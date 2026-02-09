@@ -1,43 +1,43 @@
 name: Cosplay Data Collector
 
 on:
-  workflow_dispatch: # GitHubの画面からボタンで起動できるようになります
+  workflow_dispatch: # GitHubのActionsタブから手動でボタン起動が可能になります
   schedule:
-    - cron: '0 0 * * *' # 毎日日本時間 9:00 に自動実行 (UTC 0:00)
+    - cron: '0 0 * * *' # 毎日日本時間 9:00 (UTC 0:00) に自動実行されます
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 収集したデータをリポジトリに保存するために必要
+      contents: write # 収集したデータをリポジトリに書き込むために必須の設定です
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # リポジトリのファイルを手元に持ってきます
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.10' # 安定性の高いPython 3.10を使用します
 
-    　- name: Install dependencies
+      - name: Install dependencies
+        # PythonライブラリとPlaywrightブラウザの依存関係をすべてインストールします
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install playwright
           python3 -m playwright install chromium
-          python3 -m playwright install-deps chromium
+          sudo python3 -m playwright install-deps chromium
 
       - name: Create auth.json from secret
+        # GitHub Secretsに保存したJSONテキストから、一時的にauth.jsonファイルを作成します
         run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
 
       - name: Run scraper
-        env:
-          X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
-        # python ではなく python3 -m で実行
+        # 環境変数をセットし、スクレイピングスクリプトを実行します
         run: python3 scraper_x.py
 
       - name: Commit and Push
-        # 収集した collect.json をリポジトリに保存します
+        # 収集して更新された collect.json を自動的にリポジトリへコミットします
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
