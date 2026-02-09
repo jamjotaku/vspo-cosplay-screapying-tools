@@ -38,12 +38,12 @@
                 <div class="text-xs text-gray-500 mt-2 font-mono">Total DB: <span id="total-records">-</span></div>
             </div>
             <div class="card p-6 rounded-xl shadow-lg">
-                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Engagement Rate</div>
-                <div class="text-4xl font-bold font-mono stat-value" id="max-engagement">-%</div>
-                <div class="text-xs text-gray-500 mt-2">Likes / Impressions</div>
+                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Overall Average</div>
+                <div class="text-4xl font-bold font-mono text-white" id="global-avg">-</div>
+                <div class="text-xs text-gray-500 mt-2">All Posts Avg Likes</div>
             </div>
             <div class="card p-6 rounded-xl shadow-lg">
-                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Avg Likes</div>
+                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Avg Member</div>
                 <div class="text-2xl font-bold text-white truncate" id="top-member">-</div>
                 <div class="text-xs text-gray-500 mt-2 font-mono">Avg: <span id="top-member-avg">-</span> Likes</div>
             </div>
@@ -66,14 +66,18 @@
                 </div>
             </div>
             
-            <div class="flex flex-col gap-4">
-                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col">
-                    <h3 class="font-bold text-base mb-3 text-white">💎 高エンゲージメント</h3>
-                    <div id="engagement-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar" style="max-height: 200px;"></div>
+            <div class="flex flex-col gap-4 h-[500px] lg:h-auto">
+                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col min-h-0">
+                    <h3 class="font-bold text-base mb-3 text-white flex justify-between">
+                        <span>🗝️ 魔法のキーワード</span>
+                        <span class="text-xs text-gray-500 font-normal">対平均倍率</span>
+                    </h3>
+                    <div id="keyword-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar"></div>
                 </div>
-                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col">
+
+                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col min-h-0">
                     <h3 class="font-bold text-base mb-3 text-white">🏷️ トレンドタグ (Avg Likes)</h3>
-                    <div id="tag-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar" style="max-height: 200px;"></div>
+                    <div id="tag-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar"></div>
                 </div>
             </div>
         </div>
@@ -109,7 +113,7 @@
                 document.getElementById('last-updated').innerText = data.updated_at;
                 document.getElementById('total-analyzed').innerText = data.total_analyzed.toLocaleString();
                 if(data.total_records) document.getElementById('total-records').innerText = data.total_records.toLocaleString();
-                if(data.engagement_ranking.length > 0) document.getElementById('max-engagement').innerText = data.engagement_ranking[0].rate + '%';
+                if(data.global_avg) document.getElementById('global-avg').innerText = data.global_avg.toLocaleString();
                 if(data.member_ranking.length > 0) {
                     document.getElementById('top-member').innerText = data.member_ranking[0].name;
                     document.getElementById('top-member-avg').innerText = data.member_ranking[0].avg.toLocaleString();
@@ -120,14 +124,35 @@
                 if(data.member_ranking) renderMemberChart(data.member_ranking);
                 
                 // Lists
-                if(data.engagement_ranking) renderEngagementList(data.engagement_ranking.slice(0, 10));
-                if(data.tag_ranking) renderTagList(data.tag_ranking.slice(0, 10)); // 新しいリスト
+                if(data.keyword_ranking) renderKeywordList(data.keyword_ranking); // NEW
+                if(data.tag_ranking) renderTagList(data.tag_ranking.slice(0, 10));
                 
                 // Table
                 const tableData = data.viral_ranking || data.like_ranking;
                 renderTable(tableData.slice(0, 50));
 
             } catch(e) { console.error(e); }
+        }
+
+        // NEW: キーワードリスト描画関数
+        function renderKeywordList(items) {
+            const container = document.getElementById('keyword-list');
+            items.forEach((item, i) => {
+                // 倍率に応じた色付け
+                let rateColor = 'text-gray-400';
+                if(item.multiplier >= 1.5) rateColor = 'text-yellow-400 font-bold';
+                else if(item.multiplier >= 1.0) rateColor = 'text-green-400';
+                
+                container.innerHTML += `
+                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
+                        <div class="font-mono text-purple-400 font-bold w-5 text-center text-sm">#${i+1}</div>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-white text-xs font-bold truncate">"${item.keyword}"</div>
+                            <div class="text-xs text-gray-500 font-mono">Avg: ${item.avg_likes.toLocaleString()}</div>
+                        </div>
+                        <div class="text-xs font-mono ${rateColor}">x${item.multiplier}</div>
+                    </div>`;
+            });
         }
 
         function renderTimeChart(report) {
@@ -149,7 +174,7 @@
                     responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
                     plugins: { legend: { labels: { color: '#cbd5e1' } } },
                     scales: { 
-                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' }, title: {display:true, text:'Avg Likes', color:'#64748b'} },
                         y2: { position: 'right', grid: { display: false }, ticks: { color: '#64748b' } },
                         x: { grid: { display: false }, ticks: { color: '#e2e8f0' } }
                     }
@@ -172,22 +197,6 @@
             });
         }
 
-        function renderEngagementList(items) {
-            const container = document.getElementById('engagement-list');
-            items.forEach((item, i) => {
-                container.innerHTML += `
-                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
-                        <div class="font-mono text-indigo-400 font-bold w-5 text-center text-sm">#${i+1}</div>
-                        <div class="flex-grow min-w-0">
-                            <div class="text-white text-xs font-bold truncate">${item.member_name}</div>
-                            <div class="text-xs text-blue-400 font-mono">Rate: ${item.rate}%</div>
-                        </div>
-                        <a href="${item.url}" target="_blank" class="text-[10px] bg-indigo-600 text-white px-2 py-1 rounded">View</a>
-                    </div>`;
-            });
-        }
-
-        // 新しいタグリスト描画関数
         function renderTagList(items) {
             const container = document.getElementById('tag-list');
             items.forEach((item, i) => {

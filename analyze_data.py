@@ -31,15 +31,29 @@ def analyze_data():
 
     valid_data = []
     hourly_stats = {h: {'likes': 0, 'count': 0} for h in range(24)}
-    
-    # ハッシュタグ分析用の箱
     tag_stats = {} 
+
+    # --- 🎯 魔法のキーワード定義 ---
+    # ここに分析したい単語を追加できます
+    target_keywords = [
+        "速報", "宅コス", "初出し", "イベント", "コミケ", 
+        "捏造", "私服", "動画", "自撮り", "オフショ", 
+        "供養", "再掲", "そくほ", "スタジオ"
+    ]
+    keyword_stats = {k: {'total_likes': 0, 'count': 0} for k in target_keywords}
+
+    # 全体の平均いいね数（比較用）
+    global_total_likes = 0
+    global_count = 0
 
     for d in raw_data:
         likes = d.get('like_count', 0)
         if likes == 0: continue
         
-        # ユーザー情報 & Viral Score
+        global_total_likes += likes
+        global_count += 1
+
+        # ユーザー情報
         url_parts = d['url'].split('x.com/')
         username = "unknown"
         tweet_id = None
@@ -65,17 +79,21 @@ def analyze_data():
                 hourly_stats[hour]['likes'] += likes
                 hourly_stats[hour]['count'] += 1
 
-        # --- ハッシュタグ抽出 ---
+        # --- テキスト解析 ---
         text = d.get('text', '')
-        # ハッシュタグの正規表現 (#の後に続く文字)
-        tags = re.findall(r'[#＃]([a-zA-Z0-9_\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]+)', text)
         
+        # A. ハッシュタグ抽出
+        tags = re.findall(r'[#＃]([a-zA-Z0-9_\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]+)', text)
         for tag in tags:
-            # "ぶいすぽ" "VSPO" などの当たり前すぎるタグは除外してもOKだが一旦全部集計
-            if tag not in tag_stats:
-                tag_stats[tag] = {'total_likes': 0, 'count': 0}
+            if tag not in tag_stats: tag_stats[tag] = {'total_likes': 0, 'count': 0}
             tag_stats[tag]['total_likes'] += likes
             tag_stats[tag]['count'] += 1
+
+        # B. キーワード分析 (NEW!)
+        for kw in target_keywords:
+            if kw in text:
+                keyword_stats[kw]['total_likes'] += likes
+                keyword_stats[kw]['count'] += 1
 
         d_copy = d.copy()
         d_copy['followers'] = followers
@@ -85,22 +103,40 @@ def analyze_data():
 
     # --- 集計結果の整形 ---
     
-    # 1. ハッシュタグランキング (投稿数3件以上で平均いいねが高い順)
+    # 0. 全体平均
+    global_avg = int(global_total_likes / global_count) if global_count > 0 else 0
+
+    # 1. キーワードランキング (NEW!)
+    keyword_ranking = []
+    for kw, s in keyword_stats.items():
+        if s['count'] > 0:
+            avg = int(s['total_likes'] / s['count'])
+            # "倍率" (全体平均よりどれくらい高いか)
+            multiplier = round(avg / global_avg, 2) if global_avg > 0 else 0
+            keyword_ranking.append({
+                'keyword': kw, 
+                'avg_likes': avg, 
+                'count': s['count'],
+                'multiplier': multiplier
+            })
+    keyword_ranking.sort(key=lambda x: x['avg_likes'], reverse=True)
+
+    # 2. ハッシュタグランキング
     tag_ranking = []
     for tag, s in tag_stats.items():
-        if s['count'] >= 3: # ノイズ除去のため3回以上使われたタグに限定
+        if s['count'] >= 3:
             avg = int(s['total_likes'] / s['count'])
             tag_ranking.append({'tag': tag, 'avg_likes': avg, 'count': s['count']})
     tag_ranking.sort(key=lambda x: x['avg_likes'], reverse=True)
 
-    # 2. 時間レポート
+    # 3. 時間レポート
     hourly_report = []
     for h in range(24):
         s = hourly_stats[h]
         avg = int(s['likes'] / s['count']) if s['count'] > 0 else 0
         hourly_report.append({'hour': h, 'avg_likes': avg, 'count': s['count']})
 
-    # 3. その他ランキング
+    # 4. その他ランキング
     with_imp = [d for d in valid_data if d.get('impression_count', 0) > 100]
     engagement_ranking = []
     for d in with_imp:
@@ -130,7 +166,9 @@ def analyze_data():
         'updated_at': datetime.now().strftime('%Y/%m/%d %H:%M'),
         'total_analyzed': len(valid_data),
         'total_records': len(raw_data),
-        'tag_ranking': tag_ranking[:20], # Top 20タグ
+        'global_avg': global_avg, # 全体平均を追加
+        'keyword_ranking': keyword_ranking, # キーワード分析を追加
+        'tag_ranking': tag_ranking[:20],
         'hourly_report': hourly_report,
         'engagement_ranking': engagement_ranking[:30],
         'viral_ranking': viral_ranking,
@@ -140,7 +178,7 @@ def analyze_data():
 
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"✅ 言語解析完了！ 有効なタグトレンドを抽出しました。")
+    print(f"✅ キーワード分析完了！ 「速報」「宅コス」などの効果を測定しました。")
 
 if __name__ == "__main__":
     analyze_data()
