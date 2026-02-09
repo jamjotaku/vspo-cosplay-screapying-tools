@@ -1,88 +1,89 @@
 import json
 import os
-from collections import Counter
 from datetime import datetime
 
-def analyze_vspo_data():
+def analyze_data():
     input_file = 'collect.json'
     output_file = 'analysis.json'
 
     if not os.path.exists(input_file):
-        print(f"❌ {input_file} が見つかりません。")
+        print("❌ データファイルがありません")
         return
 
     with open(input_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+        raw_data = json.load(f)
 
-    print(f"📊 {len(data)} 件のデータを分析中...")
-
-    # 1. 基本サマリー
-    total_posts = len(data)
-    members = [item.get('member_name', 'Unknown') for item in data if item.get('member_name')]
-    unique_members = len(set(members))
+    # 数値が入っているデータだけを抽出
+    valid_data = [d for d in raw_data if d.get('like_count', 0) > 0]
     
-    # 2. メンバー別ランキング (Top 20)
-    member_counts = Counter(members)
-    member_ranking = dict(member_counts.most_common(20))
+    if not valid_data:
+        print("⚠️ 数値データがまだありません")
+        return
 
-    # 3. プラットフォーム割合 (X vs Instagram)
-    sources = [item.get('source', 'Unknown') for item in data]
-    source_ratio = dict(Counter(sources))
+    # --- 1. メンバー別平均いいねランキング ---
+    member_stats = {}
+    for d in valid_data:
+        name = d['member_name']
+        likes = d['like_count']
+        if name not in member_stats:
+            member_stats[name] = {'total': 0, 'count': 0, 'max': 0}
+        member_stats[name]['total'] += likes
+        member_stats[name]['count'] += 1
+        if likes > member_stats[name]['max']:
+            member_stats[name]['max'] = likes
 
-    # 4. 時系列データ (日別の投稿数推移)
-    # collected_at を日付(YYYY-MM-DD)に変換して集計
-    dates = []
-    for item in data:
-        raw_date = item.get('collected_at', '')
-        if raw_date:
-            try:
-                date_str = raw_date.split('T')[0]
-                dates.append(date_str)
-            except:
-                continue
-    
-    # 直近30日分などのトレンドを把握
-    timeline_counts = Counter(dates)
-    # 日付順にソート（直近30件など）
-    sorted_timeline = dict(sorted(timeline_counts.items(), reverse=True)[:30])
-    # グラフ表示用に古い順に戻す
-    display_timeline = dict(reversed(list(sorted_timeline.items())))
+    member_ranking = []
+    for name, stats in member_stats.items():
+        if stats['count'] >= 3: # 投稿3件以上のみ
+            avg = int(stats['total'] / stats['count'])
+            member_ranking.append({
+                'name': name,
+                'avg': avg,
+                'max': stats['max'],
+                'count': stats['count']
+            })
+    member_ranking.sort(key=lambda x: x['avg'], reverse=True)
 
-    # 5. 「いいね」数ランキング (Top 5)
-    # 数値がない場合は0として処理
-    sorted_by_likes = sorted(
-        data, 
-        key=lambda x: int(x.get('like_count', 0)), 
-        reverse=True
-    )
-    
-    top_liked_posts = []
-    for item in sorted_by_likes[:5]:
-        top_liked_posts.append({
-            "member": item.get('member_name'),
-            "likes": item.get('like_count', 0),
-            "url": item.get('url'),
-            "image": item.get('images', [""])[0]
+    # --- 2. エンゲージメント率ランキング (インプありのみ) ---
+    with_imp = [d for d in valid_data if d.get('impression_count', 0) > 500]
+    engagement_ranking = []
+    for d in with_imp:
+        rate = (d['like_count'] / d['impression_count']) * 100
+        engagement_ranking.append({
+            'member_name': d['member_name'],
+            'url': d['url'],
+            'rate': round(rate, 2),
+            'likes': d['like_count'],
+            'views': d['impression_count'],
+            'thumb': d['images'][0] if d['images'] else ''
+        })
+    engagement_ranking.sort(key=lambda x: x['rate'], reverse=True)
+
+    # --- 3. 総合いいねランキング ---
+    like_ranking = sorted(valid_data, key=lambda x: x['like_count'], reverse=True)[:50]
+    # 軽量化のため必要な情報だけに絞る
+    simple_like_ranking = []
+    for d in like_ranking:
+        simple_like_ranking.append({
+            'member_name': d['member_name'],
+            'url': d['url'],
+            'likes': d['like_count'],
+            'thumb': d['images'][0] if d['images'] else ''
         })
 
-    # 集計結果のまとめ
-    analysis_result = {
-        "summary": {
-            "total_posts": total_posts,
-            "total_members": unique_members,
-            "last_updated": datetime.now().isoformat()
-        },
-        "member_ranking": member_ranking,
-        "source_ratio": source_ratio,
-        "timeline": display_timeline,
-        "top_liked_posts": top_liked_posts
+    # --- 結果を出力 ---
+    result = {
+        'updated_at': datetime.now().strftime('%Y/%m/%d %H:%M'),
+        'total_analyzed': len(valid_data),
+        'total_records': len(raw_data),
+        'member_ranking': member_ranking,
+        'engagement_ranking': engagement_ranking[:30],
+        'like_ranking': simple_like_ranking
     }
 
-    # analysis.json として保存
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(analysis_result, f, ensure_ascii=False, indent=2)
-
-    print(f"✅ {output_file} を作成しました。")
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"✅ 分析完了: {len(valid_data)}件のデータを処理しました")
 
 if __name__ == "__main__":
-    analyze_vspo_data()
+    analyze_data()

@@ -3,239 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSPO! Cosplay Archive</title>
+    <title>VSPO! Metrics Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Zen Maru Gothic', sans-serif; background-color: #fdfbf7; }
-        .card:hover { transform: translateY(-5px); }
-        .tweet-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        /* 読み込み中のローディングスピナー */
-        .loader {
-            border: 4px solid #f3f3f3; border-top: 4px solid #6366f1; border-radius: 50%;
-            width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        body { font-family: 'Zen Kaku Gothic New', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .card { background-color: #1e293b; border: 1px solid #334155; }
+        .stat-value { background: linear-gradient(45deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="min-h-screen p-6">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-            <div class="flex items-center gap-8">
-                <h1 class="text-2xl font-bold text-indigo-600 tracking-tight">
-                    <a href="index.html">VSPO! Cosplay</a>
-                </h1>
-                <nav class="hidden md:flex gap-1 bg-gray-100 p-1 rounded-lg">
-                    <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-bold bg-white text-indigo-600 shadow-sm transition">
-                        ギャラリー
-                    </a>
-                    <a href="analytics.html" class="px-4 py-1.5 rounded-md text-sm font-bold text-gray-500 hover:text-indigo-600 transition">
-                        データ分析
-                    </a>
-                </nav>
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-8 border-b border-gray-700 pb-4">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-1">VSPO! Metrics Lab</h1>
+                <p class="text-sm text-gray-400 font-mono">データ分析専用ダッシュボード</p>
             </div>
-            <div class="text-xs text-gray-400" id="last-updated">Updating...</div>
+            <div class="text-right">
+                <div class="text-xs text-gray-500">LAST UPDATE</div>
+                <div class="text-xl font-mono font-bold text-indigo-400" id="last-updated">--/-- --:--</div>
+            </div>
         </div>
-    </header>
 
-    <div class="md:hidden flex justify-center py-2 bg-white border-b border-gray-100 gap-4 text-sm font-bold">
-        <a href="index.html" class="text-indigo-600 border-b-2 border-indigo-600">ギャラリー</a>
-        <a href="analytics.html" class="text-gray-400">データ分析</a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="card p-6 rounded-lg">
+                <div class="text-sm text-gray-400 mb-1">分析対象データ数</div>
+                <div class="text-4xl font-bold font-mono stat-value" id="total-analyzed">-</div>
+                <div class="text-xs text-gray-500 mt-2">全データ: <span id="total-records">-</span> 件</div>
+            </div>
+            <div class="card p-6 rounded-lg">
+                <div class="text-sm text-gray-400 mb-1">最高エンゲージメント率</div>
+                <div class="text-4xl font-bold font-mono stat-value" id="max-engagement">-%</div>
+                <div class="text-xs text-gray-500 mt-2">驚異的な数値です</div>
+            </div>
+            <div class="card p-6 rounded-lg">
+                <div class="text-sm text-gray-400 mb-1">平均いいねNo.1</div>
+                <div class="text-4xl font-bold text-white" id="top-member">-</div>
+                <div class="text-xs text-gray-500 mt-2">Avg: <span id="top-member-avg">-</span> Likes</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="card p-6 rounded-lg lg:col-span-2">
+                <h3 class="font-bold text-lg mb-4 text-white">📊 メンバー別 平均いいね数 (上位15名)</h3>
+                <div class="h-64">
+                    <canvas id="memberChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card p-6 rounded-lg">
+                <h3 class="font-bold text-lg mb-4 text-white">💎 高効率投稿 (Top 10)</h3>
+                <div id="engagement-list" class="space-y-3 overflow-y-auto h-64 pr-2">
+                    </div>
+            </div>
+        </div>
+
+        <div class="card rounded-lg overflow-hidden">
+            <div class="p-4 bg-gray-800 border-b border-gray-700 font-bold text-white">
+                🏆 総合いいねランキング Top 30
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-gray-400">
+                    <thead class="bg-gray-900 text-gray-200 uppercase font-mono">
+                        <tr>
+                            <th class="px-6 py-3">Rank</th>
+                            <th class="px-6 py-3">Member</th>
+                            <th class="px-6 py-3 text-right">Likes</th>
+                            <th class="px-6 py-3 text-center">Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body" class="divide-y divide-gray-700">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
-
-    <div class="max-w-7xl mx-auto px-4 py-6 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <div id="filter-container" class="flex gap-2 pb-2">
-            </div>
-    </div>
-
-    <main class="max-w-7xl mx-auto px-4 pb-12">
-        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            </div>
-
-        <div id="loading-indicator" class="text-center py-10">
-            <div class="loader"></div>
-            <p class="text-gray-400 text-sm">Loading more...</p>
-        </div>
-        
-        <div id="end-message" class="hidden text-center py-10 text-gray-400">
-            これ以上データはありません 🎉
-        </div>
-    </main>
 
     <script>
-        // --- 設定 ---
-        const PAGE_SIZE = 24; // 一度に読み込む枚数
-        
-        // --- 状態管理 ---
-        let allData = [];
-        let filteredData = [];
-        let currentIndex = 0;
-        let isLoading = false;
-
-        // --- 初期化 ---
-        async function loadData() {
+        async function init() {
             try {
-                const response = await fetch('collect.json');
-                const data = await response.json();
+                const res = await fetch('analysis.json');
+                if(!res.ok) throw new Error("No Data");
+                const data = await res.json();
+
+                // KPI更新
+                document.getElementById('last-updated').innerText = data.updated_at;
+                document.getElementById('total-analyzed').innerText = data.total_analyzed.toLocaleString();
+                document.getElementById('total-records').innerText = data.total_records.toLocaleString();
                 
-                // 新しい順にソート (CSVデータも考慮して collected_at がない場合は後ろへ)
-                allData = data.sort((a, b) => {
-                    const dateA = a.collected_at ? new Date(a.collected_at) : new Date(0);
-                    const dateB = b.collected_at ? new Date(b.collected_at) : new Date(0);
-                    return dateB - dateA;
-                });
+                if(data.engagement_ranking.length > 0) {
+                    document.getElementById('max-engagement').innerText = data.engagement_ranking[0].rate + '%';
+                }
+                if(data.member_ranking.length > 0) {
+                    document.getElementById('top-member').innerText = data.member_ranking[0].name;
+                    document.getElementById('top-member-avg').innerText = data.member_ranking[0].avg.toLocaleString();
+                }
+
+                // グラフ描画
+                renderChart(data.member_ranking);
                 
-                filteredData = allData;
-                
-                // ヘッダー更新
-                if(allData.length > 0) {
-                    const lastDate = new Date(allData[0].collected_at);
-                    if (!isNaN(lastDate)) {
-                        document.getElementById('last-updated').textContent = `最終更新: ${lastDate.toLocaleString('ja-JP')}`;
+                // リスト生成
+                renderEngagementList(data.engagement_ranking.slice(0, 10));
+                renderTable(data.like_ranking.slice(0, 30));
+
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        function renderChart(members) {
+            const top15 = members.slice(0, 15);
+            new Chart(document.getElementById('memberChart'), {
+                type: 'bar',
+                data: {
+                    labels: top15.map(m => m.name),
+                    datasets: [{
+                        label: '平均いいね',
+                        data: top15.map(m => m.avg),
+                        backgroundColor: '#6366f1',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        x: { grid: { display: false }, ticks: { color: '#e2e8f0' } }
                     }
                 }
-
-                renderFilters();
-                renderNextBatch(); // 最初の24件を表示
-
-            } catch (error) {
-                console.error("Error loading data:", error);
-                document.getElementById('gallery-grid').innerHTML = `<div class="col-span-full text-center text-red-500">データの読み込みに失敗しました。<br>${error}</div>`;
-                document.getElementById('loading-indicator').style.display = 'none';
-            }
-        }
-
-        // --- フィルターボタン描画 ---
-        function renderFilters() {
-            const container = document.getElementById('filter-container');
-            container.innerHTML = '';
-
-            // メンバー一覧を取得（重複排除）
-            const members = ['ALL', ...new Set(allData.map(item => item.member_name).filter(n => n))];
-            
-            members.forEach(member => {
-                const btn = document.createElement('button');
-                const isAll = member === 'ALL';
-                btn.className = `filter-btn px-4 py-2 rounded-full text-sm font-bold shadow-sm transition border ${isAll ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-600 border-gray-200 hover:bg-indigo-50 hover:text-indigo-600'}`;
-                btn.textContent = member;
-                btn.dataset.member = member;
-                
-                btn.onclick = () => applyFilter(member);
-                container.appendChild(btn);
             });
         }
 
-        // --- フィルター適用 ---
-        function applyFilter(memberName) {
-            // ボタンのスタイル切り替え
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if (btn.dataset.member === memberName) {
-                    btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-bold shadow-md transition border bg-indigo-600 text-white border-indigo-600";
-                } else {
-                    btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-bold shadow-sm transition border bg-white text-gray-600 border-gray-200 hover:bg-indigo-50 hover:text-indigo-600";
-                }
-            });
-
-            // データの絞り込み
-            if (memberName === 'ALL') {
-                filteredData = allData;
-            } else {
-                filteredData = allData.filter(item => item.member_name === memberName);
-            }
-
-            // 表示リセット
-            currentIndex = 0;
-            document.getElementById('gallery-grid').innerHTML = '';
-            document.getElementById('end-message').classList.add('hidden');
-            document.getElementById('loading-indicator').style.display = 'block';
-            
-            renderNextBatch();
-        }
-
-        // --- 画像カード生成 (遅延読み込み対応) ---
-        function renderNextBatch() {
-            if (isLoading) return;
-            isLoading = true;
-
-            const container = document.getElementById('gallery-grid');
-            const endMessage = document.getElementById('end-message');
-            const loadingIndicator = document.getElementById('loading-indicator');
-
-            // 次のバッチを取得
-            const nextBatch = filteredData.slice(currentIndex, currentIndex + PAGE_SIZE);
-
-            if (nextBatch.length === 0) {
-                loadingIndicator.style.display = 'none';
-                if (currentIndex > 0) endMessage.classList.remove('hidden');
-                isLoading = false;
-                return;
-            }
-
-            // HTML生成
-            const fragment = document.createDocumentFragment();
-            nextBatch.forEach(item => {
-                // 画像がないデータはスキップ
-                if (!item.images || item.images.length === 0) return;
-
-                const displayImage = item.images[0];
-                const likes = item.like_count ? item.like_count.toLocaleString() : 0;
-                
-                // contentが長い場合や、レイヤー名を表示するための処理
-                let displayText = item.content || "";
-                if (item.author_name) displayText = `Cosplayer: ${item.author_name}`;
-
-                const card = document.createElement('div');
-                card.className = "card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition duration-300 flex flex-col";
-                card.innerHTML = `
-                    <a href="${item.url}" target="_blank" class="block relative group h-64 overflow-hidden bg-gray-100">
-                        <img src="${displayImage}" loading="lazy" alt="${item.member_name}" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition"></div>
-                        <div class="absolute top-2 right-2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded">
-                            ${item.images.length}枚
+        function renderEngagementList(items) {
+            const container = document.getElementById('engagement-list');
+            items.forEach((item, i) => {
+                const html = `
+                    <div class="flex items-center gap-3 p-2 bg-gray-800 rounded border border-gray-700 hover:bg-gray-700 transition">
+                        <div class="font-mono text-indigo-400 font-bold w-6">#${i+1}</div>
+                        <div class="flex-grow">
+                            <div class="text-white text-sm font-bold">${item.member_name}</div>
+                            <div class="text-xs text-blue-400 font-mono">Rate: ${item.rate}%</div>
                         </div>
-                    </a>
-                    <div class="p-4 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-0.5 rounded">
-                                ${item.member_name}
-                            </span>
-                            <div class="flex items-center gap-2 text-xs text-gray-400">
-                                <span>${item.source === 'Instagram' ? '📷' : '🐦'}</span>
-                                <span class="flex items-center gap-0.5 text-pink-500 font-bold">
-                                    ❤️ ${likes}
-                                </span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-3 tweet-text flex-grow">${displayText}</p>
+                        <a href="${item.url}" target="_blank" class="text-xs bg-indigo-600 text-white px-2 py-1 rounded">View</a>
                     </div>
                 `;
-                fragment.appendChild(card);
+                container.innerHTML += html;
             });
-
-            container.appendChild(fragment);
-            currentIndex += nextBatch.length;
-            isLoading = false;
-
-            // データが尽きたかチェック
-            if (currentIndex >= filteredData.length) {
-                loadingIndicator.style.display = 'none';
-                endMessage.classList.remove('hidden');
-            }
         }
 
-        // --- 無限スクロール検知 ---
-        window.addEventListener('scroll', () => {
-            if (isLoading) return;
-            // 画面の下端近くまでスクロールしたら次を読み込む
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                renderNextBatch();
-            }
-        });
+        function renderTable(items) {
+            const tbody = document.getElementById('ranking-body');
+            items.forEach((item, i) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-gray-800 transition";
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-mono font-bold text-white">#${i+1}</td>
+                    <td class="px-6 py-4 text-white font-bold">${item.member_name}</td>
+                    <td class="px-6 py-4 text-right font-mono text-pink-400">❤️ ${item.likes.toLocaleString()}</td>
+                    <td class="px-6 py-4 text-center">
+                        <a href="${item.url}" target="_blank" class="text-indigo-400 hover:text-indigo-300 hover:underline text-xs">Link ↗</a>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
 
-        // 開始
-        loadData();
-
+        init();
     </script>
 </body>
 </html>
