@@ -21,79 +21,88 @@ async def scrape_vspo_cosplay(context, member):
     
     print(f"--- Searching for: {member['name']} ---")
     try:
-        # 【修正点】networkidle (通信完了待ち) をやめ、domcontentloaded (表示待ち) に変更
-        # これにより、無限ロードによるタイムアウトを防ぎます
+        # タイムアウト対策：domcontentloadedで早めに次へ
         await page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        
-        # 読み込みの余韻として少しだけ待つ
-        await asyncio.sleep(3)
+        await asyncio.sleep(3) # 読み込み待ち
 
-        # ログインチェック
         if "login" in page.url:
-            print(f"⚠️ ログインが解除されています。")
+            print(f"⚠️ Login page detected. Skipping.")
             return []
 
-        # ツイートが表示されるかチェック（最大10秒）
         try:
             await page.wait_for_selector('article[data-testid="tweet"]', timeout=10000)
         except:
-            print(f"❌ ツイートが見つかりません（検索結果0件、または読込エラー）")
-            # デバッグ用にスクショを保存
-            await page.screenshot(path=f"error_{member['id']}.png")
+            print(f"❌ No tweets found (Timeout).")
             return []
 
-        # 少しスクロールしてデータを読み込ませる
-        await page.mouse.wheel(0, 1000)
-        await asyncio.sleep(1)
+        # 画像を読み込ませるために少しスクロール
+        for _ in range(3):
+            await page.mouse.wheel(0, 1000)
+            await asyncio.sleep(1)
 
         tweets = await page.query_selector_all('article[data-testid="tweet"]')
-        print(f"✅ Found {len(tweets)} tweets")
+        print(f"✅ Found {len(tweets)} tweets in DOM")
 
-        for tweet in tweets:
+        for i, tweet in enumerate(tweets):
             try:
-                user_info = await tweet.query_selector('[data-testid="User-Name"]')
-                full_name = await user_info.inner_text() if user_info else "Unknown"
+                # ユーザー名
+                user_elem = await tweet.query_selector('[data-testid="User-Name"]')
+                full_name = await user_elem.inner_text() if user_elem else "Unknown"
                 
-                content_elem = await tweet.query_selector('[data-testid="tweetText"]')
-                content = await content_elem.inner_text() if content_elem else ""
-
-                # 広告ツイートを除外
+                # 広告スキップ
                 if "プロモーション" in full_name or "Ad" in full_name:
                     continue
 
-                group_label = await tweet.query_selector('div[role="group"]')
-                stats_text = await group_label.get_attribute('aria-label') if group_label else ""
+                # 本文
+                content_elem = await tweet.query_selector('[data-testid="tweetText"]')
+                content = await content_elem.inner_text() if content_elem else ""
 
-                metrics = {
-                    "replies": extract_number(stats_text, r"(\d+)件のリプライ"),
-                    "retweets": extract_number(stats_text, r"(\d+)件のリポスト"),
-                    "likes": extract_number(stats_text, r"(\d+)件のいいね"),
-                    "views": extract_number(stats_text, r"([\d\.]+[万億]?+)件の表示")
-                }
-
-                img_elements = await tweet.query_selector_all('img[src*="media"]')
+                # 画像抽出の強化：data-testid="tweetPhoto" の中の img を優先的に探す
                 images = []
-                for img in img_elements:
+                photo_divs = await tweet.query_selector_all('div[data-testid="tweetPhoto"] img')
+                
+                for img in photo_divs:
                     src = await img.get_attribute('src')
-                    if src and "profile_images" not in src:
-                        images.append(src)
+                    if src: images.append(src)
+                
+                # もし上記で見つからなければ、汎用的な img タグも探す（プロフ画像等は除外）
+                if not images:
+                    all_imgs = await tweet.query_selector_all('img')
+                    for img in all_imgs:
+                        src = await img.get_attribute('src')
+                        # メディアサーバー(pbs.twimg.com)の画像で、かつプロフ画像でないもの
+                        if src and "pbs.twimg.com/media" in src and "profile_images" not in src:
+                            images.append(src)
 
+                # 重複排除
+                images = list(set(images))
+
+                # URL取得
                 link_elem = await tweet.query_selector('a[href*="/status/"]')
                 tweet_url = f"https://x.com{await link_elem.get_attribute('href')}" if link_elem else ""
 
+                # 保存判定
                 if images and tweet_url:
                     results.append({
                         "member_id": member.get('id', 'unknown'),
                         "member_name": member['name'],
                         "content": content,
-                        "metrics": metrics,
-                        "images": list(set(images)),
+                        "images": images,
                         "url": tweet_url,
-                        "source": "X",
                         "collected_at": datetime.now().isoformat()
                     })
-            except:
+                    print(f"  ⭕ Saved tweet from {full_name.splitlines()[0]}: {len(images)} images")
+                else:
+                    # なぜ保存されなかったかログに出す
+                    reason = []
+                    if not images: reason.append("No images")
+                    if not tweet_url: reason.append("No URL")
+                    print(f"  Start analyzing tweet {i+1}... Skip: {', '.join(reason)}")
+
+            except Exception as e:
+                print(f"  ❌ Error processing tweet {i+1}: {e}")
                 continue
+
     except Exception as e:
         print(f"❌ Error scraping {member['name']}: {e}")
     
@@ -102,12 +111,11 @@ async def scrape_vspo_cosplay(context, member):
 
 async def main():
     if not os.path.exists('members.json'): return
-
     with open('members.json', 'r', encoding='utf-8') as f:
         members = json.load(f)
 
-    # 動作確認のため、最初の3人だけテストしたい場合はここを有効に
-    # members = members[:3] 
+    # テスト用：全員やると長いので、最初の3人だけ試すなら以下をコメントアウト解除
+    # members = members[:3]
 
     data_file = 'collect.json'
     all_data = []
@@ -120,7 +128,6 @@ async def main():
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        
         if not os.path.exists('auth.json'):
             print("Error: auth.json not found.")
             await browser.close()
@@ -142,14 +149,13 @@ async def main():
             if count > 0:
                 print(f"✨ Added {count} new items for {member['name']}")
             
-            # 連続アクセス対策の休憩（2〜4秒）
             await asyncio.sleep(random.uniform(2, 4))
         
         with open(data_file, 'w', encoding='utf-8') as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
         
         await browser.close()
-        print(f"🚀 Finished! Total items: {len(all_data)}")
+        print(f"🚀 Finished! Total items in DB: {len(all_data)}")
 
 if __name__ == "__main__":
     asyncio.run(main())
