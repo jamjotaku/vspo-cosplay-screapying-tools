@@ -1,181 +1,131 @@
 import json
 import os
-import re
 import asyncio
-import base64
 import random
+import requests
+from io import BytesIO
 from datetime import datetime
 from playwright.async_api import async_playwright
-import google.generativeai as genai
+import torch
+from PIL import Image
+from transformers import CLIPProcessor, CLIPModel
 
-# ■■■ 設定：ノイズ除去キーワード（AI前の門番） ■■■
-EXCLUDE_KEYWORDS = [
-    "譲渡", "買取", "交換", "グッズ", "回収", "同行", "代行", 
-    "検索用", "求)", "出)", "譲)", "定価", "取引", "入荷", "完売"
-]
+# ■■■ 設定：CLIPモデル（CPUでも動く軽量版） ■■■
+MODEL_ID = "openai/clip-vit-base-patch32"
+print("🚀 Loading Local AI (CLIP)... This takes a moment.")
+try:
+    model = CLIPModel.from_pretrained(MODEL_ID)
+    processor = CLIPProcessor.from_pretrained(MODEL_ID)
+    print("✅ CLIP Model Loaded!")
+except Exception as e:
+    print(f"⚠️ Failed to load CLIP: {e}")
+    model = None
 
-# APIキーの読み込み
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
-
-def extract_number(text, pattern):
-    if not text: return "0"
-    match = re.search(pattern, text)
-    return match.group(1) if match else "0"
-
-# --- AI判定関数 ---
-async def check_image_with_gemini(page, image_url, member_name):
-    # APIキーがない場合は判定をスルーして「合格」とする
-    if not GEMINI_API_KEY:
-        return True
+def check_image_locally(image_url, member_name):
+    """
+    画像URLをダウンロードし、CLIPで「そのキャラのコスプレか？」を判定する
+    """
+    if model is None: return True # モデル読み込み失敗時はスルーして保存
     
-    print(f"   🤖 AI Checking: Is this {member_name}?")
     try:
-        # 1. 画像データをダウンロード (メモリ上で行う)
-        response = await page.request.get(image_url)
-        if response.status != 200:
-            return False
-        image_bytes = await response.body()
-
-        # 2. AIモデルの準備 (Gemini 1.5 Flash は高速で安価)
-        model = genai.GenerativeModel('gemini-2.5-flash-image')
-
-        # 3. 質問内容（プロンプト）
-        # 「これは[キャラ名]のコスプレですか？ 他のキャラならFalseを返して」と指示
-        prompt = f"""
-        Look at this image. Is this a cosplay of the VTuber "{member_name}" (from VSPO/Buisupo)?
+        # 画像ダウンロード（タイムアウト設定付き）
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(image_url, headers=headers, timeout=10)
+        if response.status_code != 200: return False
         
-        Strict rules:
-        - If it is clearly {member_name}, answer "TRUE".
-        - If it is a completely different character (e.g. Genshin Impact, Hololive, generic anime girl), answer "FALSE".
-        - If it is just a wig, clothes without a person, or text/screenshot, answer "FALSE".
-        - Only return "TRUE" or "FALSE".
-        """
-
-        # 4. 送信
-        # Geminiにバイナリを渡すための形式
-        image_parts = [{"mime_type": "image/jpeg", "data": image_bytes}]
+        image = Image.open(BytesIO(response.content)).convert("RGB")
         
-        result = await model.generate_content_async([prompt, image_parts[0]])
-        answer = result.text.strip().upper()
+        # 判定ラベル（英語のほうが精度が良い）
+        # 0番目が「正解」の基準
+        labels = [
+            f"a cosplay photo of {member_name}",
+            "a screenshot of a video game or anime",
+            "text or merchandise or random object"
+        ]
 
-        if "TRUE" in answer:
-            print("   ✅ AI Pass: Looks like target character.")
+        inputs = processor(text=labels, images=image, return_tensors="pt", padding=True)
+        with torch.no_grad():
+            outputs = model(**inputs)
+        
+        probs = outputs.logits_per_image.softmax(dim=1)
+        top_index = probs.argmax().item()
+        
+        # 0番目の確率が一番高ければ合格
+        if top_index == 0:
             return True
         else:
-            print(f"   🗑️ AI Reject: {answer} (Probably different character)")
             return False
 
-    except Exception as e:
-        print(f"   ⚠️ AI Error: {e} (Allowing by default)")
-        return True # エラー時はとりあえず通す（または厳しくFalseにするかはお好みで）
+    except Exception:
+        return True # エラー時は安全のため残す
 
 async def scrape_vspo_cosplay(context, member):
     results = []
     page = await context.new_page()
-    await page.set_viewport_size({"width": 1280, "height": 800})
-
+    
+    # 検索クエリ（画像フィルタ付き）
     query = f"{member['name']} コスプレ"
     url = f"https://x.com/search?q={query}&src=typed_query&f=live"
     
-    print(f"--- Searching for: {member['name']} ---")
+    print(f"--- [X] Searching: {member['name']} ---")
     try:
         await page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        await asyncio.sleep(3)
+        await asyncio.sleep(5) # 読み込み待ち
 
-        if "login" in page.url:
-            print(f"⚠️ Login page detected. Skipping.")
-            return []
-
-        try:
-            await page.wait_for_selector('article[data-testid="tweet"]', timeout=10000)
-        except:
-            print(f"❌ No tweets found (Timeout).")
-            return []
-
-        for _ in range(3):
-            await page.mouse.wheel(0, 1000)
-            await asyncio.sleep(1)
-
+        # ツイート取得
         tweets = await page.query_selector_all('article[data-testid="tweet"]')
-        print(f"✅ Found {len(tweets)} tweets in DOM")
+        print(f"   Found {len(tweets)} tweets")
 
-        for i, tweet in enumerate(tweets):
+        for tweet in tweets[:15]: # 1人あたり最大15件チェック
             try:
-                user_elem = await tweet.query_selector('[data-testid="User-Name"]')
-                full_name = await user_elem.inner_text() if user_elem else "Unknown"
-                
-                if "プロモーション" in full_name or "Ad" in full_name: continue
-
+                # 本文取得
                 content_elem = await tweet.query_selector('[data-testid="tweetText"]')
                 content = await content_elem.inner_text() if content_elem else ""
+                
+                # ノイズキーワード除外
+                if any(x in content for x in ["譲渡", "買取", "交換", "グッズ"]): continue
 
-                # テキストフィルター
-                if any(k in content for k in EXCLUDE_KEYWORDS):
-                    print(f"  ⏩ Skip: Noise keyword detected.")
-                    continue
-
+                # 画像URL取得
                 images = []
                 photo_divs = await tweet.query_selector_all('div[data-testid="tweetPhoto"] img')
                 for img in photo_divs:
                     src = await img.get_attribute('src')
                     if src: images.append(src)
                 
-                if not images:
-                    # 代替手段
-                    all_imgs = await tweet.query_selector_all('img')
-                    for img in all_imgs:
-                        src = await img.get_attribute('src')
-                        if src and "pbs.twimg.com/media" in src and "profile_images" not in src:
-                            images.append(src)
-
-                images = list(set(images))
-
+                # リンク取得
                 link_elem = await tweet.query_selector('a[href*="/status/"]')
                 tweet_url = f"https://x.com{await link_elem.get_attribute('href')}" if link_elem else ""
 
                 if images and tweet_url:
-                    # ★★★ ここでAI判定を実行！ ★★★
-                    # 最初の1枚だけチェックして判断する（節約と高速化のため）
-                    is_valid = await check_image_with_gemini(page, images[0], member['name'])
-                    
-                    if is_valid:
+                    # ★AI判定（1枚目だけチェック）
+                    if check_image_locally(images[0], member['name']):
                         results.append({
-                            "member_id": member.get('id', 'unknown'),
                             "member_name": member['name'],
-                            "author_name": full_name.split("\n")[0],
                             "content": content,
                             "images": images,
                             "url": tweet_url,
-                            "collected_at": datetime.now().isoformat(),
-                            "source": "X"
+                            "source": "X",
+                            "collected_at": datetime.now().isoformat()
                         })
-                        print(f"  ⭕ Saved tweet: {len(images)} images")
+                        print(f"   ✅ Saved: {member['name']}")
                     else:
-                        print(f"  ❌ Skipped by AI (Wrong character)")
-
-                else:
-                    pass # 画像なし
-
-            except Exception as e:
-                print(f"  ❌ Error processing tweet {i+1}: {e}")
+                        print(f"   🗑️ Rejected by AI")
+            except Exception:
                 continue
 
     except Exception as e:
-        print(f"❌ Error scraping {member['name']}: {e}")
+        print(f"❌ Error: {e}")
     
     await page.close()
     return results
 
 async def main():
+    # メンバーリスト読み込み
     if not os.path.exists('members.json'): return
     with open('members.json', 'r', encoding='utf-8') as f:
         members = json.load(f)
 
-    # テスト時は人数を絞る
-    # members = members[:2]
-
+    # 既存データ読み込み
     data_file = 'collect.json'
     all_data = []
     if os.path.exists(data_file):
@@ -185,8 +135,11 @@ async def main():
     
     existing_urls = {item['url'] for item in all_data}
 
+    # ブラウザ起動
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
+        
+        # auth.json がない場合は終了
         if not os.path.exists('auth.json'):
             print("Error: auth.json not found.")
             await browser.close()
@@ -205,16 +158,15 @@ async def main():
                     all_data.append(t)
                     existing_urls.add(t['url'])
                     count += 1
-            if count > 0:
-                print(f"✨ Added {count} new items for {member['name']}")
             
-            await asyncio.sleep(random.uniform(2, 4))
+            await asyncio.sleep(random.uniform(3, 6)) # BAN対策の休憩
         
+        # 保存
         with open(data_file, 'w', encoding='utf-8') as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
         
         await browser.close()
-        print(f"🚀 Finished! Total items in DB: {len(all_data)}")
+        print("🎉 X Scraping Finished!")
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,16 +1,13 @@
-name: Cosplay Data Collector
+name: Cosplay Data Collector (Local AI)
 
 on:
   schedule:
-    # 毎日 日本時間 午前9時（UTC 0:00）に実行
-    - cron: '0 0 * * *'
-  # 手動でいつでも実行できるボタンを Actions タブに表示
+    - cron: '0 0 * * *' # 毎日 日本時間9時
   workflow_dispatch:
 
 jobs:
   scrape_and_analyze:
     runs-on: ubuntu-latest
-    # リポジトリへの書き込み権限を付与
     permissions:
       contents: write
 
@@ -22,58 +19,51 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip' # インストールの高速化
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # スクレイピングと分析に必要なライブラリをまとめてインストール
-          pip install playwright pandas google-generativeai
+          # ★CPU版PyTorchを指定してインストール時間を短縮
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          # その他のライブラリ
+          pip install transformers pillow requests playwright pandas
           playwright install chromium
 
-      # --- X (Twitter) の認証情報作成 ---
-      - name: Create auth.json (X)
+      # --- 認証情報の復元 ---
+      - name: Create auth.json
         env:
           X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
         run: echo "$X_AUTH_JSON" > auth.json
 
-      # --- Instagram の認証情報作成 ---
       - name: Create auth_instagram.json
         env:
           INSTAGRAM_AUTH_JSON: ${{ secrets.INSTAGRAM_AUTH_JSON }}
         run: echo "$INSTAGRAM_AUTH_JSON" > auth_instagram.json
 
-      # --- スクレイピング実行 (X & Instagram) ---
+      # --- スクレイピング実行 (CLIP判定付き) ---
       - name: Run Scrapers
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 将来のAI判定用
         run: |
           python scraper_x.py
           python scraper_instagram.py
 
-      # --- データ分析の実行 ---
+      # --- データ分析 ---
       - name: Run Data Analysis
         run: python analyze_data.py
 
-      # --- 収集・分析結果をリポジトリに保存 ---
-      - name: Commit and Push changes
+      # --- 保存と反映 ---
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # 収集データと分析結果の両方をステージング
           git add collect.json analysis.json
-          # 変更がある場合のみコミットしてプッシュ
-          if ! git diff --cached --exit-code; then
-            git commit -m "Auto Update: Collected data and analysis [skip ci]"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update: Data collected with Local AI [skip ci]"
+          git push
 
-      # --- 失敗時のデバッグ用（スクリーンショット保存） ---
-      - name: Upload debug screenshots
+      # --- エラー時のデバッグ用 ---
+      - name: Upload screenshots if failed
         uses: actions/upload-artifact@v4
-        if: always()
+        if: failure()
         with:
           name: debug-screenshots
           path: "*.png"
-          retention-days: 3

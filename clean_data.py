@@ -1,82 +1,97 @@
 import json
 import os
-import asyncio
-import time
 import requests
-import google.generativeai as genai
+from io import BytesIO
+from PIL import Image
+import torch
+from transformers import CLIPProcessor, CLIPModel
 
-# APIキーの設定
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
+# --- 設定 ---
+# GitHub Actionsでも動く軽量モデルを使用
+MODEL_ID = "openai/clip-vit-base-patch32"
 
-async def check_image_with_ai(image_url, member_name):
-    if not GEMINI_API_KEY: return True
-    
-    print(f"🤖 Checking {member_name}...", end=" ")
+print("🚀 Loading CLIP model... (This may take a minute on the first run)")
+model = CLIPModel.from_pretrained(MODEL_ID)
+processor = CLIPProcessor.from_pretrained(MODEL_ID)
+
+def check_image_locally(image_url, member_name):
+    """
+    CLIPを使って画像とテキストの類似度を計算し、
+    その画像が指定したメンバーのコスプレである確率が高いかを判定する。
+    """
     try:
-        # 最新モデルを使用
-        model = genai.GenerativeModel('gemini-2.5-flash-image')
-        
-        # 画像ダウンロード
-        resp = requests.get(image_url, timeout=15)
-        if resp.status_code != 200:
-            print("❌ Image Load Fail")
+        # 1. 画像の取得
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(image_url, headers=headers, timeout=15)
+        if response.status_code != 200:
             return False
-            
-        image_bytes = resp.content
         
-        # プロンプト（判定基準をより具体化）
-        prompt = f"""
-        Is the person in this photo cosplaying the VTuber "{member_name}" from the group "VSPO!"?
-        Return "TRUE" if it is highly likely to be {member_name}.
-        Return "FALSE" if it is a different character, just a person in normal clothes, or goods.
-        Strictly answer only "TRUE" or "FALSE".
-        """
+        image = Image.open(BytesIO(response.content)).convert("RGB")
+
+        # 2. 比較用ラベルの設定
+        # 0番目が正解ラベル、1,2番目が除外用ラベル
+        labels = [
+            f"a cosplay photo of {member_name} from vspo",
+            "a screenshot of a video game or anime",
+            "a photo of an unrelated object or different character"
+        ]
+
+        # 3. 推論
+        inputs = processor(text=labels, images=image, return_tensors="pt", padding=True)
+        with torch.no_grad():
+            outputs = model(**inputs)
         
-        image_parts = [{"mime_type": "image/jpeg", "data": image_bytes}]
-        result = await model.generate_content_async([prompt, image_parts[0]])
-        answer = result.text.strip().upper()
-        
-        if "TRUE" in answer:
-            print("✅ OK")
+        # 類似度を確率(0.0~1.0)に変換
+        probs = outputs.logits_per_image.softmax(dim=1)
+        top_index = probs.argmax().item()
+
+        # 0番目（正解ラベル）の確率が最も高い場合のみ合格
+        if top_index == 0:
+            confidence = probs[0][0].item()
+            print(f"✅ OK ({member_name}) - Conf: {confidence:.2f}")
             return True
         else:
-            print(f"🗑️ REJECT")
+            print(f"🗑️ REJECT - Match index: {top_index}")
             return False
 
     except Exception as e:
-        print(f"⚠️ Error: {e}")
-        return True
+        print(f"⚠️ Error checking {image_url}: {e}")
+        return True # エラー時は安全のために残す
 
-async def main():
+def main():
     data_file = 'collect.json'
-    if not os.path.exists(data_file): return
+    if not os.path.exists(data_file):
+        print("collect.jsonが見つかりません。")
+        return
 
     with open(data_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    print(f"🔍 Items to check: {len(data)}")
+    print(f"🔍 分析開始: {len(data)}件のデータをチェックします。")
     
     cleaned_data = []
     removed_count = 0
 
-    for item in data:
-        # 千燈ゆうひや一ノ瀬うるはなど、特定の推しを優先的に残すようAIに判断させます
-        is_valid = await check_image_with_ai(item['images'][0], item['member_name'])
+    for i, item in enumerate(data):
+        print(f"[{i+1}/{len(data)}]", end=" ")
         
-        if is_valid:
+        # 画像がないデータは残す
+        if not item.get('images') or len(item['images']) == 0:
+            cleaned_data.append(item)
+            continue
+
+        # 判定実行
+        if check_image_locally(item['images'][0], item['member_name']):
             cleaned_data.append(item)
         else:
             removed_count += 1
-        
-        # Rate limit 対策
-        await asyncio.sleep(2)
 
+    # 上書き保存
     with open(data_file, 'w', encoding='utf-8') as f:
         json.dump(cleaned_data, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✨ Finished! Removed {removed_count} noise items.")
+    print(f"\n✨ 掃除完了！ {removed_count}件のノイズを削除しました。")
+    print(f"残ったデータ: {len(cleaned_data)}件")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

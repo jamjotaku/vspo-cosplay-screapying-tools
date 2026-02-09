@@ -2,45 +2,42 @@ import json
 import os
 import asyncio
 import random
+import requests
+from io import BytesIO
 from datetime import datetime
 from playwright.async_api import async_playwright
-import google.generativeai as genai
+import torch
+from PIL import Image
+from transformers import CLIPProcessor, CLIPModel
 
-# ■■■ AI設定 ■■■
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
+# ■■■ 設定：CLIPモデル ■■■
+MODEL_ID = "openai/clip-vit-base-patch32"
+print("🚀 Loading Local AI (CLIP)...")
+try:
+    model = CLIPModel.from_pretrained(MODEL_ID)
+    processor = CLIPProcessor.from_pretrained(MODEL_ID)
+except:
+    model = None
 
-async def check_image_with_gemini(page, image_url, member_name):
-    if not GEMINI_API_KEY:
-        return True
-    
-    print(f"   🤖 [Insta AI] Checking: Is this {member_name}?")
+def check_image_locally(image_url, member_name):
+    if model is None: return True
     try:
-        response = await page.request.get(image_url)
-        if response.status != 200: return False
-        image_bytes = await response.body()
-
-        model = genai.GenerativeModel('gemini-2.5-flash-image')
-        prompt = f"""
-        Look at this Instagram post image. Is this a cosplay of the VTuber "{member_name}" from VSPO (Buisupo)?
-        Answer "TRUE" only if it is clearly that character. 
-        If it's a different character (e.g. Genshin, Hololive) or not a person, answer "FALSE".
-        Only return "TRUE" or "FALSE".
-        """
-
-        image_parts = [{"mime_type": "image/jpeg", "data": image_bytes}]
-        result = await model.generate_content_async([prompt, image_parts[0]])
-        answer = result.text.strip().upper()
-
-        if "TRUE" in answer:
-            print("   ✅ AI Pass")
-            return True
-        else:
-            print(f"   🗑️ AI Reject: {answer}")
-            return False
-    except Exception as e:
-        print(f"   ⚠️ AI Error: {e}")
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(image_url, headers=headers, timeout=10)
+        if response.status_code != 200: return False
+        
+        image = Image.open(BytesIO(response.content)).convert("RGB")
+        labels = [
+            f"a cosplay photo of {member_name}",
+            "game screenshot or text",
+            "random object"
+        ]
+        inputs = processor(text=labels, images=image, return_tensors="pt", padding=True)
+        with torch.no_grad():
+            outputs = model(**inputs)
+        
+        return outputs.logits_per_image.softmax(dim=1).argmax().item() == 0
+    except:
         return True
 
 async def scrape_instagram_tag(context, member):
@@ -49,20 +46,19 @@ async def scrape_instagram_tag(context, member):
     tag = f"{member['name']}コスプレ"
     url = f"https://www.instagram.com/explore/tags/{tag}/"
     
-    print(f"--- [Instagram] Searching for: #{tag} ---")
+    print(f"--- [Insta] Searching: #{tag} ---")
     try:
         await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        await asyncio.sleep(random.uniform(5, 8))
+        await asyncio.sleep(random.uniform(6, 10))
 
         if "login" in page.url:
-            print(f"⚠️ Cookie expired.")
+            print(f"⚠️ Login required/Cookie expired")
             return []
 
-        # 投稿リンクの取得
         posts = await page.query_selector_all('a[href*="/p/"]')
-        print(f"✅ Found {len(posts)} posts in view")
+        print(f"   Found {len(posts)} posts")
 
-        for i, post in enumerate(posts[:8]): # BAN対策で件数を絞る
+        for post in posts[:10]:
             try:
                 post_url = f"https://www.instagram.com{await post.get_attribute('href')}"
                 img_elem = await post.query_selector('img')
@@ -70,15 +66,11 @@ async def scrape_instagram_tag(context, member):
                 
                 img_src = await img_elem.get_attribute('src')
                 alt_text = await img_elem.get_attribute('alt')
-                caption = alt_text if alt_text else "No caption"
+                caption = alt_text if alt_text else ""
 
                 if img_src and post_url:
-                    # ★★★ ここでAI判定 ★★★
-                    is_valid = await check_image_with_gemini(page, img_src, member['name'])
-                    
-                    if is_valid:
+                    if check_image_locally(img_src, member['name']):
                         results.append({
-                            "member_id": member.get('id', 'unknown'),
                             "member_name": member['name'],
                             "author_name": "InstagramUser",
                             "content": caption,
@@ -87,11 +79,10 @@ async def scrape_instagram_tag(context, member):
                             "source": "Instagram",
                             "collected_at": datetime.now().isoformat()
                         })
-                        print(f"  ⭕ Saved: {post_url}")
+                        print(f"   ✅ Saved: {post_url}")
                     else:
-                        print(f"  ❌ AI Skipped (Wrong character)")
-
-            except Exception: continue
+                        print(f"   🗑️ Rejected by AI")
+            except: continue
 
     except Exception as e:
         print(f"❌ Error: {e}")
@@ -115,6 +106,12 @@ async def main():
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
+        
+        if not os.path.exists('auth_instagram.json'):
+            print("Error: auth_instagram.json not found.")
+            await browser.close()
+            return
+
         context = await browser.new_context(
             storage_state="auth_instagram.json",
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
@@ -128,12 +125,14 @@ async def main():
                     all_data.append(post)
                     existing_urls.add(post['url'])
                     count += 1
-            if count > 0: print(f"✨ Added {count} from Instagram for {member['name']}")
+            
             await asyncio.sleep(random.uniform(5, 10))
         
         with open(data_file, 'w', encoding='utf-8') as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
+        
         await browser.close()
+        print("🎉 Instagram Scraping Finished!")
 
 if __name__ == "__main__":
     asyncio.run(main())
