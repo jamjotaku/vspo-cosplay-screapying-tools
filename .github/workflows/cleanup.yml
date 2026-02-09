@@ -1,0 +1,36 @@
+name: Manual Data Cleanup
+
+on:
+  workflow_dispatch: # ボタンで手動実行
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install google-generativeai requests
+
+      - name: Run Cleanup Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python clean_data.py
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add collect.json
+          git commit -m "Cleanup: Removed irrelevant images via AI [skip ci]" || echo "No changes"
+          git push
