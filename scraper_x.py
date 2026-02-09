@@ -6,6 +6,13 @@ import random
 from datetime import datetime
 from playwright.async_api import async_playwright
 
+# ■■■ 設定：ノイズ除去キーワード ■■■
+# 以下の言葉がツイート本文に含まれていたら保存せずにスキップします
+EXCLUDE_KEYWORDS = [
+    "譲渡", "買取", "交換", "グッズ", "回収", "同行", "代行", 
+    "検索用", "求)", "出)", "譲)", "定価", "取引"
+]
+
 def extract_number(text, pattern):
     if not text: return "0"
     match = re.search(pattern, text)
@@ -57,6 +64,11 @@ async def scrape_vspo_cosplay(context, member):
                 content_elem = await tweet.query_selector('[data-testid="tweetText"]')
                 content = await content_elem.inner_text() if content_elem else ""
 
+                # ■■■ ノイズ除去判定 ■■■
+                if any(k in content for k in EXCLUDE_KEYWORDS):
+                    print(f"  ⏩ Skip: Noise keyword detected in tweet from {full_name.splitlines()[0]}")
+                    continue
+
                 # 画像抽出の強化：data-testid="tweetPhoto" の中の img を優先的に探す
                 images = []
                 photo_divs = await tweet.query_selector_all('div[data-testid="tweetPhoto"] img')
@@ -86,6 +98,7 @@ async def scrape_vspo_cosplay(context, member):
                     results.append({
                         "member_id": member.get('id', 'unknown'),
                         "member_name": member['name'],
+                        "author_name": full_name.split("\n")[0], # 投稿者名も保存
                         "content": content,
                         "images": images,
                         "url": tweet_url,
