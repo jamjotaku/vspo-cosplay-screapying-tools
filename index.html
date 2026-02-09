@@ -102,7 +102,8 @@
                 <table class="w-full text-left text-sm text-gray-400">
                     <thead class="bg-gray-900/50 text-gray-200 uppercase font-mono text-xs">
                         <tr>
-                            <th class="px-6 py-4">Rank</th>
+                            <th class="px-6 py-4 w-16">Rank</th>
+                            <th class="px-6 py-4 w-20">Image</th>
                             <th class="px-6 py-4">Member / Follower</th>
                             <th class="px-6 py-4 text-right">Metrics</th>
                             <th class="px-6 py-4 text-center">Link</th>
@@ -133,7 +134,7 @@
 
                 // Charts
                 if(data.hourly_report) renderTimeChart(data.hourly_report);
-                if(data.aspect_report) renderAspectChart(data.aspect_report); // NEW
+                if(data.aspect_report) renderAspectChart(data.aspect_report);
                 if(data.member_ranking) renderMemberChart(data.member_ranking);
                 
                 // Lists
@@ -147,51 +148,24 @@
             } catch(e) { console.error(e); }
         }
 
-        // NEW: 構図分析チャート (ドーナツ)
         function renderAspectChart(report) {
-            // Unknownを除外
             const valid = report.filter(r => r.type !== 'Unknown');
             if(valid.length === 0) return;
-
             new Chart(document.getElementById('aspectChart'), {
                 type: 'doughnut',
                 data: {
                     labels: valid.map(r => r.type),
                     datasets: [{
                         data: valid.map(r => r.avg),
-                        backgroundColor: ['#f472b6', '#60a5fa', '#34d399'], // ピンク, 青, 緑
+                        backgroundColor: ['#f472b6', '#60a5fa', '#34d399'],
                         borderWidth: 0,
                         hoverOffset: 4
                     }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { position: 'bottom', labels: { color: '#cbd5e1', font: {size: 10} } },
-                        tooltip: { callbacks: { label: (ctx) => `Avg: ${ctx.raw.toLocaleString()} Likes` } }
-                    },
-                    cutout: '60%'
+                    responsive: true, maintainAspectRatio: false, cutout: '60%',
+                    plugins: { legend: { position: 'bottom', labels: { color: '#cbd5e1', font: {size: 10} } } }
                 }
-            });
-        }
-
-        function renderKeywordList(items) {
-            const container = document.getElementById('keyword-list');
-            items.forEach((item, i) => {
-                let rateColor = 'text-gray-400';
-                if(item.multiplier >= 1.5) rateColor = 'text-yellow-400 font-bold';
-                else if(item.multiplier >= 1.0) rateColor = 'text-green-400';
-                
-                container.innerHTML += `
-                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
-                        <div class="font-mono text-purple-400 font-bold w-5 text-center text-sm">#${i+1}</div>
-                        <div class="flex-grow min-w-0">
-                            <div class="text-white text-xs font-bold truncate">"${item.keyword}"</div>
-                            <div class="text-xs text-gray-500 font-mono">Avg: ${item.avg_likes.toLocaleString()}</div>
-                        </div>
-                        <div class="text-xs font-mono ${rateColor}">x${item.multiplier}</div>
-                    </div>`;
             });
         }
 
@@ -213,11 +187,7 @@
                 options: {
                     responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
                     plugins: { legend: { labels: { color: '#cbd5e1' } } },
-                    scales: { 
-                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' }, title: {display:true, text:'Avg Likes', color:'#64748b'} },
-                        y2: { position: 'right', grid: { display: false }, ticks: { color: '#64748b' } },
-                        x: { grid: { display: false }, ticks: { color: '#e2e8f0' } }
-                    }
+                    scales: { y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }, y2: { position: 'right', grid: { display: false }, ticks: { color: '#64748b' } }, x: { grid: { display: false }, ticks: { color: '#e2e8f0' } } }
                 }
             });
         }
@@ -237,6 +207,24 @@
             });
         }
 
+        function renderKeywordList(items) {
+            const container = document.getElementById('keyword-list');
+            items.forEach((item, i) => {
+                let rateColor = 'text-gray-400';
+                if(item.multiplier >= 1.5) rateColor = 'text-yellow-400 font-bold';
+                else if(item.multiplier >= 1.0) rateColor = 'text-green-400';
+                container.innerHTML += `
+                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
+                        <div class="font-mono text-purple-400 font-bold w-5 text-center text-sm">#${i+1}</div>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-white text-xs font-bold truncate">"${item.keyword}"</div>
+                            <div class="text-xs text-gray-500 font-mono">Avg: ${item.avg_likes.toLocaleString()}</div>
+                        </div>
+                        <div class="text-xs font-mono ${rateColor}">x${item.multiplier}</div>
+                    </div>`;
+            });
+        }
+
         function renderTagList(items) {
             const container = document.getElementById('tag-list');
             items.forEach((item, i) => {
@@ -252,6 +240,7 @@
             });
         }
 
+        // NEW: サムネイル対応のテーブル描画
         function renderTable(items) {
             const tbody = document.getElementById('ranking-body');
             items.forEach((item, i) => {
@@ -261,8 +250,19 @@
                 const score = item.viral_score || 0;
                 let scoreClass = score >= 1.0 ? 'text-yellow-400 font-bold' : (score >= 0.1 ? 'text-green-400' : 'text-gray-500');
 
+                // 画像があるかチェック
+                let imgHtml = '<div class="w-12 h-12 bg-gray-800 rounded flex items-center justify-center text-xs text-gray-600">No Img</div>';
+                if(item.images && item.images.length > 0) {
+                    imgHtml = `<a href="${item.images[0]}" target="_blank">
+                        <img src="${item.images[0]}" class="w-12 h-12 rounded object-cover border border-gray-600 hover:border-indigo-400 transition" loading="lazy">
+                    </a>`;
+                }
+
                 tr.innerHTML = `
                     <td class="px-6 py-4 font-mono font-bold text-white text-lg">#${i+1}</td>
+                    <td class="px-6 py-4">
+                        ${imgHtml}
+                    </td>
                     <td class="px-6 py-4">
                         <div class="text-white font-bold text-base mb-1">${item.member_name}</div>
                         <div class="text-xs text-gray-500 font-mono">👥 Fol: ${followers}</div>
