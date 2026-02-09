@@ -1955,7 +1955,7 @@
     "like_count": 0,
     "impression_count": 0,
     "collected_at": "2026-02-09T10:40:35.104338",
-    "last_fetched": "2026-02-09T14:54:10.599401"
+    "last_fetched": "2026-02-09T19:14:46.778551"
   },
   {
     "member_name": "花芽なずな",
@@ -2077,7 +2077,7 @@
     "like_count": 0,
     "impression_count": 0,
     "collected_at": "2026-02-09T10:40:35.104290",
-    "last_fetched": "2026-02-09T14:54:16.577649"
+    "last_fetched": "2026-02-09T19:14:52.958986"
   },
   {
     "member_name": "花芽なずな",
@@ -2955,7 +2955,7 @@
     "like_count": 492,
     "impression_count": 13300,
     "collected_at": "2026-02-09T10:40:35.103765",
-    "last_fetched": "2026-02-09T14:55:25.612031",
+    "last_fetched": "2026-02-09T19:14:57.753984",
     "width": 1366,
     "height": 2048,
     "aspect_type": "Portrait (縦長)"
@@ -3563,12 +3563,14 @@
     "url": "https://x.com/nyan_o912/status/1751555063544488318/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
+    "like_count": 434,
+    "impression_count": 10200,
     "collected_at": "2026-02-09T10:40:35.103489",
     "width": 1365,
     "height": 2048,
-    "aspect_type": "Portrait (縦長)"
+    "aspect_type": "Portrait (縦長)",
+    "text": "おいす〜",
+    "last_fetched": "2026-02-09T19:15:01.424217"
   },
   {
     "member_name": "花芽すみれ",
@@ -3579,12 +3581,14 @@
     "url": "https://x.com/nyan_o912/status/1730556413137887618/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
+    "like_count": 730,
+    "impression_count": 35600,
     "collected_at": "2026-02-09T10:40:35.103483",
     "width": 2048,
     "height": 1366,
-    "aspect_type": "Landscape (横長)"
+    "aspect_type": "Landscape (横長)",
+    "text": "ぶいすぽっ！￤花芽すみれ ひなたぼっこする？",
+    "last_fetched": "2026-02-09T19:15:05.356968"
   },
   {
     "member_name": "花芽すみれ",
@@ -3595,12 +3599,14 @@
     "url": "https://x.com/nyan_o912/status/1728754977676656739/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
+    "like_count": 621,
+    "impression_count": 24600,
     "collected_at": "2026-02-09T10:40:35.103474",
     "width": 1365,
     "height": 2048,
-    "aspect_type": "Portrait (縦長)"
+    "aspect_type": "Portrait (縦長)",
+    "text": "ぶいすぽっ！ 花芽すみれ ぽかぽか日向ぼっこ〜",
+    "last_fetched": "2026-02-09T19:15:10.986177"
   },
   {
     "member_name": "花芽すみれ",
@@ -3611,12 +3617,14 @@
     "url": "https://x.com/nyan_o912/status/1715289627005944014/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
+    "like_count": 796,
+    "impression_count": 26800,
     "collected_at": "2026-02-09T10:40:35.103465",
     "width": 2048,
     "height": 1365,
-    "aspect_type": "Landscape (横長)"
+    "aspect_type": "Landscape (横長)",
+    "text": "すーちゃん5周年おめでとう   #花芽すみれ5周年",
+    "last_fetched": "2026-02-09T19:15:14.891022"
   },
   {
     "member_name": "花芽すみれ",
@@ -3627,9 +3635,13 @@
     "url": "https://x.com/nyan_o912/status/1712441530945012055/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103458"
+    "like_count": 1100,
+    "impression_count": 37400,
+    "collected_at": "2026-02-09T10:40:35.103458",
+    "last_fetched": "2026-02-09T19:15:17.707641",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3640,9 +3652,14 @@
     "url": "https://x.com/nyan_o912/status/1709144985571061984/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103451"
+    "like_count": 1200,
+    "impression_count": 41300,
+    "collected_at": "2026-02-09T10:40:35.103451",
+    "text": "花芽すみれ",
+    "last_fetched": "2026-02-09T19:15:23.000403",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3653,9 +3670,14 @@
     "url": "https://x.com/nyan_o912/status/1708390409045778921/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103446"
+    "like_count": 1400,
+    "impression_count": 70300,
+    "collected_at": "2026-02-09T10:40:35.103446",
+    "text": "ぶいすぽっ！花芽すみれ 夏コミ 水着 #cosplay",
+    "last_fetched": "2026-02-09T19:15:27.198575",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3666,9 +3688,14 @@
     "url": "https://x.com/nyan_o912/status/1708031047966097510/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103439"
+    "like_count": 1400,
+    "impression_count": 51000,
+    "collected_at": "2026-02-09T10:40:35.103439",
+    "text": "ぶいすぽっ！花芽すみれ  夏コミ 水着",
+    "last_fetched": "2026-02-09T19:15:30.349395",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3679,9 +3706,14 @@
     "url": "https://x.com/nyan_o912/status/1707989936077774861/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103433"
+    "like_count": 2000,
+    "impression_count": 68700,
+    "collected_at": "2026-02-09T10:40:35.103433",
+    "text": "花芽すみれ",
+    "last_fetched": "2026-02-09T19:15:33.875551",
+    "width": 1505,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3692,9 +3724,14 @@
     "url": "https://x.com/nyan_o912/status/1700079946667024631/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103425"
+    "like_count": 169,
+    "impression_count": 11200,
+    "collected_at": "2026-02-09T10:40:35.103425",
+    "text": "ぶいすぽっ！花芽すみれ すみれとごろごろする？",
+    "last_fetched": "2026-02-09T19:15:38.608358",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3705,9 +3742,14 @@
     "url": "https://x.com/nyan_o912/status/1684877572461731840/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103412"
+    "like_count": 358,
+    "impression_count": 18100,
+    "collected_at": "2026-02-09T10:40:35.103412",
+    "text": "cosplay￤コスプレ ぶいすぽっ！ 花芽すみれ",
+    "last_fetched": "2026-02-09T19:15:43.667972",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3718,9 +3760,14 @@
     "url": "https://x.com/nyan_o912/status/1684491060104531968/photo/1",
     "source": "X",
     "content": "Cosplayer: なぎにゃさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103405"
+    "like_count": 1300,
+    "impression_count": 63800,
+    "collected_at": "2026-02-09T10:40:35.103405",
+    "text": "ぶいすぽっ！￤花芽すみれ おいすー",
+    "last_fetched": "2026-02-09T19:15:48.357282",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3731,9 +3778,14 @@
     "url": "https://x.com/chloelissam/status/1980195075369185567/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103398"
+    "like_count": 168,
+    "impression_count": 4434,
+    "collected_at": "2026-02-09T10:40:35.103398",
+    "text": "7周年おめでとう〜〜〜  ぶいすぽっ！~花芽すみれ~ 部屋着ver.  PHOTO BY　 @RicherTonyTW   #cosplay #コスプレ",
+    "last_fetched": "2026-02-09T19:15:53.969888",
+    "width": 2048,
+    "height": 1366,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3744,9 +3796,14 @@
     "url": "https://x.com/chloelissam/status/1907104302528864639/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103391"
+    "like_count": 138,
+    "impression_count": 3096,
+    "collected_at": "2026-02-09T10:40:35.103391",
+    "text": "ʜᴀᴘᴘʏ  ʙɪʀᴛʜᴅᴀʏ︎︎  Photo by  @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:15:57.648057",
+    "width": 2048,
+    "height": 1366,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3757,9 +3814,14 @@
     "url": "https://x.com/chloelissam/status/1847958044657025332/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103385"
+    "like_count": 75,
+    "impression_count": 11100,
+    "collected_at": "2026-02-09T10:40:35.103385",
+    "text": "6周年おめでとう  ぶいすぽっ！　～花芽すみれ～  PHOTO BY  @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:16:01.116491",
+    "width": 2048,
+    "height": 1366,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3770,9 +3832,13 @@
     "url": "https://x.com/chloelissam/status/1835646112658866665/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103376"
+    "like_count": 85,
+    "impression_count": 2683,
+    "collected_at": "2026-02-09T10:40:35.103376",
+    "last_fetched": "2026-02-09T19:16:05.569336",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3783,9 +3849,14 @@
     "url": "https://x.com/chloelissam/status/1831331790386245891/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103329"
+    "like_count": 118,
+    "impression_count": 5152,
+    "collected_at": "2026-02-09T10:40:35.103329",
+    "text": "PHOTO BY  @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:16:09.690262",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3796,9 +3867,14 @@
     "url": "https://x.com/chloelissam/status/1819705304298520894/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103322"
+    "like_count": 309,
+    "impression_count": 12400,
+    "collected_at": "2026-02-09T10:40:35.103322",
+    "text": "すーちゃん",
+    "last_fetched": "2026-02-09T19:16:12.908024",
+    "width": 1310,
+    "height": 1638,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3809,9 +3885,14 @@
     "url": "https://x.com/chloelissam/status/1774817487282122928/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103316"
+    "like_count": 27,
+    "impression_count": 742,
+    "collected_at": "2026-02-09T10:40:35.103316",
+    "text": "すーちゃんお誕生日おめでとう！！！  ぶいすぽっ！~花芽すみれ~  PHOTO BY　 @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:16:16.320323",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3822,9 +3903,14 @@
     "url": "https://x.com/chloelissam/status/1757756171455479893/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103310"
+    "like_count": 25,
+    "impression_count": 1257,
+    "collected_at": "2026-02-09T10:40:35.103310",
+    "text": "*•.𝙷𝚊𝚙𝚙𝚢 𝚅𝚊𝚕𝚎𝚗𝚝𝚒𝚗𝚎˚₊*̥  ぶいすぽっ！~花芽すみれ~  PHOTO BY  @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:16:19.391345",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3835,9 +3921,13 @@
     "url": "https://x.com/chloelissam/status/1691812963328397811/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103301"
+    "like_count": 23,
+    "impression_count": 606,
+    "collected_at": "2026-02-09T10:40:35.103301",
+    "last_fetched": "2026-02-09T19:16:24.436360",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3848,9 +3938,14 @@
     "url": "https://x.com/chloelissam/status/1677275995429298177/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103296"
+    "like_count": 28,
+    "impression_count": 1432,
+    "collected_at": "2026-02-09T10:40:35.103296",
+    "text": "サマーバレンタイン(?   胡桃のあ  @wanjiang5686   花芽すみれ  @chloelissam    PHOTO BY  @RicherTonyTW",
+    "last_fetched": "2026-02-09T19:16:29.152886",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3861,9 +3956,14 @@
     "url": "https://x.com/chloelissam/status/1652579135825522689/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103290"
+    "like_count": 17,
+    "impression_count": 1310,
+    "collected_at": "2026-02-09T10:40:35.103290",
+    "text": "花芽すみれ ~バレンタインver.~  PHOTO BY  @RicherTonyTW   VGGC行きたい........",
+    "last_fetched": "2026-02-09T19:16:34.267007",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3874,9 +3974,13 @@
     "url": "https://x.com/chloelissam/status/1642826685858070529/photo/1",
     "source": "X",
     "content": "Cosplayer: 月樹さん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103281"
+    "like_count": 30,
+    "impression_count": 905,
+    "collected_at": "2026-02-09T10:40:35.103281",
+    "last_fetched": "2026-02-09T19:16:39.806919",
+    "width": 1080,
+    "height": 1440,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3887,9 +3991,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1998540471405261254/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103275"
+    "like_count": 342,
+    "impression_count": 5303,
+    "collected_at": "2026-02-09T10:40:35.103275",
+    "text": "cos⚠︎︎ ",
+    "last_fetched": "2026-02-09T19:16:45.422063",
+    "width": 696,
+    "height": 958,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3900,9 +4009,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1997836798308078041/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103268"
+    "like_count": 317,
+    "impression_count": 5065,
+    "collected_at": "2026-02-09T10:40:35.103268",
+    "text": "cos⚠︎ ",
+    "last_fetched": "2026-02-09T19:16:49.031450",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3913,9 +4027,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1983799286006718513/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103259"
+    "like_count": 263,
+    "impression_count": 18400,
+    "collected_at": "2026-02-09T10:40:35.103259",
+    "text": "cosplay⚠︎ 【ぶいすぽっ！】/  花芽姉妹〜",
+    "last_fetched": "2026-02-09T19:16:54.034249",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3926,9 +4045,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1976197430329987395/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103252"
+    "like_count": 339,
+    "impression_count": 7532,
+    "collected_at": "2026-02-09T10:40:35.103252",
+    "text": "cosplay⚠︎︎ 【Vspo! / Hanabusa Sumire】                     #Fukushima Town Cosplay",
+    "last_fetched": "2026-02-09T19:16:57.903236",
+    "width": 1366,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3939,9 +4063,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1974755810262872348/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103247"
+    "like_count": 445,
+    "impression_count": 9571,
+    "collected_at": "2026-02-09T10:40:35.103247",
+    "text": "cos⚠︎︎     #ふくしま街コス",
+    "last_fetched": "2026-02-09T19:17:01.945942",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3952,9 +4081,14 @@
     "url": "https://x.com/Saki_cos_1115/status/1974716281619403227/photo/1",
     "source": "X",
     "content": "Cosplayer: さきさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103240"
+    "like_count": 717,
+    "impression_count": 16900,
+    "collected_at": "2026-02-09T10:40:35.103240",
+    "text": "cos⚠︎︎/   花芽姉妹してました",
+    "last_fetched": "2026-02-09T19:17:06.550352",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3965,9 +4099,14 @@
     "url": "https://x.com/ebisen_bei_kosu/status/1775151539382014259/photo/1",
     "source": "X",
     "content": "Cosplayer: えびせんべいさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103234"
+    "like_count": 236,
+    "impression_count": 7001,
+    "collected_at": "2026-02-09T10:40:35.103234",
+    "text": "すーちゃんなずぴ お誕生日おめでとう   @hazakura_cam",
+    "last_fetched": "2026-02-09T19:17:09.813790",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3978,9 +4117,14 @@
     "url": "https://x.com/ebisen_bei_kosu/status/1728393335575044569/photo/1",
     "source": "X",
     "content": "Cosplayer: えびせんべいさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103225"
+    "like_count": 244,
+    "impression_count": 10400,
+    "collected_at": "2026-02-09T10:40:35.103225",
+    "text": "※Cosplay  ぶいすぽ/花芽すみれ  𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 photo  @hazakura_cam",
+    "last_fetched": "2026-02-09T19:17:15.103404",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -3991,9 +4135,14 @@
     "url": "https://x.com/ebisen_bei_kosu/status/1703376567303623046/photo/1",
     "source": "X",
     "content": "Cosplayer: えびせんべいさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103160"
+    "like_count": 995,
+    "impression_count": 54400,
+    "collected_at": "2026-02-09T10:40:35.103160",
+    "text": "#VGGC6th  VGGC！！猫星ほろ先生のサークルにて、花芽すみれちゃんのコスプレで頒布のお手伝いをしていました〜！！！サークルも回れて、楽しかったです皆さんお疲れ様でした",
+    "last_fetched": "2026-02-09T19:17:20.122408",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4004,9 +4153,14 @@
     "url": "https://x.com/ebisen_bei_kosu/status/1687796472451117056/photo/1",
     "source": "X",
     "content": "Cosplayer: えびせんべいさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103154"
+    "like_count": 477,
+    "impression_count": 20400,
+    "collected_at": "2026-02-09T10:40:35.103154",
+    "text": "※Cosplay  ぶいすぽっ！/花芽すみれ  𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 𓐄 photo  @hazakura_cam",
+    "last_fetched": "2026-02-09T19:17:23.350998",
+    "width": 1365,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4017,9 +4171,14 @@
     "url": "https://x.com/ebisen_bei_kosu/status/1685279711499567105/photo/1",
     "source": "X",
     "content": "Cosplayer: えびせんべいさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103147"
+    "like_count": 603,
+    "impression_count": 27600,
+    "collected_at": "2026-02-09T10:40:35.103147",
+    "text": "初ぶいすぽっすーちゃん",
+    "last_fetched": "2026-02-09T19:17:26.493610",
+    "width": 1536,
+    "height": 2048,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4030,9 +4189,14 @@
     "url": "https://x.com/yukimuraYY2/status/1895780063913918501?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103141"
+    "like_count": 1700,
+    "impression_count": 35000,
+    "collected_at": "2026-02-09T10:40:35.103141",
+    "text": "Su-chan ",
+    "last_fetched": "2026-02-09T19:17:30.005048",
+    "width": 2880,
+    "height": 3840,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4043,9 +4207,14 @@
     "url": "https://x.com/yukimuraYY2/status/1885646140093411836?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103135"
+    "like_count": 1200,
+    "impression_count": 31000,
+    "collected_at": "2026-02-09T10:40:35.103135",
+    "text": "Heyyy! ",
+    "last_fetched": "2026-02-09T19:17:33.815565",
+    "width": 2908,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4056,9 +4225,14 @@
     "url": "https://x.com/yukimuraYY2/status/1838556917171655090?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103128"
+    "like_count": 760,
+    "impression_count": 25000,
+    "collected_at": "2026-02-09T10:40:35.103128",
+    "text": "おいす〜  #VGGC8th #cos",
+    "last_fetched": "2026-02-09T19:17:39.400289",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4069,9 +4243,14 @@
     "url": "https://x.com/yukimuraYY2/status/1834912696418107866?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103122"
+    "like_count": 1200,
+    "impression_count": 35900,
+    "collected_at": "2026-02-09T10:40:35.103122",
+    "text": "ジャージメイド",
+    "last_fetched": "2026-02-09T19:17:42.517619",
+    "width": 2733,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4082,9 +4261,14 @@
     "url": "https://x.com/yukimuraYY2/status/1833101624182501500?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103107"
+    "like_count": 3200,
+    "impression_count": 83700,
+    "collected_at": "2026-02-09T10:40:35.103107",
+    "text": "花芽姉妹",
+    "last_fetched": "2026-02-09T19:17:46.556886",
+    "width": 1672,
+    "height": 2507,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4095,9 +4279,14 @@
     "url": "https://x.com/yukimuraYY2/status/1830558635832778876?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103101"
+    "like_count": 1400,
+    "impression_count": 38800,
+    "collected_at": "2026-02-09T10:40:35.103101",
+    "text": "cos ぶいすぽっ！/花芽すみれ",
+    "last_fetched": "2026-02-09T19:17:52.261124",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4108,9 +4297,14 @@
     "url": "https://x.com/yukimuraYY2/status/1828366327633060250?s=20",
     "source": "X",
     "content": "Cosplayer: 雪村ユノさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103094"
+    "like_count": 1000,
+    "impression_count": 28900,
+    "collected_at": "2026-02-09T10:40:35.103094",
+    "text": "ྀིྀི",
+    "last_fetched": "2026-02-09T19:17:56.870564",
+    "width": 1773,
+    "height": 2364,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4121,9 +4315,13 @@
     "url": "https://x.com/udonshika_/status/2003052140135379033?s=20",
     "source": "X",
     "content": "Cosplayer: ひらこさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103082"
+    "like_count": 631,
+    "impression_count": 11800,
+    "collected_at": "2026-02-09T10:40:35.103082",
+    "last_fetched": "2026-02-09T19:17:59.594351",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4134,9 +4332,14 @@
     "url": "https://x.com/udonshika_/status/2002599851075514721?s=20",
     "source": "X",
     "content": "Cosplayer: ひらこさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103072"
+    "like_count": 877,
+    "impression_count": 21900,
+    "collected_at": "2026-02-09T10:40:35.103072",
+    "text": "ing! #acstionmallhiroshimaFuchu",
+    "last_fetched": "2026-02-09T19:18:02.855885",
+    "width": 3024,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4147,9 +4350,14 @@
     "url": "https://x.com/udonshika_/status/1769648437686050875?s=20",
     "source": "X",
     "content": "Cosplayer: ひらこさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103065"
+    "like_count": 54,
+    "impression_count": 3880,
+    "collected_at": "2026-02-09T10:40:35.103065",
+    "text": "※cos ぶいすぽっ！/  #コスフェス岡山#コスログ",
+    "last_fetched": "2026-02-09T19:18:08.437954",
+    "width": 2999,
+    "height": 3999,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4160,9 +4368,14 @@
     "url": "https://x.com/udonshika_/status/1767151320585400431?s=20",
     "source": "X",
     "content": "Cosplayer: ひらこさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103058"
+    "like_count": 57,
+    "impression_count": 3937,
+    "collected_at": "2026-02-09T10:40:35.103058",
+    "text": "※cos    #コスログ  #コスフェス岡山",
+    "last_fetched": "2026-02-09T19:18:11.702388",
+    "width": 4096,
+    "height": 2730,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4173,9 +4386,14 @@
     "url": "https://x.com/MeruRabbit033/status/1998665562944410068?s=20",
     "source": "X",
     "content": "Cosplayer: めるとさん",
-    "like_count": 0,
-    "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103051"
+    "like_count": 2500,
+    "impression_count": 37100,
+    "collected_at": "2026-02-09T10:40:35.103051",
+    "text": "本日すーちゃんでした",
+    "last_fetched": "2026-02-09T19:18:14.911670",
+    "width": 3024,
+    "height": 4028,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4188,7 +4406,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103041"
+    "collected_at": "2026-02-09T10:40:35.103041",
+    "width": 2689,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4201,7 +4422,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103035"
+    "collected_at": "2026-02-09T10:40:35.103035",
+    "width": 1170,
+    "height": 1560,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4214,7 +4438,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103028"
+    "collected_at": "2026-02-09T10:40:35.103028",
+    "width": 4096,
+    "height": 2731,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4227,7 +4454,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103021"
+    "collected_at": "2026-02-09T10:40:35.103021",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4240,7 +4470,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.103011"
+    "collected_at": "2026-02-09T10:40:35.103011",
+    "width": 3019,
+    "height": 3965,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4253,7 +4486,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102961"
+    "collected_at": "2026-02-09T10:40:35.102961",
+    "width": 3024,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4266,7 +4502,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102955"
+    "collected_at": "2026-02-09T10:40:35.102955",
+    "width": 3024,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4279,7 +4518,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102949"
+    "collected_at": "2026-02-09T10:40:35.102949",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4292,7 +4534,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102942"
+    "collected_at": "2026-02-09T10:40:35.102942",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4305,7 +4550,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102936"
+    "collected_at": "2026-02-09T10:40:35.102936",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4318,7 +4566,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102926"
+    "collected_at": "2026-02-09T10:40:35.102926",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4331,7 +4582,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102920"
+    "collected_at": "2026-02-09T10:40:35.102920",
+    "width": 1170,
+    "height": 1560,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4344,7 +4598,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102913"
+    "collected_at": "2026-02-09T10:40:35.102913",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4357,7 +4614,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102903"
+    "collected_at": "2026-02-09T10:40:35.102903",
+    "width": 4096,
+    "height": 2731,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4370,7 +4630,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102896"
+    "collected_at": "2026-02-09T10:40:35.102896",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4383,7 +4646,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102886"
+    "collected_at": "2026-02-09T10:40:35.102886",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4396,7 +4662,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102880"
+    "collected_at": "2026-02-09T10:40:35.102880",
+    "width": 1102,
+    "height": 1469,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4409,7 +4678,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102873"
+    "collected_at": "2026-02-09T10:40:35.102873",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4422,7 +4694,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102867"
+    "collected_at": "2026-02-09T10:40:35.102867",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4435,7 +4710,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102861"
+    "collected_at": "2026-02-09T10:40:35.102861",
+    "width": 2730,
+    "height": 4095,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4448,7 +4726,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102854"
+    "collected_at": "2026-02-09T10:40:35.102854",
+    "width": 4096,
+    "height": 2731,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4461,7 +4742,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102847"
+    "collected_at": "2026-02-09T10:40:35.102847",
+    "width": 2725,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4474,7 +4758,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102829"
+    "collected_at": "2026-02-09T10:40:35.102829",
+    "width": 2160,
+    "height": 3840,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4487,7 +4774,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102807"
+    "collected_at": "2026-02-09T10:40:35.102807",
+    "width": 2678,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4500,7 +4790,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102800"
+    "collected_at": "2026-02-09T10:40:35.102800",
+    "width": 1170,
+    "height": 1560,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4513,7 +4806,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102793"
+    "collected_at": "2026-02-09T10:40:35.102793",
+    "width": 1170,
+    "height": 1170,
+    "aspect_type": "Square (正方形)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4526,7 +4822,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102787"
+    "collected_at": "2026-02-09T10:40:35.102787",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4539,7 +4838,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102778"
+    "collected_at": "2026-02-09T10:40:35.102778",
+    "width": 3885,
+    "height": 2590,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4552,7 +4854,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102769"
+    "collected_at": "2026-02-09T10:40:35.102769",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4565,7 +4870,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102762"
+    "collected_at": "2026-02-09T10:40:35.102762",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4578,7 +4886,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102753"
+    "collected_at": "2026-02-09T10:40:35.102753",
+    "width": 1280,
+    "height": 1280,
+    "aspect_type": "Square (正方形)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4591,7 +4902,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102747"
+    "collected_at": "2026-02-09T10:40:35.102747",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4604,7 +4918,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102740"
+    "collected_at": "2026-02-09T10:40:35.102740",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4617,7 +4934,10 @@
     "content": "Cosplayer: めるとさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102730"
+    "collected_at": "2026-02-09T10:40:35.102730",
+    "width": 1170,
+    "height": 1170,
+    "aspect_type": "Square (正方形)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4630,7 +4950,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102720"
+    "collected_at": "2026-02-09T10:40:35.102720",
+    "width": 1633,
+    "height": 2448,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4643,7 +4966,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102713"
+    "collected_at": "2026-02-09T10:40:35.102713",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4656,7 +4982,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102706"
+    "collected_at": "2026-02-09T10:40:35.102706",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4669,7 +4998,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102699"
+    "collected_at": "2026-02-09T10:40:35.102699",
+    "width": 1595,
+    "height": 2241,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4682,7 +5014,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102688"
+    "collected_at": "2026-02-09T10:40:35.102688",
+    "width": 2708,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4695,7 +5030,10 @@
     "content": "Cosplayer: しきぶさん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102680"
+    "collected_at": "2026-02-09T10:40:35.102680",
+    "width": 3024,
+    "height": 4032,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4708,7 +5046,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102632"
+    "collected_at": "2026-02-09T10:40:35.102632",
+    "width": 2726,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4721,7 +5062,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102625"
+    "collected_at": "2026-02-09T10:40:35.102625",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4734,7 +5078,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102619"
+    "collected_at": "2026-02-09T10:40:35.102619",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4747,7 +5094,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102613"
+    "collected_at": "2026-02-09T10:40:35.102613",
+    "width": 2726,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4760,7 +5110,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102607"
+    "collected_at": "2026-02-09T10:40:35.102607",
+    "width": 4096,
+    "height": 2730,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4773,7 +5126,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102600"
+    "collected_at": "2026-02-09T10:40:35.102600",
+    "width": 1736,
+    "height": 3088,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4786,7 +5142,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102591"
+    "collected_at": "2026-02-09T10:40:35.102591",
+    "width": 1691,
+    "height": 2470,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4799,7 +5158,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102579"
+    "collected_at": "2026-02-09T10:40:35.102579",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4812,7 +5174,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102572"
+    "collected_at": "2026-02-09T10:40:35.102572",
+    "width": 2464,
+    "height": 3695,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4825,7 +5190,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102564"
+    "collected_at": "2026-02-09T10:40:35.102564",
+    "width": 1754,
+    "height": 2390,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4838,7 +5206,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102558"
+    "collected_at": "2026-02-09T10:40:35.102558",
+    "width": 2732,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4851,7 +5222,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102552"
+    "collected_at": "2026-02-09T10:40:35.102552",
+    "width": 2730,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4864,7 +5238,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102546"
+    "collected_at": "2026-02-09T10:40:35.102546",
+    "width": 1704,
+    "height": 3012,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4877,7 +5254,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102539"
+    "collected_at": "2026-02-09T10:40:35.102539",
+    "width": 4096,
+    "height": 2726,
+    "aspect_type": "Landscape (横長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4890,7 +5270,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102530"
+    "collected_at": "2026-02-09T10:40:35.102530",
+    "width": 1733,
+    "height": 2518,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4903,7 +5286,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102524"
+    "collected_at": "2026-02-09T10:40:35.102524",
+    "width": 2731,
+    "height": 4096,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
@@ -4916,7 +5302,10 @@
     "content": "Cosplayer: 一姫さん",
     "like_count": 0,
     "impression_count": 0,
-    "collected_at": "2026-02-09T10:40:35.102517"
+    "collected_at": "2026-02-09T10:40:35.102517",
+    "width": 1773,
+    "height": 2365,
+    "aspect_type": "Portrait (縦長)"
   },
   {
     "member_name": "花芽すみれ",
