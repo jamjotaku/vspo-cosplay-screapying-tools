@@ -28,30 +28,29 @@ def check_image_locally(image_url, member_name):
         
         image = Image.open(BytesIO(response.content)).convert("RGB")
 
-        # 2. 比較用ラベルの設定
-        # 0番目が正解ラベル、1,2番目が除外用ラベル
+        # メンバーごとの特徴を考慮したラベル設定（例）
         labels = [
-            f"a cosplay photo of {member_name} from vspo",
-            "a screenshot of a video game or anime",
-            "a photo of an unrelated object or different character"
+         f"a photo of a girl with colored hair cosplaying {member_name} from vspo anime style", # 正解
+         "cosplay of Demon Slayer Kimetsu no Yaiba or Genshin Impact", # 強力な除外ターゲット
+         "a screenshot of a video game or anime character", # 除外
+         "just a random person or text or goods" # 除外
         ]
-
         # 3. 推論
         inputs = processor(text=labels, images=image, return_tensors="pt", padding=True)
         with torch.no_grad():
             outputs = model(**inputs)
         
-        # 類似度を確率(0.0~1.0)に変換
+        # 確率を取得
         probs = outputs.logits_per_image.softmax(dim=1)
-        top_index = probs.argmax().item()
-
-        # 0番目（正解ラベル）の確率が最も高い場合のみ合格
-        if top_index == 0:
-            confidence = probs[0][0].item()
-            print(f"✅ OK ({member_name}) - Conf: {confidence:.2f}")
+        top_prob = probs[0][top_index].item()
+        
+        # 0番目（正解）が選ばれ、かつ「自信（確率）」が 0.6(60%) 以上の時だけ合格
+        # この数値を 0.7 や 0.8 に上げると、より厳選されます
+        if top_index == 0 and top_prob > 0.6:
+            print(f"✅ OK ({member_name}) - Prob: {top_prob:.2f}")
             return True
         else:
-            print(f"🗑️ REJECT - Match index: {top_index}")
+            print(f"🗑️ REJECT - Prob: {top_prob:.2f} (Index: {top_index})")
             return False
 
     except Exception as e:
