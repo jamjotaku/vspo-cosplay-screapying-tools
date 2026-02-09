@@ -1,0 +1,40 @@
+name: Cosplay Data Collector
+
+on:
+  workflow_dispatch: # 手動実行用ボタン
+  schedule:
+    - cron: '0 0 * * *' # 毎日日本時間午前9時に自動実行（UTC 0:00）
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+          playwright install-deps
+
+      - name: Run scraper
+        env:
+          # GitHub Secretsに登録したauth.jsonの中身を一時ファイルとして復元
+          X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
+        run: |
+          echo "$X_AUTH_JSON" > auth.json
+          python scraper_x.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add collect.json
+          git commit -m "Update collected data [skip ci]" || exit 0
+          git push
