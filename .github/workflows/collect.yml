@@ -1,9 +1,9 @@
 name: Cosplay Data Collector
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 手動実行用
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # 毎日日本時間9時実行
 
 jobs:
   scrape:
@@ -19,25 +19,26 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip' # キャッシュを有効にして安定性を高めます
+          cache: 'pip' # インストールしたライブラリをキャッシュして安定させます
 
       - name: Install dependencies
         run: |
-          # python3 ではなく、環境変数で指定された python を使ってインストール
+          # python3 ではなく、環境で指定された python を直接使います
           python -m pip install --upgrade pip
           python -m pip install playwright
           python -m playwright install chromium
           sudo python -m playwright install-deps chromium
 
       - name: Create auth.json from secret
+        # Secretからauth.jsonを生成。実行後、このファイルは自動で破棄されます
         run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
 
       - name: Run scraper
-        # ここも python -m または直接実行することで、パスのズレを防ぎます
-        run: |
-          python scraper_x.py
+        # ここが重要：python3 ではなく python コマンドで実行します
+        run: python scraper_x.py
 
       - name: Commit and Push
+        # 取得したデータをリポジトリに保存します
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
