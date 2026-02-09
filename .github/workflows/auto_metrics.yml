@@ -23,8 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install playwright requests
-          # 以前インストールした依存関係をここでも入れる
+          # requests, playwrightに加え、画像処理用のPillowを追加
+          pip install playwright requests Pillow
           sudo npx playwright install-deps
           python -m playwright install chromium
 
@@ -33,13 +33,24 @@ jobs:
           X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
         run: echo "$X_AUTH_JSON" > auth.json
 
+      # 1. いいね数・インプ・本文の取得
       - name: Run Fetch Metrics
         run: python fetch_metrics.py
+
+      # 2. 画像サイズ(アスペクト比)の取得
+      - name: Run Fetch Dimensions
+        run: python fetch_dimensions.py
+
+      # 3. データの分析・集計 (analysis.json生成)
+      - name: Run Analyze Data
+        run: python analyze_data.py
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # 変更された全てのJSONをステージング
           git add collect.json analysis.json
-          git commit -m "Auto-update: Fetched social metrics for batch" || echo "No changes"
+          # 差分がある場合のみコミット
+          git commit -m "Auto-update: Metrics, Dimensions, and Analysis" || echo "No changes"
           git push

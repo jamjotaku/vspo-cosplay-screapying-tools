@@ -49,12 +49,24 @@
             </div>
         </div>
 
-        <div class="card p-6 rounded-xl shadow-lg mb-8">
-            <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                ⏰ ゴールデンタイム分析 <span class="text-xs font-normal text-gray-500">(時間帯別 平均いいね数)</span>
-            </h3>
-            <div class="h-64 w-full">
-                <canvas id="timeChart"></canvas>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="card p-6 rounded-xl shadow-lg lg:col-span-2">
+                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                    ⏰ ゴールデンタイム分析 <span class="text-xs font-normal text-gray-500">(時間帯別 平均いいね数)</span>
+                </h3>
+                <div class="h-64 w-full">
+                    <canvas id="timeChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card p-6 rounded-xl shadow-lg flex flex-col">
+                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                    📐 構図の勝利 <span class="text-xs font-normal text-gray-500">(アスペクト比)</span>
+                </h3>
+                <div class="h-64 w-full relative">
+                    <canvas id="aspectChart"></canvas>
+                </div>
+                <p class="text-xs text-center text-gray-500 mt-2">※ 縦長(Portrait) vs 横長(Landscape)</p>
             </div>
         </div>
 
@@ -121,10 +133,11 @@
 
                 // Charts
                 if(data.hourly_report) renderTimeChart(data.hourly_report);
+                if(data.aspect_report) renderAspectChart(data.aspect_report); // NEW
                 if(data.member_ranking) renderMemberChart(data.member_ranking);
                 
                 // Lists
-                if(data.keyword_ranking) renderKeywordList(data.keyword_ranking); // NEW
+                if(data.keyword_ranking) renderKeywordList(data.keyword_ranking);
                 if(data.tag_ranking) renderTagList(data.tag_ranking.slice(0, 10));
                 
                 // Table
@@ -134,11 +147,38 @@
             } catch(e) { console.error(e); }
         }
 
-        // NEW: キーワードリスト描画関数
+        // NEW: 構図分析チャート (ドーナツ)
+        function renderAspectChart(report) {
+            // Unknownを除外
+            const valid = report.filter(r => r.type !== 'Unknown');
+            if(valid.length === 0) return;
+
+            new Chart(document.getElementById('aspectChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: valid.map(r => r.type),
+                    datasets: [{
+                        data: valid.map(r => r.avg),
+                        backgroundColor: ['#f472b6', '#60a5fa', '#34d399'], // ピンク, 青, 緑
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { color: '#cbd5e1', font: {size: 10} } },
+                        tooltip: { callbacks: { label: (ctx) => `Avg: ${ctx.raw.toLocaleString()} Likes` } }
+                    },
+                    cutout: '60%'
+                }
+            });
+        }
+
         function renderKeywordList(items) {
             const container = document.getElementById('keyword-list');
             items.forEach((item, i) => {
-                // 倍率に応じた色付け
                 let rateColor = 'text-gray-400';
                 if(item.multiplier >= 1.5) rateColor = 'text-yellow-400 font-bold';
                 else if(item.multiplier >= 1.0) rateColor = 'text-green-400';
