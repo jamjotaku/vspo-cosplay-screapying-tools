@@ -15,11 +15,28 @@
 <body class="text-gray-800">
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-indigo-600">VSPO! Cosplay Archive</h1>
-            <div class="text-sm text-gray-500" id="last-updated">Updating...</div>
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <h1 class="text-2xl font-bold text-indigo-600 tracking-tight">
+                    <a href="index.html">VSPO! Cosplay</a>
+                </h1>
+                <nav class="hidden md:flex gap-1 bg-gray-100 p-1 rounded-lg">
+                    <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-bold bg-white text-indigo-600 shadow-sm transition">
+                        ギャラリー
+                    </a>
+                    <a href="analytics.html" class="px-4 py-1.5 rounded-md text-sm font-bold text-gray-500 hover:text-indigo-600 transition">
+                        データ分析
+                    </a>
+                </nav>
+            </div>
+            <div class="text-xs text-gray-400" id="last-updated">Updating...</div>
         </div>
     </header>
+
+    <div class="md:hidden flex justify-center py-2 bg-white border-b border-gray-100 gap-4 text-sm font-bold">
+        <a href="index.html" class="text-indigo-600 border-b-2 border-indigo-600">ギャラリー</a>
+        <a href="analytics.html" class="text-gray-400">データ分析</a>
+    </div>
 
     <div class="max-w-7xl mx-auto px-4 py-6 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <button onclick="filterItems('all')" class="filter-btn bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-bold mr-2 shadow-md hover:bg-indigo-700 transition">
@@ -37,16 +54,13 @@
     </main>
 
     <script>
+        // --- 既存のJSロジック ---
         let allData = [];
 
-        // データの読み込み
         async function loadData() {
             try {
-                // collect.json を読み込む
                 const response = await fetch('collect.json');
                 const data = await response.json();
-                
-                // 新しい順に並べ替え
                 allData = data.sort((a, b) => new Date(b.collected_at) - new Date(a.collected_at));
                 
                 renderFilters(allData);
@@ -54,22 +68,15 @@
                 
                 if(allData.length > 0) {
                     const lastDate = new Date(allData[0].collected_at);
-                    document.getElementById('last-updated').textContent = `Last update: ${lastDate.toLocaleString('ja-JP')}`;
+                    document.getElementById('last-updated').textContent = `最終更新: ${lastDate.toLocaleString('ja-JP')}`;
                 }
             } catch (error) {
                 console.error("Error loading data:", error);
-                document.getElementById('gallery-grid').innerHTML = `
-                    <div class="col-span-full text-center py-10">
-                        <p class="text-red-500 font-bold">データの読み込みに失敗しました。</p>
-                        <p class="text-sm text-gray-400">collect.json がまだ生成されていない可能性があります。</p>
-                    </div>`;
             }
         }
 
-        // メンバーフィルターボタンの生成
         function renderFilters(data) {
             const container = document.getElementById('member-filters');
-            // 重複なしのメンバーリストを作成
             const members = [...new Set(data.map(item => item.member_name))];
             
             members.forEach(member => {
@@ -81,9 +88,7 @@
             });
         }
 
-        // フィルタリング処理
         function filterItems(memberName) {
-            // ボタンの見た目切り替え
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 if (btn.textContent === memberName || (memberName === 'all' && btn.textContent === 'ALL')) {
                     btn.classList.add('bg-indigo-600', 'text-white');
@@ -94,22 +99,15 @@
                 }
             });
 
-            const filtered = memberName === 'all' 
-                ? allData 
-                : allData.filter(item => item.member_name === memberName);
-            
+            const filtered = memberName === 'all' ? allData : allData.filter(item => item.member_name === memberName);
             renderGallery(filtered);
         }
 
-        // 画像カードの描画
         function renderGallery(items) {
             const container = document.getElementById('gallery-grid');
             container.innerHTML = '';
-
             items.forEach(item => {
-                // 画像が複数ある場合は1枚目を使用
                 const displayImage = item.images[0];
-                
                 const card = `
                     <div class="card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition duration-300">
                         <a href="${item.url}" target="_blank" class="block relative group">
@@ -125,23 +123,16 @@
                                     ${item.member_name}
                                 </span>
                                 <span class="text-xs text-gray-400">
-                                    ❤️ ${item.metrics?.likes || 0}
+                                    ${item.source === 'Instagram' ? '📷 Insta' : '🐦 X'}
                                 </span>
                             </div>
                             <p class="text-sm text-gray-600 mb-3 tweet-text">${item.content}</p>
-                            <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
-                                <span class="text-xs text-gray-400 truncate w-24">@${item.author_name}</span>
-                                <a href="${item.url}" target="_blank" class="text-xs text-indigo-500 hover:text-indigo-700 font-medium">
-                                    Xで見る →
-                                </a>
-                            </div>
                         </div>
                     </div>
                 `;
                 container.innerHTML += card;
             });
         }
-
         loadData();
     </script>
 </body>
