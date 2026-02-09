@@ -1,13 +1,16 @@
 name: Cosplay Data Collector
 
 on:
-  workflow_dispatch: # 手動実行用ボタン
+  workflow_dispatch: # GitHubの画面からボタンで起動できるようになります
   schedule:
-    - cron: '0 0 * * *' # 毎日日本時間午前9時に自動実行（UTC 0:00）
+    - cron: '0 0 * * *' # 毎日日本時間 9:00 に自動実行 (UTC 0:00)
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # 収集したデータをリポジトリに保存するために必要
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,19 +22,19 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          playwright install chromium
-          playwright install-deps
+          pip install playwright
+          python -m playwright install chromium
+          sudo python -m playwright install-deps chromium
+
+      - name: Create auth.json from secret
+        # Secretから一時的にファイルを復元します。実行完了後は自動で消去されます
+        run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
 
       - name: Run scraper
-        env:
-          # GitHub Secretsに登録したauth.jsonの中身を一時ファイルとして復元
-          X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
-        run: |
-          echo "$X_AUTH_JSON" > auth.json
-          python scraper_x.py
+        run: python scraper_x.py
 
       - name: Commit and Push
+        # 収集した collect.json をリポジトリに保存します
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
