@@ -1,7 +1,129 @@
 {
-  "updated_at": "2026/02/09 12:40",
+  "updated_at": "2026/02/09 12:45",
   "total_analyzed": 151,
   "total_records": 5888,
+  "hourly_report": [
+    {
+      "hour": 0,
+      "avg_likes": 2427,
+      "count": 3
+    },
+    {
+      "hour": 1,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 2,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 3,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 4,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 5,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 6,
+      "avg_likes": 747,
+      "count": 2
+    },
+    {
+      "hour": 7,
+      "avg_likes": 0,
+      "count": 0
+    },
+    {
+      "hour": 8,
+      "avg_likes": 484,
+      "count": 3
+    },
+    {
+      "hour": 9,
+      "avg_likes": 191,
+      "count": 1
+    },
+    {
+      "hour": 10,
+      "avg_likes": 309,
+      "count": 2
+    },
+    {
+      "hour": 11,
+      "avg_likes": 1574,
+      "count": 1
+    },
+    {
+      "hour": 12,
+      "avg_likes": 1056,
+      "count": 8
+    },
+    {
+      "hour": 13,
+      "avg_likes": 2695,
+      "count": 2
+    },
+    {
+      "hour": 14,
+      "avg_likes": 458,
+      "count": 2
+    },
+    {
+      "hour": 15,
+      "avg_likes": 1955,
+      "count": 1
+    },
+    {
+      "hour": 16,
+      "avg_likes": 1901,
+      "count": 2
+    },
+    {
+      "hour": 17,
+      "avg_likes": 1208,
+      "count": 10
+    },
+    {
+      "hour": 18,
+      "avg_likes": 1654,
+      "count": 18
+    },
+    {
+      "hour": 19,
+      "avg_likes": 1536,
+      "count": 17
+    },
+    {
+      "hour": 20,
+      "avg_likes": 1072,
+      "count": 26
+    },
+    {
+      "hour": 21,
+      "avg_likes": 1572,
+      "count": 27
+    },
+    {
+      "hour": 22,
+      "avg_likes": 1303,
+      "count": 15
+    },
+    {
+      "hour": 23,
+      "avg_likes": 1105,
+      "count": 11
+    }
+  ],
   "engagement_ranking": [
     {
       "member_name": "蝶屋はなび",
@@ -17,6 +139,7 @@
       "collected_at": "2026-02-09T10:40:35.157066",
       "followers": 14300,
       "viral_score": 0.138,
+      "posted_hour": 17,
       "rate": 9.09
     },
     {
@@ -33,6 +156,7 @@
       "collected_at": "2026-02-09T10:40:35.157072",
       "followers": 14300,
       "viral_score": 0.174,
+      "posted_hour": 17,
       "rate": 9.08
     },
     {
@@ -49,6 +173,7 @@
       "collected_at": "2026-02-09T10:40:35.157048",
       "followers": 14300,
       "viral_score": 0.097,
+      "posted_hour": 19,
       "rate": 8.77
     },
     {
@@ -65,6 +190,7 @@
       "collected_at": "2026-02-09T10:40:35.157131",
       "followers": 7851,
       "viral_score": 0.119,
+      "posted_hour": 21,
       "rate": 8.74
     },
     {
@@ -81,6 +207,7 @@
       "collected_at": "2026-02-09T10:40:35.157725",
       "followers": 10000,
       "viral_score": 0.101,
+      "posted_hour": 8,
       "rate": 8.66
     },
     {
@@ -97,6 +224,7 @@
       "collected_at": "2026-02-09T10:40:35.157119",
       "followers": 7851,
       "viral_score": 0.711,
+      "posted_hour": 22,
       "rate": 8.66
     },
     {
@@ -113,6 +241,7 @@
       "collected_at": "2026-02-09T10:40:35.157077",
       "followers": 14300,
       "viral_score": 0.2,
+      "posted_hour": 18,
       "rate": 8.65
     },
     {
@@ -129,6 +258,7 @@
       "collected_at": "2026-02-09T10:40:35.157084",
       "followers": 14300,
       "viral_score": 0.072,
+      "posted_hour": 18,
       "rate": 8.51
     },
     {
@@ -145,6 +275,7 @@
       "collected_at": "2026-02-09T10:40:35.157679",
       "followers": 10000,
       "viral_score": 0.1,
+      "posted_hour": 22,
       "rate": 7.97
     },
     {
@@ -161,6 +292,7 @@
       "collected_at": "2026-02-09T10:40:35.157125",
       "followers": 7851,
       "viral_score": 0.132,
+      "posted_hour": 21,
       "rate": 7.6
     },
     {
@@ -177,6 +309,7 @@
       "collected_at": "2026-02-09T10:40:35.157042",
       "followers": 14300,
       "viral_score": 0.151,
+      "posted_hour": 21,
       "rate": 7.39
     },
     {
@@ -193,6 +326,7 @@
       "collected_at": "2026-02-09T10:40:35.157610",
       "followers": 34700,
       "viral_score": 0.027,
+      "posted_hour": 21,
       "rate": 7.33
     },
     {
@@ -209,6 +343,7 @@
       "collected_at": "2026-02-09T10:40:35.156999",
       "followers": 14300,
       "viral_score": 0.195,
+      "posted_hour": 21,
       "rate": 7.33
     },
     {
@@ -225,6 +360,7 @@
       "collected_at": "2026-02-09T10:40:35.157673",
       "followers": 10000,
       "viral_score": 0.126,
+      "posted_hour": 17,
       "rate": 7.32
     },
     {
@@ -241,6 +377,7 @@
       "collected_at": "2026-02-09T10:40:35.157054",
       "followers": 14300,
       "viral_score": 0.23,
+      "posted_hour": 19,
       "rate": 7.31
     },
     {
@@ -257,6 +394,7 @@
       "collected_at": "2026-02-09T10:40:35.157595",
       "followers": 34700,
       "viral_score": 0.06,
+      "posted_hour": 19,
       "rate": 7.17
     },
     {
@@ -273,6 +411,7 @@
       "collected_at": "2026-02-09T10:40:35.157161",
       "followers": 52400,
       "viral_score": 0.038,
+      "posted_hour": 21,
       "rate": 7.17
     },
     {
@@ -289,6 +428,7 @@
       "collected_at": "2026-02-09T10:40:35.157713",
       "followers": 10000,
       "viral_score": 0.075,
+      "posted_hour": 18,
       "rate": 7.12
     },
     {
@@ -305,6 +445,7 @@
       "collected_at": "2026-02-09T10:40:35.157686",
       "followers": 10000,
       "viral_score": 0.075,
+      "posted_hour": 18,
       "rate": 7.04
     },
     {
@@ -321,6 +462,7 @@
       "collected_at": "2026-02-09T10:40:35.157740",
       "followers": 10000,
       "viral_score": 0.069,
+      "posted_hour": 17,
       "rate": 6.93
     },
     {
@@ -337,6 +479,7 @@
       "collected_at": "2026-02-09T10:40:35.157508",
       "followers": 34700,
       "viral_score": 0.019,
+      "posted_hour": 19,
       "rate": 6.75
     },
     {
@@ -353,6 +496,7 @@
       "collected_at": "2026-02-09T10:40:35.156991",
       "followers": 14300,
       "viral_score": 0.113,
+      "posted_hour": 18,
       "rate": 6.56
     },
     {
@@ -369,6 +513,7 @@
       "collected_at": "2026-02-09T10:40:35.105676",
       "followers": 8432,
       "viral_score": 0.095,
+      "posted_hour": 18,
       "rate": 6.54
     },
     {
@@ -385,6 +530,7 @@
       "collected_at": "2026-02-09T10:40:35.156924",
       "followers": 14300,
       "viral_score": 0.41,
+      "posted_hour": 19,
       "rate": 6.54
     },
     {
@@ -401,6 +547,7 @@
       "collected_at": "2026-02-09T10:40:35.157024",
       "followers": 14300,
       "viral_score": 0.145,
+      "posted_hour": 21,
       "rate": 6.53
     },
     {
@@ -417,6 +564,7 @@
       "collected_at": "2026-02-09T10:40:35.157650",
       "followers": 10000,
       "viral_score": 0.249,
+      "posted_hour": 18,
       "rate": 6.43
     },
     {
@@ -433,6 +581,7 @@
       "collected_at": "2026-02-09T10:40:35.157692",
       "followers": 10000,
       "viral_score": 0.157,
+      "posted_hour": 11,
       "rate": 6.35
     },
     {
@@ -449,6 +598,7 @@
       "collected_at": "2026-02-09T10:40:35.157719",
       "followers": 10000,
       "viral_score": 0.049,
+      "posted_hour": 17,
       "rate": 6.26
     },
     {
@@ -465,6 +615,7 @@
       "collected_at": "2026-02-09T10:40:35.157440",
       "followers": 10900,
       "viral_score": 0.024,
+      "posted_hour": 18,
       "rate": 6.26
     },
     {
@@ -481,6 +632,7 @@
       "collected_at": "2026-02-09T10:40:35.157585",
       "followers": 34700,
       "viral_score": 0.022,
+      "posted_hour": 22,
       "rate": 6.25
     }
   ],
@@ -498,7 +650,8 @@
       "impression_count": 64400,
       "collected_at": "2026-02-09T10:40:35.157119",
       "followers": 7851,
-      "viral_score": 0.711
+      "viral_score": 0.711,
+      "posted_hour": 22
     },
     {
       "member_name": "蝶屋はなび",
@@ -513,7 +666,8 @@
       "impression_count": 186800,
       "collected_at": "2026-02-09T10:40:35.156914",
       "followers": 14300,
-      "viral_score": 0.482
+      "viral_score": 0.482,
+      "posted_hour": 18
     },
     {
       "member_name": "甘結もか",
@@ -528,7 +682,8 @@
       "impression_count": 184300,
       "collected_at": "2026-02-09T10:40:35.157643",
       "followers": 10000,
-      "viral_score": 0.463
+      "viral_score": 0.463,
+      "posted_hour": 13
     },
     {
       "member_name": "蝶屋はなび",
@@ -543,7 +698,8 @@
       "impression_count": 163000,
       "collected_at": "2026-02-09T10:40:35.157096",
       "followers": 14300,
-      "viral_score": 0.454
+      "viral_score": 0.454,
+      "posted_hour": 0
     },
     {
       "member_name": "蝶屋はなび",
@@ -558,7 +714,8 @@
       "impression_count": 126400,
       "collected_at": "2026-02-09T10:40:35.156937",
       "followers": 14300,
-      "viral_score": 0.412
+      "viral_score": 0.412,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -573,7 +730,8 @@
       "impression_count": 89500,
       "collected_at": "2026-02-09T10:40:35.156924",
       "followers": 14300,
-      "viral_score": 0.41
+      "viral_score": 0.41,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -588,7 +746,8 @@
       "impression_count": 99400,
       "collected_at": "2026-02-09T10:40:35.157090",
       "followers": 14300,
-      "viral_score": 0.391
+      "viral_score": 0.391,
+      "posted_hour": 21
     },
     {
       "member_name": "花芽なずな",
@@ -603,7 +762,8 @@
       "impression_count": 195000,
       "collected_at": "2026-02-09T10:40:35.105311",
       "followers": 7997,
-      "viral_score": 0.377
+      "viral_score": 0.377,
+      "posted_hour": 22
     },
     {
       "member_name": "蝶屋はなび",
@@ -618,7 +778,8 @@
       "impression_count": 83000,
       "collected_at": "2026-02-09T10:40:35.157010",
       "followers": 14300,
-      "viral_score": 0.34
+      "viral_score": 0.34,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -633,7 +794,8 @@
       "impression_count": 24100,
       "collected_at": "2026-02-09T10:40:35.157413",
       "followers": 3730,
-      "viral_score": 0.306
+      "viral_score": 0.306,
+      "posted_hour": 20
     },
     {
       "member_name": "蝶屋はなび",
@@ -648,7 +810,8 @@
       "impression_count": 96600,
       "collected_at": "2026-02-09T10:40:35.156931",
       "followers": 14300,
-      "viral_score": 0.291
+      "viral_score": 0.291,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -663,7 +826,8 @@
       "impression_count": 133200,
       "collected_at": "2026-02-09T10:40:35.156944",
       "followers": 14300,
-      "viral_score": 0.274
+      "viral_score": 0.274,
+      "posted_hour": 20
     },
     {
       "member_name": "甘結もか",
@@ -678,7 +842,8 @@
       "impression_count": 38700,
       "collected_at": "2026-02-09T10:40:35.157650",
       "followers": 10000,
-      "viral_score": 0.249
+      "viral_score": 0.249,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -693,7 +858,8 @@
       "impression_count": 44900,
       "collected_at": "2026-02-09T10:40:35.157054",
       "followers": 14300,
-      "viral_score": 0.23
+      "viral_score": 0.23,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -708,7 +874,8 @@
       "impression_count": 33100,
       "collected_at": "2026-02-09T10:40:35.157077",
       "followers": 14300,
-      "viral_score": 0.2
+      "viral_score": 0.2,
+      "posted_hour": 18
     },
     {
       "member_name": "甘結もか",
@@ -723,7 +890,8 @@
       "impression_count": 15600,
       "collected_at": "2026-02-09T10:40:35.157420",
       "followers": 3730,
-      "viral_score": 0.195
+      "viral_score": 0.195,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -738,7 +906,8 @@
       "impression_count": 38000,
       "collected_at": "2026-02-09T10:40:35.156999",
       "followers": 14300,
-      "viral_score": 0.195
+      "viral_score": 0.195,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -753,7 +922,8 @@
       "impression_count": 64000,
       "collected_at": "2026-02-09T10:40:35.157017",
       "followers": 14300,
-      "viral_score": 0.189
+      "viral_score": 0.189,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -768,7 +938,8 @@
       "impression_count": 46100,
       "collected_at": "2026-02-09T10:40:35.157030",
       "followers": 14300,
-      "viral_score": 0.178
+      "viral_score": 0.178,
+      "posted_hour": 17
     },
     {
       "member_name": "蝶屋はなび",
@@ -783,7 +954,8 @@
       "impression_count": 27400,
       "collected_at": "2026-02-09T10:40:35.157072",
       "followers": 14300,
-      "viral_score": 0.174
+      "viral_score": 0.174,
+      "posted_hour": 17
     },
     {
       "member_name": "甘結もか",
@@ -798,7 +970,8 @@
       "impression_count": 43900,
       "collected_at": "2026-02-09T10:40:35.157347",
       "followers": 10000,
-      "viral_score": 0.172
+      "viral_score": 0.172,
+      "posted_hour": 23
     },
     {
       "member_name": "甘結もか",
@@ -813,7 +986,8 @@
       "impression_count": 10300,
       "collected_at": "2026-02-09T10:40:35.157427",
       "followers": 3730,
-      "viral_score": 0.16
+      "viral_score": 0.16,
+      "posted_hour": 19
     },
     {
       "member_name": "甘結もか",
@@ -828,7 +1002,8 @@
       "impression_count": 24800,
       "collected_at": "2026-02-09T10:40:35.157692",
       "followers": 10000,
-      "viral_score": 0.157
+      "viral_score": 0.157,
+      "posted_hour": 11
     },
     {
       "member_name": "蝶屋はなび",
@@ -843,7 +1018,8 @@
       "impression_count": 29300,
       "collected_at": "2026-02-09T10:40:35.157042",
       "followers": 14300,
-      "viral_score": 0.151
+      "viral_score": 0.151,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -858,7 +1034,8 @@
       "impression_count": 34200,
       "collected_at": "2026-02-09T10:40:35.157378",
       "followers": 10000,
-      "viral_score": 0.146
+      "viral_score": 0.146,
+      "posted_hour": 20
     },
     {
       "member_name": "花芽なずな",
@@ -873,7 +1050,8 @@
       "impression_count": 39500,
       "collected_at": "2026-02-09T10:40:35.105340",
       "followers": 7997,
-      "viral_score": 0.145
+      "viral_score": 0.145,
+      "posted_hour": 23
     },
     {
       "member_name": "蝶屋はなび",
@@ -888,7 +1066,8 @@
       "impression_count": 31700,
       "collected_at": "2026-02-09T10:40:35.157024",
       "followers": 14300,
-      "viral_score": 0.145
+      "viral_score": 0.145,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -903,7 +1082,8 @@
       "impression_count": 21700,
       "collected_at": "2026-02-09T10:40:35.157066",
       "followers": 14300,
-      "viral_score": 0.138
+      "viral_score": 0.138,
+      "posted_hour": 17
     },
     {
       "member_name": "蝶屋はなび",
@@ -918,7 +1098,8 @@
       "impression_count": 13600,
       "collected_at": "2026-02-09T10:40:35.157125",
       "followers": 7851,
-      "viral_score": 0.132
+      "viral_score": 0.132,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -933,7 +1114,328 @@
       "impression_count": 36100,
       "collected_at": "2026-02-09T10:40:35.157036",
       "followers": 14300,
-      "viral_score": 0.132
+      "viral_score": 0.132,
+      "posted_hour": 16
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9FKN8xaUAAV3k8?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2004464922345025614/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1259,
+      "impression_count": 17200,
+      "collected_at": "2026-02-09T10:40:35.157673",
+      "followers": 10000,
+      "viral_score": 0.126,
+      "posted_hour": 17
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "なぽさん",
+      "images": [
+        "https://pbs.twimg.com/media/GoOWFcEbMAAIBQK?format=jpg&name=large"
+      ],
+      "url": "https://x.com/___napo_leon___/status/1910541482815348914",
+      "source": "X",
+      "content": "Cosplayer: なぽさん",
+      "like_count": 951,
+      "impression_count": 24200,
+      "collected_at": "2026-02-09T10:40:35.105519",
+      "followers": 7997,
+      "viral_score": 0.119,
+      "posted_hour": 12
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "にょるさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8XuPcbbIAAyBik?format=jpg&name=large"
+      ],
+      "url": "https://x.com/nyoru_nyokki/status/2001267567323910639/photo/1",
+      "source": "X",
+      "content": "Cosplayer: にょるさん",
+      "like_count": 935,
+      "impression_count": 10700,
+      "collected_at": "2026-02-09T10:40:35.157131",
+      "followers": 7851,
+      "viral_score": 0.119,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8605rmbAAAKO2I?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2003737797468074208/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1153,
+      "impression_count": 129100,
+      "collected_at": "2026-02-09T10:40:35.157656",
+      "followers": 10000,
+      "viral_score": 0.115,
+      "posted_hour": 17
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G2fZj91a0AES9Nc?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1974786186570019052/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1626,
+      "impression_count": 26000,
+      "collected_at": "2026-02-09T10:40:35.156906",
+      "followers": 14300,
+      "viral_score": 0.114,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G378vPYXEAAAyal?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1981298784098488765/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1621,
+      "impression_count": 24700,
+      "collected_at": "2026-02-09T10:40:35.156991",
+      "followers": 14300,
+      "viral_score": 0.113,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "なぽさん",
+      "images": [
+        "https://pbs.twimg.com/media/GnqVm5jaMAE-fb5?format=jpg&name=large"
+      ],
+      "url": "https://x.com/___napo_leon___/status/1908001896729895324",
+      "source": "X",
+      "content": "Cosplayer: なぽさん",
+      "like_count": 886,
+      "impression_count": 27900,
+      "collected_at": "2026-02-09T10:40:35.105502",
+      "followers": 7997,
+      "viral_score": 0.111,
+      "posted_hour": 12
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "まめさん",
+      "images": [
+        "https://pbs.twimg.com/media/FAw8fSVVgAQl6nX?format=jpg&name=large"
+      ],
+      "url": "https://x.com/mm_23_22/status/1444596098471915528",
+      "source": "X",
+      "content": "Cosplayer: まめさん",
+      "like_count": 1150,
+      "impression_count": 0,
+      "collected_at": "2026-02-09T10:40:35.105525",
+      "followers": 10800,
+      "viral_score": 0.106,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/Gz88993bAAAeMFV?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1963355013763502379?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 1015,
+      "impression_count": 33700,
+      "collected_at": "2026-02-09T10:40:35.157338",
+      "followers": 10000,
+      "viral_score": 0.102,
+      "posted_hour": 6
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G_OTJhdbIAA5swQ?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2014115262765625546",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1005,
+      "impression_count": 11600,
+      "collected_at": "2026-02-09T10:40:35.157725",
+      "followers": 10000,
+      "viral_score": 0.101,
+      "posted_hour": 8
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9Ldff_bkAA87AY?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2004908322668118192/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 996,
+      "impression_count": 12500,
+      "collected_at": "2026-02-09T10:40:35.157679",
+      "followers": 10000,
+      "viral_score": 0.1,
+      "posted_hour": 22
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/GoQxW4_aYAAygTw?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1910706422435946606?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 993,
+      "impression_count": 33000,
+      "collected_at": "2026-02-09T10:40:35.157315",
+      "followers": 10000,
+      "viral_score": 0.099,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G0zohXubwAEDkSw?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1967202809776156946/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 3401,
+      "impression_count": 81800,
+      "collected_at": "2026-02-09T10:40:35.157523",
+      "followers": 34700,
+      "viral_score": 0.098,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6mGze3bwAMn916?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1993272546872246355/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1394,
+      "impression_count": 15900,
+      "collected_at": "2026-02-09T10:40:35.157048",
+      "followers": 14300,
+      "viral_score": 0.097,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "如月うなさん",
+      "images": [
+        "https://pbs.twimg.com/media/GqgprOHbMAAAFpM?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/UxxnaxxU/status/1920831074973753589?s=20",
+      "source": "X",
+      "content": "Cosplayer: 如月うなさん",
+      "like_count": 2878,
+      "impression_count": 81500,
+      "collected_at": "2026-02-09T10:40:35.157301",
+      "followers": 30100,
+      "viral_score": 0.096,
+      "posted_hour": 22
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
+      "images": [
+        "https://pbs.twimg.com/media/G9aAfppaQAAnh_2?format=jpg&name=large"
+      ],
+      "url": "https://x.com/chiaki_1023cos/status/2005931976532885695",
+      "source": "X",
+      "content": "Cosplayer: 深月さん",
+      "like_count": 805,
+      "impression_count": 12300,
+      "collected_at": "2026-02-09T10:40:35.105676",
+      "followers": 8432,
+      "viral_score": 0.095,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G05IdWBboAAc59M?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1967589765311869102/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 3300,
+      "impression_count": 73700,
+      "collected_at": "2026-02-09T10:40:35.157535",
+      "followers": 34700,
+      "viral_score": 0.095,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/GoZ6uGZWMAAxXaJ?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1911350038015738330?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 933,
+      "impression_count": 23400,
+      "collected_at": "2026-02-09T10:40:35.157371",
+      "followers": 10000,
+      "viral_score": 0.093,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "如月うなさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gq0-df1bAAI6Xwr?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/UxxnaxxU/status/1922261299603374376?s=20",
+      "source": "X",
+      "content": "Cosplayer: 如月うなさん",
+      "like_count": 2553,
+      "impression_count": 83800,
+      "collected_at": "2026-02-09T10:40:35.157321",
+      "followers": 30100,
+      "viral_score": 0.085,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/Go5o9OPbAAA7r5w?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1913582441912230373?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 832,
+      "impression_count": 20200,
+      "collected_at": "2026-02-09T10:40:35.157396",
+      "followers": 10000,
+      "viral_score": 0.083,
+      "posted_hour": 22
     }
   ],
   "like_ranking": [
@@ -950,7 +1452,8 @@
       "impression_count": 186800,
       "collected_at": "2026-02-09T10:40:35.156914",
       "followers": 14300,
-      "viral_score": 0.482
+      "viral_score": 0.482,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -965,7 +1468,8 @@
       "impression_count": 163000,
       "collected_at": "2026-02-09T10:40:35.157096",
       "followers": 14300,
-      "viral_score": 0.454
+      "viral_score": 0.454,
+      "posted_hour": 0
     },
     {
       "member_name": "蝶屋はなび",
@@ -980,7 +1484,8 @@
       "impression_count": 126400,
       "collected_at": "2026-02-09T10:40:35.156937",
       "followers": 14300,
-      "viral_score": 0.412
+      "viral_score": 0.412,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -995,7 +1500,8 @@
       "impression_count": 89500,
       "collected_at": "2026-02-09T10:40:35.156924",
       "followers": 14300,
-      "viral_score": 0.41
+      "viral_score": 0.41,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -1010,7 +1516,8 @@
       "impression_count": 99400,
       "collected_at": "2026-02-09T10:40:35.157090",
       "followers": 14300,
-      "viral_score": 0.391
+      "viral_score": 0.391,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -1025,7 +1532,8 @@
       "impression_count": 64400,
       "collected_at": "2026-02-09T10:40:35.157119",
       "followers": 7851,
-      "viral_score": 0.711
+      "viral_score": 0.711,
+      "posted_hour": 22
     },
     {
       "member_name": "蝶屋はなび",
@@ -1040,7 +1548,8 @@
       "impression_count": 83000,
       "collected_at": "2026-02-09T10:40:35.157010",
       "followers": 14300,
-      "viral_score": 0.34
+      "viral_score": 0.34,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -1055,7 +1564,8 @@
       "impression_count": 184300,
       "collected_at": "2026-02-09T10:40:35.157643",
       "followers": 10000,
-      "viral_score": 0.463
+      "viral_score": 0.463,
+      "posted_hour": 13
     },
     {
       "member_name": "蝶屋はなび",
@@ -1070,7 +1580,8 @@
       "impression_count": 96600,
       "collected_at": "2026-02-09T10:40:35.156931",
       "followers": 14300,
-      "viral_score": 0.291
+      "viral_score": 0.291,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -1085,7 +1596,8 @@
       "impression_count": 133200,
       "collected_at": "2026-02-09T10:40:35.156944",
       "followers": 14300,
-      "viral_score": 0.274
+      "viral_score": 0.274,
+      "posted_hour": 20
     },
     {
       "member_name": "甘結もか",
@@ -1100,7 +1612,8 @@
       "impression_count": 81800,
       "collected_at": "2026-02-09T10:40:35.157523",
       "followers": 34700,
-      "viral_score": 0.098
+      "viral_score": 0.098,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -1115,7 +1628,8 @@
       "impression_count": 73700,
       "collected_at": "2026-02-09T10:40:35.157535",
       "followers": 34700,
-      "viral_score": 0.095
+      "viral_score": 0.095,
+      "posted_hour": 23
     },
     {
       "member_name": "蝶屋はなび",
@@ -1130,7 +1644,8 @@
       "impression_count": 44900,
       "collected_at": "2026-02-09T10:40:35.157054",
       "followers": 14300,
-      "viral_score": 0.23
+      "viral_score": 0.23,
+      "posted_hour": 19
     },
     {
       "member_name": "花芽なずな",
@@ -1145,7 +1660,8 @@
       "impression_count": 195000,
       "collected_at": "2026-02-09T10:40:35.105311",
       "followers": 7997,
-      "viral_score": 0.377
+      "viral_score": 0.377,
+      "posted_hour": 22
     },
     {
       "member_name": "甘結もか",
@@ -1160,7 +1676,8 @@
       "impression_count": 81500,
       "collected_at": "2026-02-09T10:40:35.157301",
       "followers": 30100,
-      "viral_score": 0.096
+      "viral_score": 0.096,
+      "posted_hour": 22
     },
     {
       "member_name": "蝶屋はなび",
@@ -1175,7 +1692,8 @@
       "impression_count": 33100,
       "collected_at": "2026-02-09T10:40:35.157077",
       "followers": 14300,
-      "viral_score": 0.2
+      "viral_score": 0.2,
+      "posted_hour": 18
     },
     {
       "member_name": "甘結もか",
@@ -1190,7 +1708,8 @@
       "impression_count": 68400,
       "collected_at": "2026-02-09T10:40:35.157541",
       "followers": 34700,
-      "viral_score": 0.081
+      "viral_score": 0.081,
+      "posted_hour": 20
     },
     {
       "member_name": "蝶屋はなび",
@@ -1205,7 +1724,8 @@
       "impression_count": 38000,
       "collected_at": "2026-02-09T10:40:35.156999",
       "followers": 14300,
-      "viral_score": 0.195
+      "viral_score": 0.195,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -1220,7 +1740,8 @@
       "impression_count": 64000,
       "collected_at": "2026-02-09T10:40:35.157017",
       "followers": 14300,
-      "viral_score": 0.189
+      "viral_score": 0.189,
+      "posted_hour": 19
     },
     {
       "member_name": "甘結もか",
@@ -1235,7 +1756,8 @@
       "impression_count": 58800,
       "collected_at": "2026-02-09T10:40:35.157501",
       "followers": 34700,
-      "viral_score": 0.077
+      "viral_score": 0.077,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -1250,7 +1772,8 @@
       "impression_count": 83800,
       "collected_at": "2026-02-09T10:40:35.157321",
       "followers": 30100,
-      "viral_score": 0.085
+      "viral_score": 0.085,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -1265,7 +1788,8 @@
       "impression_count": 77200,
       "collected_at": "2026-02-09T10:40:35.157149",
       "followers": 52400,
-      "viral_score": 0.049
+      "viral_score": 0.049,
+      "posted_hour": 20
     },
     {
       "member_name": "蝶屋はなび",
@@ -1280,7 +1804,8 @@
       "impression_count": 46100,
       "collected_at": "2026-02-09T10:40:35.157030",
       "followers": 14300,
-      "viral_score": 0.178
+      "viral_score": 0.178,
+      "posted_hour": 17
     },
     {
       "member_name": "甘結もか",
@@ -1295,7 +1820,8 @@
       "impression_count": 74000,
       "collected_at": "2026-02-09T10:40:35.157489",
       "followers": 34700,
-      "viral_score": 0.072
+      "viral_score": 0.072,
+      "posted_hour": 20
     },
     {
       "member_name": "甘結もか",
@@ -1310,7 +1836,8 @@
       "impression_count": 38700,
       "collected_at": "2026-02-09T10:40:35.157650",
       "followers": 10000,
-      "viral_score": 0.249
+      "viral_score": 0.249,
+      "posted_hour": 18
     },
     {
       "member_name": "蝶屋はなび",
@@ -1325,7 +1852,8 @@
       "impression_count": 27400,
       "collected_at": "2026-02-09T10:40:35.157072",
       "followers": 14300,
-      "viral_score": 0.174
+      "viral_score": 0.174,
+      "posted_hour": 17
     },
     {
       "member_name": "花芽なずな",
@@ -1340,7 +1868,8 @@
       "impression_count": 61700,
       "collected_at": "2026-02-09T10:40:35.105670",
       "followers": 254400,
-      "viral_score": 0.01
+      "viral_score": 0.01,
+      "posted_hour": 18
     },
     {
       "member_name": "甘結もか",
@@ -1355,7 +1884,8 @@
       "impression_count": 52800,
       "collected_at": "2026-02-09T10:40:35.157460",
       "followers": 34700,
-      "viral_score": 0.067
+      "viral_score": 0.067,
+      "posted_hour": 12
     },
     {
       "member_name": "蝶屋はなび",
@@ -1370,7 +1900,8 @@
       "impression_count": 29300,
       "collected_at": "2026-02-09T10:40:35.157042",
       "followers": 14300,
-      "viral_score": 0.151
+      "viral_score": 0.151,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -1385,7 +1916,328 @@
       "impression_count": 49500,
       "collected_at": "2026-02-09T10:40:35.157155",
       "followers": 52400,
-      "viral_score": 0.04
+      "viral_score": 0.04,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G1CkYb_awAAbq00?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1968253793424003468/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 2079,
+      "impression_count": 29000,
+      "collected_at": "2026-02-09T10:40:35.157595",
+      "followers": 34700,
+      "viral_score": 0.06,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6HpCh2bYAA2x4H?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1991128751627755788/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2071,
+      "impression_count": 31700,
+      "collected_at": "2026-02-09T10:40:35.157024",
+      "followers": 14300,
+      "viral_score": 0.145,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "茉夏なつさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7AFzQEbgAEo8RO?format=jpg&name=large"
+      ],
+      "url": "https://x.com/VERYVERY_HOT/status/1995101023954993155",
+      "source": "X",
+      "content": "Cosplayer: 茉夏なつさん",
+      "like_count": 1973,
+      "impression_count": 27500,
+      "collected_at": "2026-02-09T10:40:35.157161",
+      "followers": 52400,
+      "viral_score": 0.038,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G735gZJa4AAIDs1?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1999028159333941431/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1972,
+      "impression_count": 21700,
+      "collected_at": "2026-02-09T10:40:35.157066",
+      "followers": 14300,
+      "viral_score": 0.138,
+      "posted_hour": 17
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G0yWB3-bcAETwqz?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1967112115845832737/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1955,
+      "impression_count": 39400,
+      "collected_at": "2026-02-09T10:40:35.157517",
+      "followers": 34700,
+      "viral_score": 0.056,
+      "posted_hour": 15
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzGfJ8aakAA7lu6?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1959522315731079231/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1915,
+      "impression_count": 53900,
+      "collected_at": "2026-02-09T10:40:35.157447",
+      "followers": 34700,
+      "viral_score": 0.055,
+      "posted_hour": 16
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6a9jVGbcAAyo0Y?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1992488305381048800/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1887,
+      "impression_count": 36100,
+      "collected_at": "2026-02-09T10:40:35.157036",
+      "followers": 14300,
+      "viral_score": 0.132,
+      "posted_hour": 16
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G094qqtaEAIx13X?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1967924253308883423/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1855,
+      "impression_count": 32400,
+      "collected_at": "2026-02-09T10:40:35.157578",
+      "followers": 34700,
+      "viral_score": 0.053,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "花村きりさん",
+      "images": [
+        "https://pbs.twimg.com/media/GoyfzlHbkAAwqYZ?format=jpg&name=large"
+      ],
+      "url": "https://x.com/kri0063/status/1913079666711085204",
+      "source": "X",
+      "content": "Cosplayer: 花村きりさん",
+      "like_count": 1823,
+      "impression_count": 52600,
+      "collected_at": "2026-02-09T10:40:35.105658",
+      "followers": 71100,
+      "viral_score": 0.026,
+      "posted_hour": 12
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/GqRXYLebAAYXX3p?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1919755423663428035?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 1715,
+      "impression_count": 43900,
+      "collected_at": "2026-02-09T10:40:35.157347",
+      "followers": 10000,
+      "viral_score": 0.172,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzcdE1FacAARtqL?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1961068141729263734?s=20",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1711,
+      "impression_count": 48100,
+      "collected_at": "2026-02-09T10:40:35.157384",
+      "followers": 34700,
+      "viral_score": 0.049,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G2fZj91a0AES9Nc?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1974786186570019052/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1626,
+      "impression_count": 26000,
+      "collected_at": "2026-02-09T10:40:35.156906",
+      "followers": 14300,
+      "viral_score": 0.114,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G378vPYXEAAAyal?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1981298784098488765/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1621,
+      "impression_count": 24700,
+      "collected_at": "2026-02-09T10:40:35.156991",
+      "followers": 14300,
+      "viral_score": 0.113,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9dyyzuaYAENjkT?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2006198407577080217/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1574,
+      "impression_count": 24800,
+      "collected_at": "2026-02-09T10:40:35.157692",
+      "followers": 10000,
+      "viral_score": 0.157,
+      "posted_hour": 11
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzraTZiaIAAn5gi?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1962120628921872748?s=20",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1545,
+      "impression_count": 25300,
+      "collected_at": "2026-02-09T10:40:35.157308",
+      "followers": 34700,
+      "viral_score": 0.045,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "わらわらさん",
+      "images": [
+        "https://pbs.twimg.com/media/GxgdiQdbQAAkXj5?format=jpg&name=large"
+      ],
+      "url": "https://x.com/chacha_0320/status/1952342929345052693",
+      "source": "X",
+      "content": "Cosplayer: わらわらさん",
+      "like_count": 1503,
+      "impression_count": 36500,
+      "collected_at": "2026-02-09T10:40:35.157184",
+      "followers": 45500,
+      "viral_score": 0.033,
+      "posted_hour": 21
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzhYiF0aQAAjzJT?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1961414988431770025?s=20",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1460,
+      "impression_count": 41200,
+      "collected_at": "2026-02-09T10:40:35.157354",
+      "followers": 34700,
+      "viral_score": 0.042,
+      "posted_hour": 22
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "みぞれ！さん",
+      "images": [
+        "https://pbs.twimg.com/media/GnsBMe-a0AAdnKu?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/_Mizore_cos/status/1908120203243716679?s=20",
+      "source": "X",
+      "content": "Cosplayer: みぞれ！さん",
+      "like_count": 1457,
+      "impression_count": 34200,
+      "collected_at": "2026-02-09T10:40:35.157378",
+      "followers": 10000,
+      "viral_score": 0.146,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G1SXhN-bQAAq42s?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1969365543728922866?s=20",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1450,
+      "impression_count": 32700,
+      "collected_at": "2026-02-09T10:40:35.157332",
+      "followers": 34700,
+      "viral_score": 0.042,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gz_sdOnbkAEdmWR?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1963547957245923688/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 1416,
+      "impression_count": 26200,
+      "collected_at": "2026-02-09T10:40:35.157495",
+      "followers": 34700,
+      "viral_score": 0.041,
+      "posted_hour": 19
     }
   ],
   "member_ranking": [
