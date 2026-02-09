@@ -1,9 +1,9 @@
 name: Cosplay Data Collector
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # 毎日日本時間 朝9時
+  workflow_dispatch: # 手動実行ボタン
 
 jobs:
   scrape:
@@ -19,34 +19,46 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
-          # ここでも確実にパスを指定
-          $pythonLocation/python -m pip install --upgrade pip
-          $pythonLocation/python -m pip install playwright
-          $pythonLocation/python -m playwright install chromium
-          sudo $pythonLocation/python -m playwright install-deps chromium
+          python -m pip install --upgrade pip
+          pip install playwright google-generativeai
+          playwright install chromium
 
+      # --- X (Twitter) の認証 ---
       - name: Create auth.json from secret
         env:
-          # Secretを一時的に環境変数に格納します
-          AUTH_JSON_RAW: ${{ secrets.X_AUTH_JSON }}
-        run: |
-          # Pythonを使って、記号を壊さずにファイルへ書き出します
-          python -c "import os; open('auth.json', 'w').write(os.environ['AUTH_JSON_RAW'])"
+          X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
+        run: echo "$X_AUTH_JSON" > auth.json
+
+      # --- Instagram の認証 (ここを追加！) ---
+      - name: Create auth_instagram.json from secret
+        env:
+          INSTAGRAM_AUTH_JSON: ${{ secrets.INSTAGRAM_AUTH_JSON }}
+        run: echo "$INSTAGRAM_AUTH_JSON" > auth_instagram.json
+
+      # --- スクレイピング実行 ---
+      - name: Run scraper (X)
+        run: python scraper_x.py
         
+      - name: Run scraper (Instagram)
+        run: python scraper_instagram.py
 
-      - name: Run scraper
+      # --- 結果の保存 ---
+      - name: Update collected data
         run: |
-          # 絶対パスで実行
-          $pythonLocation/python scraper_x.py
-
-      - name: Commit and Push
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add collect.json
-          git commit -m "Update collected data [skip ci]" || exit 0
+          # 変更があった時だけコミット
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update collected data [skip ci]"
           git push
+
+      # --- エラー時のスクリーンショット保存 ---
+      - name: Upload screenshots if failed
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debug-screenshots
+          path: "*.png"
