@@ -20,18 +20,21 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+    　- name: Install dependencies
         run: |
-          pip install playwright
-          python -m playwright install chromium
-          sudo python -m playwright install-deps chromium
+          python3 -m pip install --upgrade pip
+          python3 -m pip install playwright
+          python3 -m playwright install chromium
+          python3 -m playwright install-deps chromium
 
       - name: Create auth.json from secret
-        # Secretから一時的にファイルを復元します。実行完了後は自動で消去されます
         run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
 
       - name: Run scraper
-        run: python scraper_x.py
+        env:
+          X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
+        # python ではなく python3 -m で実行
+        run: python3 scraper_x.py
 
       - name: Commit and Push
         # 収集した collect.json をリポジトリに保存します
