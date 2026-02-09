@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - VSPO! Cosplay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Zen Maru Gothic', sans-serif; background-color: #f8fafc; }</style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <h1 class="text-2xl font-bold text-indigo-600 tracking-tight">
+                    <a href="index.html">VSPO! Cosplay</a>
+                </h1>
+                <nav class="hidden md:flex gap-1 bg-gray-100 p-1 rounded-lg">
+                    <a href="index.html" class="px-4 py-1.5 rounded-md text-sm font-bold text-gray-500 hover:text-indigo-600 transition">
+                        ギャラリー
+                    </a>
+                    <a href="analytics.html" class="px-4 py-1.5 rounded-md text-sm font-bold bg-white text-indigo-600 shadow-sm transition">
+                        データ分析
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="md:hidden flex justify-center py-2 bg-white border-b border-gray-100 gap-4 text-sm font-bold">
+        <a href="index.html" class="text-gray-400">ギャラリー</a>
+        <a href="analytics.html" class="text-indigo-600 border-b-2 border-indigo-600">データ分析</a>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                <div class="text-gray-500 text-sm font-bold">総収集アイテム数</div>
+                <div class="text-4xl font-bold text-indigo-600 mt-2" id="total-posts">-</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                <div class="text-gray-500 text-sm font-bold">メンバー数</div>
+                <div class="text-4xl font-bold text-pink-500 mt-2" id="total-members">-</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border text-center">
+                <div class="text-gray-500 text-sm font-bold">最終更新</div>
+                <div class="text-lg font-bold text-gray-700 mt-4" id="last-updated">-</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    🏆 メンバー別投稿数ランキング
+                </h2>
+                <canvas id="memberChart"></canvas>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    🌍 情報源の割合
+                </h2>
+                <div class="w-2/3 mx-auto">
+                    <canvas id="sourceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border col-span-1 md:col-span-2">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    📈 日別投稿数の推移
+                </h2>
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadAnalytics() {
+            try {
+                const res = await fetch('analysis.json');
+                const data = await res.json();
+
+                document.getElementById('total-posts').textContent = data.summary.total_posts;
+                document.getElementById('total-members').textContent = data.summary.total_members;
+                document.getElementById('last-updated').textContent = new Date(data.summary.last_updated).toLocaleString('ja-JP');
+
+                // メンバーランキング
+                new Chart(document.getElementById('memberChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(data.member_ranking),
+                        datasets: [{
+                            label: '投稿数',
+                            data: Object.values(data.member_ranking),
+                            backgroundColor: 'rgba(99, 102, 241, 0.6)',
+                            borderRadius: 4
+                        }]
+                    },
+                    options: { indexAxis: 'y', responsive: true }
+                });
+
+                // 情報源割合
+                new Chart(document.getElementById('sourceChart'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(data.source_ratio),
+                        datasets: [{
+                            data: Object.values(data.source_ratio),
+                            backgroundColor: ['#1DA1F2', '#E1306C', '#FF9900'],
+                        }]
+                    }
+                });
+
+                // 時系列推移
+                const sortedDates = Object.keys(data.timeline).sort();
+                const sortedCounts = sortedDates.map(date => data.timeline[date]);
+
+                new Chart(document.getElementById('timelineChart'), {
+                    type: 'line',
+                    data: {
+                        labels: sortedDates,
+                        datasets: [{
+                            label: '新規投稿数',
+                            data: sortedCounts,
+                            borderColor: '#EC4899',
+                            backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: { responsive: true }
+                });
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        loadAnalytics();
+    </script>
+</body>
+</html>
