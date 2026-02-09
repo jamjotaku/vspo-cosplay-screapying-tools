@@ -1,6 +1,489 @@
 {
-  "updated_at": "2026/02/09 12:37",
+  "updated_at": "2026/02/09 12:40",
   "total_analyzed": 151,
+  "total_records": 5888,
+  "engagement_ranking": [
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G735gZJa4AAIDs1?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1999028159333941431/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1972,
+      "impression_count": 21700,
+      "collected_at": "2026-02-09T10:40:35.157066",
+      "followers": 14300,
+      "viral_score": 0.138,
+      "rate": 9.09
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G79KSDkagAARKvZ?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1999398441601105937/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2487,
+      "impression_count": 27400,
+      "collected_at": "2026-02-09T10:40:35.157072",
+      "followers": 14300,
+      "viral_score": 0.174,
+      "rate": 9.08
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6mGze3bwAMn916?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1993272546872246355/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1394,
+      "impression_count": 15900,
+      "collected_at": "2026-02-09T10:40:35.157048",
+      "followers": 14300,
+      "viral_score": 0.097,
+      "rate": 8.77
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "にょるさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8XuPcbbIAAyBik?format=jpg&name=large"
+      ],
+      "url": "https://x.com/nyoru_nyokki/status/2001267567323910639/photo/1",
+      "source": "X",
+      "content": "Cosplayer: にょるさん",
+      "like_count": 935,
+      "impression_count": 10700,
+      "collected_at": "2026-02-09T10:40:35.157131",
+      "followers": 7851,
+      "viral_score": 0.119,
+      "rate": 8.74
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G_OTJhdbIAA5swQ?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2014115262765625546",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1005,
+      "impression_count": 11600,
+      "collected_at": "2026-02-09T10:40:35.157725",
+      "followers": 10000,
+      "viral_score": 0.101,
+      "rate": 8.66
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "にょるさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8Id2M6aUAAEWUa?format=jpg&name=large"
+      ],
+      "url": "https://x.com/nyoru_nyokki/status/2000194010863005825/photo/1",
+      "source": "X",
+      "content": "Cosplayer: にょるさん",
+      "like_count": 5580,
+      "impression_count": 64400,
+      "collected_at": "2026-02-09T10:40:35.157119",
+      "followers": 7851,
+      "viral_score": 0.711,
+      "rate": 8.66
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8cRGueaIAEIRRK?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/2001587425496490313/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2862,
+      "impression_count": 33100,
+      "collected_at": "2026-02-09T10:40:35.157077",
+      "followers": 14300,
+      "viral_score": 0.2,
+      "rate": 8.65
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8rw87Ea0AAgGc9?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/2002677922621235340/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1030,
+      "impression_count": 12100,
+      "collected_at": "2026-02-09T10:40:35.157084",
+      "followers": 14300,
+      "viral_score": 0.072,
+      "rate": 8.51
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9Ldff_bkAA87AY?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2004908322668118192/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 996,
+      "impression_count": 12500,
+      "collected_at": "2026-02-09T10:40:35.157679",
+      "followers": 10000,
+      "viral_score": 0.1,
+      "rate": 7.97
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "にょるさん",
+      "images": [
+        "https://pbs.twimg.com/media/G8NX8dQaEAA2QjS?format=jpg&name=large"
+      ],
+      "url": "https://x.com/nyoru_nyokki/status/2000539363399376930/photo/1",
+      "source": "X",
+      "content": "Cosplayer: にょるさん",
+      "like_count": 1034,
+      "impression_count": 13600,
+      "collected_at": "2026-02-09T10:40:35.157125",
+      "followers": 7851,
+      "viral_score": 0.132,
+      "rate": 7.6
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6hVOYfasAAMmgk?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1992936552071385526/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2166,
+      "impression_count": 29300,
+      "collected_at": "2026-02-09T10:40:35.157042",
+      "followers": 14300,
+      "viral_score": 0.151,
+      "rate": 7.39
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G1DB5bva4AA85vw?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1968286236470358508/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 938,
+      "impression_count": 12800,
+      "collected_at": "2026-02-09T10:40:35.157610",
+      "followers": 34700,
+      "viral_score": 0.027,
+      "rate": 7.33
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G4GzkpqWUAAVrwt?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1982062767801766390/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2784,
+      "impression_count": 38000,
+      "collected_at": "2026-02-09T10:40:35.156999",
+      "followers": 14300,
+      "viral_score": 0.195,
+      "rate": 7.33
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9FKN8xaUAAV3k8?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2004464922345025614/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1259,
+      "impression_count": 17200,
+      "collected_at": "2026-02-09T10:40:35.157673",
+      "followers": 10000,
+      "viral_score": 0.126,
+      "rate": 7.32
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7jxUVzaoAA0JrE?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1997611778617069792/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 3283,
+      "impression_count": 44900,
+      "collected_at": "2026-02-09T10:40:35.157054",
+      "followers": 14300,
+      "viral_score": 0.23,
+      "rate": 7.31
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G1CkYb_awAAbq00?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1968253793424003468/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 2079,
+      "impression_count": 29000,
+      "collected_at": "2026-02-09T10:40:35.157595",
+      "followers": 34700,
+      "viral_score": 0.06,
+      "rate": 7.17
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "茉夏なつさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7AFzQEbgAEo8RO?format=jpg&name=large"
+      ],
+      "url": "https://x.com/VERYVERY_HOT/status/1995101023954993155",
+      "source": "X",
+      "content": "Cosplayer: 茉夏なつさん",
+      "like_count": 1973,
+      "impression_count": 27500,
+      "collected_at": "2026-02-09T10:40:35.157161",
+      "followers": 52400,
+      "viral_score": 0.038,
+      "rate": 7.17
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G-nTyCHbwAAP2SY?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2011371579838718251",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 755,
+      "impression_count": 10600,
+      "collected_at": "2026-02-09T10:40:35.157713",
+      "followers": 10000,
+      "viral_score": 0.075,
+      "rate": 7.12
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9PpGh0bQAATJd7?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2005202574614700528/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 746,
+      "impression_count": 10600,
+      "collected_at": "2026-02-09T10:40:35.157686",
+      "followers": 10000,
+      "viral_score": 0.075,
+      "rate": 7.04
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G_k5AdRXcAAhixW?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2015704998970265770",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 686,
+      "impression_count": 9903,
+      "collected_at": "2026-02-09T10:40:35.157740",
+      "followers": 10000,
+      "viral_score": 0.069,
+      "rate": 6.93
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G0US1L4aQAAIWlR?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1964997524969963817/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 675,
+      "impression_count": 10000,
+      "collected_at": "2026-02-09T10:40:35.157508",
+      "followers": 34700,
+      "viral_score": 0.019,
+      "rate": 6.75
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G378vPYXEAAAyal?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1981298784098488765/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 1621,
+      "impression_count": 24700,
+      "collected_at": "2026-02-09T10:40:35.156991",
+      "followers": 14300,
+      "viral_score": 0.113,
+      "rate": 6.56
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
+      "images": [
+        "https://pbs.twimg.com/media/G9aAfppaQAAnh_2?format=jpg&name=large"
+      ],
+      "url": "https://x.com/chiaki_1023cos/status/2005931976532885695",
+      "source": "X",
+      "content": "Cosplayer: 深月さん",
+      "like_count": 805,
+      "impression_count": 12300,
+      "collected_at": "2026-02-09T10:40:35.105676",
+      "followers": 8432,
+      "viral_score": 0.095,
+      "rate": 6.54
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G3dInB3XYAAdEJS?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1979130406135108025/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 5856,
+      "impression_count": 89500,
+      "collected_at": "2026-02-09T10:40:35.156924",
+      "followers": 14300,
+      "viral_score": 0.41,
+      "rate": 6.54
+    },
+    {
+      "member_name": "蝶屋はなび",
+      "author_name": "さめのちさん",
+      "images": [
+        "https://pbs.twimg.com/media/G6HpCh2bYAA2x4H?format=jpg&name=large"
+      ],
+      "url": "https://x.com/samesandayo/status/1991128751627755788/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さめのちさん",
+      "like_count": 2071,
+      "impression_count": 31700,
+      "collected_at": "2026-02-09T10:40:35.157024",
+      "followers": 14300,
+      "viral_score": 0.145,
+      "rate": 6.53
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G816hVYaUAAh6QB?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2003392138902651209/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 2490,
+      "impression_count": 38700,
+      "collected_at": "2026-02-09T10:40:35.157650",
+      "followers": 10000,
+      "viral_score": 0.249,
+      "rate": 6.43
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G9dyyzuaYAENjkT?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2006198407577080217/photo/1",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 1574,
+      "impression_count": 24800,
+      "collected_at": "2026-02-09T10:40:35.157692",
+      "followers": 10000,
+      "viral_score": 0.157,
+      "rate": 6.35
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "さきさん",
+      "images": [
+        "https://pbs.twimg.com/media/G_p-HQWWYAAK-A5?format=jpg&name=large"
+      ],
+      "url": "https://x.com/Saki_cos_1115/status/2016062457496969324",
+      "source": "X",
+      "content": "Cosplayer: さきさん",
+      "like_count": 485,
+      "impression_count": 7746,
+      "collected_at": "2026-02-09T10:40:35.157719",
+      "followers": 10000,
+      "viral_score": 0.049,
+      "rate": 6.26
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "れいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G82AaAYagAA5ZPl?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/Rei_a_1323/status/2003398602119610798?s=20",
+      "source": "X",
+      "content": "Cosplayer: れいさん",
+      "like_count": 261,
+      "impression_count": 4167,
+      "collected_at": "2026-02-09T10:40:35.157440",
+      "followers": 10900,
+      "viral_score": 0.024,
+      "rate": 6.26
+    },
+    {
+      "member_name": "甘結もか",
+      "author_name": "えびせんべいさん",
+      "images": [
+        "https://pbs.twimg.com/media/G0-IazAaoAA68ES?format=jpg&name=large"
+      ],
+      "url": "https://x.com/ebisen_bei_kosu/status/1967941561532174393/photo/1",
+      "source": "X",
+      "content": "Cosplayer: えびせんべいさん",
+      "like_count": 769,
+      "impression_count": 12300,
+      "collected_at": "2026-02-09T10:40:35.157585",
+      "followers": 34700,
+      "viral_score": 0.022,
+      "rate": 6.25
+    }
+  ],
   "viral_ranking": [
     {
       "member_name": "蝶屋はなび",
