@@ -1,51 +1,88 @@
 import json
-import pandas as pd
 import os
+from collections import Counter
+from datetime import datetime
 
-def run_analysis():
-    # データの読み込み
-    if not os.path.exists('collect.json'):
-        print("データがありません")
+def analyze_vspo_data():
+    input_file = 'collect.json'
+    output_file = 'analysis.json'
+
+    if not os.path.exists(input_file):
+        print(f"❌ {input_file} が見つかりません。")
         return
 
-    with open('collect.json', 'r', encoding='utf-8') as f:
+    with open(input_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
+
+    print(f"📊 {len(data)} 件のデータを分析中...")
+
+    # 1. 基本サマリー
+    total_posts = len(data)
+    members = [item.get('member_name', 'Unknown') for item in data if item.get('member_name')]
+    unique_members = len(set(members))
     
-    if not data: return
+    # 2. メンバー別ランキング (Top 20)
+    member_counts = Counter(members)
+    member_ranking = dict(member_counts.most_common(20))
 
-    df = pd.DataFrame(data)
+    # 3. プラットフォーム割合 (X vs Instagram)
+    sources = [item.get('source', 'Unknown') for item in data]
+    source_ratio = dict(Counter(sources))
 
-    # --- 集計処理 ---
+    # 4. 時系列データ (日別の投稿数推移)
+    # collected_at を日付(YYYY-MM-DD)に変換して集計
+    dates = []
+    for item in data:
+        raw_date = item.get('collected_at', '')
+        if raw_date:
+            try:
+                date_str = raw_date.split('T')[0]
+                dates.append(date_str)
+            except:
+                continue
+    
+    # 直近30日分などのトレンドを把握
+    timeline_counts = Counter(dates)
+    # 日付順にソート（直近30件など）
+    sorted_timeline = dict(sorted(timeline_counts.items(), reverse=True)[:30])
+    # グラフ表示用に古い順に戻す
+    display_timeline = dict(reversed(list(sorted_timeline.items())))
 
-    # 1. メンバー別投稿数 (Top 20)
-    member_counts = df['member_name'].value_counts().head(20).to_dict()
+    # 5. 「いいね」数ランキング (Top 5)
+    # 数値がない場合は0として処理
+    sorted_by_likes = sorted(
+        data, 
+        key=lambda x: int(x.get('like_count', 0)), 
+        reverse=True
+    )
+    
+    top_liked_posts = []
+    for item in sorted_by_likes[:5]:
+        top_liked_posts.append({
+            "member": item.get('member_name'),
+            "likes": item.get('like_count', 0),
+            "url": item.get('url'),
+            "image": item.get('images', [""])[0]
+        })
 
-    # 2. 情報源の割合 (X vs Instagram)
-    source_counts = df['source'].value_counts().to_dict()
-
-    # 3. 日別トレンド (直近30日など)
-    df['date'] = pd.to_datetime(df['collected_at']).dt.strftime('%Y-%m-%d')
-    date_counts = df.groupby('date').size().to_dict()
-
-    # 4. 総合サマリー
-    summary = {
-        "total_posts": len(df),
-        "total_members": df['member_name'].nunique(),
-        "last_updated": df['collected_at'].max()
-    }
-
-    # --- 結果を JSON で保存 ---
+    # 集計結果のまとめ
     analysis_result = {
-        "member_ranking": member_counts,
-        "source_ratio": source_counts,
-        "timeline": date_counts,
-        "summary": summary
+        "summary": {
+            "total_posts": total_posts,
+            "total_members": unique_members,
+            "last_updated": datetime.now().isoformat()
+        },
+        "member_ranking": member_ranking,
+        "source_ratio": source_ratio,
+        "timeline": display_timeline,
+        "top_liked_posts": top_liked_posts
     }
 
-    with open('analysis.json', 'w', encoding='utf-8') as f:
+    # analysis.json として保存
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(analysis_result, f, ensure_ascii=False, indent=2)
-    
-    print("✅ 分析完了！ analysis.json を生成しました。")
+
+    print(f"✅ {output_file} を作成しました。")
 
 if __name__ == "__main__":
-    run_analysis()
+    analyze_vspo_data()
