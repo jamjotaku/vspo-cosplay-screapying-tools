@@ -30,7 +30,10 @@ jobs:
           sudo $pythonLocation/python -m playwright install-deps chromium
 
       - name: Create auth.json from secret
-        run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
+        # echo ではなく printf を使うことで、特殊文字をそのままファイルに書き込めます
+        run: |
+          printf '%s' '${{ secrets.X_AUTH_JSON }}' > auth.json
+        
 
       - name: Run scraper
         run: |
