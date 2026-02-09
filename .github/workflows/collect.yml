@@ -2,12 +2,15 @@ name: Cosplay Data Collector
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 毎日日本時間 朝9時
-  workflow_dispatch: # 手動実行ボタン
+    # 毎日 日本時間 午前9時（UTC 0:00）に実行
+    - cron: '0 0 * * *'
+  # 手動でいつでも実行できるボタンを Actions タブに表示
+  workflow_dispatch:
 
 jobs:
-  scrape:
+  scrape_and_analyze:
     runs-on: ubuntu-latest
+    # リポジトリへの書き込み権限を付与
     permissions:
       contents: write
 
@@ -23,42 +26,54 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install playwright google-generativeai
+          # スクレイピングと分析に必要なライブラリをまとめてインストール
+          pip install playwright pandas google-generativeai
           playwright install chromium
 
-      # --- X (Twitter) の認証 ---
-      - name: Create auth.json from secret
+      # --- X (Twitter) の認証情報作成 ---
+      - name: Create auth.json (X)
         env:
           X_AUTH_JSON: ${{ secrets.X_AUTH_JSON }}
         run: echo "$X_AUTH_JSON" > auth.json
 
-      # --- Instagram の認証 (ここを追加！) ---
-      - name: Create auth_instagram.json from secret
+      # --- Instagram の認証情報作成 ---
+      - name: Create auth_instagram.json
         env:
           INSTAGRAM_AUTH_JSON: ${{ secrets.INSTAGRAM_AUTH_JSON }}
         run: echo "$INSTAGRAM_AUTH_JSON" > auth_instagram.json
 
-      # --- スクレイピング実行 ---
-      - name: Run scraper (X)
-        run: python scraper_x.py
-        
-      - name: Run scraper (Instagram)
-        run: python scraper_instagram.py
+      # --- スクレイピング実行 (X & Instagram) ---
+      - name: Run Scrapers
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 将来のAI判定用
+        run: |
+          python scraper_x.py
+          python scraper_instagram.py
 
-      # --- 結果の保存 ---
-      - name: Update collected data
+      # --- データ分析の実行 ---
+      - name: Run Data Analysis
+        run: python analyze_data.py
+
+      # --- 収集・分析結果をリポジトリに保存 ---
+      - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add collect.json
-          # 変更があった時だけコミット
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update collected data [skip ci]"
-          git push
+          # 収集データと分析結果の両方をステージング
+          git add collect.json analysis.json
+          # 変更がある場合のみコミットしてプッシュ
+          if ! git diff --cached --exit-code; then
+            git commit -m "Auto Update: Collected data and analysis [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
 
-      # --- エラー時のスクリーンショット保存 ---
-      - name: Upload screenshots if failed
+      # --- 失敗時のデバッグ用（スクリーンショット保存） ---
+      - name: Upload debug screenshots
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: debug-screenshots
           path: "*.png"
+          retention-days: 3
