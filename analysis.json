@@ -1,38 +1,50 @@
 {
-  "updated_at": "2026/02/09 20:43",
-  "total_analyzed": 436,
+  "updated_at": "2026/02/09 22:42",
+  "total_analyzed": 476,
   "total_records": 5888,
-  "global_avg": 1018,
+  "global_avg": 973,
   "keyword_ranking": [
     {
       "keyword": "そくほ",
       "avg_likes": 2286,
       "count": 2,
-      "multiplier": 2.25
+      "multiplier": 2.35
     },
     {
       "keyword": "初出し",
       "avg_likes": 468,
       "count": 1,
-      "multiplier": 0.46
+      "multiplier": 0.48
     },
     {
       "keyword": "イベント",
       "avg_likes": 468,
       "count": 1,
-      "multiplier": 0.46
+      "multiplier": 0.48
     },
     {
       "keyword": "オフショ",
       "avg_likes": 411,
       "count": 1,
-      "multiplier": 0.4
+      "multiplier": 0.42
     },
     {
       "keyword": "自撮り",
       "avg_likes": 401,
       "count": 2,
-      "multiplier": 0.39
+      "multiplier": 0.41
+    },
+    {
+      "keyword": "コミケ",
+      "avg_likes": 355,
+      "count": 4,
+      "multiplier": 0.36
+    },
+    {
+      "keyword": "速報",
+      "avg_likes": 213,
+      "count": 1,
+      "multiplier": 0.22
     },
     {
       "keyword": "供養",
@@ -44,7 +56,7 @@
       "keyword": "コラボ",
       "avg_likes": 74,
       "count": 3,
-      "multiplier": 0.07
+      "multiplier": 0.08
     },
     {
       "keyword": "スタジオ",
@@ -66,13 +78,18 @@
     },
     {
       "tag": "0824SHOWDOWN併せ",
-      "avg_likes": 1058,
-      "count": 3
+      "avg_likes": 1254,
+      "count": 5
     },
     {
       "tag": "0315ぶいすぽ大型併せ",
       "avg_likes": 774,
       "count": 6
+    },
+    {
+      "tag": "コスサミ",
+      "avg_likes": 611,
+      "count": 3
     },
     {
       "tag": "Cosplay",
@@ -90,11 +107,6 @@
       "count": 3
     },
     {
-      "tag": "VGGC7th",
-      "avg_likes": 522,
-      "count": 3
-    },
-    {
       "tag": "cosplay",
       "avg_likes": 515,
       "count": 6
@@ -108,6 +120,11 @@
       "tag": "ホココス",
       "avg_likes": 405,
       "count": 3
+    },
+    {
+      "tag": "VGGC7th",
+      "avg_likes": 405,
+      "count": 6
     },
     {
       "tag": "RagCos",
@@ -130,29 +147,24 @@
       "count": 3
     },
     {
-      "tag": "VGGC8th",
-      "avg_likes": 351,
-      "count": 9
+      "tag": "VGGC10th",
+      "avg_likes": 378,
+      "count": 6
     },
     {
-      "tag": "VGGC10th",
-      "avg_likes": 314,
+      "tag": "VGGC8th",
+      "avg_likes": 341,
+      "count": 10
+    },
+    {
+      "tag": "コミケ",
+      "avg_likes": 339,
       "count": 3
     },
     {
       "tag": "ラグコス",
-      "avg_likes": 281,
-      "count": 9
-    },
-    {
-      "tag": "ラグコス2025",
-      "avg_likes": 241,
-      "count": 7
-    },
-    {
-      "tag": "vspo",
-      "avg_likes": 220,
-      "count": 3
+      "avg_likes": 306,
+      "count": 12
     }
   ],
   "aspect_report": [
@@ -163,13 +175,13 @@
     },
     {
       "type": "Portrait (縦長)",
-      "avg": 921,
-      "count": 243
+      "avg": 866,
+      "count": 280
     },
     {
       "type": "Landscape (横長)",
-      "avg": 350,
-      "count": 38
+      "avg": 344,
+      "count": 41
     }
   ],
   "hourly_report": [
@@ -180,18 +192,18 @@
     },
     {
       "hour": 1,
-      "avg_likes": 983,
-      "count": 6
+      "avg_likes": 898,
+      "count": 7
     },
     {
       "hour": 2,
-      "avg_likes": 315,
-      "count": 2
+      "avg_likes": 496,
+      "count": 4
     },
     {
       "hour": 3,
-      "avg_likes": 92,
-      "count": 1
+      "avg_likes": 189,
+      "count": 2
     },
     {
       "hour": 4,
@@ -215,28 +227,28 @@
     },
     {
       "hour": 8,
-      "avg_likes": 1648,
-      "count": 10
-    },
-    {
-      "hour": 9,
-      "avg_likes": 616,
+      "avg_likes": 1576,
       "count": 11
     },
     {
+      "hour": 9,
+      "avg_likes": 574,
+      "count": 13
+    },
+    {
       "hour": 10,
-      "avg_likes": 469,
-      "count": 8
+      "avg_likes": 455,
+      "count": 9
     },
     {
       "hour": 11,
-      "avg_likes": 910,
-      "count": 8
+      "avg_likes": 853,
+      "count": 9
     },
     {
       "hour": 12,
-      "avg_likes": 1123,
-      "count": 17
+      "avg_likes": 1139,
+      "count": 21
     },
     {
       "hour": 13,
@@ -245,13 +257,13 @@
     },
     {
       "hour": 14,
-      "avg_likes": 993,
-      "count": 5
+      "avg_likes": 881,
+      "count": 7
     },
     {
       "hour": 15,
-      "avg_likes": 654,
-      "count": 6
+      "avg_likes": 573,
+      "count": 8
     },
     {
       "hour": 16,
@@ -260,33 +272,33 @@
     },
     {
       "hour": 17,
-      "avg_likes": 1062,
-      "count": 26
+      "avg_likes": 963,
+      "count": 30
     },
     {
       "hour": 18,
-      "avg_likes": 1022,
-      "count": 49
+      "avg_likes": 994,
+      "count": 51
     },
     {
       "hour": 19,
-      "avg_likes": 1137,
-      "count": 52
+      "avg_likes": 1105,
+      "count": 54
     },
     {
       "hour": 20,
-      "avg_likes": 911,
-      "count": 70
+      "avg_likes": 858,
+      "count": 78
     },
     {
       "hour": 21,
-      "avg_likes": 1128,
-      "count": 57
+      "avg_likes": 1103,
+      "count": 59
     },
     {
       "hour": 22,
-      "avg_likes": 818,
-      "count": 35
+      "avg_likes": 764,
+      "count": 40
     },
     {
       "hour": 23,
@@ -2047,7 +2059,7 @@
       "width": 1595,
       "height": 2241,
       "aspect_type": "Portrait (縦長)",
-      "last_fetched": "2026-02-09T20:43:13.389066",
+      "last_fetched": "2026-02-09T22:38:35.832029",
       "followers": 57300,
       "viral_score": 0.086,
       "posted_hour": 1
@@ -2067,7 +2079,7 @@
       "width": 2708,
       "height": 4032,
       "aspect_type": "Portrait (縦長)",
-      "last_fetched": "2026-02-09T20:43:18.288974",
+      "last_fetched": "2026-02-09T22:38:41.354454",
       "followers": 57300,
       "viral_score": 0.086,
       "posted_hour": 20
@@ -2785,7 +2797,7 @@
     },
     {
       "name": "花芽すみれ",
-      "avg": 759
+      "avg": 706
     }
   ]
 }
