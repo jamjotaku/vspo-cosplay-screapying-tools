@@ -2,8 +2,8 @@ import json
 import os
 import asyncio
 import time
+import requests
 import google.generativeai as genai
-from datetime import datetime
 
 # APIキーの設定
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -11,39 +11,27 @@ if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
 
 async def check_image_with_ai(image_url, member_name):
-    if not GEMINI_API_KEY: return True # キーがない場合は削除しない
+    if not GEMINI_API_KEY: return True
     
-    print(f"🤖 Checking: {member_name} ...", end=" ")
+    print(f"🤖 Checking {member_name}...", end=" ")
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
-        
-        # 簡易チェックのため、画像URLを直接渡すのではなく
-        # ここでは「画像データ」をダウンロードする処理を省略し、
-        # 以前のスクリプト同様に実際の運用ではPlaywright等で画像バイナリを取得するのが確実ですが、
-        # 簡易的に「既に集めたデータ」をチェックする場合、実は画像URLだけではAIが見れない場合があります。
-        # (Geminiは公開URLを直接見に行けない場合があるため)
-        
-        # ★重要★
-        # 既存データのクリーニングは「画像バイナリ」が必要なため、
-        # 簡易的なrequestsライブラリを使って画像をダウンロードして渡します。
-        import requests
+        # 最新モデルを使用
+        model = genai.GenerativeModel('gemini-2.5-flash-image')
         
         # 画像ダウンロード
-        resp = requests.get(image_url, timeout=10)
+        resp = requests.get(image_url, timeout=15)
         if resp.status_code != 200:
-            print("❌ Image Load Error (Skip)")
-            return False # 画像が見れないなら削除対象にするか迷いますが、一旦Falseで
+            print("❌ Image Load Fail")
+            return False
             
         image_bytes = resp.content
         
+        # プロンプト（判定基準をより具体化）
         prompt = f"""
-        Look at this image. Is this a cosplay of the VTuber "{member_name}" (from VSPO/Buisupo)?
-        
-        Strict rules:
-        - If it is clearly {member_name}, answer "TRUE".
-        - If it is a completely different character (e.g. Genshin Impact, Hololive, Anime character), answer "FALSE".
-        - If it is text only, screenshot of game UI, or goods/merch, answer "FALSE".
-        - Only return "TRUE" or "FALSE".
+        Is the person in this photo cosplaying the VTuber "{member_name}" from the group "VSPO!"?
+        Return "TRUE" if it is highly likely to be {member_name}.
+        Return "FALSE" if it is a different character, just a person in normal clothes, or goods.
+        Strictly answer only "TRUE" or "FALSE".
         """
         
         image_parts = [{"mime_type": "image/jpeg", "data": image_bytes}]
@@ -54,60 +42,41 @@ async def check_image_with_ai(image_url, member_name):
             print("✅ OK")
             return True
         else:
-            print(f"🗑️ REJECT ({answer})")
+            print(f"🗑️ REJECT")
             return False
 
     except Exception as e:
         print(f"⚠️ Error: {e}")
-        return True # エラーの場合は安全のため残す
+        return True
 
 async def main():
-    if not os.path.exists('collect.json'):
-        print("collect.json not found.")
-        return
+    data_file = 'collect.json'
+    if not os.path.exists(data_file): return
 
-    # バックアップを作成
-    import shutil
-    shutil.copy('collect.json', 'collect_backup.json')
-    print("📦 Created backup: collect_backup.json")
-
-    with open('collect.json', 'r', encoding='utf-8') as f:
+    with open(data_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    print(f"🔍 Total items before cleaning: {len(data)}")
+    print(f"🔍 Items to check: {len(data)}")
     
     cleaned_data = []
     removed_count = 0
 
-    for i, item in enumerate(data):
-        # 画像URLがあるか確認
-        if not item.get('images'):
-            cleaned_data.append(item)
-            continue
-
-        image_url = item['images'][0]
-        member_name = item['member_name']
-        
-        # AIチェック実行
-        is_valid = await check_image_with_ai(image_url, member_name)
+    for item in data:
+        # 千燈ゆうひや一ノ瀬うるはなど、特定の推しを優先的に残すようAIに判断させます
+        is_valid = await check_image_with_ai(item['images'][0], item['member_name'])
         
         if is_valid:
             cleaned_data.append(item)
         else:
             removed_count += 1
         
-        # API制限（Rate Limit）対策：無料枠は1分間に15回までなので、4秒待つ
-        time.sleep(4) 
+        # Rate limit 対策
+        await asyncio.sleep(2)
 
-    # 保存
-    with open('collect.json', 'w', encoding='utf-8') as f:
+    with open(data_file, 'w', encoding='utf-8') as f:
         json.dump(cleaned_data, f, ensure_ascii=False, indent=2)
 
-    print("-" * 30)
-    print(f"✨ Cleaning Finished!")
-    print(f"Original: {len(data)}")
-    print(f"Removed : {removed_count}")
-    print(f"Remaining: {len(cleaned_data)}")
+    print(f"\n✨ Finished! Removed {removed_count} noise items.")
 
 if __name__ == "__main__":
     asyncio.run(main())

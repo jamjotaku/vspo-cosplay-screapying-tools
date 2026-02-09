@@ -21,7 +21,7 @@ async def check_image_with_gemini(page, image_url, member_name):
         if response.status != 200: return False
         image_bytes = await response.body()
 
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash-image')
         prompt = f"""
         Look at this Instagram post image. Is this a cosplay of the VTuber "{member_name}" from VSPO (Buisupo)?
         Answer "TRUE" only if it is clearly that character. 

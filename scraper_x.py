@@ -39,7 +39,7 @@ async def check_image_with_gemini(page, image_url, member_name):
         image_bytes = await response.body()
 
         # 2. AIモデルの準備 (Gemini 1.5 Flash は高速で安価)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash-image')
 
         # 3. 質問内容（プロンプト）
         # 「これは[キャラ名]のコスプレですか？ 他のキャラならFalseを返して」と指示
