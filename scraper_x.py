@@ -14,7 +14,6 @@ def extract_number(text, pattern):
 async def scrape_vspo_cosplay(context, member):
     results = []
     page = await context.new_page()
-    # 画面サイズを固定して、モバイル版へのリダイレクトを防ぐ
     await page.set_viewport_size({"width": 1280, "height": 800})
 
     query = f"{member['name']} コスプレ"
@@ -22,45 +21,46 @@ async def scrape_vspo_cosplay(context, member):
     
     print(f"--- Searching for: {member['name']} ---")
     try:
-        # 1. ページ移動（ネットワークが落ち着くまで待機）
-        await page.goto(url, wait_until="networkidle", timeout=60000)
+        # 【修正点】networkidle (通信完了待ち) をやめ、domcontentloaded (表示待ち) に変更
+        # これにより、無限ロードによるタイムアウトを防ぎます
+        await page.goto(url, wait_until="domcontentloaded", timeout=30000)
         
-        # 2. 人間らしくランダムに待機
-        wait_time = random.uniform(5000, 8000)
-        await page.wait_for_timeout(wait_time)
+        # 読み込みの余韻として少しだけ待つ
+        await asyncio.sleep(3)
 
-        # 3. ログイン画面に飛ばされていないかチェック
+        # ログインチェック
         if "login" in page.url:
-            print(f"⚠️ ログインが解除されています。Cookieを更新してください。")
-            await page.screenshot(path="login_error.png")
+            print(f"⚠️ ログインが解除されています。")
             return []
 
-        # 4. ツイートが表示されるまで最大20秒待機
+        # ツイートが表示されるかチェック（最大10秒）
         try:
-            await page.wait_for_selector('article[data-testid="tweet"]', timeout=20000)
+            await page.wait_for_selector('article[data-testid="tweet"]', timeout=10000)
         except:
-            print(f"❌ ツイートが見つかりません（検索結果0件、またはブロック）")
-            await page.screenshot(path=f"not_found_{member['id']}.png")
+            print(f"❌ ツイートが見つかりません（検索結果0件、または読込エラー）")
+            # デバッグ用にスクショを保存
+            await page.screenshot(path=f"error_{member['id']}.png")
             return []
 
-        # 5. スクロールして読み込みを促す
-        await page.mouse.wheel(0, 2000)
-        await asyncio.sleep(2)
+        # 少しスクロールしてデータを読み込ませる
+        await page.mouse.wheel(0, 1000)
+        await asyncio.sleep(1)
 
         tweets = await page.query_selector_all('article[data-testid="tweet"]')
-        print(f"✅ Found {len(tweets)} potential tweets")
+        print(f"✅ Found {len(tweets)} tweets")
 
         for tweet in tweets:
             try:
-                # ユーザー情報
                 user_info = await tweet.query_selector('[data-testid="User-Name"]')
                 full_name = await user_info.inner_text() if user_info else "Unknown"
                 
-                # 本文
                 content_elem = await tweet.query_selector('[data-testid="tweetText"]')
                 content = await content_elem.inner_text() if content_elem else ""
 
-                # 統計
+                # 広告ツイートを除外
+                if "プロモーション" in full_name or "Ad" in full_name:
+                    continue
+
                 group_label = await tweet.query_selector('div[role="group"]')
                 stats_text = await group_label.get_attribute('aria-label') if group_label else ""
 
@@ -71,7 +71,6 @@ async def scrape_vspo_cosplay(context, member):
                     "views": extract_number(stats_text, r"([\d\.]+[万億]?+)件の表示")
                 }
 
-                # 画像（プロフィール画像を除外して抽出）
                 img_elements = await tweet.query_selector_all('img[src*="media"]')
                 images = []
                 for img in img_elements:
@@ -79,7 +78,6 @@ async def scrape_vspo_cosplay(context, member):
                     if src and "profile_images" not in src:
                         images.append(src)
 
-                # ツイートURL
                 link_elem = await tweet.query_selector('a[href*="/status/"]')
                 tweet_url = f"https://x.com{await link_elem.get_attribute('href')}" if link_elem else ""
 
@@ -87,8 +85,6 @@ async def scrape_vspo_cosplay(context, member):
                     results.append({
                         "member_id": member.get('id', 'unknown'),
                         "member_name": member['name'],
-                        "author_name": full_name.split("\n")[0],
-                        "author_id": full_name.split("\n")[1] if "\n" in full_name else "",
                         "content": content,
                         "metrics": metrics,
                         "images": list(set(images)),
@@ -105,26 +101,24 @@ async def scrape_vspo_cosplay(context, member):
     return results
 
 async def main():
-    if not os.path.exists('members.json'):
-        print("Error: members.json not found")
-        return
+    if not os.path.exists('members.json'): return
 
     with open('members.json', 'r', encoding='utf-8') as f:
         members = json.load(f)
+
+    # 動作確認のため、最初の3人だけテストしたい場合はここを有効に
+    # members = members[:3] 
 
     data_file = 'collect.json'
     all_data = []
     if os.path.exists(data_file):
         with open(data_file, 'r', encoding='utf-8') as f:
-            try:
-                all_data = json.load(f)
-            except:
-                all_data = []
+            try: all_data = json.load(f)
+            except: all_data = []
     
     existing_urls = {item['url'] for item in all_data}
 
     async with async_playwright() as p:
-        # 海外サーバーからのアクセスを怪しまれないよう、言語設定等を指定
         browser = await p.chromium.launch(headless=True)
         
         if not os.path.exists('auth.json'):
@@ -134,27 +128,28 @@ async def main():
 
         context = await browser.new_context(
             storage_state="auth.json",
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-            locale="ja-JP"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         )
         
-        # 連続アクセスでのロックを避けるため、1人ずつゆっくり処理
         for member in members:
             new_tweets = await scrape_vspo_cosplay(context, member)
-            added_count = 0
+            count = 0
             for t in new_tweets:
                 if t['url'] not in existing_urls:
                     all_data.append(t)
                     existing_urls.add(t['url'])
-                    added_count += 1
-            print(f"✨ Added {added_count} new items for {member['name']}")
-            await asyncio.sleep(random.uniform(2, 5))
+                    count += 1
+            if count > 0:
+                print(f"✨ Added {count} new items for {member['name']}")
+            
+            # 連続アクセス対策の休憩（2〜4秒）
+            await asyncio.sleep(random.uniform(2, 4))
         
         with open(data_file, 'w', encoding='utf-8') as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
         
         await browser.close()
-        print(f"🚀 All process finished! Total database: {len(all_data)}")
+        print(f"🚀 Finished! Total items: {len(all_data)}")
 
 if __name__ == "__main__":
     asyncio.run(main())
