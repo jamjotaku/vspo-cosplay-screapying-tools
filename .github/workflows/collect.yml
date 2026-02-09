@@ -33,8 +33,12 @@ jobs:
         run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
 
       - name: Run scraper
-        # 環境変数をセットし、スクレイピングスクリプトを実行します
-        run: python3 scraper_x.py
+        run: |
+          # 確実に現在のPython環境へインストールし直してから実行
+          python3 -m pip install playwright
+          python3 scraper_x.py
+        
+      
 
       - name: Commit and Push
         # 収集して更新された collect.json を自動的にリポジトリへコミットします
