@@ -12,70 +12,80 @@
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .card { background-color: #1e293b; border: 1px solid #334155; }
         .stat-value { background: linear-gradient(45deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* スクロールバーのカスタマイズ */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="min-h-screen p-6">
+<body class="min-h-screen p-4 md:p-8">
 
     <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-8 border-b border-gray-700 pb-4">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-gray-700 pb-4 gap-4">
             <div>
-                <h1 class="text-3xl font-bold text-white mb-1">VSPO! Metrics Lab</h1>
-                <p class="text-sm text-gray-400 font-mono">データ分析専用ダッシュボード</p>
+                <h1 class="text-3xl font-bold text-white mb-1 tracking-tight">VSPO! Metrics Lab</h1>
+                <p class="text-sm text-gray-400 font-mono">Cosplay Virality Analysis Dashboard</p>
             </div>
             <div class="text-right">
-                <div class="text-xs text-gray-500">LAST UPDATE</div>
+                <div class="text-xs text-gray-500 font-mono">LAST UPDATE</div>
                 <div class="text-xl font-mono font-bold text-indigo-400" id="last-updated">--/-- --:--</div>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div class="card p-6 rounded-lg">
-                <div class="text-sm text-gray-400 mb-1">分析対象データ数</div>
+            <div class="card p-6 rounded-xl shadow-lg">
+                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Analyzed Posts</div>
                 <div class="text-4xl font-bold font-mono stat-value" id="total-analyzed">-</div>
-                <div class="text-xs text-gray-500 mt-2">全データ: <span id="total-records">-</span> 件</div>
+                <div class="text-xs text-gray-500 mt-2 font-mono">Total DB: <span id="total-records">-</span></div>
             </div>
-            <div class="card p-6 rounded-lg">
-                <div class="text-sm text-gray-400 mb-1">最高エンゲージメント率</div>
+            <div class="card p-6 rounded-xl shadow-lg">
+                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Engagement Rate</div>
                 <div class="text-4xl font-bold font-mono stat-value" id="max-engagement">-%</div>
-                <div class="text-xs text-gray-500 mt-2">驚異的な数値です</div>
+                <div class="text-xs text-gray-500 mt-2">Likes / Impressions</div>
             </div>
-            <div class="card p-6 rounded-lg">
-                <div class="text-sm text-gray-400 mb-1">平均いいねNo.1</div>
-                <div class="text-4xl font-bold text-white" id="top-member">-</div>
-                <div class="text-xs text-gray-500 mt-2">Avg: <span id="top-member-avg">-</span> Likes</div>
+            <div class="card p-6 rounded-xl shadow-lg">
+                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Avg Likes</div>
+                <div class="text-2xl font-bold text-white truncate" id="top-member">-</div>
+                <div class="text-xs text-gray-500 mt-2 font-mono">Avg: <span id="top-member-avg">-</span> Likes</div>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <div class="card p-6 rounded-lg lg:col-span-2">
-                <h3 class="font-bold text-lg mb-4 text-white">📊 メンバー別 平均いいね数 (上位15名)</h3>
-                <div class="h-64">
+            <div class="card p-6 rounded-xl lg:col-span-2 shadow-lg">
+                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                    📊 メンバー別 平均いいね数 <span class="text-xs font-normal text-gray-500">(Top 15)</span>
+                </h3>
+                <div class="h-72">
                     <canvas id="memberChart"></canvas>
                 </div>
             </div>
             
-            <div class="card p-6 rounded-lg">
-                <h3 class="font-bold text-lg mb-4 text-white">💎 高効率投稿 (Top 10)</h3>
-                <div id="engagement-list" class="space-y-3 overflow-y-auto h-64 pr-2">
+            <div class="card p-6 rounded-xl shadow-lg flex flex-col">
+                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                    💎 高エンゲージメント <span class="text-xs font-normal text-gray-500">(Top 10)</span>
+                </h3>
+                <div id="engagement-list" class="space-y-3 overflow-y-auto flex-grow pr-2 custom-scrollbar" style="max-height: 300px;">
                     </div>
             </div>
         </div>
 
-        <div class="card rounded-lg overflow-hidden">
-            <div class="p-4 bg-gray-800 border-b border-gray-700 font-bold text-white">
-                🏆 総合いいねランキング Top 30
+        <div class="card rounded-xl overflow-hidden shadow-lg border-t-4 border-indigo-500">
+            <div class="p-4 bg-gray-800/50 border-b border-gray-700 font-bold text-white flex justify-between items-center">
+                <span>🏆 総合分析ランキング (Viral Score順)</span>
+                <span class="text-xs text-gray-400 font-normal">※ Score = いいね数 ÷ フォロワー数</span>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-sm text-gray-400">
-                    <thead class="bg-gray-900 text-gray-200 uppercase font-mono">
+                    <thead class="bg-gray-900/50 text-gray-200 uppercase font-mono text-xs">
                         <tr>
-                            <th class="px-6 py-3">Rank</th>
-                            <th class="px-6 py-3">Member</th>
-                            <th class="px-6 py-3 text-right">Likes</th>
-                            <th class="px-6 py-3 text-center">Preview</th>
+                            <th class="px-6 py-4">Rank</th>
+                            <th class="px-6 py-4">Member / Follower</th>
+                            <th class="px-6 py-4 text-right">Metrics</th>
+                            <th class="px-6 py-4 text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="ranking-body" class="divide-y divide-gray-700">
+                    <tbody id="ranking-body" class="divide-y divide-gray-700/50">
                         </tbody>
                 </table>
             </div>
@@ -86,32 +96,44 @@
     <script>
         async function init() {
             try {
+                // analysis.json を読み込み
                 const res = await fetch('analysis.json');
-                if(!res.ok) throw new Error("No Data");
+                if(!res.ok) throw new Error("No Data found. Run analyze_data.py first.");
                 const data = await res.json();
 
                 // KPI更新
                 document.getElementById('last-updated').innerText = data.updated_at;
                 document.getElementById('total-analyzed').innerText = data.total_analyzed.toLocaleString();
-                document.getElementById('total-records').innerText = data.total_records.toLocaleString();
+                if(data.total_records) {
+                    document.getElementById('total-records').innerText = data.total_records.toLocaleString();
+                }
                 
-                if(data.engagement_ranking.length > 0) {
+                if(data.engagement_ranking && data.engagement_ranking.length > 0) {
                     document.getElementById('max-engagement').innerText = data.engagement_ranking[0].rate + '%';
                 }
-                if(data.member_ranking.length > 0) {
+                if(data.member_ranking && data.member_ranking.length > 0) {
                     document.getElementById('top-member').innerText = data.member_ranking[0].name;
                     document.getElementById('top-member-avg').innerText = data.member_ranking[0].avg.toLocaleString();
                 }
 
                 // グラフ描画
-                renderChart(data.member_ranking);
+                if(data.member_ranking) {
+                    renderChart(data.member_ranking);
+                }
                 
                 // リスト生成
-                renderEngagementList(data.engagement_ranking.slice(0, 10));
-                renderTable(data.like_ranking.slice(0, 30));
+                if(data.engagement_ranking) {
+                    renderEngagementList(data.engagement_ranking.slice(0, 10));
+                }
+                
+                // テーブル生成 (Viral Scoreの高い順になっているはずの viral_ranking を使用)
+                // もし viral_ranking がなければ like_ranking を使用
+                const tableData = data.viral_ranking || data.like_ranking;
+                renderTable(tableData.slice(0, 50));
 
             } catch(e) {
                 console.error(e);
+                alert("データの読み込みに失敗しました。analyze_data.py を実行して analysis.json を生成してください。");
             }
         }
 
@@ -124,8 +146,11 @@
                     datasets: [{
                         label: '平均いいね',
                         data: top15.map(m => m.avg),
-                        backgroundColor: '#6366f1',
-                        borderRadius: 4
+                        backgroundColor: 'rgba(99, 102, 241, 0.8)',
+                        borderColor: '#6366f1',
+                        borderWidth: 1,
+                        borderRadius: 4,
+                        hoverBackgroundColor: '#818cf8'
                     }]
                 },
                 options: {
@@ -133,8 +158,14 @@
                     maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: { 
-                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
-                        x: { grid: { display: false }, ticks: { color: '#e2e8f0' } }
+                        y: { 
+                            grid: { color: '#334155' }, 
+                            ticks: { color: '#94a3b8', font: {family: "'JetBrains Mono'"} } 
+                        },
+                        x: { 
+                            grid: { display: false }, 
+                            ticks: { color: '#e2e8f0', font: {family: "'Zen Kaku Gothic New'"} } 
+                        }
                     }
                 }
             });
@@ -144,13 +175,15 @@
             const container = document.getElementById('engagement-list');
             items.forEach((item, i) => {
                 const html = `
-                    <div class="flex items-center gap-3 p-2 bg-gray-800 rounded border border-gray-700 hover:bg-gray-700 transition">
-                        <div class="font-mono text-indigo-400 font-bold w-6">#${i+1}</div>
-                        <div class="flex-grow">
-                            <div class="text-white text-sm font-bold">${item.member_name}</div>
+                    <div class="flex items-center gap-3 p-3 bg-gray-800/50 rounded-lg border border-gray-700 hover:bg-gray-700 transition group">
+                        <div class="font-mono text-indigo-400 font-bold w-6 text-center">#${i+1}</div>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-white text-sm font-bold truncate">${item.member_name}</div>
                             <div class="text-xs text-blue-400 font-mono">Rate: ${item.rate}%</div>
                         </div>
-                        <a href="${item.url}" target="_blank" class="text-xs bg-indigo-600 text-white px-2 py-1 rounded">View</a>
+                        <a href="${item.url}" target="_blank" class="text-xs bg-indigo-600 text-white px-3 py-1.5 rounded-md opacity-80 group-hover:opacity-100 transition">
+                            View ↗
+                        </a>
                     </div>
                 `;
                 container.innerHTML += html;
@@ -162,12 +195,32 @@
             items.forEach((item, i) => {
                 const tr = document.createElement('tr');
                 tr.className = "hover:bg-gray-800 transition";
+                
+                // フォロワー数の表示 (データがない場合は ---)
+                const followers = item.followers ? item.followers.toLocaleString() : '---';
+                
+                // Viral Score の表示と色分け (1.0以上は神)
+                const score = item.viral_score || 0;
+                let scoreClass = 'text-gray-500';
+                if(score >= 1.0) scoreClass = 'text-yellow-400 font-bold';
+                else if(score >= 0.1) scoreClass = 'text-green-400';
+
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-mono font-bold text-white">#${i+1}</td>
-                    <td class="px-6 py-4 text-white font-bold">${item.member_name}</td>
-                    <td class="px-6 py-4 text-right font-mono text-pink-400">❤️ ${item.likes.toLocaleString()}</td>
+                    <td class="px-6 py-4 font-mono font-bold text-white text-lg">#${i+1}</td>
+                    <td class="px-6 py-4">
+                        <div class="text-white font-bold text-base mb-1">${item.member_name}</div>
+                        <div class="text-xs text-gray-500 font-mono flex items-center gap-1">
+                            👥 Fol: ${followers}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <div class="font-mono text-pink-400 font-bold mb-1">❤️ ${item.like_count.toLocaleString()}</div>
+                        <div class="font-mono text-xs ${scoreClass}">🚀 Score: ${score}</div>
+                    </td>
                     <td class="px-6 py-4 text-center">
-                        <a href="${item.url}" target="_blank" class="text-indigo-400 hover:text-indigo-300 hover:underline text-xs">Link ↗</a>
+                        <a href="${item.url}" target="_blank" class="text-indigo-400 text-xs border border-indigo-500/30 px-3 py-1.5 rounded hover:bg-indigo-500 hover:text-white transition font-mono">
+                            Analyze ↗
+                        </a>
                     </td>
                 `;
                 tbody.appendChild(tr);
