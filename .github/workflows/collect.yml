@@ -21,19 +21,21 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
-      - name: Install and Run Scraper
-        # インストールから実行までを一気に行い、パスの不整合を物理的に防ぎます
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install playwright
-          python -m playwright install chromium
-          sudo python -m playwright install-deps chromium
-          
-          # auth.jsonをSecretから復元
-          echo '${{ secrets.X_AUTH_JSON }}' > auth.json
-          
-          # 確実に同じpython環境で実行
-          python scraper_x.py
+          # ここでも確実にパスを指定
+          $pythonLocation/python -m pip install --upgrade pip
+          $pythonLocation/python -m pip install playwright
+          $pythonLocation/python -m playwright install chromium
+          sudo $pythonLocation/python -m playwright install-deps chromium
+
+      - name: Create auth.json from secret
+        run: echo '${{ secrets.X_AUTH_JSON }}' > auth.json
+
+      - name: Run scraper
+        run: |
+          # 絶対パスで実行
+          $pythonLocation/python scraper_x.py
 
       - name: Commit and Push
         run: |
