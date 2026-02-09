@@ -2,21 +2,74 @@ import json
 import os
 import re
 import asyncio
+import base64
 import random
 from datetime import datetime
 from playwright.async_api import async_playwright
+import google.generativeai as genai
 
-# ■■■ 設定：ノイズ除去キーワード ■■■
-# 以下の言葉がツイート本文に含まれていたら保存せずにスキップします
+# ■■■ 設定：ノイズ除去キーワード（AI前の門番） ■■■
 EXCLUDE_KEYWORDS = [
     "譲渡", "買取", "交換", "グッズ", "回収", "同行", "代行", 
-    "検索用", "求)", "出)", "譲)", "定価", "取引"
+    "検索用", "求)", "出)", "譲)", "定価", "取引", "入荷", "完売"
 ]
+
+# APIキーの読み込み
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 def extract_number(text, pattern):
     if not text: return "0"
     match = re.search(pattern, text)
     return match.group(1) if match else "0"
+
+# --- AI判定関数 ---
+async def check_image_with_gemini(page, image_url, member_name):
+    # APIキーがない場合は判定をスルーして「合格」とする
+    if not GEMINI_API_KEY:
+        return True
+    
+    print(f"   🤖 AI Checking: Is this {member_name}?")
+    try:
+        # 1. 画像データをダウンロード (メモリ上で行う)
+        response = await page.request.get(image_url)
+        if response.status != 200:
+            return False
+        image_bytes = await response.body()
+
+        # 2. AIモデルの準備 (Gemini 1.5 Flash は高速で安価)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+
+        # 3. 質問内容（プロンプト）
+        # 「これは[キャラ名]のコスプレですか？ 他のキャラならFalseを返して」と指示
+        prompt = f"""
+        Look at this image. Is this a cosplay of the VTuber "{member_name}" (from VSPO/Buisupo)?
+        
+        Strict rules:
+        - If it is clearly {member_name}, answer "TRUE".
+        - If it is a completely different character (e.g. Genshin Impact, Hololive, generic anime girl), answer "FALSE".
+        - If it is just a wig, clothes without a person, or text/screenshot, answer "FALSE".
+        - Only return "TRUE" or "FALSE".
+        """
+
+        # 4. 送信
+        # Geminiにバイナリを渡すための形式
+        image_parts = [{"mime_type": "image/jpeg", "data": image_bytes}]
+        
+        result = await model.generate_content_async([prompt, image_parts[0]])
+        answer = result.text.strip().upper()
+
+        if "TRUE" in answer:
+            print("   ✅ AI Pass: Looks like target character.")
+            return True
+        else:
+            print(f"   🗑️ AI Reject: {answer} (Probably different character)")
+            return False
+
+    except Exception as e:
+        print(f"   ⚠️ AI Error: {e} (Allowing by default)")
+        return True # エラー時はとりあえず通す（または厳しくFalseにするかはお好みで）
 
 async def scrape_vspo_cosplay(context, member):
     results = []
@@ -28,9 +81,8 @@ async def scrape_vspo_cosplay(context, member):
     
     print(f"--- Searching for: {member['name']} ---")
     try:
-        # タイムアウト対策：domcontentloadedで早めに次へ
         await page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        await asyncio.sleep(3) # 読み込み待ち
+        await asyncio.sleep(3)
 
         if "login" in page.url:
             print(f"⚠️ Login page detected. Skipping.")
@@ -42,7 +94,6 @@ async def scrape_vspo_cosplay(context, member):
             print(f"❌ No tweets found (Timeout).")
             return []
 
-        # 画像を読み込ませるために少しスクロール
         for _ in range(3):
             await page.mouse.wheel(0, 1000)
             await asyncio.sleep(1)
@@ -52,65 +103,60 @@ async def scrape_vspo_cosplay(context, member):
 
         for i, tweet in enumerate(tweets):
             try:
-                # ユーザー名
                 user_elem = await tweet.query_selector('[data-testid="User-Name"]')
                 full_name = await user_elem.inner_text() if user_elem else "Unknown"
                 
-                # 広告スキップ
-                if "プロモーション" in full_name or "Ad" in full_name:
-                    continue
+                if "プロモーション" in full_name or "Ad" in full_name: continue
 
-                # 本文
                 content_elem = await tweet.query_selector('[data-testid="tweetText"]')
                 content = await content_elem.inner_text() if content_elem else ""
 
-                # ■■■ ノイズ除去判定 ■■■
+                # テキストフィルター
                 if any(k in content for k in EXCLUDE_KEYWORDS):
-                    print(f"  ⏩ Skip: Noise keyword detected in tweet from {full_name.splitlines()[0]}")
+                    print(f"  ⏩ Skip: Noise keyword detected.")
                     continue
 
-                # 画像抽出の強化：data-testid="tweetPhoto" の中の img を優先的に探す
                 images = []
                 photo_divs = await tweet.query_selector_all('div[data-testid="tweetPhoto"] img')
-                
                 for img in photo_divs:
                     src = await img.get_attribute('src')
                     if src: images.append(src)
                 
-                # もし上記で見つからなければ、汎用的な img タグも探す（プロフ画像等は除外）
                 if not images:
+                    # 代替手段
                     all_imgs = await tweet.query_selector_all('img')
                     for img in all_imgs:
                         src = await img.get_attribute('src')
-                        # メディアサーバー(pbs.twimg.com)の画像で、かつプロフ画像でないもの
                         if src and "pbs.twimg.com/media" in src and "profile_images" not in src:
                             images.append(src)
 
-                # 重複排除
                 images = list(set(images))
 
-                # URL取得
                 link_elem = await tweet.query_selector('a[href*="/status/"]')
                 tweet_url = f"https://x.com{await link_elem.get_attribute('href')}" if link_elem else ""
 
-                # 保存判定
                 if images and tweet_url:
-                    results.append({
-                        "member_id": member.get('id', 'unknown'),
-                        "member_name": member['name'],
-                        "author_name": full_name.split("\n")[0], # 投稿者名も保存
-                        "content": content,
-                        "images": images,
-                        "url": tweet_url,
-                        "collected_at": datetime.now().isoformat()
-                    })
-                    print(f"  ⭕ Saved tweet from {full_name.splitlines()[0]}: {len(images)} images")
+                    # ★★★ ここでAI判定を実行！ ★★★
+                    # 最初の1枚だけチェックして判断する（節約と高速化のため）
+                    is_valid = await check_image_with_gemini(page, images[0], member['name'])
+                    
+                    if is_valid:
+                        results.append({
+                            "member_id": member.get('id', 'unknown'),
+                            "member_name": member['name'],
+                            "author_name": full_name.split("\n")[0],
+                            "content": content,
+                            "images": images,
+                            "url": tweet_url,
+                            "collected_at": datetime.now().isoformat(),
+                            "source": "X"
+                        })
+                        print(f"  ⭕ Saved tweet: {len(images)} images")
+                    else:
+                        print(f"  ❌ Skipped by AI (Wrong character)")
+
                 else:
-                    # なぜ保存されなかったかログに出す
-                    reason = []
-                    if not images: reason.append("No images")
-                    if not tweet_url: reason.append("No URL")
-                    print(f"  Start analyzing tweet {i+1}... Skip: {', '.join(reason)}")
+                    pass # 画像なし
 
             except Exception as e:
                 print(f"  ❌ Error processing tweet {i+1}: {e}")
@@ -127,8 +173,8 @@ async def main():
     with open('members.json', 'r', encoding='utf-8') as f:
         members = json.load(f)
 
-    # テスト用：全員やると長いので、最初の3人だけ試すなら以下をコメントアウト解除
-    # members = members[:3]
+    # テスト時は人数を絞る
+    # members = members[:2]
 
     data_file = 'collect.json'
     all_data = []
