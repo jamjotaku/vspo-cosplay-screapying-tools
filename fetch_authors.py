@@ -4,109 +4,71 @@ import asyncio
 import random
 from playwright.async_api import async_playwright
 
-def parse_count(text):
-    if not text: return 0
-    text = text.replace(',', '').replace('Followers', '').replace('フォロワー', '').strip()
-    try:
-        if '万' in text: return int(float(text.replace('万', '')) * 10000)
-        if 'K' in text: return int(float(text.replace('K', '')) * 1000)
-        return int(''.join(filter(str.isdigit, text)) or 0)
-    except: return 0
+AUTH_FILE = 'auth.json'
+DATA_FILE = 'collect.json'
 
-async def fetch_authors_safe():
-    output_file = 'authors.json'
-    
-    # 1. ターゲットのリストアップ
-    if not os.path.exists('collect.json'): return
-    with open('collect.json', 'r', encoding='utf-8') as f:
-        tweets = json.load(f)
+async def fetch_authors():
+    if not os.path.exists(DATA_FILE): return
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
 
-    all_authors = {}
-    # 既存データの読み込み
-    if os.path.exists(output_file):
-        with open(output_file, 'r', encoding='utf-8') as f:
-            all_authors = json.load(f)
+    # フォロワー数が未取得のユニークなユーザーを抽出
+    authors = list(set([d['member'] for d in data if d.get('follower_count', 0) == 0 and d.get('member') != 'Unknown']))
+    print(f"🎯 残りの取得対象: {len(authors)} 人")
 
-    # 新規ターゲット抽出
-    targets = []
-    for t in tweets:
-        url = t.get('url', '')
-        if 'x.com/' in url:
-            try:
-                username = url.split('x.com/')[1].split('/')[0]
-                # まだ辞書にない、または値が0のユーザーのみ対象
-                if username not in all_authors or all_authors[username] == 0:
-                    targets.append(username)
-                    if username not in all_authors:
-                        all_authors[username] = 0
-            except: continue
-            
-    # 重複排除
-    targets = list(set(targets))
-    print(f"🎯 残りの取得対象: {len(targets)} 人")
+    if not authors: return
 
-    if not targets:
-        print("✅ 全員のフォロワー数取得が完了しています！")
-        return
-
-    # 2. 安全運転で取得開始
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        context_options = {"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
-        if os.path.exists('auth.json'):
-            context_options["storage_state"] = "auth.json"
-            
+        context_options = {"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        if os.path.exists(AUTH_FILE):
+            context_options["storage_state"] = AUTH_FILE
+        
         context = await browser.new_context(**context_options)
         page = await context.new_page()
 
-        consecutive_errors = 0 # 連続エラーカウンタ
-
-        for i, username in enumerate(targets):
-            # 連続エラーが続いたら緊急停止
-            if consecutive_errors >= 5:
-                print("\n🚨 連続で取得に失敗しました。制限の可能性があるため停止します。")
-                print("⏳ 1〜2時間空けてから再開してください。")
-                break
+        for i, author in enumerate(authors):
+            url = f"https://x.com/{author}"
+            print(f"[{i+1}/{len(authors)}] Checking: {author} ...", end="", flush=True)
 
             try:
-                print(f"[{i+1}/{len(targets)}] Checking: {username} ...", end="", flush=True)
-                
-                await page.goto(f"https://x.com/{username}", wait_until="domcontentloaded", timeout=30000)
-                
-                # 人間らしくランダムに待つ (10秒〜25秒)
-                wait_time = random.uniform(10, 25)
-                await asyncio.sleep(2) 
-                
-                # 少しスクロールして読み込みを促す
-                await page.mouse.wheel(0, 300)
-                await asyncio.sleep(2)
+                await page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                await asyncio.sleep(random.uniform(2, 4))
 
-                # フォロワー数取得
-                count_elem = await page.query_selector('a[href*="/followers"] span')
+                # フォロワー数の要素を探す
+                # 複数のセレクタ候補で試行
+                selectors = [
+                    f'a[href="/{author}/verified_followers"] span span',
+                    f'a[href="/{author}/followers"] span span',
+                    'span:has-text("フォロワー")'
+                ]
                 
-                if count_elem:
-                    text = await count_elem.inner_text()
-                    count = parse_count(text)
-                    all_authors[username] = count
-                    print(f" ✅ {count:,}")
-                    consecutive_errors = 0 # 成功したらリセット
+                follower_count = 0
+                for sel in selectors:
+                    elem = await page.query_selector(sel)
+                    if elem:
+                        text = await elem.inner_text()
+                        # "1.5万" などの数値をパース (前のparse_metricを流用)
+                        from fetch_metrics import parse_metric
+                        follower_count = parse_metric(text)
+                        if follower_count > 0: break
+
+                if follower_count > 0:
+                    print(f" ✅ {follower_count}")
+                    # 全データの中の該当ユーザーのフォロワー数を更新
+                    for d in data:
+                        if d.get('member') == author:
+                            d['follower_count'] = follower_count
                 else:
                     print(" ❌ Not found")
-                    consecutive_errors += 1
-
-                # 保存
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    json.dump(all_authors, f, indent=2)
-
-                # 次の人に行く前にしっかり休憩
-                await asyncio.sleep(wait_time)
 
             except Exception as e:
-                print(f" ⚠️ Error: {e}")
-                consecutive_errors += 1
-                await asyncio.sleep(30) # エラー時は長めに休む
+                print(f" ❌ Error: {e}")
 
         await browser.close()
 
+    with open(DATA_FILE, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
 if __name__ == "__main__":
-    asyncio.run(fetch_authors_safe())
+    asyncio.run(fetch_authors())
