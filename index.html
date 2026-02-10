@@ -3,277 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSPO! Metrics Lab</title>
+    <title>VSPO! Cosplay Metrics Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Zen Kaku Gothic New', sans-serif; background-color: #0f172a; color: #e2e8f0; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
         .card { background-color: #1e293b; border: 1px solid #334155; }
-        .stat-value { background: linear-gradient(45deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        .glass-header { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="min-h-screen p-4 md:p-8">
+<body class="p-4 md:p-8 min-h-screen">
 
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-gray-700 pb-4 gap-4">
-            <div>
-                <h1 class="text-3xl font-bold text-white mb-1">VSPO! Metrics Lab</h1>
-                <p class="text-sm text-gray-400 font-mono">Cosplay Virality Analysis Dashboard</p>
-            </div>
-            <div class="text-right">
-                <div class="text-xs text-gray-500 font-mono">LAST UPDATE</div>
-                <div class="text-xl font-mono font-bold text-indigo-400" id="last-updated">--/-- --:--</div>
-            </div>
+    <header class="mb-8 text-center sticky top-0 z-50 glass-header py-4 -mx-4 md:-mx-8 border-b border-slate-800">
+        <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400 mb-2">
+            VSPO! Metrics Lab
+        </h1>
+        <p class="text-slate-400 text-sm md:text-base">Cosplay Virality & Efficiency Analysis Dashboard</p>
+        <p id="lastUpdate" class="text-xs text-blue-400 mt-2 font-mono opacity-80">Loading data...</p>
+    </header>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="card p-4 rounded-xl shadow-lg hover:border-indigo-500 transition-colors">
+            <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Analyzed Posts</p>
+            <p id="totalPosts" class="text-3xl font-bold text-indigo-400">-</p>
+            <p class="text-xs text-slate-500 mt-1">Total DB: <span id="totalDB">-</span></p>
+        </div>
+        
+        <div class="card p-4 rounded-xl shadow-lg hover:border-emerald-500 transition-colors">
+            <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Global Avg Likes</p>
+            <p id="globalAvg" class="text-3xl font-bold text-emerald-400">-</p>
+            <p class="text-xs text-slate-500 mt-1">All Posts Avg</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div class="card p-6 rounded-xl shadow-lg">
-                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Analyzed Posts</div>
-                <div class="text-4xl font-bold font-mono stat-value" id="total-analyzed">-</div>
-                <div class="text-xs text-gray-500 mt-2 font-mono">Total DB: <span id="total-records">-</span></div>
-            </div>
-            <div class="card p-6 rounded-xl shadow-lg">
-                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Overall Average</div>
-                <div class="text-4xl font-bold font-mono text-white" id="global-avg">-</div>
-                <div class="text-xs text-gray-500 mt-2">All Posts Avg Likes</div>
-            </div>
-            <div class="card p-6 rounded-xl shadow-lg">
-                <div class="text-xs text-gray-400 mb-1 uppercase tracking-wider">Top Avg Member</div>
-                <div class="text-2xl font-bold text-white truncate" id="top-member">-</div>
-                <div class="text-xs text-gray-500 mt-2 font-mono">Avg: <span id="top-member-avg">-</span> Likes</div>
-            </div>
+        <div class="card p-4 rounded-xl shadow-lg hover:border-pink-500 transition-colors">
+            <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Top Viral Eff.</p>
+            <p id="topViralScore" class="text-3xl font-bold text-pink-400">-</p>
+            <p class="text-xs text-slate-500 mt-1">Efficiency Score</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <div class="card p-6 rounded-xl shadow-lg lg:col-span-2">
-                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                    ⏰ ゴールデンタイム分析 <span class="text-xs font-normal text-gray-500">(時間帯別 平均いいね数)</span>
-                </h3>
-                <div class="h-64 w-full">
-                    <canvas id="timeChart"></canvas>
-                </div>
-            </div>
-
-            <div class="card p-6 rounded-xl shadow-lg flex flex-col">
-                <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                    📐 構図の勝利 <span class="text-xs font-normal text-gray-500">(アスペクト比)</span>
-                </h3>
-                <div class="h-64 w-full relative">
-                    <canvas id="aspectChart"></canvas>
-                </div>
-                <p class="text-xs text-center text-gray-500 mt-2">※ 縦長(Portrait) vs 横長(Landscape)</p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <div class="card p-6 rounded-xl lg:col-span-2 shadow-lg">
-                <h3 class="font-bold text-lg mb-4 text-white">📊 メンバー別 平均いいね数</h3>
-                <div class="h-80">
-                    <canvas id="memberChart"></canvas>
-                </div>
-            </div>
-            
-            <div class="flex flex-col gap-4 h-[500px] lg:h-auto">
-                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col min-h-0">
-                    <h3 class="font-bold text-base mb-3 text-white flex justify-between">
-                        <span>🗝️ 魔法のキーワード</span>
-                        <span class="text-xs text-gray-500 font-normal">対平均倍率</span>
-                    </h3>
-                    <div id="keyword-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar"></div>
-                </div>
-
-                <div class="card p-4 rounded-xl shadow-lg flex-1 flex flex-col min-h-0">
-                    <h3 class="font-bold text-base mb-3 text-white">🏷️ トレンドタグ (Avg Likes)</h3>
-                    <div id="tag-list" class="space-y-2 overflow-y-auto flex-grow pr-2 custom-scrollbar"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card rounded-xl overflow-hidden shadow-lg border-t-4 border-indigo-500">
-            <div class="p-4 bg-gray-800/50 border-b border-gray-700 font-bold text-white flex justify-between items-center">
-                <span>🏆 総合分析ランキング (Viral Score順)</span>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-gray-400">
-                    <thead class="bg-gray-900/50 text-gray-200 uppercase font-mono text-xs">
-                        <tr>
-                            <th class="px-6 py-4 w-16">Rank</th>
-                            <th class="px-6 py-4 w-20">Image</th>
-                            <th class="px-6 py-4">Member / Follower</th>
-                            <th class="px-6 py-4 text-right">Metrics</th>
-                            <th class="px-6 py-4 text-center">Link</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ranking-body" class="divide-y divide-gray-700/50"></tbody>
-                </table>
-            </div>
+        <div class="card p-4 rounded-xl shadow-lg hover:border-yellow-500 transition-colors">
+            <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Trending Character</p>
+            <p id="topMember" class="text-xl font-bold text-white truncate">-</p>
+            <p id="topMemberScore" class="text-xs text-slate-500 mt-1">Avg Likes: -</p>
         </div>
     </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        
+        <div class="card p-6 rounded-xl shadow-lg flex flex-col">
+            <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                ⏰ ゴールデンタイム <span class="text-xs font-normal text-slate-500">Best Time</span>
+            </h3>
+            <div class="h-64 w-full relative">
+                <canvas id="hourlyChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card p-6 rounded-xl shadow-lg flex flex-col">
+            <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                📐 構図の勝利学 <span class="text-xs font-normal text-slate-500">Aspect Ratio</span>
+            </h3>
+            <div class="h-64 w-full relative">
+                <canvas id="aspectChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card p-6 rounded-xl shadow-lg flex flex-col border-pink-500/30">
+            <h3 class="font-bold text-lg mb-4 text-white flex items-center gap-2">
+                🎪 Event vs Studio <span class="text-xs font-normal text-pink-400">Beta</span>
+            </h3>
+            <div class="h-64 w-full relative">
+                <canvas id="locationChart"></canvas>
+            </div>
+            <p class="text-xs text-center text-slate-500 mt-2">Based on keyword detection</p>
+        </div>
+    </div>
+
+    <div class="card rounded-xl shadow-lg overflow-hidden border-t-4 border-t-indigo-500">
+        <div class="p-6 border-b border-slate-700 bg-slate-800/50 flex justify-between items-center">
+            <div>
+                <h3 class="font-bold text-xl text-white">🏆 Viral Efficiency Ranking</h3>
+                <p class="text-sm text-slate-400">フォロワー数に対して「どれだけバズったか」の効率ランキング (Top 50)</p>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-300">
+                <thead class="bg-slate-800 text-slate-100 uppercase font-bold tracking-wider">
+                    <tr>
+                        <th class="p-4 text-center">Rank</th>
+                        <th class="p-4">Character</th>
+                        <th class="p-4">Cosplayer (ID)</th>
+                        <th class="p-4 text-right">Likes</th>
+                        <th class="p-4 text-right">Viral Eff.</th>
+                        <th class="p-4">Location</th>
+                        <th class="p-4 text-center">Link</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingTable" class="divide-y divide-slate-700">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="text-center text-slate-600 text-xs py-8 mt-8 border-t border-slate-800">
+        <p>Powered by VSPO! Metrics Lab | Automated Analysis Tool</p>
+        <p class="mt-1">Last System Build: 2026/02/10</p>
+    </footer>
+
     <script>
+        // Chart.js Default Config for Dark Mode
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#334155';
+
         async function init() {
             try {
-                const res = await fetch('analysis.json');
-                if(!res.ok) throw new Error("No Data");
-                const data = await res.json();
+                const response = await fetch('analysis.json');
+                if (!response.ok) throw new Error("Data not found");
+                const data = await response.json();
 
-                // KPI
-                document.getElementById('last-updated').innerText = data.updated_at;
-                document.getElementById('total-analyzed').innerText = data.total_analyzed.toLocaleString();
-                if(data.total_records) document.getElementById('total-records').innerText = data.total_records.toLocaleString();
-                if(data.global_avg) document.getElementById('global-avg').innerText = data.global_avg.toLocaleString();
-                if(data.member_ranking.length > 0) {
-                    document.getElementById('top-member').innerText = data.member_ranking[0].name;
-                    document.getElementById('top-member-avg').innerText = data.member_ranking[0].avg.toLocaleString();
+                // --- 1. KPI更新 ---
+                document.getElementById('lastUpdate').textContent = `LAST UPDATE: ${data.updated_at}`;
+                document.getElementById('totalPosts').textContent = data.total_analyzed.toLocaleString();
+                document.getElementById('totalDB').textContent = data.total_records.toLocaleString();
+                document.getElementById('globalAvg').textContent = data.global_avg.toLocaleString();
+                
+                // Viral Score Top
+                if (data.viral_ranking.length > 0) {
+                    document.getElementById('topViralScore').textContent = data.viral_ranking[0].viral_score + "%";
+                }
+                
+                // Member Top (キャラ別)
+                if (data.member_ranking.length > 0) {
+                    const top = data.member_ranking[0];
+                    document.getElementById('topMember').textContent = top.name;
+                    document.getElementById('topMemberScore').textContent = `Avg: ${top.avg.toLocaleString()} Likes`;
                 }
 
-                // Charts
-                if(data.hourly_report) renderTimeChart(data.hourly_report);
-                if(data.aspect_report) renderAspectChart(data.aspect_report);
-                if(data.member_ranking) renderMemberChart(data.member_ranking);
-                
-                // Lists
-                if(data.keyword_ranking) renderKeywordList(data.keyword_ranking);
-                if(data.tag_ranking) renderTagList(data.tag_ranking.slice(0, 10));
-                
-                // Table
-                const tableData = data.viral_ranking || data.like_ranking;
-                renderTable(tableData.slice(0, 50));
+                // --- 2. チャート描画 ---
+                renderHourlyChart(data.hourly_report);
+                renderAspectChart(data.aspect_report);
+                if(data.location_report) renderLocationChart(data.location_report);
 
-            } catch(e) { console.error(e); }
+                // --- 3. ランキング描画 ---
+                renderTable(data.viral_ranking);
+
+            } catch (e) {
+                console.error(e);
+                document.getElementById('lastUpdate').textContent = "データ読み込み待機中... (analysis.json未生成)";
+                document.getElementById('lastUpdate').classList.add('text-red-400');
+            }
+        }
+
+        function renderHourlyChart(report) {
+            new Chart(document.getElementById('hourlyChart'), {
+                type: 'line',
+                data: {
+                    labels: report.map(r => r.hour + '時'),
+                    datasets: [{
+                        label: 'Avg Likes',
+                        data: report.map(r => r.avg_likes),
+                        borderColor: '#818cf8',
+                        backgroundColor: 'rgba(129, 140, 248, 0.2)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        y: { beginAtZero: true, grid: { borderDash: [2, 4] } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
         }
 
         function renderAspectChart(report) {
-            const valid = report.filter(r => r.type !== 'Unknown');
-            if(valid.length === 0) return;
             new Chart(document.getElementById('aspectChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: valid.map(r => r.type),
+                    labels: report.map(r => r.type),
                     datasets: [{
-                        data: valid.map(r => r.avg),
-                        backgroundColor: ['#f472b6', '#60a5fa', '#34d399'],
-                        borderWidth: 0,
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false, cutout: '60%',
-                    plugins: { legend: { position: 'bottom', labels: { color: '#cbd5e1', font: {size: 10} } } }
-                }
-            });
-        }
-
-        function renderTimeChart(report) {
-            new Chart(document.getElementById('timeChart'), {
-                type: 'line',
-                data: {
-                    labels: report.map(r => r.hour + "時"),
-                    datasets: [{
-                        label: '平均いいね数',
-                        data: report.map(r => r.avg_likes),
-                        borderColor: '#f472b6', backgroundColor: 'rgba(244, 114, 182, 0.1)', borderWidth: 3, pointBackgroundColor: '#fff', tension: 0.4, fill: true
-                    }, {
-                        label: '投稿数',
                         data: report.map(r => r.count),
-                        borderColor: '#475569', borderWidth: 1, borderDash: [5, 5], yAxisID: 'y2', pointRadius: 0
+                        backgroundColor: ['#34d399', '#f472b6', '#60a5fa', '#94a3b8'],
+                        borderWidth: 0,
+                        hoverOffset: 10
                     }]
                 },
                 options: {
-                    responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
-                    plugins: { legend: { labels: { color: '#cbd5e1' } } },
-                    scales: { y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }, y2: { position: 'right', grid: { display: false }, ticks: { color: '#64748b' } }, x: { grid: { display: false }, ticks: { color: '#e2e8f0' } } }
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { 
+                        legend: { position: 'bottom', labels: { padding: 20, usePointStyle: true } } 
+                    }
                 }
             });
         }
 
-        function renderMemberChart(members) {
-            const top15 = members.slice(0, 15);
-            new Chart(document.getElementById('memberChart'), {
+        function renderLocationChart(report) {
+            // 表示順を固定: Event -> Studio -> Others
+            const order = ['Event', 'Studio/Home', 'Others'];
+            report.sort((a, b) => order.indexOf(a.location) - order.indexOf(b.location));
+
+            new Chart(document.getElementById('locationChart'), {
                 type: 'bar',
                 data: {
-                    labels: top15.map(m => m.name),
-                    datasets: [{ label: '平均いいね', data: top15.map(m => m.avg), backgroundColor: '#6366f1', borderRadius: 4 }]
+                    labels: report.map(r => r.location),
+                    datasets: [{
+                        label: 'Avg Likes',
+                        data: report.map(r => r.avg),
+                        backgroundColor: [
+                            '#f43f5e', // Event (Red/Pink for heat)
+                            '#3b82f6', // Studio (Blue for cool)
+                            '#64748b'  // Others (Slate)
+                        ],
+                        borderRadius: 6,
+                        barThickness: 30
+                    }]
                 },
                 options: {
-                    responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
-                    scales: { y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }, x: { grid: { display: false }, ticks: { color: '#e2e8f0' } } }
+                    indexAxis: 'y', // 横向き
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { 
+                        x: { grid: { color: '#334155' } }, 
+                        y: { grid: { display: false }, ticks: { font: {weight: 'bold', size: 12}, color: '#e2e8f0' } } 
+                    }
                 }
             });
         }
 
-        function renderKeywordList(items) {
-            const container = document.getElementById('keyword-list');
-            items.forEach((item, i) => {
-                let rateColor = 'text-gray-400';
-                if(item.multiplier >= 1.5) rateColor = 'text-yellow-400 font-bold';
-                else if(item.multiplier >= 1.0) rateColor = 'text-green-400';
-                container.innerHTML += `
-                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
-                        <div class="font-mono text-purple-400 font-bold w-5 text-center text-sm">#${i+1}</div>
-                        <div class="flex-grow min-w-0">
-                            <div class="text-white text-xs font-bold truncate">"${item.keyword}"</div>
-                            <div class="text-xs text-gray-500 font-mono">Avg: ${item.avg_likes.toLocaleString()}</div>
-                        </div>
-                        <div class="text-xs font-mono ${rateColor}">x${item.multiplier}</div>
-                    </div>`;
-            });
-        }
-
-        function renderTagList(items) {
-            const container = document.getElementById('tag-list');
-            items.forEach((item, i) => {
-                container.innerHTML += `
-                    <div class="flex items-center gap-3 p-2 bg-gray-800/50 rounded border border-gray-700 hover:bg-gray-700 transition">
-                        <div class="font-mono text-pink-400 font-bold w-5 text-center text-sm">#${i+1}</div>
-                        <div class="flex-grow min-w-0">
-                            <div class="text-white text-xs font-bold truncate">#${item.tag}</div>
-                            <div class="text-xs text-gray-500 font-mono">Avg: ${item.avg_likes.toLocaleString()}</div>
-                        </div>
-                        <div class="text-[10px] text-gray-600 bg-gray-900 px-2 py-1 rounded">${item.count}件</div>
-                    </div>`;
-            });
-        }
-
-        // NEW: サムネイル対応のテーブル描画
-        function renderTable(items) {
-            const tbody = document.getElementById('ranking-body');
-            items.forEach((item, i) => {
+        function renderTable(ranking) {
+            const tbody = document.getElementById('rankingTable');
+            tbody.innerHTML = ''; // クリア
+            
+            // Top 20のみ表示
+            ranking.slice(0, 20).forEach((item, index) => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-gray-800 transition";
-                const followers = item.followers ? item.followers.toLocaleString() : '---';
-                const score = item.viral_score || 0;
-                let scoreClass = score >= 1.0 ? 'text-yellow-400 font-bold' : (score >= 0.1 ? 'text-green-400' : 'text-gray-500');
-
-                // 画像があるかチェック
-                let imgHtml = '<div class="w-12 h-12 bg-gray-800 rounded flex items-center justify-center text-xs text-gray-600">No Img</div>';
-                if(item.images && item.images.length > 0) {
-                    imgHtml = `<a href="${item.images[0]}" target="_blank">
-                        <img src="${item.images[0]}" class="w-12 h-12 rounded object-cover border border-gray-600 hover:border-indigo-400 transition" loading="lazy">
-                    </a>`;
+                tr.className = "hover:bg-slate-700/50 transition duration-150 group";
+                
+                // Viral Scoreの色付け
+                let scoreClass = "text-slate-300";
+                let scoreSuffix = "%";
+                if(item.viral_score > 300) {
+                    scoreClass = "text-pink-400 font-bold drop-shadow-sm"; 
+                    scoreSuffix = "% 🔥";
+                } else if(item.viral_score > 100) {
+                    scoreClass = "text-emerald-400 font-bold";
                 }
+
+                // ロケーションのバッジ化
+                let locBadge = `<span class="px-2 py-1 rounded text-xs bg-slate-700 text-slate-300">${item.location}</span>`;
+                if(item.location === 'Event') locBadge = `<span class="px-2 py-1 rounded text-xs bg-red-900/30 text-red-300 border border-red-800">Event</span>`;
+                if(item.location === 'Studio/Home') locBadge = `<span class="px-2 py-1 rounded text-xs bg-blue-900/30 text-blue-300 border border-blue-800">Studio</span>`;
 
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-mono font-bold text-white text-lg">#${i+1}</td>
-                    <td class="px-6 py-4">
-                        ${imgHtml}
+                    <td class="p-4 text-center font-mono text-slate-500 font-bold">#${index + 1}</td>
+                    <td class="p-4 font-bold text-white tracking-wide">
+                        ${item.character_name}
                     </td>
-                    <td class="px-6 py-4">
-                        <div class="text-white font-bold text-base mb-1">${item.member_name}</div>
-                        <div class="text-xs text-gray-500 font-mono">👥 Fol: ${followers}</div>
+                    <td class="p-4">
+                        <span class="text-indigo-300 hover:text-indigo-200 cursor-pointer">@${item.cosplayer_name}</span>
                     </td>
-                    <td class="px-6 py-4 text-right">
-                        <div class="font-mono text-pink-400 font-bold mb-1">❤️ ${item.like_count.toLocaleString()}</div>
-                        <div class="font-mono text-xs ${scoreClass}">🚀 Score: ${score}</div>
+                    <td class="p-4 text-right font-mono text-slate-300">
+                        ${item.like_count.toLocaleString()}
                     </td>
-                    <td class="px-6 py-4 text-center">
-                        <a href="${item.url}" target="_blank" class="text-indigo-400 text-xs border border-indigo-500/30 px-3 py-1.5 rounded hover:bg-indigo-500 hover:text-white transition font-mono">Analyze ↗</a>
-                    </td>`;
+                    <td class="p-4 text-right font-mono ${scoreClass}">
+                        ${item.viral_score}${scoreSuffix}
+                    </td>
+                    <td class="p-4">
+                        ${locBadge}
+                    </td>
+                    <td class="p-4 text-center">
+                        <a href="${item.url}" target="_blank" class="inline-block p-2 text-blue-400 hover:text-white bg-blue-500/10 hover:bg-blue-500 rounded-full transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </td>
+                `;
                 tbody.appendChild(tr);
             });
         }

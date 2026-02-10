@@ -1,238 +1,215 @@
 import json
 import os
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
+from collections import Counter
 
-# --- 1. Tweet IDから時間を復元する魔法 (Snowflake ID) ---
-def get_tweet_time(tweet_id):
-    try:
-        # X(Twitter)の紀元: 2010-11-04 01:42:54.657 UTC
-        tw_epoch = 1288834974657
-        timestamp_ms = (int(tweet_id) >> 22) + tw_epoch
-        # UTC -> JST (+9時間)
-        dt_utc = datetime.fromtimestamp(timestamp_ms / 1000, timezone.utc)
-        dt_jst = dt_utc.astimezone(timezone(timedelta(hours=9)))
-        return dt_jst
-    except:
-        return None
+# --- 設定 ---
+INPUT_FILE = 'collect.json'
+OUTPUT_FILE = 'analysis.json'
+
+# ロケーション判定用キーワード
+LOCATION_KEYWORDS = {
+    "Event": [
+        "コミケ", "C9", "C10", "夏コミ", "冬コミ", 
+        "アコスタ", "acosta", "池ハロ", "となコス", 
+        "超会議", "ニコ超", "ラグコス", "ワンフェス", 
+        "ホココス", "ビビコス", "ストフェス", "a!"
+    ],
+    "Studio": [
+        "スタジオ", "studio", "撮", "撮影会", 
+        "宅コス", "家", "自撮り", "セルフィー", "笹塚"
+    ]
+}
 
 def analyze_data():
-    input_file = 'collect.json'
-    authors_file = 'authors.json'
-    output_file = 'analysis.json'
+    print("🚀 分析を開始します...")
 
-    if not os.path.exists(input_file):
-        print(f"❌ {input_file} が見つかりません")
+    if not os.path.exists(INPUT_FILE):
+        print(f"❌ エラー: {INPUT_FILE} が見つかりません")
         return
 
-    # データの読み込み
-    with open(input_file, 'r', encoding='utf-8') as f:
-        raw_data = json.load(f)
+    with open(INPUT_FILE, 'r', encoding='utf-8') as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError:
+            print("❌ エラー: JSONファイルが破損しています")
+            return
+
+    # 有効データ（いいね数が取得できているもの）のみ抽出
+    valid_data = [d for d in data if d.get('like_count', 0) > 0]
+    total_posts = len(valid_data)
     
-    authors_data = {}
-    if os.path.exists(authors_file):
-        with open(authors_file, 'r', encoding='utf-8') as f:
-            authors_data = json.load(f)
+    if total_posts == 0:
+        print("⚠️ 有効なデータ（いいね > 0）がありません。fetch_metrics.pyを実行してください。")
+        return
+
+    # 全体平均の算出
+    total_likes = sum(d['like_count'] for d in valid_data)
+    global_avg = int(total_likes / total_posts)
 
     # --- 集計用変数の初期化 ---
-    valid_data = []
+    # 0~23時の箱を用意
+    hourly_stats = {h: {'likes': [], 'count': 0} for h in range(24)}
     
-    # 時間帯 (0~23時)
-    hourly_stats = {h: {'likes': 0, 'count': 0} for h in range(24)}
-    
-    # ハッシュタグ
-    tag_stats = {} 
-    
-    # アスペクト比 (縦長/横長/正方形)
+    # 構図ごとの箱
     aspect_stats = {
-        'Portrait (縦長)': {'likes': 0, 'count': 0},
-        'Landscape (横長)': {'likes': 0, 'count': 0},
-        'Square (正方形)': {'likes': 0, 'count': 0},
-        'Unknown': {'likes': 0, 'count': 0}
+        'Portrait': [], 
+        'Landscape': [], 
+        'Square': [], 
+        'Unknown': []
     }
-
-    # 魔法のキーワード (分析したい単語リスト)
-    target_keywords = [
-        "速報", "宅コス", "初出し", "イベント", "コミケ", 
-        "捏造", "私服", "動画", "自撮り", "オフショ", 
-        "供養", "再掲", "そくほ", "スタジオ", "コラボ"
-    ]
-    keyword_stats = {k: {'total_likes': 0, 'count': 0} for k in target_keywords}
-
-    # 全体平均算出用
-    global_total_likes = 0
-    global_count = 0
-
-    # --- メインループ: 全データを解析 ---
-    for d in raw_data:
-        likes = d.get('like_count', 0)
-        if likes == 0: continue # いいね0は除外（取得ミス等の可能性）
-        
-        global_total_likes += likes
-        global_count += 1
-
-        # A. ユーザー情報 & Viral Score
-        url_parts = d['url'].split('x.com/')
-        username = "unknown"
-        tweet_id = None
-        if len(url_parts) > 1:
-            parts = url_parts[1].split('/')
-            username = parts[0]
-            try:
-                status_idx = parts.index('status')
-                tweet_id = parts[status_idx + 1].split('?')[0]
-            except: pass
-            
-        followers = authors_data.get(username, 0)
-        viral_score = 0
-        if followers > 100:
-            viral_score = round(likes / followers, 3)
-
-        # B. 時間解析
-        hour = -1
-        if tweet_id:
-            dt = get_tweet_time(tweet_id)
-            if dt:
-                hour = dt.hour
-                hourly_stats[hour]['likes'] += likes
-                hourly_stats[hour]['count'] += 1
-
-        # C. テキスト解析 (タグ & キーワード)
-        text = d.get('text', '')
-        
-        # C-1. ハッシュタグ抽出
-        tags = re.findall(r'[#＃]([a-zA-Z0-9_\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]+)', text)
-        for tag in tags:
-            # 一般的すぎるタグは除外しても良いが、一旦すべて集計
-            if tag not in tag_stats: tag_stats[tag] = {'total_likes': 0, 'count': 0}
-            tag_stats[tag]['total_likes'] += likes
-            tag_stats[tag]['count'] += 1
-
-        # C-2. キーワード分析
-        for kw in target_keywords:
-            if kw in text:
-                keyword_stats[kw]['total_likes'] += likes
-                keyword_stats[kw]['count'] += 1
-
-        # D. 画像アスペクト比分析 (width/heightがある場合)
-        aspect_type = 'Unknown'
-        if d.get('width') and d.get('height'):
-            w, h = d['width'], d['height']
-            ratio = w / h
-            if ratio < 0.9: aspect_type = 'Portrait (縦長)'
-            elif ratio > 1.1: aspect_type = 'Landscape (横長)'
-            else: aspect_type = 'Square (正方形)'
-            
-            # データ自体にラベルを記録しておく
-            d['aspect_type'] = aspect_type
-
-        # 集計加算
-        if aspect_type in aspect_stats:
-            aspect_stats[aspect_type]['likes'] += likes
-            aspect_stats[aspect_type]['count'] += 1
-
-        # 有効データリストに追加
-        d_copy = d.copy()
-        d_copy['followers'] = followers
-        d_copy['viral_score'] = viral_score
-        d_copy['posted_hour'] = hour
-        d_copy['aspect_type'] = aspect_type
-        valid_data.append(d_copy)
-
-    # --- 集計結果の整形とランキング作成 ---
     
-    # 0. 全体平均 (基準値)
-    global_avg = int(global_total_likes / global_count) if global_count > 0 else 0
+    # ロケーションごとの箱
+    location_stats = {
+        'Event': {'likes': [], 'count': 0},
+        'Studio/Home': {'likes': [], 'count': 0},
+        'Others': {'likes': [], 'count': 0}
+    }
+    
+    # キャラクター別集計用
+    char_stats = {} 
+    
+    # ランキング用リスト
+    ranking_data = []
 
-    # 1. キーワードランキング (倍率付き)
-    keyword_ranking = []
-    for kw, s in keyword_stats.items():
-        if s['count'] > 0:
-            avg = int(s['total_likes'] / s['count'])
-            multiplier = round(avg / global_avg, 2) if global_avg > 0 else 0
-            keyword_ranking.append({
-                'keyword': kw, 'avg_likes': avg, 'count': s['count'], 'multiplier': multiplier
-            })
-    keyword_ranking.sort(key=lambda x: x['avg_likes'], reverse=True)
+    print(f"📊 {total_posts} 件のデータを解析中...")
 
-    # 2. ハッシュタグランキング (3件以上)
-    tag_ranking = []
-    for tag, s in tag_stats.items():
-        if s['count'] >= 3:
-            avg = int(s['total_likes'] / s['count'])
-            tag_ranking.append({'tag': tag, 'avg_likes': avg, 'count': s['count']})
-    tag_ranking.sort(key=lambda x: x['avg_likes'], reverse=True)
+    for item in valid_data:
+        likes = item['like_count']
+        followers = item.get('follower_count', 0)
+        text = item.get('text', "")
+        url = item.get('url', "")
+        
+        # 1. 時間帯分析
+        try:
+            dt = datetime.fromisoformat(item['created_at'])
+            hour = dt.hour
+            hourly_stats[hour]['likes'].append(likes)
+            hourly_stats[hour]['count'] += 1
+        except:
+            pass # 日付形式エラーはスキップ
 
-    # 3. アスペクト比レポート
-    aspect_report = []
-    for atype, s in aspect_stats.items():
-        if s['count'] > 0 and atype != 'Unknown':
-            avg = int(s['likes'] / s['count'])
-            aspect_report.append({'type': atype, 'avg': avg, 'count': s['count']})
-    aspect_report.sort(key=lambda x: x['avg'], reverse=True)
+        # 2. 構図分析
+        dims = item.get('dimensions')
+        label = 'Unknown'
+        if dims and dims.get('height', 0) > 0:
+            w, h = dims['width'], dims['height']
+            ratio = w / h
+            if 0.9 <= ratio <= 1.1: label = 'Square'
+            elif ratio < 0.9: label = 'Portrait'
+            else: label = 'Landscape'
+        aspect_stats[label].append(likes)
 
-    # 4. 時間帯レポート
+        # 3. ロケーション判定
+        loc_label = 'Others'
+        if any(k in text for k in LOCATION_KEYWORDS['Event']):
+            loc_label = 'Event'
+        elif any(k in text for k in LOCATION_KEYWORDS['Studio']):
+            loc_label = 'Studio/Home'
+        
+        location_stats[loc_label]['likes'].append(likes)
+        location_stats[loc_label]['count'] += 1
+
+        # 4. キャラクター名とコスプレイヤーIDの分離
+        # memberキー、またはqueryキーをキャラクター名として使用
+        char_name = item.get('query') or item.get('member') or 'Unknown'
+        
+        # URLからコスプレイヤーIDを抽出
+        cos_id = 'Unknown'
+        match = re.search(r'(?:twitter|x)\.com/([^/]+)/status', url)
+        if match:
+            cos_id = match.group(1)
+
+        # キャラクター別集計
+        if char_name not in char_stats:
+            char_stats[char_name] = {'likes': [], 'count': 0}
+        char_stats[char_name]['likes'].append(likes)
+        char_stats[char_name]['count'] += 1
+
+        # 5. Viral Score (拡散効率) 計算
+        # フォロワー0の場合は0点とする (エラー回避)
+        viral_score = 0
+        if followers > 0:
+            viral_score = round((likes / followers) * 100, 2)
+        
+        ranking_data.append({
+            'character_name': char_name,
+            'cosplayer_name': cos_id,
+            'like_count': likes,
+            'followers': followers,
+            'viral_score': viral_score,
+            'url': url,
+            'location': loc_label,
+            'text': text[:50] + "..." if text else ""
+        })
+
+    # --- レポートデータの生成 (安全な計算処理) ---
+
+    # A. 時間帯レポート
     hourly_report = []
     for h in range(24):
-        s = hourly_stats[h]
-        avg = int(s['likes'] / s['count']) if s['count'] > 0 else 0
-        hourly_report.append({'hour': h, 'avg_likes': avg, 'count': s['count']})
+        data = hourly_stats[h]
+        avg = int(sum(data['likes']) / len(data['likes'])) if data['likes'] else 0
+        hourly_report.append({'hour': h, 'avg_likes': avg, 'count': data['count']})
 
-    # 5. エンゲージメント率ランキング (Impression 100以上)
-    with_imp = [d for d in valid_data if d.get('impression_count', 0) > 100]
-    engagement_ranking = []
-    for d in with_imp:
-        rate = (d['like_count'] / d['impression_count']) * 100
-        d_copy = d.copy()
-        d_copy['rate'] = round(rate, 2)
-        engagement_ranking.append(d_copy)
-    engagement_ranking.sort(key=lambda x: x['rate'], reverse=True)
+    # B. 構図レポート
+    aspect_report = []
+    for type_name, likes_list in aspect_stats.items():
+        avg = int(sum(likes_list) / len(likes_list)) if likes_list else 0
+        aspect_report.append({'type': type_name, 'avg': avg, 'count': len(likes_list)})
 
-    # 6. Viral Score ランキング
-    viral_ranking = sorted(valid_data, key=lambda x: x['viral_score'], reverse=True)[:50]
-    
-    # 7. 単純いいねランキング
-    like_ranking = sorted(valid_data, key=lambda x: x['like_count'], reverse=True)[:50]
+    # C. ロケーションレポート
+    location_report = []
+    for loc_name, data in location_stats.items():
+        avg = int(sum(data['likes']) / len(data['likes'])) if data['likes'] else 0
+        # 全体平均との比較倍率
+        multiplier = round(avg / global_avg, 2) if global_avg > 0 else 0
+        location_report.append({
+            'location': loc_name, 
+            'avg': avg, 
+            'count': data['count'],
+            'multiplier': multiplier
+        })
 
-    # 8. メンバー別ランキング
-    member_stats = {}
-    for d in valid_data:
-        name = d['member_name']
-        if name not in member_stats: member_stats[name] = {'total_likes': 0, 'count': 0}
-        member_stats[name]['total_likes'] += d['like_count']
-        member_stats[name]['count'] += 1
+    # D. キャラクターランキング (平均いいね順)
+    char_ranking = []
+    for name, data in char_stats.items():
+        avg = int(sum(data['likes']) / len(data['likes'])) if data['likes'] else 0
+        char_ranking.append({'name': name, 'avg': avg, 'count': data['count']})
+    # 並び替え
+    char_ranking.sort(key=lambda x: x['avg'], reverse=True)
 
-    member_ranking = []
-    for name, s in member_stats.items():
-        if s['count'] >= 3:
-            member_ranking.append({'name': name, 'avg': int(s['total_likes']/s['count'])})
-    member_ranking.sort(key=lambda x: x['avg'], reverse=True)
+    # E. Viral Efficiency ランキング (スコア順)
+    ranking_data.sort(key=lambda x: x['viral_score'], reverse=True)
+    # Top 50のみ保存して容量削減
+    viral_ranking = ranking_data[:50]
 
-    # --- JSON保存 ---
-    result = {
+    # --- 出力データ作成 ---
+    output = {
         'updated_at': datetime.now().strftime('%Y/%m/%d %H:%M'),
-        'total_analyzed': len(valid_data),
-        'total_records': len(raw_data),
+        'total_analyzed': len(ranking_data),
+        'total_records': len(data),
         'global_avg': global_avg,
-        'keyword_ranking': keyword_ranking,
-        'tag_ranking': tag_ranking[:20],
-        'aspect_report': aspect_report,     # 構図分析
-        'hourly_report': hourly_report,     # 時間分析
-        'engagement_ranking': engagement_ranking[:30],
-        'viral_ranking': viral_ranking,
-        'like_ranking': like_ranking,
-        'member_ranking': member_ranking
+        'hourly_report': hourly_report,
+        'aspect_report': aspect_report,
+        'location_report': location_report,
+        'member_ranking': char_ranking,
+        'viral_ranking': viral_ranking
     }
 
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
     
+    # 完了ログ
     print("-" * 30)
-    print(f"✅ 分析コンプリート！")
-    print(f"📊 データ数: {len(valid_data)}件")
-    print(f"⏰ 時間解析: 完了")
-    print(f"🗝️ キーワード: {len(keyword_ranking)}個の単語を分析")
-    print(f"📸 構図分析: {len(aspect_report)}種類の比率を集計")
+    print(f"✨ 分析完了！ (Avg: {global_avg} Likes)")
+    if char_ranking:
+        top_c = char_ranking[0]
+        print(f"👑 Top Character: {top_c['name']} (Avg: {top_c['avg']})")
+    if viral_ranking:
+        top_v = viral_ranking[0]
+        print(f"🚀 Top Viral Post: {top_v['viral_score']}% Efficiency (@{top_v['cosplayer_name']})")
     print("-" * 30)
 
 if __name__ == "__main__":
