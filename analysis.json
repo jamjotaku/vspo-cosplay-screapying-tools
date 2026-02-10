@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/10 20:02",
-  "total_analyzed": 1470,
+  "updated_at": "2026/02/10 21:35",
+  "total_analyzed": 1564,
   "total_records": 6015,
-  "global_avg": 1211,
+  "global_avg": 1216,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1211,
-      "count": 1470
+      "avg": 1216,
+      "count": 1564
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 740,
-      "count": 214
+      "avg": 733,
+      "count": 220
     },
     {
       "location": "Studio/Home",
-      "avg": 1026,
-      "count": 37
+      "avg": 1065,
+      "count": 44
     },
     {
       "location": "Others",
-      "avg": 1299,
-      "count": 1219
+      "avg": 1303,
+      "count": 1300
     }
   ],
   "member_ranking": [
@@ -231,6 +231,11 @@
       "count": 17
     },
     {
+      "name": "kokko_tarou",
+      "avg": 2267,
+      "count": 2
+    },
+    {
       "name": "calxx0l",
       "avg": 2151,
       "count": 3
@@ -286,6 +291,11 @@
       "count": 73
     },
     {
+      "name": "urisuke4_",
+      "avg": 1213,
+      "count": 104
+    },
+    {
       "name": "ebisen_bei_kosu",
       "avg": 1132,
       "count": 48
@@ -331,14 +341,14 @@
       "count": 1
     },
     {
-      "name": "mm_23_22",
-      "avg": 731,
-      "count": 26
-    },
-    {
       "name": "MeruRabbit033",
       "avg": 723,
       "count": 35
+    },
+    {
+      "name": "mm_23_22",
+      "avg": 723,
+      "count": 27
     },
     {
       "name": "nyan_o912",
@@ -349,11 +359,6 @@
       "name": "maikasan_oO",
       "avg": 698,
       "count": 15
-    },
-    {
-      "name": "tsuyuko_cos",
-      "avg": 676,
-      "count": 107
     },
     {
       "name": "uniywp",
@@ -371,14 +376,14 @@
       "count": 1
     },
     {
+      "name": "tsuyuko_cos",
+      "avg": 654,
+      "count": 114
+    },
+    {
       "name": "nahohon_",
       "avg": 635,
       "count": 6
-    },
-    {
-      "name": "urisuke4_",
-      "avg": 634,
-      "count": 19
     },
     {
       "name": "Rei_a_1323",
@@ -434,11 +439,6 @@
       "name": "Shino_323a",
       "avg": 408,
       "count": 9
-    },
-    {
-      "name": "kokko_tarou",
-      "avg": 394,
-      "count": 1
     },
     {
       "name": "Niru_ne",
@@ -728,6 +728,24 @@
   ],
   "viral_ranking": [
     {
+      "character_name": "kokko_tarou",
+      "cosplayer_name": "kokko_tarou",
+      "like_count": 4140,
+      "followers": 3665,
+      "viral_score": 112.96,
+      "url": "https://x.com/kokko_tarou/status/1972972192855101799",
+      "location": "Others"
+    },
+    {
+      "character_name": "urisuke4_",
+      "cosplayer_name": "urisuke4_",
+      "like_count": 11534,
+      "followers": 12100,
+      "viral_score": 95.32,
+      "url": "https://x.com/urisuke4_/status/1752634046587498939/photo/1",
+      "location": "Others"
+    },
+    {
       "character_name": "chloelissam",
       "cosplayer_name": "chloelissam",
       "like_count": 2247,
@@ -815,6 +833,15 @@
       "followers": 939,
       "viral_score": 57.08,
       "url": "https://x.com/L4t___/status/1975482371907670130/photo/1",
+      "location": "Others"
+    },
+    {
+      "character_name": "urisuke4_",
+      "cosplayer_name": "urisuke4_",
+      "like_count": 6884,
+      "followers": 12100,
+      "viral_score": 56.89,
+      "url": "https://x.com/urisuke4_/status/1741329075959165089/photo/1",
       "location": "Others"
     },
     {
@@ -971,6 +998,15 @@
       "location": "Others"
     },
     {
+      "character_name": "urisuke4_",
+      "cosplayer_name": "urisuke4_",
+      "like_count": 4989,
+      "followers": 12100,
+      "viral_score": 41.23,
+      "url": "https://x.com/urisuke4_/status/1799677864096436624/photo/1",
+      "location": "Others"
+    },
+    {
       "character_name": "samesandayo",
       "cosplayer_name": "samesandayo",
       "like_count": 5895,
@@ -1005,6 +1041,15 @@
       "viral_score": 40.57,
       "url": "https://x.com/riha_amase/status/1983474385135735086",
       "location": "Event"
+    },
+    {
+      "character_name": "urisuke4_",
+      "cosplayer_name": "urisuke4_",
+      "like_count": 4796,
+      "followers": 12100,
+      "viral_score": 39.64,
+      "url": "https://x.com/urisuke4_/status/1804741740001382880/photo/1",
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -1131,51 +1176,6 @@
       "viral_score": 32.55,
       "url": "https://x.com/samesandayo/status/1876556852185677930?s=20",
       "location": "Others"
-    },
-    {
-      "character_name": "samesandayo",
-      "cosplayer_name": "samesandayo",
-      "like_count": 4533,
-      "followers": 14300,
-      "viral_score": 31.7,
-      "url": "https://x.com/samesandayo/status/1918081525603877056/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "shinoazu_cos",
-      "cosplayer_name": "shinoazu_cos",
-      "like_count": 638,
-      "followers": 2093,
-      "viral_score": 30.48,
-      "url": "https://x.com/shinoazu_cos/status/1938044630991614288",
-      "location": "Others"
-    },
-    {
-      "character_name": "samesandayo",
-      "cosplayer_name": "samesandayo",
-      "like_count": 4273,
-      "followers": 14300,
-      "viral_score": 29.88,
-      "url": "https://x.com/samesandayo/status/1967888091986923644/photo/1",
-      "location": "Event"
-    },
-    {
-      "character_name": "kagoshimanana",
-      "cosplayer_name": "kagoshimanana",
-      "like_count": 1423,
-      "followers": 4785,
-      "viral_score": 29.74,
-      "url": "https://x.com/kagoshimanana/status/1944716358010515805?s=20",
-      "location": "Others"
-    },
-    {
-      "character_name": "L4t___",
-      "cosplayer_name": "L4t___",
-      "like_count": 276,
-      "followers": 939,
-      "viral_score": 29.39,
-      "url": "https://x.com/L4t___/status/1933115039407599741/photo/1",
-      "location": "Event"
     }
   ]
 }
