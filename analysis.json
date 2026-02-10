@@ -1,168 +1,309 @@
 {
-  "updated_at": "2026/02/09 13:16",
-  "total_analyzed": 201,
+  "updated_at": "2026/02/09 22:42",
+  "total_analyzed": 476,
   "total_records": 5888,
-  "global_avg": 1128,
+  "global_avg": 973,
   "keyword_ranking": [
+    {
+      "keyword": "そくほ",
+      "avg_likes": 2286,
+      "count": 2,
+      "multiplier": 2.35
+    },
     {
       "keyword": "初出し",
       "avg_likes": 468,
       "count": 1,
-      "multiplier": 0.41
+      "multiplier": 0.48
     },
     {
       "keyword": "イベント",
       "avg_likes": 468,
       "count": 1,
-      "multiplier": 0.41
+      "multiplier": 0.48
     },
     {
       "keyword": "オフショ",
       "avg_likes": 411,
       "count": 1,
-      "multiplier": 0.36
+      "multiplier": 0.42
     },
     {
       "keyword": "自撮り",
-      "avg_likes": 92,
+      "avg_likes": 401,
+      "count": 2,
+      "multiplier": 0.41
+    },
+    {
+      "keyword": "コミケ",
+      "avg_likes": 355,
+      "count": 4,
+      "multiplier": 0.36
+    },
+    {
+      "keyword": "速報",
+      "avg_likes": 213,
       "count": 1,
-      "multiplier": 0.08
+      "multiplier": 0.22
     },
     {
       "keyword": "供養",
       "avg_likes": 92,
       "count": 1,
+      "multiplier": 0.09
+    },
+    {
+      "keyword": "コラボ",
+      "avg_likes": 74,
+      "count": 3,
       "multiplier": 0.08
+    },
+    {
+      "keyword": "スタジオ",
+      "avg_likes": 51,
+      "count": 1,
+      "multiplier": 0.05
     }
   ],
   "tag_ranking": [
     {
-      "tag": "ビビコス大須若宮",
-      "avg_likes": 378,
-      "count": 3
-    }
-  ],
-  "aspect_report": [],
-  "hourly_report": [
-    {
-      "hour": 0,
-      "avg_likes": 1652,
-      "count": 6
-    },
-    {
-      "hour": 1,
-      "avg_likes": 48,
-      "count": 2
-    },
-    {
-      "hour": 2,
-      "avg_likes": 468,
-      "count": 1
-    },
-    {
-      "hour": 3,
-      "avg_likes": 92,
-      "count": 1
-    },
-    {
-      "hour": 4,
-      "avg_likes": 0,
-      "count": 0
-    },
-    {
-      "hour": 5,
-      "avg_likes": 0,
-      "count": 0
-    },
-    {
-      "hour": 6,
-      "avg_likes": 747,
-      "count": 2
-    },
-    {
-      "hour": 7,
-      "avg_likes": 0,
-      "count": 0
-    },
-    {
-      "hour": 8,
-      "avg_likes": 484,
-      "count": 3
-    },
-    {
-      "hour": 9,
-      "avg_likes": 191,
-      "count": 1
-    },
-    {
-      "hour": 10,
-      "avg_likes": 309,
-      "count": 2
-    },
-    {
-      "hour": 11,
-      "avg_likes": 1574,
-      "count": 1
-    },
-    {
-      "hour": 12,
-      "avg_likes": 988,
-      "count": 9
-    },
-    {
-      "hour": 13,
-      "avg_likes": 1583,
+      "tag": "TMAF2023",
+      "avg_likes": 4150,
       "count": 4
     },
     {
-      "hour": 14,
-      "avg_likes": 458,
-      "count": 2
+      "tag": "池ハロ2025",
+      "avg_likes": 3444,
+      "count": 3
     },
     {
-      "hour": 15,
-      "avg_likes": 1037,
-      "count": 2
+      "tag": "0824SHOWDOWN併せ",
+      "avg_likes": 1254,
+      "count": 5
     },
     {
-      "hour": 16,
-      "avg_likes": 761,
+      "tag": "0315ぶいすぽ大型併せ",
+      "avg_likes": 774,
       "count": 6
     },
     {
-      "hour": 17,
-      "avg_likes": 1139,
+      "tag": "コスサミ",
+      "avg_likes": 611,
+      "count": 3
+    },
+    {
+      "tag": "Cosplay",
+      "avg_likes": 591,
+      "count": 24
+    },
+    {
+      "tag": "コスプレ",
+      "avg_likes": 585,
+      "count": 26
+    },
+    {
+      "tag": "TMAF",
+      "avg_likes": 542,
+      "count": 3
+    },
+    {
+      "tag": "cosplay",
+      "avg_likes": 515,
+      "count": 6
+    },
+    {
+      "tag": "レラコス",
+      "avg_likes": 500,
+      "count": 3
+    },
+    {
+      "tag": "ホココス",
+      "avg_likes": 405,
+      "count": 3
+    },
+    {
+      "tag": "VGGC7th",
+      "avg_likes": 405,
+      "count": 6
+    },
+    {
+      "tag": "RagCos",
+      "avg_likes": 393,
+      "count": 7
+    },
+    {
+      "tag": "RagCos2025",
+      "avg_likes": 393,
+      "count": 7
+    },
+    {
+      "tag": "花芽すみれ生誕祭2025",
+      "avg_likes": 379,
+      "count": 3
+    },
+    {
+      "tag": "ビビコス大須若宮",
+      "avg_likes": 378,
+      "count": 3
+    },
+    {
+      "tag": "VGGC10th",
+      "avg_likes": 378,
+      "count": 6
+    },
+    {
+      "tag": "VGGC8th",
+      "avg_likes": 341,
+      "count": 10
+    },
+    {
+      "tag": "コミケ",
+      "avg_likes": 339,
+      "count": 3
+    },
+    {
+      "tag": "ラグコス",
+      "avg_likes": 306,
+      "count": 12
+    }
+  ],
+  "aspect_report": [
+    {
+      "type": "Square (正方形)",
+      "avg": 932,
+      "count": 4
+    },
+    {
+      "type": "Portrait (縦長)",
+      "avg": 866,
+      "count": 280
+    },
+    {
+      "type": "Landscape (横長)",
+      "avg": 344,
+      "count": 41
+    }
+  ],
+  "hourly_report": [
+    {
+      "hour": 0,
+      "avg_likes": 1191,
+      "count": 12
+    },
+    {
+      "hour": 1,
+      "avg_likes": 898,
+      "count": 7
+    },
+    {
+      "hour": 2,
+      "avg_likes": 496,
+      "count": 4
+    },
+    {
+      "hour": 3,
+      "avg_likes": 189,
+      "count": 2
+    },
+    {
+      "hour": 4,
+      "avg_likes": 160,
+      "count": 1
+    },
+    {
+      "hour": 5,
+      "avg_likes": 4215,
+      "count": 2
+    },
+    {
+      "hour": 6,
+      "avg_likes": 1067,
+      "count": 6
+    },
+    {
+      "hour": 7,
+      "avg_likes": 619,
+      "count": 9
+    },
+    {
+      "hour": 8,
+      "avg_likes": 1576,
       "count": 11
+    },
+    {
+      "hour": 9,
+      "avg_likes": 574,
+      "count": 13
+    },
+    {
+      "hour": 10,
+      "avg_likes": 455,
+      "count": 9
+    },
+    {
+      "hour": 11,
+      "avg_likes": 853,
+      "count": 9
+    },
+    {
+      "hour": 12,
+      "avg_likes": 1139,
+      "count": 21
+    },
+    {
+      "hour": 13,
+      "avg_likes": 1707,
+      "count": 7
+    },
+    {
+      "hour": 14,
+      "avg_likes": 881,
+      "count": 7
+    },
+    {
+      "hour": 15,
+      "avg_likes": 573,
+      "count": 8
+    },
+    {
+      "hour": 16,
+      "avg_likes": 1093,
+      "count": 16
+    },
+    {
+      "hour": 17,
+      "avg_likes": 963,
+      "count": 30
     },
     {
       "hour": 18,
-      "avg_likes": 1581,
-      "count": 19
+      "avg_likes": 994,
+      "count": 51
     },
     {
       "hour": 19,
-      "avg_likes": 1310,
-      "count": 25
+      "avg_likes": 1105,
+      "count": 54
     },
     {
       "hour": 20,
-      "avg_likes": 889,
-      "count": 37
+      "avg_likes": 858,
+      "count": 78
     },
     {
       "hour": 21,
-      "avg_likes": 1244,
-      "count": 36
+      "avg_likes": 1103,
+      "count": 59
     },
     {
       "hour": 22,
-      "avg_likes": 1146,
-      "count": 20
+      "avg_likes": 764,
+      "count": 40
     },
     {
       "hour": 23,
-      "avg_likes": 1105,
-      "count": 11
+      "avg_likes": 867,
+      "count": 20
     }
   ],
   "engagement_ranking": [
@@ -437,6 +578,28 @@
       "rate": 7.31
     },
     {
+      "member_name": "花芽なずな",
+      "author_name": "まいか㌠さん",
+      "images": [
+        "https://pbs.twimg.com/media/G3smPr5XEAA4I30?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/maikasan_oO/status/1980218522505773229?s=20",
+      "source": "X",
+      "content": "Cosplayer: まいか㌠さん",
+      "like_count": 1500,
+      "impression_count": 20700,
+      "collected_at": "2026-02-09T10:40:35.104849",
+      "text": "なずぴ7周年おめでとう",
+      "last_fetched": "2026-02-09T13:11:48.220961",
+      "width": 3024,
+      "height": 4032,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 5902,
+      "viral_score": 0.254,
+      "posted_hour": 19,
+      "rate": 7.25
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "えびせんべいさん",
       "images": [
@@ -545,6 +708,28 @@
       "rate": 6.75
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7yvurtaMAAKrIl?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1998665562944410068?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 2500,
+      "impression_count": 37100,
+      "collected_at": "2026-02-09T10:40:35.103051",
+      "text": "本日すーちゃんでした",
+      "last_fetched": "2026-02-09T19:18:14.911670",
+      "width": 3024,
+      "height": 4028,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 7334,
+      "viral_score": 0.341,
+      "posted_hour": 17,
+      "rate": 6.74
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -617,97 +802,94 @@
       "rate": 6.53
     },
     {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
       "images": [
-        "https://pbs.twimg.com/media/G816hVYaUAAh6QB?format=jpg&name=large"
+        "https://pbs.twimg.com/media/G5YmHqYbUAAeKHt?format=jpg&name=small"
       ],
-      "url": "https://x.com/Saki_cos_1115/status/2003392138902651209/photo/1",
+      "url": "https://x.com/chiaki_1023cos/status/1987818212277489863?s=20",
       "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 2490,
-      "impression_count": 38700,
-      "collected_at": "2026-02-09T10:40:35.157650",
-      "followers": 10000,
-      "viral_score": 0.249,
+      "content": "Cosplayer: 深月さん",
+      "like_count": 1000,
+      "impression_count": 15400,
+      "collected_at": "2026-02-09T10:40:35.104326",
+      "text": "【ぶいすぽ 】cosplay  cos",
+      "last_fetched": "2026-02-09T13:32:10.107957",
+      "width": 454,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 8432,
+      "viral_score": 0.119,
       "posted_hour": 18,
-      "aspect_type": "Unknown",
-      "rate": 6.43
+      "rate": 6.49
     },
     {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
       "images": [
-        "https://pbs.twimg.com/media/G9dyyzuaYAENjkT?format=jpg&name=large"
+        "https://pbs.twimg.com/media/G6uzNP3a0AUQAJ6?format=jpg&name=small"
       ],
-      "url": "https://x.com/Saki_cos_1115/status/2006198407577080217/photo/1",
+      "url": "https://x.com/chiaki_1023cos/status/1993884311863640533?s=20",
       "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1574,
-      "impression_count": 24800,
-      "collected_at": "2026-02-09T10:40:35.157692",
-      "followers": 10000,
-      "viral_score": 0.157,
-      "posted_hour": 11,
-      "aspect_type": "Unknown",
-      "rate": 6.35
+      "content": "Cosplayer: 深月さん",
+      "like_count": 1300,
+      "impression_count": 20100,
+      "collected_at": "2026-02-09T10:40:35.104474",
+      "text": "【ぶいすぽ 】cosplay  ♡花芽なずな",
+      "last_fetched": "2026-02-09T13:14:43.373401",
+      "width": 454,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 8432,
+      "viral_score": 0.154,
+      "posted_hour": 12,
+      "rate": 6.47
     },
     {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
       "images": [
-        "https://pbs.twimg.com/media/G_p-HQWWYAAK-A5?format=jpg&name=large"
+        "https://pbs.twimg.com/media/G4KyhtuWUAAhq0e?format=jpg&name=small"
       ],
-      "url": "https://x.com/Saki_cos_1115/status/2016062457496969324",
+      "url": "https://x.com/chiaki_1023cos/status/1982343088615104756?s=20",
       "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 485,
-      "impression_count": 7746,
-      "collected_at": "2026-02-09T10:40:35.157719",
-      "followers": 10000,
-      "viral_score": 0.049,
-      "posted_hour": 17,
-      "aspect_type": "Unknown",
-      "rate": 6.26
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "れいさん",
-      "images": [
-        "https://pbs.twimg.com/media/G82AaAYagAA5ZPl?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/Rei_a_1323/status/2003398602119610798?s=20",
-      "source": "X",
-      "content": "Cosplayer: れいさん",
-      "like_count": 261,
-      "impression_count": 4167,
-      "collected_at": "2026-02-09T10:40:35.157440",
-      "followers": 10900,
-      "viral_score": 0.024,
-      "posted_hour": 18,
-      "aspect_type": "Unknown",
-      "rate": 6.26
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/G0-IazAaoAA68ES?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1967941561532174393/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 769,
-      "impression_count": 12300,
-      "collected_at": "2026-02-09T10:40:35.157585",
-      "followers": 34700,
-      "viral_score": 0.022,
-      "posted_hour": 22,
-      "aspect_type": "Unknown",
-      "rate": 6.25
+      "content": "Cosplayer: 深月さん",
+      "like_count": 1500,
+      "impression_count": 23200,
+      "collected_at": "2026-02-09T10:40:35.104461",
+      "text": "【Vspo】cosplay  ♡Kaga Nazuna",
+      "last_fetched": "2026-02-09T13:14:51.483614",
+      "width": 454,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 8432,
+      "viral_score": 0.178,
+      "posted_hour": 16,
+      "rate": 6.47
     }
   ],
   "viral_ranking": [
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "寝木ねぎさん",
+      "images": [
+        "https://pbs.twimg.com/media/G4BsTzyWcAAvZAU?format=jpg&name=large"
+      ],
+      "url": "https://x.com/negi_negi_cos/status/1981702933336187022",
+      "source": "X",
+      "content": "Cosplayer: 寝木ねぎさん",
+      "like_count": 1000,
+      "impression_count": 22400,
+      "collected_at": "2026-02-09T10:40:35.104252",
+      "text": "⚠︎cos Vspo!  Takeki Yoshio /         Hanabusa Sumire  __________________",
+      "last_fetched": "2026-02-09T13:32:47.906011",
+      "width": 1367,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 564,
+      "viral_score": 1.773,
+      "posted_hour": 21
+    },
     {
       "member_name": "蝶屋はなび",
       "author_name": "にょるさん",
@@ -726,6 +908,27 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "寝木ねぎさん",
+      "images": [
+        "https://pbs.twimg.com/media/G5ZGjV8asAAnG2y?format=jpg&name=large"
+      ],
+      "url": "https://x.com/negi_negi_cos/status/1987853864801095782",
+      "source": "X",
+      "content": "Cosplayer: 寝木ねぎさん",
+      "like_count": 314,
+      "impression_count": 6867,
+      "collected_at": "2026-02-09T10:40:35.104238",
+      "text": "⚠︎︎cos Vspo! × Famima  Hanabusa Sumire  photo by  @dai_cos4444",
+      "last_fetched": "2026-02-09T13:32:55.506485",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 564,
+      "viral_score": 0.557,
+      "posted_hour": 21
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -741,6 +944,27 @@
       "viral_score": 0.482,
       "posted_hour": 18,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gs7lx4jbcAA9dZ7?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1931733949182824718",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 1000,
+      "impression_count": 40700,
+      "collected_at": "2026-02-09T10:40:35.103981",
+      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ！/花芽すみれ  新衣装チャイナver 素敵なお衣装作って頂きました",
+      "last_fetched": "2026-02-09T14:54:31.285758",
+      "width": 1536,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.478,
+      "posted_hour": 0
     },
     {
       "member_name": "甘結もか",
@@ -777,6 +1001,27 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GvdjTaCWEAAsSuu?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1943130959504904551",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 876,
+      "impression_count": 19300,
+      "collected_at": "2026-02-09T10:40:35.104109",
+      "text": "【⚠︎Cosplay】  Vspo!/Kaga Sumire China ver  #RagCos #RagCos2025",
+      "last_fetched": "2026-02-09T13:34:15.972122",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.419,
+      "posted_hour": 11
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -809,6 +1054,27 @@
       "viral_score": 0.41,
       "posted_hour": 19,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "天世りはさん",
+      "images": [
+        "https://pbs.twimg.com/media/G4a296gaQAAty5v?format=jpg&name=large"
+      ],
+      "url": "https://x.com/riha_amase/status/1983474385135735086",
+      "source": "X",
+      "content": "Cosplayer: 天世りはさん",
+      "like_count": 8600,
+      "impression_count": 160100,
+      "collected_at": "2026-02-09T10:40:35.104246",
+      "text": "#池ハロ2025  cos 花芽すみれ",
+      "last_fetched": "2026-02-09T13:32:51.184130",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 21100,
+      "viral_score": 0.408,
+      "posted_hour": 19
     },
     {
       "member_name": "蝶屋はなび",
@@ -845,6 +1111,27 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7yvurtaMAAKrIl?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1998665562944410068?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 2500,
+      "impression_count": 37100,
+      "collected_at": "2026-02-09T10:40:35.103051",
+      "text": "本日すーちゃんでした",
+      "last_fetched": "2026-02-09T19:18:14.911670",
+      "width": 3024,
+      "height": 4028,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 7334,
+      "viral_score": 0.341,
+      "posted_hour": 17
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -862,6 +1149,48 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gwypx5YbkAAxm0R?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1949119474822483988",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 697,
+      "impression_count": 14200,
+      "collected_at": "2026-02-09T10:40:35.104149",
+      "text": "すーちゃんぬいと",
+      "last_fetched": "2026-02-09T13:33:52.667567",
+      "width": 1536,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.333,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gv8v-HDWIAAOdDi?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1945326341664203198",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 686,
+      "impression_count": 14400,
+      "collected_at": "2026-02-09T10:40:35.104140",
+      "text": "おいす〜",
+      "last_fetched": "2026-02-09T13:33:58.172576",
+      "width": 1536,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.328,
+      "posted_hour": 12
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "朝香ナホさん",
       "images": [
@@ -877,6 +1206,27 @@
       "viral_score": 0.306,
       "posted_hour": 20,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GuVRUCEbEAE2If_?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1938044630991614288",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 638,
+      "impression_count": 15500,
+      "collected_at": "2026-02-09T10:40:35.103993",
+      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ！/花芽すみれ  チャイナver : @chimeAtelier    蝶々さん達にも出演してもらいました",
+      "last_fetched": "2026-02-09T14:54:21.033242",
+      "width": 2048,
+      "height": 1366,
+      "aspect_type": "Landscape (横長)",
+      "followers": 2093,
+      "viral_score": 0.305,
+      "posted_hour": 10
     },
     {
       "member_name": "蝶屋はなび",
@@ -913,6 +1263,90 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽なずな",
+      "author_name": "楪さらさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gs6UqUgbcAA7dnQ?format=jpg&name=small"
+      ],
+      "url": "https://x.com/r_1O31/status/1931644760458150281?s=20",
+      "source": "X",
+      "content": "Cosplayer: 楪さらさん",
+      "like_count": 1100,
+      "impression_count": 32600,
+      "collected_at": "2026-02-09T10:40:35.104400",
+      "text": "✦⋆Cosplay⋆✦ 花芽なずな  ぶいすぽっₛᵤₘₘₑᵣ",
+      "last_fetched": "2026-02-09T13:31:54.073698",
+      "width": 453,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 4243,
+      "viral_score": 0.259,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/F0gUHFFaAAUMVwX?format=jpg&name=medium"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1677612978659786756?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 1900,
+      "impression_count": 89800,
+      "collected_at": "2026-02-09T10:40:35.102730",
+      "width": 1170,
+      "height": 1170,
+      "aspect_type": "Square (正方形)",
+      "text": "おいす〜！",
+      "last_fetched": "2026-02-09T20:42:56.663161",
+      "followers": 7334,
+      "viral_score": 0.259,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "まいか㌠さん",
+      "images": [
+        "https://pbs.twimg.com/media/G3smPr5XEAA4I30?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/maikasan_oO/status/1980218522505773229?s=20",
+      "source": "X",
+      "content": "Cosplayer: まいか㌠さん",
+      "like_count": 1500,
+      "impression_count": 20700,
+      "collected_at": "2026-02-09T10:40:35.104849",
+      "text": "なずぴ7周年おめでとう",
+      "last_fetched": "2026-02-09T13:11:48.220961",
+      "width": 3024,
+      "height": 4032,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 5902,
+      "viral_score": 0.254,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "まいか㌠さん",
+      "images": [
+        "https://pbs.twimg.com/media/GmDpjKSa0AAdUkn?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/maikasan_oO/status/1900775850100081065?s=20",
+      "source": "X",
+      "content": "Cosplayer: まいか㌠さん",
+      "like_count": 1500,
+      "impression_count": 43800,
+      "collected_at": "2026-02-09T10:40:35.104766",
+      "text": "#0315ぶいすぽ大型併せ なずぴしてる景色良すぎてたのしいすぎる",
+      "last_fetched": "2026-02-09T13:12:26.599928",
+      "width": 3024,
+      "height": 4032,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 5902,
+      "viral_score": 0.254,
+      "posted_hour": 14
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "さきさん",
       "images": [
@@ -947,6 +1381,111 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽なずな",
+      "author_name": "まいか㌠さん",
+      "images": [
+        "https://pbs.twimg.com/media/Gc5OnEsaAAAFZzb?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/maikasan_oO/status/1859510138815775099?s=20",
+      "source": "X",
+      "content": "Cosplayer: まいか㌠さん",
+      "like_count": 1300,
+      "impression_count": 30100,
+      "collected_at": "2026-02-09T10:40:35.104736",
+      "text": "なずぴの全身(ᐡ - ·̫ -ᐡ)",
+      "last_fetched": "2026-02-09T13:12:41.383997",
+      "width": 2304,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 5902,
+      "viral_score": 0.22,
+      "posted_hour": 17
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/F1RyK5UaYAA1Ctq?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1681094101289308160?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 1600,
+      "impression_count": 78700,
+      "collected_at": "2026-02-09T10:40:35.102762",
+      "width": 2731,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "text": "Cosplay  ぶいすぽっ！/花芽すみれ  photo  @blackcrowcar     #コスプレ  #Cosplay",
+      "last_fetched": "2026-02-09T20:42:36.936412",
+      "followers": 7334,
+      "viral_score": 0.218,
+      "posted_hour": 9
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "らとさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7UdCTma8AAqp-A?format=jpg&name=small"
+      ],
+      "url": "https://x.com/L4t___/status/1996533970163712250?s=20",
+      "source": "X",
+      "content": "Cosplayer: らとさん",
+      "like_count": 202,
+      "impression_count": 3537,
+      "collected_at": "2026-02-09T10:40:35.104313",
+      "text": "cos パフォ  VtC  @syokuyoudango  様",
+      "last_fetched": "2026-02-09T13:32:17.555565",
+      "width": 453,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 937,
+      "viral_score": 0.216,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/GLeu0uBa4AA5fjc?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1781084405345476963?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 1500,
+      "impression_count": 40600,
+      "collected_at": "2026-02-09T10:40:35.102936",
+      "width": 2732,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "text": "コスプレ/Cosplay                   花芽姉妹  ぶいすぽっ！/花芽すみれ                         花芽なずな  @snow_sayu_    photo  @blackcrowcar     #コスプレ  #Cosplay",
+      "last_fetched": "2026-02-09T20:41:12.588656",
+      "followers": 7334,
+      "viral_score": 0.205,
+      "posted_hour": 7
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GvaLqvrWwAAWMYm?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1942893867659034857",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 420,
+      "impression_count": 8779,
+      "collected_at": "2026-02-09T10:40:35.104099",
+      "text": "【⚠︎Cosplay】  Vspo!/Kaga Sumire China ver  #RagCos #RagCos2025  I'm so glad to meet you for the first time Thank you for all the compliments and for taking such wonderful photos(；＿；)",
+      "last_fetched": "2026-02-09T13:34:19.279707",
+      "width": 1365,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.201,
+      "posted_hour": 19
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -977,10 +1516,12 @@
       "collected_at": "2026-02-09T10:40:35.105161",
       "text": "りだつ！  #なちゅすぽっ でパフォしましたっ   #ビビコス大須若宮 #さくコス",
       "last_fetched": "2026-02-09T13:03:54.441616",
+      "width": 1080,
+      "height": 1920,
+      "aspect_type": "Portrait (縦長)",
       "followers": 2281,
       "viral_score": 0.199,
-      "posted_hour": 17,
-      "aspect_type": "Unknown"
+      "posted_hour": 17
     },
     {
       "member_name": "花芽なずな",
@@ -996,10 +1537,12 @@
       "collected_at": "2026-02-09T10:40:35.105154",
       "text": "ぴっ！この後パフォも出るのでよければჱ̒⸝⸝•̀֊•́⸝⸝)  #ビビコス大須若宮",
       "last_fetched": "2026-02-09T13:03:58.261967",
+      "width": 720,
+      "height": 1280,
+      "aspect_type": "Portrait (縦長)",
       "followers": 2281,
       "viral_score": 0.195,
-      "posted_hour": 12,
-      "aspect_type": "Unknown"
+      "posted_hour": 12
     },
     {
       "member_name": "甘結もか",
@@ -1036,6 +1579,48 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gt-NhNjXIAAQnHh?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1936421978107482429",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 398,
+      "impression_count": 10900,
+      "collected_at": "2026-02-09T10:40:35.103987",
+      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ！/花芽すみれ  チャイナver :@ chimeAtelier",
+      "last_fetched": "2026-02-09T14:54:25.984090",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.19,
+      "posted_hour": 22
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GvL3BAgawAAINlV?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1941886000139231380",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 395,
+      "impression_count": 9317,
+      "collected_at": "2026-02-09T10:40:35.104013",
+      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ!/花芽すみれ チャイナver  #ラグコス #ラグコス2025 いつもお写真ありがと",
+      "last_fetched": "2026-02-09T13:34:41.832107",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.189,
+      "posted_hour": 0
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -1066,10 +1651,75 @@
       "collected_at": "2026-02-09T10:40:35.105094",
       "text": "1000年に1度の爆盛れでした！！(見て)",
       "last_fetched": "2026-02-09T13:04:33.402056",
+      "width": 961,
+      "height": 1425,
+      "aspect_type": "Portrait (縦長)",
       "followers": 3593,
       "viral_score": 0.184,
-      "posted_hour": 13,
-      "aspect_type": "Unknown"
+      "posted_hour": 13
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "Miauさん",
+      "images": [
+        "https://pbs.twimg.com/media/GV6eoQga8AA0a_M?format=jpg&name=small"
+      ],
+      "url": "https://x.com/Shiau_Miau/status/1828073359957205478?s=20",
+      "source": "X",
+      "content": "Cosplayer: Miauさん",
+      "like_count": 421,
+      "impression_count": 11900,
+      "collected_at": "2026-02-09T10:40:35.104486",
+      "text": "コスプレ  台湾FF43  ぶいすぽっ！             /   花芽なずな  Photo by   @urien911    － #Cosplay #vspo #ぶいすぽ #なずなーと",
+      "last_fetched": "2026-02-09T13:14:37.229322",
+      "width": 453,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2300,
+      "viral_score": 0.183,
+      "posted_hour": 23
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "深月さん",
+      "images": [
+        "https://pbs.twimg.com/media/G4KyhtuWUAAhq0e?format=jpg&name=small"
+      ],
+      "url": "https://x.com/chiaki_1023cos/status/1982343088615104756?s=20",
+      "source": "X",
+      "content": "Cosplayer: 深月さん",
+      "like_count": 1500,
+      "impression_count": 23200,
+      "collected_at": "2026-02-09T10:40:35.104461",
+      "text": "【Vspo】cosplay  ♡Kaga Nazuna",
+      "last_fetched": "2026-02-09T13:14:51.483614",
+      "width": 454,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 8432,
+      "viral_score": 0.178,
+      "posted_hour": 16
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GvF3lmTaAAIBVz7?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1941464428828143796",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 373,
+      "impression_count": 9545,
+      "collected_at": "2026-02-09T10:40:35.104000",
+      "text": "#ラグコス おそくほー 今ツリーのとこ居ます!!",
+      "last_fetched": "2026-02-09T13:34:49.979379",
+      "width": 1536,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.178,
+      "posted_hour": 20
     },
     {
       "member_name": "蝶屋はなび",
@@ -1087,6 +1737,48 @@
       "viral_score": 0.178,
       "posted_hour": 17,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/GWYSc6PbEAAmpwn?format=jpg&name=large"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1830170598196330881?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 1300,
+      "impression_count": 41900,
+      "collected_at": "2026-02-09T10:40:35.103035",
+      "width": 1170,
+      "height": 1560,
+      "aspect_type": "Portrait (縦長)",
+      "text": "すーちゃんの新水着やってきた",
+      "last_fetched": "2026-02-09T20:40:39.383508",
+      "followers": 7334,
+      "viral_score": 0.177,
+      "posted_hour": 18
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "東雲あずさん",
+      "images": [
+        "https://pbs.twimg.com/media/GvlOFjBawAA7lU_?format=jpg&name=large"
+      ],
+      "url": "https://x.com/shinoazu_cos/status/1943670582924480738",
+      "source": "X",
+      "content": "Cosplayer: 東雲あずさん",
+      "like_count": 364,
+      "impression_count": 7736,
+      "collected_at": "2026-02-09T10:40:35.104133",
+      "text": "【⚠︎Cosplay】  Vspo!/Kaga Sumire  China ver  #RagCos #RagCos2025",
+      "last_fetched": "2026-02-09T13:34:01.571865",
+      "width": 1365,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 2093,
+      "viral_score": 0.174,
+      "posted_hour": 22
     },
     {
       "member_name": "蝶屋はなび",
@@ -1123,463 +1815,112 @@
       "aspect_type": "Unknown"
     },
     {
-      "member_name": "甘結もか",
+      "member_name": "花芽なずな",
       "author_name": "朝香ナホさん",
       "images": [
-        "https://pbs.twimg.com/media/Gsbjn44bQAAB7Rp?format=jpg&name=4096x4096"
+        "https://pbs.twimg.com/media/G4QevyyXsAAY8k6?format=jpg&name=small"
       ],
-      "url": "https://x.com/nahohon_/status/1929479783810760775?s=20",
+      "url": "https://x.com/nahohon_/status/1982743553274196331?s=20",
       "source": "X",
       "content": "Cosplayer: 朝香ナホさん",
-      "like_count": 596,
-      "impression_count": 10300,
-      "collected_at": "2026-02-09T10:40:35.157427",
+      "like_count": 633,
+      "impression_count": 10500,
+      "collected_at": "2026-02-09T10:40:35.104467",
+      "text": "【Cosplay】          ぶいすぽっ！ / 花芽なずな  → @tukihara_lgk  さん  #池ハロ2025",
+      "last_fetched": "2026-02-09T13:14:48.374753",
+      "width": 453,
+      "height": 680,
+      "aspect_type": "Portrait (縦長)",
       "followers": 3730,
-      "viral_score": 0.16,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
-      "images": [
-        "https://pbs.twimg.com/media/G9dyyzuaYAENjkT?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Saki_cos_1115/status/2006198407577080217/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1574,
-      "impression_count": 24800,
-      "collected_at": "2026-02-09T10:40:35.157692",
-      "followers": 10000,
-      "viral_score": 0.157,
-      "posted_hour": 11,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6hVOYfasAAMmgk?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1992936552071385526/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 2166,
-      "impression_count": 29300,
-      "collected_at": "2026-02-09T10:40:35.157042",
-      "followers": 14300,
-      "viral_score": 0.151,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "みぞれ！さん",
-      "images": [
-        "https://pbs.twimg.com/media/GnsBMe-a0AAdnKu?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/_Mizore_cos/status/1908120203243716679?s=20",
-      "source": "X",
-      "content": "Cosplayer: みぞれ！さん",
-      "like_count": 1457,
-      "impression_count": 34200,
-      "collected_at": "2026-02-09T10:40:35.157378",
-      "followers": 10000,
-      "viral_score": 0.146,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "なぽさん",
-      "images": [
-        "https://pbs.twimg.com/media/FzeVwllaQAEBoHW?format=jpg&name=large"
-      ],
-      "url": "https://x.com/___napo_leon___/status/1672970468406743048",
-      "source": "X",
-      "content": "Cosplayer: なぽさん",
-      "like_count": 1162,
-      "impression_count": 39500,
-      "collected_at": "2026-02-09T10:40:35.105340",
-      "followers": 7997,
-      "viral_score": 0.145,
-      "posted_hour": 23,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6HpCh2bYAA2x4H?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1991128751627755788/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 2071,
-      "impression_count": 31700,
-      "collected_at": "2026-02-09T10:40:35.157024",
-      "followers": 14300,
-      "viral_score": 0.145,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G735gZJa4AAIDs1?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1999028159333941431/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1972,
-      "impression_count": 21700,
-      "collected_at": "2026-02-09T10:40:35.157066",
-      "followers": 14300,
-      "viral_score": 0.138,
-      "posted_hour": 17,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "らとさん",
-      "images": [
-        "https://pbs.twimg.com/media/G33A7ZWWQAAkCkc?format=jpg&name=large"
-      ],
-      "url": "https://x.com/L4t___/status/1980951555118633329/photo/1",
-      "source": "X",
-      "content": "Cosplayer: らとさん",
-      "like_count": 127,
-      "impression_count": 5201,
-      "collected_at": "2026-02-09T10:40:35.104948",
-      "text": "【⚠︎cos vsp! 花芽なずな 】   @ya_su0707  様  #VtC名古屋",
-      "last_fetched": "2026-02-09T13:05:28.752666",
-      "followers": 937,
-      "viral_score": 0.136,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "はなぶさしのあさん",
-      "images": [
-        "https://pbs.twimg.com/media/GbiY2AhaIAAUFA8?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Shino_323a/status/1853399306616861119/photo/1",
-      "source": "X",
-      "content": "Cosplayer: はなぶさしのあさん",
-      "like_count": 474,
-      "impression_count": 23100,
-      "collected_at": "2026-02-09T10:40:35.105108",
-      "text": "コスプレ / ぶいすぽっ！   花芽なずな / Kaga Nazuna  photo： @A9T123",
-      "last_fetched": "2026-02-09T13:04:23.647404",
-      "followers": 3593,
-      "viral_score": 0.132,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "にょるさん",
-      "images": [
-        "https://pbs.twimg.com/media/G8NX8dQaEAA2QjS?format=jpg&name=large"
-      ],
-      "url": "https://x.com/nyoru_nyokki/status/2000539363399376930/photo/1",
-      "source": "X",
-      "content": "Cosplayer: にょるさん",
-      "like_count": 1034,
-      "impression_count": 13600,
-      "collected_at": "2026-02-09T10:40:35.157125",
-      "followers": 7851,
-      "viral_score": 0.132,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6a9jVGbcAAyo0Y?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1992488305381048800/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1887,
-      "impression_count": 36100,
-      "collected_at": "2026-02-09T10:40:35.157036",
-      "followers": 14300,
-      "viral_score": 0.132,
-      "posted_hour": 16,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "はなぶさしのあさん",
-      "images": [
-        "https://pbs.twimg.com/media/GbZXBcRacAA544C?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Shino_323a/status/1852763984455438526/photo/1",
-      "source": "X",
-      "content": "Cosplayer: はなぶさしのあさん",
-      "like_count": 468,
-      "impression_count": 21600,
-      "collected_at": "2026-02-09T10:40:35.105081",
-      "text": "イベントお疲れ様でした！ 初ラグコスで初出しなずぴ〜〜 楽しかったのでまた行きたいな   #ラグコス",
-      "last_fetched": "2026-02-09T13:04:37.079902",
-      "followers": 3593,
-      "viral_score": 0.13,
-      "posted_hour": 2,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
-      "images": [
-        "https://pbs.twimg.com/media/G9FKN8xaUAAV3k8?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Saki_cos_1115/status/2004464922345025614/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1259,
-      "impression_count": 17200,
-      "collected_at": "2026-02-09T10:40:35.157673",
-      "followers": 10000,
-      "viral_score": 0.126,
-      "posted_hour": 17,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "はなぶさしのあさん",
-      "images": [
-        "https://pbs.twimg.com/media/Ginh1EYbEAAeuJu?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Shino_323a/status/1885286224581349643/photo/1",
-      "source": "X",
-      "content": "Cosplayer: はなぶさしのあさん",
-      "like_count": 443,
-      "impression_count": 27100,
-      "collected_at": "2026-02-09T10:40:35.105132",
-      "text": "コスプレ / ぶいすぽっ！   花芽なずな / Kaga Nazuna 花芽すみれ / Kaga Sumire( @urisuke4_  )  photo： @A9T123",
-      "last_fetched": "2026-02-09T13:04:09.269676",
-      "followers": 3593,
-      "viral_score": 0.123,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "はなぶさしのあさん",
-      "images": [
-        "https://pbs.twimg.com/media/Giy2OJeagAEf8LQ?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Shino_323a/status/1886353938317967842/photo/1",
-      "source": "X",
-      "content": "Cosplayer: はなぶさしのあさん",
-      "like_count": 427,
-      "impression_count": 12100,
-      "collected_at": "2026-02-09T10:40:35.105139",
-      "text": "コスプレ / ぶいすぽっ！   花芽なずな / Kaga Nazuna  photo： @nyanya_yuunyan",
-      "last_fetched": "2026-02-09T13:04:05.044859",
-      "followers": 3593,
-      "viral_score": 0.119,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "なぽさん",
-      "images": [
-        "https://pbs.twimg.com/media/GoOWFcEbMAAIBQK?format=jpg&name=large"
-      ],
-      "url": "https://x.com/___napo_leon___/status/1910541482815348914",
-      "source": "X",
-      "content": "Cosplayer: なぽさん",
-      "like_count": 951,
-      "impression_count": 24200,
-      "collected_at": "2026-02-09T10:40:35.105519",
-      "followers": 7997,
-      "viral_score": 0.119,
-      "posted_hour": 12,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "にょるさん",
-      "images": [
-        "https://pbs.twimg.com/media/G8XuPcbbIAAyBik?format=jpg&name=large"
-      ],
-      "url": "https://x.com/nyoru_nyokki/status/2001267567323910639/photo/1",
-      "source": "X",
-      "content": "Cosplayer: にょるさん",
-      "like_count": 935,
-      "impression_count": 10700,
-      "collected_at": "2026-02-09T10:40:35.157131",
-      "followers": 7851,
-      "viral_score": 0.119,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
-      "images": [
-        "https://pbs.twimg.com/media/G8605rmbAAAKO2I?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Saki_cos_1115/status/2003737797468074208/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1153,
-      "impression_count": 129100,
-      "collected_at": "2026-02-09T10:40:35.157656",
-      "followers": 10000,
-      "viral_score": 0.115,
-      "posted_hour": 17,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "はなぶさしのあさん",
-      "images": [
-        "https://pbs.twimg.com/media/Gbhn0HCbkAAU_Qg?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Shino_323a/status/1853345403292570098/photo/1",
-      "source": "X",
-      "content": "Cosplayer: はなぶさしのあさん",
-      "like_count": 408,
-      "impression_count": 12700,
-      "collected_at": "2026-02-09T10:40:35.105101",
-      "text": "花芽姉妹   #ラグコス2024   #ラグコス2024TW",
-      "last_fetched": "2026-02-09T13:04:28.221990",
-      "followers": 3593,
-      "viral_score": 0.114,
-      "posted_hour": 16,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G2fZj91a0AES9Nc?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1974786186570019052/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1626,
-      "impression_count": 26000,
-      "collected_at": "2026-02-09T10:40:35.156906",
-      "followers": 14300,
-      "viral_score": 0.114,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G378vPYXEAAAyal?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1981298784098488765/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1621,
-      "impression_count": 24700,
-      "collected_at": "2026-02-09T10:40:35.156991",
-      "followers": 14300,
-      "viral_score": 0.113,
-      "posted_hour": 18,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "なぽさん",
-      "images": [
-        "https://pbs.twimg.com/media/GnqVm5jaMAE-fb5?format=jpg&name=large"
-      ],
-      "url": "https://x.com/___napo_leon___/status/1908001896729895324",
-      "source": "X",
-      "content": "Cosplayer: なぽさん",
-      "like_count": 886,
-      "impression_count": 27900,
-      "collected_at": "2026-02-09T10:40:35.105502",
-      "followers": 7997,
-      "viral_score": 0.111,
-      "posted_hour": 12,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "まめさん",
-      "images": [
-        "https://pbs.twimg.com/media/FAw8fSVVgAQl6nX?format=jpg&name=large"
-      ],
-      "url": "https://x.com/mm_23_22/status/1444596098471915528",
-      "source": "X",
-      "content": "Cosplayer: まめさん",
-      "like_count": 1150,
-      "impression_count": 0,
-      "collected_at": "2026-02-09T10:40:35.105525",
-      "followers": 10800,
-      "viral_score": 0.106,
-      "posted_hour": 18,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "にるねさん",
-      "images": [
-        "https://pbs.twimg.com/media/GtkGNOSbUAAdWdl?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Niru_ne/status/1934584347757252940/photo/1",
-      "source": "X",
-      "content": "Cosplayer: にるねさん",
-      "like_count": 236,
-      "impression_count": 10400,
-      "collected_at": "2026-02-09T10:40:35.105168",
-      "text": "cos / ぶいすぽっ！ / 花芽なずな   photo: @sin_sin_cam    #ビビコス大須若宮",
-      "last_fetched": "2026-02-09T13:03:49.348634",
-      "followers": 2281,
-      "viral_score": 0.103,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "みぞれ！さん",
-      "images": [
-        "https://pbs.twimg.com/media/Gz88993bAAAeMFV?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/_Mizore_cos/status/1963355013763502379?s=20",
-      "source": "X",
-      "content": "Cosplayer: みぞれ！さん",
-      "like_count": 1015,
-      "impression_count": 33700,
-      "collected_at": "2026-02-09T10:40:35.157338",
-      "followers": 10000,
-      "viral_score": 0.102,
-      "posted_hour": 6,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
-      "images": [
-        "https://pbs.twimg.com/media/G_OTJhdbIAA5swQ?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Saki_cos_1115/status/2014115262765625546",
-      "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1005,
-      "impression_count": 11600,
-      "collected_at": "2026-02-09T10:40:35.157725",
-      "followers": 10000,
-      "viral_score": 0.101,
-      "posted_hour": 8,
-      "aspect_type": "Unknown"
+      "viral_score": 0.17,
+      "posted_hour": 18
     }
   ],
   "like_ranking": [
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/F1WtdKvagBIaFUh?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1681440757289484289?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 9100,
+      "impression_count": 510200,
+      "collected_at": "2026-02-09T10:40:35.104708",
+      "text": "コスプレ/Cosplay                        可愛い担当  PhotoBL△CKさんのぱぱ",
+      "last_fetched": "2026-02-09T13:12:57.455895",
+      "width": 1654,
+      "height": 2480,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.159,
+      "posted_hour": 8
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "天世りはさん",
+      "images": [
+        "https://pbs.twimg.com/media/G4a296gaQAAty5v?format=jpg&name=large"
+      ],
+      "url": "https://x.com/riha_amase/status/1983474385135735086",
+      "source": "X",
+      "content": "Cosplayer: 天世りはさん",
+      "like_count": 8600,
+      "impression_count": 160100,
+      "collected_at": "2026-02-09T10:40:35.104246",
+      "text": "#池ハロ2025  cos 花芽すみれ",
+      "last_fetched": "2026-02-09T13:32:51.184130",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 21100,
+      "viral_score": 0.408,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/F3b9Tknb0AA5Oml?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1690817229066317825?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 7700,
+      "impression_count": 391300,
+      "collected_at": "2026-02-09T10:40:35.104722",
+      "text": "コスプレ/Cosplay  ぶいすぽっ！ 花芽なずな                   ⇆　◁　❚❚　▷    ↻ ​  Photo @blackcrowcar  さん",
+      "last_fetched": "2026-02-09T13:12:48.617089",
+      "width": 2732,
+      "height": 4095,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.134,
+      "posted_hour": 5
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/Gs52QGAaMAA894x?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1931611322380361899?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 7200,
+      "impression_count": 195100,
+      "collected_at": "2026-02-09T10:40:35.102680",
+      "width": 3024,
+      "height": 4032,
+      "aspect_type": "Portrait (縦長)",
+      "text": "Today, the succubus of the e-sports world ",
+      "last_fetched": "2026-02-09T20:43:22.749764",
+      "followers": 57300,
+      "viral_score": 0.126,
+      "posted_hour": 16
+    },
     {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
@@ -1596,6 +1937,27 @@
       "viral_score": 0.482,
       "posted_hour": 18,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/FzoPtDeWAAIVokZ?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1673667490667282432?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 6800,
+      "impression_count": 349000,
+      "collected_at": "2026-02-09T10:40:35.104692",
+      "text": "コスプレ/Cosplay  ぶいすぽっ！ 花芽なずな        ひゃっほ〜きらりんぶいｯ✩  Photo @blackcrowcar   #TMAF2023",
+      "last_fetched": "2026-02-09T13:13:07.331879",
+      "width": 2732,
+      "height": 4095,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.119,
+      "posted_hour": 21
     },
     {
       "member_name": "蝶屋はなび",
@@ -1683,6 +2045,46 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GxHmEz4bAAElV5G?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1950593092027138088?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 4900,
+      "impression_count": 96600,
+      "collected_at": "2026-02-09T10:40:35.102699",
+      "width": 1595,
+      "height": 2241,
+      "aspect_type": "Portrait (縦長)",
+      "last_fetched": "2026-02-09T22:38:35.832029",
+      "followers": 57300,
+      "viral_score": 0.086,
+      "posted_hour": 1
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GuH5xuhXwAAxNbY?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1937103964241359097?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 4900,
+      "impression_count": 96000,
+      "collected_at": "2026-02-09T10:40:35.102688",
+      "width": 2708,
+      "height": 4032,
+      "aspect_type": "Portrait (縦長)",
+      "last_fetched": "2026-02-09T22:38:41.354454",
+      "followers": 57300,
+      "viral_score": 0.086,
+      "posted_hour": 20
+    },
+    {
       "member_name": "蝶屋はなび",
       "author_name": "さめのちさん",
       "images": [
@@ -1698,6 +2100,48 @@
       "viral_score": 0.34,
       "posted_hour": 21,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GTIH5_CbkAAmDyr?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1815522300734939215?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 4700,
+      "impression_count": 115800,
+      "collected_at": "2026-02-09T10:40:35.104862",
+      "text": "花芽姉妹〜",
+      "last_fetched": "2026-02-09T13:11:40.665475",
+      "width": 2732,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.082,
+      "posted_hour": 8
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzVORzRa4AElMHN?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1960559330325094588?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 4700,
+      "impression_count": 104600,
+      "collected_at": "2026-02-09T10:40:35.102713",
+      "width": 2732,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "text": "Cosplay   Vspo! Hanega Sumire",
+      "last_fetched": "2026-02-09T20:43:06.073309",
+      "followers": 57300,
+      "viral_score": 0.082,
+      "posted_hour": 13
     },
     {
       "member_name": "甘結もか",
@@ -1718,6 +2162,27 @@
     },
     {
       "member_name": "花芽なずな",
+      "author_name": "小雪うのさん",
+      "images": [
+        "https://pbs.twimg.com/media/FiFeRVCVIAIY9_O?format=jpg&name=large"
+      ],
+      "url": "https://x.com/715_tyun/status/1594659403008835584?s=20",
+      "source": "X",
+      "content": "Cosplayer: 小雪うのさん",
+      "like_count": 4300,
+      "impression_count": 34,
+      "collected_at": "2026-02-09T10:40:35.104520",
+      "text": "【コスプレ】 ぶいすぽっ！花芽なずな  ━━━━━━━━━━  ぶいすぽっ！最年少！ んー！8才！ 可愛い担当、花芽なずなです  ━━━━━━━━━━    @jyuusei_massage",
+      "last_fetched": "2026-02-09T13:14:18.051550",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 61600,
+      "viral_score": 0.07,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "花芽なずな",
       "author_name": "茉夏なつさん",
       "images": [
         "https://pbs.twimg.com/media/GPi7ncQbMAAmiAm?format=jpg&name=large"
@@ -1730,10 +2195,33 @@
       "collected_at": "2026-02-09T10:40:35.105180",
       "text": "花芽なずな",
       "last_fetched": "2026-02-09T13:03:40.978479",
+      "width": 1366,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
       "followers": 52400,
       "viral_score": 0.08,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
+      "posted_hour": 19
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/FzW-ne2aMAAobJO?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1672452431857483777?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 4200,
+      "impression_count": 166300,
+      "collected_at": "2026-02-09T10:40:35.104640",
+      "text": "そくほ✌︎  きらりんぶい！ #TMAF2023",
+      "last_fetched": "2026-02-09T13:13:12.361270",
+      "width": 1735,
+      "height": 3088,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.073,
+      "posted_hour": 12
     },
     {
       "member_name": "蝶屋はなび",
@@ -1770,6 +2258,69 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GP8FWqvbkAAVY8v?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1801164268118983006?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 3900,
+      "impression_count": 86600,
+      "collected_at": "2026-02-09T10:40:35.104856",
+      "text": "去年の洞爺湖なずぴ✌︎",
+      "last_fetched": "2026-02-09T13:11:45.122712",
+      "width": 1712,
+      "height": 2922,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.068,
+      "posted_hour": 17
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/G0Nj5DVbMAAVPi2?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1964523702315553079?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 3700,
+      "impression_count": 76500,
+      "collected_at": "2026-02-09T10:40:35.102720",
+      "width": 1633,
+      "height": 2448,
+      "aspect_type": "Portrait (縦長)",
+      "text": "vsp! Hanabud Sister ",
+      "last_fetched": "2026-02-09T20:43:01.643992",
+      "followers": 57300,
+      "viral_score": 0.065,
+      "posted_hour": 11
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/GzTtH0Na4AAqirp?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1960452466530771065?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 3500,
+      "impression_count": 63400,
+      "collected_at": "2026-02-09T10:40:35.102706",
+      "width": 2732,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "text": "Heyy〜",
+      "last_fetched": "2026-02-09T20:43:10.244016",
+      "followers": 57300,
+      "viral_score": 0.061,
+      "posted_hour": 6
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "えびせんべいさん",
       "images": [
@@ -1785,6 +2336,27 @@
       "viral_score": 0.098,
       "posted_hour": 21,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "小雪うのさん",
+      "images": [
+        "https://pbs.twimg.com/media/FsEHnwyaAAE8MXw?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/715_tyun/status/1639600130008694786?s=20",
+      "source": "X",
+      "content": "Cosplayer: 小雪うのさん",
+      "like_count": 3400,
+      "impression_count": 182400,
+      "collected_at": "2026-02-09T10:40:35.104541",
+      "text": "Gaming Girls ▶︎ Dakochite T  Did you just provoke me?    @tubame_star",
+      "last_fetched": "2026-02-09T13:14:08.739838",
+      "width": 2730,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 61600,
+      "viral_score": 0.055,
+      "posted_hour": 21
     },
     {
       "member_name": "甘結もか",
@@ -1834,10 +2406,75 @@
       "collected_at": "2026-02-09T10:40:35.105174",
       "text": "ガチ姉妹の花芽姉妹VGGC二人でいます",
       "last_fetched": "2026-02-09T13:03:43.997152",
+      "width": 1506,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
       "followers": 52400,
       "viral_score": 0.061,
-      "posted_hour": 22,
-      "aspect_type": "Unknown"
+      "posted_hour": 22
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "小雪うのさん",
+      "images": [
+        "https://pbs.twimg.com/media/GKZelBibAAEzZmf?format=jpg&name=large"
+      ],
+      "url": "https://x.com/715_tyun/status/1776211098695246240?s=20",
+      "source": "X",
+      "content": "Cosplayer: 小雪うのさん",
+      "like_count": 3200,
+      "impression_count": 91300,
+      "collected_at": "2026-02-09T10:40:35.104547",
+      "text": "【コスプレ】 ぶいすぽっ！ 花芽なずなさん 雀魂  “きらりんぶいっ”   @jyuusei_massage",
+      "last_fetched": "2026-02-09T13:14:04.414879",
+      "width": 1038,
+      "height": 1449,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 61600,
+      "viral_score": 0.052,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "雪村ユノさん",
+      "images": [
+        "https://pbs.twimg.com/media/GXB8M3IaEAA4WcG?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/yukimuraYY2/status/1833101624182501500?s=20",
+      "source": "X",
+      "content": "Cosplayer: 雪村ユノさん",
+      "like_count": 3200,
+      "impression_count": 83700,
+      "collected_at": "2026-02-09T10:40:35.103107",
+      "text": "花芽姉妹",
+      "last_fetched": "2026-02-09T19:17:46.556886",
+      "width": 1672,
+      "height": 2507,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 125200,
+      "viral_score": 0.026,
+      "posted_hour": 20
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "小雪うのさん",
+      "images": [
+        "https://pbs.twimg.com/media/FgOkeoBUcAAIKm2?format=jpg&name=large"
+      ],
+      "url": "https://x.com/715_tyun/status/1586292344441012224?s=20",
+      "source": "X",
+      "content": "Cosplayer: 小雪うのさん",
+      "like_count": 3100,
+      "impression_count": 56,
+      "collected_at": "2026-02-09T10:40:35.104514",
+      "text": "チャイナな花芽なずなさんもやってきた麻雀の時の",
+      "last_fetched": "2026-02-09T13:14:21.251354",
+      "width": 1128,
+      "height": 1504,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 61600,
+      "viral_score": 0.05,
+      "posted_hour": 18
     },
     {
       "member_name": "花芽なずな",
@@ -1855,6 +2492,48 @@
       "viral_score": 0.377,
       "posted_hour": 22,
       "aspect_type": "Unknown"
+    },
+    {
+      "member_name": "花芽すみれ",
+      "author_name": "なぎにゃさん",
+      "images": [
+        "https://pbs.twimg.com/media/GR9ZyJfa4AAH5O_?format=jpg&name=large"
+      ],
+      "url": "https://x.com/nyan_o912/status/1810264769905209784/photo/1",
+      "source": "X",
+      "content": "Cosplayer: なぎにゃさん",
+      "like_count": 3000,
+      "impression_count": 83000,
+      "collected_at": "2026-02-09T10:40:35.103502",
+      "text": "cosplay  ぶいすぽっ！花芽すみれ",
+      "last_fetched": "2026-02-09T14:57:39.492749",
+      "width": 1365,
+      "height": 2048,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 38500,
+      "viral_score": 0.078,
+      "posted_hour": 19
+    },
+    {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/F0Hlm35agAIOI1k?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1675872998270849031?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 2900,
+      "impression_count": 111800,
+      "collected_at": "2026-02-09T10:40:35.104702",
+      "text": "コスプレ/Cosplay  ぶいすぽっ！ 花芽なずな                     可愛い担当❁⃘  Photo @komachiphoto  さん #TMAF2023",
+      "last_fetched": "2026-02-09T13:13:02.277493",
+      "width": 2734,
+      "height": 4096,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.051,
+      "posted_hour": 23
     },
     {
       "member_name": "甘結もか",
@@ -1942,6 +2621,27 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽なずな",
+      "author_name": "しきぶさん",
+      "images": [
+        "https://pbs.twimg.com/media/F1cz5voaYAMs_5u?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/snow_sayu_/status/1681870061206913025?s=20",
+      "source": "X",
+      "content": "Cosplayer: しきぶさん",
+      "like_count": 2700,
+      "impression_count": 103400,
+      "collected_at": "2026-02-09T10:40:35.104715",
+      "text": "コスプレ/Cosplay       ぶいすぽっ！  花芽なずな ❁⃘*  Photo @kaito_ck  さん #TMAF2023",
+      "last_fetched": "2026-02-09T13:12:52.102883",
+      "width": 2730,
+      "height": 4095,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 57300,
+      "viral_score": 0.047,
+      "posted_hour": 12
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "えびせんべいさん",
       "images": [
@@ -2027,6 +2727,27 @@
       "aspect_type": "Unknown"
     },
     {
+      "member_name": "花芽すみれ",
+      "author_name": "めるとさん",
+      "images": [
+        "https://pbs.twimg.com/media/G7yvurtaMAAKrIl?format=jpg&name=4096x4096"
+      ],
+      "url": "https://x.com/MeruRabbit033/status/1998665562944410068?s=20",
+      "source": "X",
+      "content": "Cosplayer: めるとさん",
+      "like_count": 2500,
+      "impression_count": 37100,
+      "collected_at": "2026-02-09T10:40:35.103051",
+      "text": "本日すーちゃんでした",
+      "last_fetched": "2026-02-09T19:18:14.911670",
+      "width": 3024,
+      "height": 4028,
+      "aspect_type": "Portrait (縦長)",
+      "followers": 7334,
+      "viral_score": 0.341,
+      "posted_hour": 17
+    },
+    {
       "member_name": "甘結もか",
       "author_name": "さきさん",
       "images": [
@@ -2059,384 +2780,6 @@
       "viral_score": 0.174,
       "posted_hour": 17,
       "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "あまねみやさん",
-      "images": [
-        "https://pbs.twimg.com/media/GpISBURawAA-cvO?format=jpg&name=large"
-      ],
-      "url": "https://x.com/AMNmiya4646/status/1914612616213004395",
-      "source": "X",
-      "content": "Cosplayer: あまねみやさん",
-      "like_count": 2470,
-      "impression_count": 61700,
-      "collected_at": "2026-02-09T10:40:35.105670",
-      "followers": 254400,
-      "viral_score": 0.01,
-      "posted_hour": 18,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "茉夏なつさん",
-      "images": [
-        "https://pbs.twimg.com/media/GPj2KLDaYAAT1eN?format=jpg&name=large"
-      ],
-      "url": "https://x.com/VERYVERY_HOT/status/1799458711104364989",
-      "source": "X",
-      "content": "Cosplayer: 茉夏なつさん",
-      "like_count": 2400,
-      "impression_count": 98200,
-      "collected_at": "2026-02-09T10:40:35.105186",
-      "text": "妹の紫音見ねたチャンが本日、爆誕日です kiss @kw_shiomineta",
-      "last_fetched": "2026-02-09T13:03:38.238835",
-      "followers": 52400,
-      "viral_score": 0.046,
-      "posted_hour": 0,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/GzKpalebIAAfo2I?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1959815069895897319/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 2325,
-      "impression_count": 52800,
-      "collected_at": "2026-02-09T10:40:35.157460",
-      "followers": 34700,
-      "viral_score": 0.067,
-      "posted_hour": 12,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6hVOYfasAAMmgk?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1992936552071385526/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 2166,
-      "impression_count": 29300,
-      "collected_at": "2026-02-09T10:40:35.157042",
-      "followers": 14300,
-      "viral_score": 0.151,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "茉夏なつさん",
-      "images": [
-        "https://pbs.twimg.com/media/GzhDxyKaEAADAqT?format=jpg&name=large"
-      ],
-      "url": "https://x.com/VERYVERY_HOT/status/1961392169459257446",
-      "source": "X",
-      "content": "Cosplayer: 茉夏なつさん",
-      "like_count": 2084,
-      "impression_count": 49500,
-      "collected_at": "2026-02-09T10:40:35.157155",
-      "followers": 52400,
-      "viral_score": 0.04,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/G1CkYb_awAAbq00?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1968253793424003468/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 2079,
-      "impression_count": 29000,
-      "collected_at": "2026-02-09T10:40:35.157595",
-      "followers": 34700,
-      "viral_score": 0.06,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6HpCh2bYAA2x4H?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1991128751627755788/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 2071,
-      "impression_count": 31700,
-      "collected_at": "2026-02-09T10:40:35.157024",
-      "followers": 14300,
-      "viral_score": 0.145,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "茉夏なつさん",
-      "images": [
-        "https://pbs.twimg.com/media/G7AFzQEbgAEo8RO?format=jpg&name=large"
-      ],
-      "url": "https://x.com/VERYVERY_HOT/status/1995101023954993155",
-      "source": "X",
-      "content": "Cosplayer: 茉夏なつさん",
-      "like_count": 1973,
-      "impression_count": 27500,
-      "collected_at": "2026-02-09T10:40:35.157161",
-      "followers": 52400,
-      "viral_score": 0.038,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G735gZJa4AAIDs1?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1999028159333941431/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1972,
-      "impression_count": 21700,
-      "collected_at": "2026-02-09T10:40:35.157066",
-      "followers": 14300,
-      "viral_score": 0.138,
-      "posted_hour": 17,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/G0yWB3-bcAETwqz?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1967112115845832737/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 1955,
-      "impression_count": 39400,
-      "collected_at": "2026-02-09T10:40:35.157517",
-      "followers": 34700,
-      "viral_score": 0.056,
-      "posted_hour": 15,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/GzGfJ8aakAA7lu6?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1959522315731079231/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 1915,
-      "impression_count": 53900,
-      "collected_at": "2026-02-09T10:40:35.157447",
-      "followers": 34700,
-      "viral_score": 0.055,
-      "posted_hour": 16,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G6a9jVGbcAAyo0Y?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1992488305381048800/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1887,
-      "impression_count": 36100,
-      "collected_at": "2026-02-09T10:40:35.157036",
-      "followers": 14300,
-      "viral_score": 0.132,
-      "posted_hour": 16,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/G094qqtaEAIx13X?format=jpg&name=large"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1967924253308883423/photo/1",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 1855,
-      "impression_count": 32400,
-      "collected_at": "2026-02-09T10:40:35.157578",
-      "followers": 34700,
-      "viral_score": 0.053,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "花村きりさん",
-      "images": [
-        "https://pbs.twimg.com/media/GoyfzlHbkAAwqYZ?format=jpg&name=large"
-      ],
-      "url": "https://x.com/kri0063/status/1913079666711085204",
-      "source": "X",
-      "content": "Cosplayer: 花村きりさん",
-      "like_count": 1823,
-      "impression_count": 52600,
-      "collected_at": "2026-02-09T10:40:35.105658",
-      "followers": 71100,
-      "viral_score": 0.026,
-      "posted_hour": 12,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "みぞれ！さん",
-      "images": [
-        "https://pbs.twimg.com/media/GqRXYLebAAYXX3p?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/_Mizore_cos/status/1919755423663428035?s=20",
-      "source": "X",
-      "content": "Cosplayer: みぞれ！さん",
-      "like_count": 1715,
-      "impression_count": 43900,
-      "collected_at": "2026-02-09T10:40:35.157347",
-      "followers": 10000,
-      "viral_score": 0.172,
-      "posted_hour": 23,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/GzcdE1FacAARtqL?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1961068141729263734?s=20",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 1711,
-      "impression_count": 48100,
-      "collected_at": "2026-02-09T10:40:35.157384",
-      "followers": 34700,
-      "viral_score": 0.049,
-      "posted_hour": 23,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "花芽なずな",
-      "author_name": "茉夏なつさん",
-      "images": [
-        "https://pbs.twimg.com/media/Gy3wvJWbQAAUH8i?format=jpg&name=large"
-      ],
-      "url": "https://x.com/VERYVERY_HOT/status/1958486141541503082",
-      "source": "X",
-      "content": "Cosplayer: 茉夏なつさん",
-      "like_count": 1700,
-      "impression_count": 42400,
-      "collected_at": "2026-02-09T10:40:35.105192",
-      "text": "え、可愛い‼︎",
-      "last_fetched": "2026-02-09T13:03:35.329469",
-      "followers": 52400,
-      "viral_score": 0.032,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G2fZj91a0AES9Nc?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1974786186570019052/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1626,
-      "impression_count": 26000,
-      "collected_at": "2026-02-09T10:40:35.156906",
-      "followers": 14300,
-      "viral_score": 0.114,
-      "posted_hour": 19,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "さめのちさん",
-      "images": [
-        "https://pbs.twimg.com/media/G378vPYXEAAAyal?format=jpg&name=large"
-      ],
-      "url": "https://x.com/samesandayo/status/1981298784098488765/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さめのちさん",
-      "like_count": 1621,
-      "impression_count": 24700,
-      "collected_at": "2026-02-09T10:40:35.156991",
-      "followers": 14300,
-      "viral_score": 0.113,
-      "posted_hour": 18,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "さきさん",
-      "images": [
-        "https://pbs.twimg.com/media/G9dyyzuaYAENjkT?format=jpg&name=large"
-      ],
-      "url": "https://x.com/Saki_cos_1115/status/2006198407577080217/photo/1",
-      "source": "X",
-      "content": "Cosplayer: さきさん",
-      "like_count": 1574,
-      "impression_count": 24800,
-      "collected_at": "2026-02-09T10:40:35.157692",
-      "followers": 10000,
-      "viral_score": 0.157,
-      "posted_hour": 11,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "甘結もか",
-      "author_name": "えびせんべいさん",
-      "images": [
-        "https://pbs.twimg.com/media/GzraTZiaIAAn5gi?format=jpg&name=4096x4096"
-      ],
-      "url": "https://x.com/ebisen_bei_kosu/status/1962120628921872748?s=20",
-      "source": "X",
-      "content": "Cosplayer: えびせんべいさん",
-      "like_count": 1545,
-      "impression_count": 25300,
-      "collected_at": "2026-02-09T10:40:35.157308",
-      "followers": 34700,
-      "viral_score": 0.045,
-      "posted_hour": 20,
-      "aspect_type": "Unknown"
-    },
-    {
-      "member_name": "蝶屋はなび",
-      "author_name": "わらわらさん",
-      "images": [
-        "https://pbs.twimg.com/media/GxgdiQdbQAAkXj5?format=jpg&name=large"
-      ],
-      "url": "https://x.com/chacha_0320/status/1952342929345052693",
-      "source": "X",
-      "content": "Cosplayer: わらわらさん",
-      "like_count": 1503,
-      "impression_count": 36500,
-      "collected_at": "2026-02-09T10:40:35.157184",
-      "followers": 45500,
-      "viral_score": 0.033,
-      "posted_hour": 21,
-      "aspect_type": "Unknown"
     }
   ],
   "member_ranking": [
@@ -2450,7 +2793,11 @@
     },
     {
       "name": "花芽なずな",
-      "avg": 502
+      "avg": 837
+    },
+    {
+      "name": "花芽すみれ",
+      "avg": 706
     }
   ]
 }
