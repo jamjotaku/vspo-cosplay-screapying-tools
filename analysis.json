@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026/02/10 03:47",
+  "updated_at": "2026/02/10 03:50",
   "total_analyzed": 662,
-  "total_records": 2,
+  "total_records": 6015,
   "global_avg": 1211,
   "hourly_report": [
     {
@@ -151,20 +151,17 @@
     {
       "location": "Event",
       "avg": 1204,
-      "count": 71,
-      "multiplier": 0.99
+      "count": 71
     },
     {
       "location": "Studio/Home",
       "avg": 569,
-      "count": 19,
-      "multiplier": 0.47
+      "count": 19
     },
     {
       "location": "Others",
       "avg": 1233,
-      "count": 572,
-      "multiplier": 1.02
+      "count": 572
     }
   ],
   "member_ranking": [
@@ -542,8 +539,7 @@
       "followers": 299,
       "viral_score": 71.91,
       "url": "https://x.com/fuyuha_c/status/1977517296634691868?s=20",
-      "location": "Others",
-      "text": "✤cosply  　　ぶいすぽっ！　千燈ゆうひ  ヨ・シーダさん  #0816夏休みのパジャマパーテ..."
+      "location": "Others"
     },
     {
       "character_name": "nyoru_nyokki",
@@ -552,8 +548,7 @@
       "followers": 7851,
       "viral_score": 71.07,
       "url": "https://x.com/nyoru_nyokki/status/2000194010863005825/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "uramaru_Z",
@@ -562,8 +557,7 @@
       "followers": 3656,
       "viral_score": 64.96,
       "url": "https://x.com/uramaru_Z/status/1967797983258578981?s=20",
-      "location": "Event",
-      "text": "#VGGC10th  千燈ゆうひちゃん、新衣装で参加してました アイマスクの素材感！こだわりました ..."
+      "location": "Event"
     },
     {
       "character_name": "fuyuha_c",
@@ -572,8 +566,7 @@
       "followers": 299,
       "viral_score": 57.19,
       "url": "https://x.com/fuyuha_c/status/1987119411581624566?s=20",
-      "location": "Others",
-      "text": "✤cosply.千燈ゆうひ  部屋着でこたつ入りたいです   #0816夏休みのパジャマパーティ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -582,8 +575,7 @@
       "followers": 14300,
       "viral_score": 55.08,
       "url": "https://x.com/samesandayo/status/1939870853749174527/photo/1",
-      "location": "Others",
-      "text": "ｽﾞｰｰｰｰﾑ!..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -592,8 +584,7 @@
       "followers": 14300,
       "viral_score": 54.45,
       "url": "https://x.com/samesandayo/status/1938576390313726239/photo/1",
-      "location": "Others",
-      "text": "cos   3D was way too good~~~   Congrats~~~..."
+      "location": "Others"
     },
     {
       "character_name": "kyokotitty_",
@@ -602,8 +593,7 @@
       "followers": 22100,
       "viral_score": 50.4,
       "url": "https://x.com/kyokotitty_/status/1989656422683148390?s=20",
-      "location": "Others",
-      "text": "Finally made it here!   It's Hanabichan in her new..."
+      "location": "Others"
     },
     {
       "character_name": "kyokotitty_",
@@ -612,8 +602,7 @@
       "followers": 22100,
       "viral_score": 49.18,
       "url": "https://x.com/kyokotitty_/status/1990707102109872398?s=20",
-      "location": "Others",
-      "text": "Cosplay cos   Vspo! / Hanabi Chouya         『 Neon..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -622,8 +611,7 @@
       "followers": 14300,
       "viral_score": 48.17,
       "url": "https://x.com/samesandayo/status/1978761231151309174/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -632,8 +620,7 @@
       "followers": 2093,
       "viral_score": 47.78,
       "url": "https://x.com/shinoazu_cos/status/1931733949182824718",
-      "location": "Others",
-      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ！/花芽すみれ  新衣装チャイナver 素敵なお衣装作..."
+      "location": "Others"
     },
     {
       "character_name": "Saki_cos_1115",
@@ -642,8 +629,7 @@
       "followers": 10000,
       "viral_score": 46.3,
       "url": "https://x.com/Saki_cos_1115/status/2003325225740697850/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -652,8 +638,7 @@
       "followers": 14300,
       "viral_score": 45.41,
       "url": "https://x.com/samesandayo/status/2006382459664175142/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -662,8 +647,7 @@
       "followers": 2093,
       "viral_score": 41.85,
       "url": "https://x.com/shinoazu_cos/status/1943130959504904551",
-      "location": "Others",
-      "text": "【⚠︎Cosplay】  Vspo!/Kaga Sumire China ver  #RagCos ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -672,8 +656,7 @@
       "followers": 14300,
       "viral_score": 41.22,
       "url": "https://x.com/samesandayo/status/1980197373063401612/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -682,8 +665,7 @@
       "followers": 14300,
       "viral_score": 40.95,
       "url": "https://x.com/samesandayo/status/1979130406135108025/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "riha_amase",
@@ -692,8 +674,7 @@
       "followers": 21200,
       "viral_score": 40.57,
       "url": "https://x.com/riha_amase/status/1983474385135735086",
-      "location": "Event",
-      "text": "#池ハロ2025  cos 花芽すみれ..."
+      "location": "Event"
     },
     {
       "character_name": "samesandayo",
@@ -702,8 +683,7 @@
       "followers": 14300,
       "viral_score": 39.11,
       "url": "https://x.com/samesandayo/status/2004887635660329195/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -712,8 +692,7 @@
       "followers": 14300,
       "viral_score": 36.65,
       "url": "https://x.com/samesandayo/status/1949417584849527195/photo/1",
-      "location": "Others",
-      "text": "ﾁｮﾔ縁日してきた~..."
+      "location": "Others"
     },
     {
       "character_name": "fuyuha_c",
@@ -722,8 +701,7 @@
       "followers": 299,
       "viral_score": 35.45,
       "url": "https://x.com/fuyuha_c/status/1965650449278947344?s=20",
-      "location": "Studio/Home",
-      "text": "初めてやった時の自撮り千燈さん..."
+      "location": "Studio/Home"
     },
     {
       "character_name": "samesandayo",
@@ -732,8 +710,7 @@
       "followers": 14300,
       "viral_score": 34.64,
       "url": "https://x.com/samesandayo/status/1973343255644479961/photo/1",
-      "location": "Others",
-      "text": "cos ﾁｮﾔｯｻｰｰｰｰﾝ!! ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -742,8 +719,7 @@
       "followers": 14300,
       "viral_score": 33.99,
       "url": "https://x.com/samesandayo/status/1982781109097333122/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "fuyuha_c",
@@ -752,8 +728,7 @@
       "followers": 299,
       "viral_score": 33.44,
       "url": "https://x.com/fuyuha_c/status/1991505215972114882?s=20",
-      "location": "Studio/Home",
-      "text": "✤cosply.千燈ゆうひ  　　　　 自撮り  また制服やりたいな..."
+      "location": "Studio/Home"
     },
     {
       "character_name": "shinoazu_cos",
@@ -762,8 +737,7 @@
       "followers": 2093,
       "viral_score": 33.3,
       "url": "https://x.com/shinoazu_cos/status/1949119474822483988",
-      "location": "Others",
-      "text": "すーちゃんぬいと..."
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -772,8 +746,7 @@
       "followers": 2093,
       "viral_score": 32.78,
       "url": "https://x.com/shinoazu_cos/status/1945326341664203198",
-      "location": "Others",
-      "text": "おいす〜..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -782,8 +755,7 @@
       "followers": 14300,
       "viral_score": 32.55,
       "url": "https://x.com/samesandayo/status/1876556852185677930?s=20",
-      "location": "Others",
-      "text": "ぴーすぴーす..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -792,8 +764,7 @@
       "followers": 14300,
       "viral_score": 31.7,
       "url": "https://x.com/samesandayo/status/1918081525603877056/photo/1",
-      "location": "Others",
-      "text": "おはヨーーーー！！！！！！！れ！！！！！！！！..."
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -802,8 +773,7 @@
       "followers": 2093,
       "viral_score": 30.48,
       "url": "https://x.com/shinoazu_cos/status/1938044630991614288",
-      "location": "Others",
-      "text": "【⚠︎コスプレ/cosplay】  ぶいすぽっ！/花芽すみれ  チャイナver : @chimeAt..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -812,8 +782,7 @@
       "followers": 14300,
       "viral_score": 29.88,
       "url": "https://x.com/samesandayo/status/1967888091986923644/photo/1",
-      "location": "Event",
-      "text": "cos   Hanabi of the Butterfly House       @haruka_..."
+      "location": "Event"
     },
     {
       "character_name": "kagoshimanana",
@@ -822,8 +791,7 @@
       "followers": 4785,
       "viral_score": 29.74,
       "url": "https://x.com/kagoshimanana/status/1944716358010515805?s=20",
-      "location": "Others",
-      "text": "cos ぶいすぽっ！／花芽すみれ ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -832,8 +800,7 @@
       "followers": 14300,
       "viral_score": 29.19,
       "url": "https://x.com/samesandayo/status/1874365767082533147?s=20",
-      "location": "Others",
-      "text": "謹賀新年  今年の目標はイラスト1ヶ月に1枚以上描く お絵描きに力を入れようの年  今年もよろしくお..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -842,8 +809,7 @@
       "followers": 14300,
       "viral_score": 29.12,
       "url": "https://x.com/samesandayo/status/1979500013974921424/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -852,8 +818,7 @@
       "followers": 14300,
       "viral_score": 28.8,
       "url": "https://x.com/samesandayo/status/1873668730397598111?s=20",
-      "location": "Event",
-      "text": "コミケ2日間完了〜！！お疲れ様でしたー 今日はすぽ推しメンはなびちゃん！！！ 好評で嬉しすぎた、、頑..."
+      "location": "Event"
     },
     {
       "character_name": "samesandayo",
@@ -862,8 +827,7 @@
       "followers": 14300,
       "viral_score": 28.14,
       "url": "https://x.com/samesandayo/status/1942201341109244129/photo/1",
-      "location": "Others",
-      "text": "ひょっこりｯｯｯ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -872,8 +836,7 @@
       "followers": 14300,
       "viral_score": 27.44,
       "url": "https://x.com/samesandayo/status/1980593450329550980/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -882,8 +845,7 @@
       "followers": 14300,
       "viral_score": 26.85,
       "url": "https://x.com/samesandayo/status/1953412007161729129/photo/1",
-      "location": "Others",
-      "text": "Do you like candied apples? ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -892,8 +854,7 @@
       "followers": 14300,
       "viral_score": 25.92,
       "url": "https://x.com/samesandayo/status/1904097502883975368?s=20",
-      "location": "Others",
-      "text": "cos ぶいすぽっ！/蝶屋はなび  『 一緒に帰らへん？？？ 』  photo  @shimadac..."
+      "location": "Others"
     },
     {
       "character_name": "nenene_cos",
@@ -902,8 +863,7 @@
       "followers": 2588,
       "viral_score": 25.46,
       "url": "https://x.com/nenene_cos/status/1966099557374464483?s=20",
-      "location": "Others",
-      "text": "Vspo! Summer Beach 2024 Su-chan has arrived  Her v..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -912,8 +872,7 @@
       "followers": 14300,
       "viral_score": 25.43,
       "url": "https://x.com/samesandayo/status/1899668864990102002?s=20",
-      "location": "Others",
-      "text": "ワイはピースしかせんのか？？？？？..."
+      "location": "Others"
     },
     {
       "character_name": "maikasan_oO",
@@ -922,8 +881,7 @@
       "followers": 5902,
       "viral_score": 25.42,
       "url": "https://x.com/maikasan_oO/status/1980218522505773229?s=20",
-      "location": "Others",
-      "text": "なずぴ7周年おめでとう..."
+      "location": "Others"
     },
     {
       "character_name": "maikasan_oO",
@@ -932,8 +890,7 @@
       "followers": 5902,
       "viral_score": 25.42,
       "url": "https://x.com/maikasan_oO/status/1900775850100081065?s=20",
-      "location": "Others",
-      "text": "#0315ぶいすぽ大型併せ なずぴしてる景色良すぎてたのしいすぎる..."
+      "location": "Others"
     },
     {
       "character_name": "Saki_cos_1115",
@@ -942,8 +899,7 @@
       "followers": 10000,
       "viral_score": 24.9,
       "url": "https://x.com/Saki_cos_1115/status/2003392138902651209/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -952,8 +908,7 @@
       "followers": 14300,
       "viral_score": 22.96,
       "url": "https://x.com/samesandayo/status/1997611778617069792/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "maikasan_oO",
@@ -962,8 +917,7 @@
       "followers": 5902,
       "viral_score": 22.03,
       "url": "https://x.com/maikasan_oO/status/1859510138815775099?s=20",
-      "location": "Others",
-      "text": "なずぴの全身(ᐡ - ·̫ -ᐡ)..."
+      "location": "Others"
     },
     {
       "character_name": "L4t___",
@@ -972,8 +926,7 @@
       "followers": 939,
       "viral_score": 21.51,
       "url": "https://x.com/L4t___/status/1996533970163712250?s=20",
-      "location": "Others",
-      "text": "cos パフォ  VtC  @syokuyoudango  様..."
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -982,8 +935,7 @@
       "followers": 2093,
       "viral_score": 21.17,
       "url": "https://x.com/shinoazu_cos/status/1967502934134112293?s=20",
-      "location": "Event",
-      "text": "VGGC10thお疲れ様でした!!! すーちゃんフェス衣装でいてました  知り合いの方々に会えて本当..."
+      "location": "Event"
     },
     {
       "character_name": "akari0914honey",
@@ -992,8 +944,7 @@
       "followers": 3970,
       "viral_score": 20.76,
       "url": "https://x.com/akari0914honey/status/1948717929505456341?s=20",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "shinoazu_cos",
@@ -1002,8 +953,7 @@
       "followers": 2093,
       "viral_score": 20.07,
       "url": "https://x.com/shinoazu_cos/status/1942893867659034857",
-      "location": "Others",
-      "text": "【⚠︎Cosplay】  Vspo!/Kaga Sumire China ver  #RagCos ..."
+      "location": "Others"
     },
     {
       "character_name": "samesandayo",
@@ -1012,8 +962,7 @@
       "followers": 14300,
       "viral_score": 20.01,
       "url": "https://x.com/samesandayo/status/2001587425496490313/photo/1",
-      "location": "Others",
-      "text": ""
+      "location": "Others"
     },
     {
       "character_name": "Niru_ne",
@@ -1022,8 +971,7 @@
       "followers": 2283,
       "viral_score": 19.84,
       "url": "https://x.com/Niru_ne/status/1934161044177653846/photo/1",
-      "location": "Event",
-      "text": "りだつ！  #なちゅすぽっ でパフォしましたっ   #ビビコス大須若宮 #さくコス..."
+      "location": "Event"
     },
     {
       "character_name": "samesandayo",
@@ -1032,8 +980,7 @@
       "followers": 14300,
       "viral_score": 19.5,
       "url": "https://x.com/samesandayo/status/1917909855299604722?s=20",
-      "location": "Others",
-      "text": "オソクホウ！ﾋﾞｰﾊﾅｻﾝ..."
+      "location": "Others"
     }
   ]
 }
