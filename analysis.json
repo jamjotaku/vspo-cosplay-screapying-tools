@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 16:17",
-  "total_analyzed": 2242,
+  "updated_at": "2026/02/11 18:00",
+  "total_analyzed": 2325,
   "total_records": 6015,
-  "global_avg": 1127,
+  "global_avg": 1141,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1127,
-      "count": 2242
+      "avg": 1141,
+      "count": 2325
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 794,
-      "count": 300
+      "avg": 795,
+      "count": 310
     },
     {
       "location": "Studio/Home",
-      "avg": 974,
-      "count": 71
+      "avg": 1088,
+      "count": 73
     },
     {
       "location": "Others",
-      "avg": 1186,
-      "count": 1871
+      "avg": 1198,
+      "count": 1942
     }
   ],
   "member_ranking": [
@@ -222,13 +222,13 @@
     },
     {
       "name": "kuroma_cos_",
-      "avg": 3812,
-      "count": 7
+      "avg": 4288,
+      "count": 22
     },
     {
       "name": "715_tyun",
-      "avg": 2994,
-      "count": 13
+      "avg": 2902,
+      "count": 17
     },
     {
       "name": "UxxnaxxU",
@@ -241,14 +241,14 @@
       "count": 16
     },
     {
-      "name": "samesandayo",
-      "avg": 2327,
-      "count": 86
-    },
-    {
       "name": "kokko_tarou",
       "avg": 2267,
       "count": 2
+    },
+    {
+      "name": "samesandayo",
+      "avg": 2167,
+      "count": 93
     },
     {
       "name": "VERYVERY_HOT",
@@ -262,13 +262,8 @@
     },
     {
       "name": "natsuno_same",
-      "avg": 1892,
-      "count": 67
-    },
-    {
-      "name": "kaza_nn0531",
-      "avg": 1844,
-      "count": 4
+      "avg": 1906,
+      "count": 76
     },
     {
       "name": "calxx0l",
@@ -286,9 +281,14 @@
       "count": 8
     },
     {
+      "name": "kaza_nn0531",
+      "avg": 1531,
+      "count": 6
+    },
+    {
       "name": "yukimuraYY2",
-      "avg": 1494,
-      "count": 7
+      "avg": 1455,
+      "count": 9
     },
     {
       "name": "kri0063",
@@ -321,14 +321,14 @@
       "count": 48
     },
     {
-      "name": "sirane2525",
-      "avg": 1039,
-      "count": 54
-    },
-    {
       "name": "urisuke4_",
       "avg": 1032,
       "count": 143
+    },
+    {
+      "name": "sirane2525",
+      "avg": 1012,
+      "count": 70
     },
     {
       "name": "cyama28",
@@ -339,11 +339,6 @@
       "name": "srmmm03",
       "avg": 995,
       "count": 28
-    },
-    {
-      "name": "Saki_cos_1115",
-      "avg": 977,
-      "count": 20
     },
     {
       "name": "chiaki_1023cos",
@@ -359,6 +354,11 @@
       "name": "nekomya_cos",
       "avg": 932,
       "count": 1
+    },
+    {
+      "name": "Saki_cos_1115",
+      "avg": 891,
+      "count": 23
     },
     {
       "name": "hdk124",
@@ -427,8 +427,8 @@
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 641,
-      "count": 279
+      "avg": 640,
+      "count": 280
     },
     {
       "name": "nahohon_",
@@ -471,6 +471,11 @@
       "count": 4
     },
     {
+      "name": "udonshika_",
+      "avg": 493,
+      "count": 14
+    },
+    {
       "name": "akari_mo",
       "avg": 482,
       "count": 20
@@ -482,13 +487,8 @@
     },
     {
       "name": "Itsuki_0714",
-      "avg": 455,
-      "count": 59
-    },
-    {
-      "name": "udonshika_",
       "avg": 448,
-      "count": 6
+      "count": 67
     },
     {
       "name": "hanyan_nyan",
@@ -516,11 +516,6 @@
       "count": 2
     },
     {
-      "name": "asagi_na_",
-      "avg": 370,
-      "count": 5
-    },
-    {
       "name": "rirerere",
       "avg": 362,
       "count": 1
@@ -534,6 +529,11 @@
       "name": "turatura2282",
       "avg": 355,
       "count": 2
+    },
+    {
+      "name": "asagi_na_",
+      "avg": 352,
+      "count": 9
     },
     {
       "name": "shinoazu_cos",
@@ -616,11 +616,6 @@
       "count": 1
     },
     {
-      "name": "chloelissam",
-      "avg": 106,
-      "count": 55
-    },
-    {
       "name": "3cha3_vcoO",
       "avg": 103,
       "count": 1
@@ -629,6 +624,11 @@
       "name": "sshika7",
       "avg": 101,
       "count": 2
+    },
+    {
+      "name": "chloelissam",
+      "avg": 100,
+      "count": 59
     },
     {
       "name": "L4t___",
