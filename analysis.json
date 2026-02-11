@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 21:38",
-  "total_analyzed": 2488,
+  "updated_at": "2026/02/11 23:25",
+  "total_analyzed": 2571,
   "total_records": 6015,
-  "global_avg": 1175,
+  "global_avg": 1216,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,15 +143,15 @@
     },
     {
       "type": "Unknown",
-      "avg": 1175,
-      "count": 2488
+      "avg": 1216,
+      "count": 2571
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 817,
-      "count": 341
+      "avg": 833,
+      "count": 344
     },
     {
       "location": "Studio/Home",
@@ -160,8 +160,8 @@
     },
     {
       "location": "Others",
-      "avg": 1236,
-      "count": 2070
+      "avg": 1282,
+      "count": 2150
     }
   ],
   "member_ranking": [
@@ -196,11 +196,6 @@
       "count": 1
     },
     {
-      "name": "snow_sayu_",
-      "avg": 4937,
-      "count": 56
-    },
-    {
       "name": "kujoamani",
       "avg": 4905,
       "count": 8
@@ -221,14 +216,19 @@
       "count": 42
     },
     {
+      "name": "snow_sayu_",
+      "avg": 3706,
+      "count": 126
+    },
+    {
       "name": "kuroma_cos_",
-      "avg": 3667,
-      "count": 34
+      "avg": 3672,
+      "count": 35
     },
     {
       "name": "715_tyun",
-      "avg": 2902,
-      "count": 17
+      "avg": 3021,
+      "count": 19
     },
     {
       "name": "UxxnaxxU",
@@ -446,9 +446,14 @@
       "count": 1
     },
     {
+      "name": "pippi_vt",
+      "avg": 573,
+      "count": 1
+    },
+    {
       "name": "tsuyuko_cos",
-      "avg": 567,
-      "count": 166
+      "avg": 572,
+      "count": 167
     },
     {
       "name": "r_1O31",
@@ -566,6 +571,11 @@
       "count": 3
     },
     {
+      "name": "A_kR_9",
+      "avg": 244,
+      "count": 1
+    },
+    {
       "name": "Shiau_Miau",
       "avg": 220,
       "count": 3
@@ -622,8 +632,8 @@
     },
     {
       "name": "chloelissam",
-      "avg": 108,
-      "count": 78
+      "avg": 107,
+      "count": 85
     },
     {
       "name": "3cha3_vcoO",
