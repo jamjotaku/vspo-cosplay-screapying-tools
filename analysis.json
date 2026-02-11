@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 18:00",
-  "total_analyzed": 2325,
+  "updated_at": "2026/02/11 20:09",
+  "total_analyzed": 2408,
   "total_records": 6015,
-  "global_avg": 1141,
+  "global_avg": 1132,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1141,
-      "count": 2325
+      "avg": 1132,
+      "count": 2408
     }
   ],
   "location_report": [
     {
       "location": "Event",
       "avg": 795,
-      "count": 310
+      "count": 325
     },
     {
       "location": "Studio/Home",
-      "avg": 1088,
-      "count": 73
+      "avg": 1089,
+      "count": 75
     },
     {
       "location": "Others",
-      "avg": 1198,
-      "count": 1942
+      "avg": 1188,
+      "count": 2008
     }
   ],
   "member_ranking": [
@@ -182,8 +182,8 @@
     },
     {
       "name": "t_cos_214",
-      "avg": 7673,
-      "count": 21
+      "avg": 7469,
+      "count": 22
     },
     {
       "name": "AMNmiya4646",
@@ -222,8 +222,8 @@
     },
     {
       "name": "kuroma_cos_",
-      "avg": 4288,
-      "count": 22
+      "avg": 3667,
+      "count": 34
     },
     {
       "name": "715_tyun",
@@ -237,8 +237,8 @@
     },
     {
       "name": "shiomineta",
-      "avg": 2616,
-      "count": 16
+      "avg": 2551,
+      "count": 17
     },
     {
       "name": "kokko_tarou",
@@ -247,8 +247,8 @@
     },
     {
       "name": "samesandayo",
-      "avg": 2167,
-      "count": 93
+      "avg": 2153,
+      "count": 94
     },
     {
       "name": "VERYVERY_HOT",
@@ -281,19 +281,9 @@
       "count": 8
     },
     {
-      "name": "kaza_nn0531",
-      "avg": 1531,
-      "count": 6
-    },
-    {
       "name": "yukimuraYY2",
       "avg": 1455,
       "count": 9
-    },
-    {
-      "name": "kri0063",
-      "avg": 1446,
-      "count": 25
     },
     {
       "name": "kagoshimanana",
@@ -301,14 +291,24 @@
       "count": 1
     },
     {
+      "name": "kri0063",
+      "avg": 1410,
+      "count": 27
+    },
+    {
       "name": "miimi_cos",
-      "avg": 1231,
-      "count": 73
+      "avg": 1224,
+      "count": 79
     },
     {
       "name": "__stk_co",
       "avg": 1199,
       "count": 1
+    },
+    {
+      "name": "kaza_nn0531",
+      "avg": 1187,
+      "count": 9
     },
     {
       "name": "kyokotitty_",
@@ -321,14 +321,14 @@
       "count": 48
     },
     {
+      "name": "sirane2525",
+      "avg": 1038,
+      "count": 75
+    },
+    {
       "name": "urisuke4_",
       "avg": 1032,
       "count": 143
-    },
-    {
-      "name": "sirane2525",
-      "avg": 1012,
-      "count": 70
     },
     {
       "name": "cyama28",
@@ -387,8 +387,8 @@
     },
     {
       "name": "mm_23_22",
-      "avg": 734,
-      "count": 43
+      "avg": 728,
+      "count": 45
     },
     {
       "name": "MeruRabbit033",
@@ -421,14 +421,14 @@
       "count": 1
     },
     {
-      "name": "tsuyuko_cos",
-      "avg": 652,
-      "count": 116
-    },
-    {
       "name": "nyoru_nyokki",
       "avg": 640,
       "count": 280
+    },
+    {
+      "name": "K_hum03_D",
+      "avg": 637,
+      "count": 2
     },
     {
       "name": "nahohon_",
@@ -446,14 +446,14 @@
       "count": 1
     },
     {
+      "name": "tsuyuko_cos",
+      "avg": 575,
+      "count": 163
+    },
+    {
       "name": "r_1O31",
       "avg": 555,
       "count": 3
-    },
-    {
-      "name": "K_hum03_D",
-      "avg": 555,
-      "count": 1
     },
     {
       "name": "aoiro378",
@@ -536,6 +536,11 @@
       "count": 9
     },
     {
+      "name": "konmnok",
+      "avg": 347,
+      "count": 1
+    },
+    {
       "name": "shinoazu_cos",
       "avg": 311,
       "count": 49
@@ -592,8 +597,8 @@
     },
     {
       "name": "YzTainment",
-      "avg": 152,
-      "count": 1
+      "avg": 148,
+      "count": 2
     },
     {
       "name": "usamisa_cos",
@@ -1209,6 +1214,15 @@
       "location": "Others"
     },
     {
+      "character_name": "sirane2525",
+      "cosplayer_name": "sirane2525",
+      "like_count": 4461,
+      "followers": 12100,
+      "viral_score": 36.87,
+      "url": "https://x.com/sirane2525/status/1843231870991143243?s=20",
+      "location": "Others"
+    },
+    {
       "character_name": "samesandayo",
       "cosplayer_name": "samesandayo",
       "like_count": 5241,
@@ -1251,15 +1265,6 @@
       "followers": 12100,
       "viral_score": 34.98,
       "url": "https://x.com/sirane2525/status/1927704933064720799?s=20",
-      "location": "Others"
-    },
-    {
-      "character_name": "fuyuha_c",
-      "cosplayer_name": "fuyuha_c",
-      "like_count": 104,
-      "followers": 299,
-      "viral_score": 34.78,
-      "url": "https://x.com/fuyuha_c/status/1995870802361942097?s=20",
       "location": "Others"
     }
   ]
