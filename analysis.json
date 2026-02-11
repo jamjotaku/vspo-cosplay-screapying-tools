@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 06:23",
-  "total_analyzed": 1828,
+  "updated_at": "2026/02/11 07:57",
+  "total_analyzed": 1911,
   "total_records": 6015,
-  "global_avg": 1164,
+  "global_avg": 1142,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1164,
-      "count": 1828
+      "avg": 1142,
+      "count": 1911
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 750,
-      "count": 261
+      "avg": 746,
+      "count": 272
     },
     {
       "location": "Studio/Home",
-      "avg": 994,
-      "count": 51
+      "avg": 986,
+      "count": 53
     },
     {
       "location": "Others",
-      "avg": 1241,
-      "count": 1516
+      "avg": 1215,
+      "count": 1586
     }
   ],
   "member_ranking": [
@@ -317,8 +317,8 @@
     },
     {
       "name": "sirane2525",
-      "avg": 1025,
-      "count": 50
+      "avg": 1039,
+      "count": 54
     },
     {
       "name": "cyama28",
@@ -366,14 +366,14 @@
       "count": 1
     },
     {
+      "name": "mm_23_22",
+      "avg": 740,
+      "count": 42
+    },
+    {
       "name": "MeruRabbit033",
       "avg": 723,
       "count": 35
-    },
-    {
-      "name": "mm_23_22",
-      "avg": 715,
-      "count": 29
     },
     {
       "name": "nyan_o912",
@@ -419,6 +419,11 @@
       "name": "ancho_cos",
       "avg": 580,
       "count": 1
+    },
+    {
+      "name": "___napo_leon___",
+      "avg": 570,
+      "count": 94
     },
     {
       "name": "miroooo_on",
@@ -474,11 +479,6 @@
       "name": "Niru_ne",
       "avg": 378,
       "count": 3
-    },
-    {
-      "name": "___napo_leon___",
-      "avg": 374,
-      "count": 43
     },
     {
       "name": "asagi_na_",
@@ -541,14 +541,14 @@
       "count": 48
     },
     {
-      "name": "Noko_cos",
-      "avg": 185,
-      "count": 7
-    },
-    {
       "name": "moyulan_16",
       "avg": 183,
       "count": 2
+    },
+    {
+      "name": "Noko_cos",
+      "avg": 183,
+      "count": 12
     },
     {
       "name": "amn__chan",
@@ -634,6 +634,11 @@
       "name": "mntcjd",
       "avg": 73,
       "count": 5
+    },
+    {
+      "name": "imokonbu2",
+      "avg": 68,
+      "count": 10
     },
     {
       "name": "EGGmon___",
