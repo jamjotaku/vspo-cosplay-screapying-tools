@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 20:09",
-  "total_analyzed": 2408,
+  "updated_at": "2026/02/11 21:38",
+  "total_analyzed": 2488,
   "total_records": 6015,
-  "global_avg": 1132,
+  "global_avg": 1175,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1132,
-      "count": 2408
+      "avg": 1175,
+      "count": 2488
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 795,
-      "count": 325
+      "avg": 817,
+      "count": 341
     },
     {
       "location": "Studio/Home",
-      "avg": 1089,
-      "count": 75
+      "avg": 1105,
+      "count": 77
     },
     {
       "location": "Others",
-      "avg": 1188,
-      "count": 2008
+      "avg": 1236,
+      "count": 2070
     }
   ],
   "member_ranking": [
@@ -186,24 +186,19 @@
       "count": 22
     },
     {
-      "name": "AMNmiya4646",
-      "avg": 5989,
-      "count": 4
-    },
-    {
       "name": "Noatan_cos",
       "avg": 5311,
       "count": 8
     },
     {
-      "name": "snow_sayu_",
-      "avg": 5086,
-      "count": 19
-    },
-    {
       "name": "angelia_lapin",
       "avg": 5066,
       "count": 1
+    },
+    {
+      "name": "snow_sayu_",
+      "avg": 4937,
+      "count": 56
     },
     {
       "name": "kujoamani",
@@ -214,6 +209,11 @@
       "name": "riha_amase",
       "avg": 4850,
       "count": 2
+    },
+    {
+      "name": "AMNmiya4646",
+      "avg": 4579,
+      "count": 6
     },
     {
       "name": "kaorokuri",
@@ -292,13 +292,13 @@
     },
     {
       "name": "kri0063",
-      "avg": 1410,
-      "count": 27
+      "avg": 1300,
+      "count": 30
     },
     {
       "name": "miimi_cos",
-      "avg": 1224,
-      "count": 79
+      "avg": 1237,
+      "count": 81
     },
     {
       "name": "__stk_co",
@@ -317,8 +317,8 @@
     },
     {
       "name": "ebisen_bei_kosu",
-      "avg": 1132,
-      "count": 48
+      "avg": 1053,
+      "count": 55
     },
     {
       "name": "sirane2525",
@@ -447,8 +447,8 @@
     },
     {
       "name": "tsuyuko_cos",
-      "avg": 575,
-      "count": 163
+      "avg": 567,
+      "count": 166
     },
     {
       "name": "r_1O31",
@@ -576,6 +576,11 @@
       "count": 48
     },
     {
+      "name": "Noko_cos",
+      "avg": 195,
+      "count": 19
+    },
+    {
       "name": "Rukachi__",
       "avg": 189,
       "count": 2
@@ -584,11 +589,6 @@
       "name": "moyulan_16",
       "avg": 183,
       "count": 2
-    },
-    {
-      "name": "Noko_cos",
-      "avg": 183,
-      "count": 12
     },
     {
       "name": "amn__chan",
@@ -621,6 +621,11 @@
       "count": 1
     },
     {
+      "name": "chloelissam",
+      "avg": 108,
+      "count": 78
+    },
+    {
       "name": "3cha3_vcoO",
       "avg": 103,
       "count": 1
@@ -629,11 +634,6 @@
       "name": "sshika7",
       "avg": 101,
       "count": 2
-    },
-    {
-      "name": "chloelissam",
-      "avg": 100,
-      "count": 59
     },
     {
       "name": "L4t___",
