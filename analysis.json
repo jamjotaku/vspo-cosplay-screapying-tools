@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 03:21",
-  "total_analyzed": 1745,
+  "updated_at": "2026/02/11 06:23",
+  "total_analyzed": 1828,
   "total_records": 6015,
-  "global_avg": 1169,
+  "global_avg": 1164,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1169,
-      "count": 1745
+      "avg": 1164,
+      "count": 1828
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 743,
-      "count": 246
+      "avg": 750,
+      "count": 261
     },
     {
       "location": "Studio/Home",
-      "avg": 1042,
-      "count": 47
+      "avg": 994,
+      "count": 51
     },
     {
       "location": "Others",
-      "avg": 1245,
-      "count": 1452
+      "avg": 1241,
+      "count": 1516
     }
   ],
   "member_ranking": [
@@ -176,14 +176,14 @@
       "count": 1
     },
     {
-      "name": "t_cos_214",
-      "avg": 9142,
-      "count": 15
-    },
-    {
       "name": "xxxUxx_OxxO",
       "avg": 7874,
       "count": 3
+    },
+    {
+      "name": "t_cos_214",
+      "avg": 7673,
+      "count": 21
     },
     {
       "name": "kujoamani",
@@ -226,14 +226,14 @@
       "count": 2
     },
     {
-      "name": "samesandayo",
-      "avg": 2565,
-      "count": 75
-    },
-    {
       "name": "VERYVERY_HOT",
       "avg": 2517,
       "count": 17
+    },
+    {
+      "name": "samesandayo",
+      "avg": 2493,
+      "count": 78
     },
     {
       "name": "kokko_tarou",
@@ -249,6 +249,11 @@
       "name": "kyokotitty_",
       "avg": 2142,
       "count": 21
+    },
+    {
+      "name": "kaza_nn0531",
+      "avg": 2121,
+      "count": 3
     },
     {
       "name": "natsuno_same",
@@ -296,6 +301,11 @@
       "count": 73
     },
     {
+      "name": "__stk_co",
+      "avg": 1199,
+      "count": 1
+    },
+    {
       "name": "urisuke4_",
       "avg": 1176,
       "count": 114
@@ -304,6 +314,16 @@
       "name": "ebisen_bei_kosu",
       "avg": 1132,
       "count": 48
+    },
+    {
+      "name": "sirane2525",
+      "avg": 1025,
+      "count": 50
+    },
+    {
+      "name": "cyama28",
+      "avg": 1004,
+      "count": 1
     },
     {
       "name": "srmmm03",
@@ -321,24 +341,19 @@
       "count": 6
     },
     {
-      "name": "sirane2525",
-      "avg": 889,
-      "count": 22
-    },
-    {
       "name": "hdk124",
       "avg": 858,
       "count": 57
     },
     {
+      "name": "chacha_0320",
+      "avg": 848,
+      "count": 71
+    },
+    {
       "name": "_Mizore_cos",
       "avg": 838,
       "count": 11
-    },
-    {
-      "name": "chacha_0320",
-      "avg": 834,
-      "count": 61
     },
     {
       "name": "akari0914honey",
@@ -357,8 +372,8 @@
     },
     {
       "name": "mm_23_22",
-      "avg": 723,
-      "count": 27
+      "avg": 715,
+      "count": 29
     },
     {
       "name": "nyan_o912",
@@ -366,14 +381,14 @@
       "count": 39
     },
     {
-      "name": "nyoru_nyokki",
-      "avg": 703,
-      "count": 236
-    },
-    {
       "name": "maikasan_oO",
       "avg": 698,
       "count": 15
+    },
+    {
+      "name": "nyoru_nyokki",
+      "avg": 692,
+      "count": 244
     },
     {
       "name": "uniywp",
@@ -387,8 +402,8 @@
     },
     {
       "name": "tsuyuko_cos",
-      "avg": 654,
-      "count": 114
+      "avg": 652,
+      "count": 116
     },
     {
       "name": "nahohon_",
@@ -401,6 +416,11 @@
       "count": 2
     },
     {
+      "name": "ancho_cos",
+      "avg": 580,
+      "count": 1
+    },
+    {
       "name": "miroooo_on",
       "avg": 557,
       "count": 1
@@ -408,6 +428,11 @@
     {
       "name": "r_1O31",
       "avg": 555,
+      "count": 3
+    },
+    {
+      "name": "aoiro378",
+      "avg": 526,
       "count": 3
     },
     {
@@ -432,8 +457,8 @@
     },
     {
       "name": "Itsuki_0714",
-      "avg": 463,
-      "count": 49
+      "avg": 455,
+      "count": 59
     },
     {
       "name": "udonshika_",
@@ -459,6 +484,11 @@
       "name": "asagi_na_",
       "avg": 370,
       "count": 5
+    },
+    {
+      "name": "rirerere",
+      "avg": 362,
+      "count": 1
     },
     {
       "name": "n_ay_u",
@@ -512,18 +542,13 @@
     },
     {
       "name": "Noko_cos",
-      "avg": 193,
-      "count": 4
+      "avg": 185,
+      "count": 7
     },
     {
       "name": "moyulan_16",
       "avg": 183,
       "count": 2
-    },
-    {
-      "name": "sshika7",
-      "avg": 169,
-      "count": 1
     },
     {
       "name": "amn__chan",
@@ -546,11 +571,6 @@
       "count": 1
     },
     {
-      "name": "aoiro378",
-      "avg": 126,
-      "count": 1
-    },
-    {
       "name": "aonyan__oo0",
       "avg": 124,
       "count": 1
@@ -569,6 +589,11 @@
       "name": "3cha3_vcoO",
       "avg": 103,
       "count": 1
+    },
+    {
+      "name": "sshika7",
+      "avg": 101,
+      "count": 2
     },
     {
       "name": "L4t___",
@@ -648,6 +673,11 @@
     {
       "name": "Dai_ziN10",
       "avg": 41,
+      "count": 1
+    },
+    {
+      "name": "nyonyoai",
+      "avg": 40,
       "count": 1
     },
     {
@@ -835,6 +865,15 @@
       "viral_score": 63.84,
       "url": "https://x.com/nyoru_nyokki/status/1953800153011241001/photo/1",
       "location": "Others"
+    },
+    {
+      "character_name": "aoiro378",
+      "cosplayer_name": "aoiro378",
+      "like_count": 921,
+      "followers": 1488,
+      "viral_score": 61.9,
+      "url": "https://x.com/aoiro378/status/1932046462151794753?s=20",
+      "location": "Event"
     },
     {
       "character_name": "krpn_3",
@@ -1080,6 +1119,15 @@
       "location": "Event"
     },
     {
+      "character_name": "kaza_nn0531",
+      "cosplayer_name": "kaza_nn0531",
+      "like_count": 3384,
+      "followers": 8510,
+      "viral_score": 39.76,
+      "url": "https://x.com/kaza_nn0531/status/1807007465214706007?s=20",
+      "location": "Event"
+    },
+    {
       "character_name": "urisuke4_",
       "cosplayer_name": "urisuke4_",
       "like_count": 4796,
@@ -1134,6 +1182,15 @@
       "location": "Studio/Home"
     },
     {
+      "character_name": "aoiro378",
+      "cosplayer_name": "aoiro378",
+      "like_count": 533,
+      "followers": 1488,
+      "viral_score": 35.82,
+      "url": "https://x.com/aoiro378/status/1933502546670477803?s=20",
+      "location": "Others"
+    },
+    {
       "character_name": "fuyuha_c",
       "cosplayer_name": "fuyuha_c",
       "like_count": 106,
@@ -1143,6 +1200,15 @@
       "location": "Studio/Home"
     },
     {
+      "character_name": "sirane2525",
+      "cosplayer_name": "sirane2525",
+      "like_count": 4232,
+      "followers": 12100,
+      "viral_score": 34.98,
+      "url": "https://x.com/sirane2525/status/1927704933064720799?s=20",
+      "location": "Others"
+    },
+    {
       "character_name": "fuyuha_c",
       "cosplayer_name": "fuyuha_c",
       "like_count": 104,
@@ -1150,42 +1216,6 @@
       "viral_score": 34.78,
       "url": "https://x.com/fuyuha_c/status/1995870802361942097?s=20",
       "location": "Others"
-    },
-    {
-      "character_name": "samesandayo",
-      "cosplayer_name": "samesandayo",
-      "like_count": 4954,
-      "followers": 14300,
-      "viral_score": 34.64,
-      "url": "https://x.com/samesandayo/status/1973343255644479961/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "samesandayo",
-      "cosplayer_name": "samesandayo",
-      "like_count": 4861,
-      "followers": 14300,
-      "viral_score": 33.99,
-      "url": "https://x.com/samesandayo/status/1982781109097333122/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "L4t___",
-      "cosplayer_name": "L4t___",
-      "like_count": 319,
-      "followers": 939,
-      "viral_score": 33.97,
-      "url": "https://x.com/L4t___/status/1928770906266153163/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "fuyuha_c",
-      "cosplayer_name": "fuyuha_c",
-      "like_count": 100,
-      "followers": 299,
-      "viral_score": 33.44,
-      "url": "https://x.com/fuyuha_c/status/1991505215972114882?s=20",
-      "location": "Studio/Home"
     }
   ]
 }
