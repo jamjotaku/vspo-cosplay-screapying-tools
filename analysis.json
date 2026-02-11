@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/11 07:57",
-  "total_analyzed": 1911,
+  "updated_at": "2026/02/11 09:47",
+  "total_analyzed": 1994,
   "total_records": 6015,
-  "global_avg": 1142,
+  "global_avg": 1124,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1142,
-      "count": 1911
+      "avg": 1124,
+      "count": 1994
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 746,
-      "count": 272
+      "avg": 739,
+      "count": 277
     },
     {
       "location": "Studio/Home",
-      "avg": 986,
-      "count": 53
+      "avg": 998,
+      "count": 58
     },
     {
       "location": "Others",
-      "avg": 1215,
-      "count": 1586
+      "avg": 1193,
+      "count": 1659
     }
   ],
   "member_ranking": [
@@ -226,14 +226,14 @@
       "count": 2
     },
     {
-      "name": "VERYVERY_HOT",
-      "avg": 2517,
-      "count": 17
+      "name": "samesandayo",
+      "avg": 2482,
+      "count": 79
     },
     {
-      "name": "samesandayo",
-      "avg": 2493,
-      "count": 78
+      "name": "VERYVERY_HOT",
+      "avg": 2373,
+      "count": 19
     },
     {
       "name": "kokko_tarou",
@@ -244,11 +244,6 @@
       "name": "calxx0l",
       "avg": 2151,
       "count": 3
-    },
-    {
-      "name": "kyokotitty_",
-      "avg": 2142,
-      "count": 21
     },
     {
       "name": "kaza_nn0531",
@@ -304,6 +299,11 @@
       "name": "__stk_co",
       "avg": 1199,
       "count": 1
+    },
+    {
+      "name": "kyokotitty_",
+      "avg": 1177,
+      "count": 59
     },
     {
       "name": "urisuke4_",
@@ -381,14 +381,19 @@
       "count": 39
     },
     {
+      "name": "___napo_leon___",
+      "avg": 707,
+      "count": 114
+    },
+    {
       "name": "maikasan_oO",
       "avg": 698,
       "count": 15
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 692,
-      "count": 244
+      "avg": 675,
+      "count": 256
     },
     {
       "name": "uniywp",
@@ -419,11 +424,6 @@
       "name": "ancho_cos",
       "avg": 580,
       "count": 1
-    },
-    {
-      "name": "___napo_leon___",
-      "avg": 570,
-      "count": 94
     },
     {
       "name": "miroooo_on",
@@ -561,14 +561,14 @@
       "count": 1
     },
     {
-      "name": "chloelissam",
-      "avg": 148,
-      "count": 35
-    },
-    {
       "name": "usamisa_cos",
       "avg": 148,
       "count": 1
+    },
+    {
+      "name": "chloelissam",
+      "avg": 137,
+      "count": 38
     },
     {
       "name": "aonyan__oo0",
@@ -638,7 +638,7 @@
     {
       "name": "imokonbu2",
       "avg": 68,
-      "count": 10
+      "count": 17
     },
     {
       "name": "EGGmon___",
