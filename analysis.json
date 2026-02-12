@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/12 15:46",
-  "total_analyzed": 3054,
+  "updated_at": "2026/02/12 18:01",
+  "total_analyzed": 3130,
   "total_records": 6136,
-  "global_avg": 1273,
+  "global_avg": 1286,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1273,
-      "count": 3054
+      "avg": 1286,
+      "count": 3130
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 876,
-      "count": 378
+      "avg": 888,
+      "count": 383
     },
     {
       "location": "Studio/Home",
-      "avg": 1204,
-      "count": 113
+      "avg": 1407,
+      "count": 121
     },
     {
       "location": "Others",
-      "avg": 1335,
-      "count": 2563
+      "avg": 1338,
+      "count": 2626
     }
   ],
   "member_ranking": [
@@ -201,14 +201,14 @@
       "count": 2
     },
     {
-      "name": "kuroma_cos_",
-      "avg": 4788,
-      "count": 64
-    },
-    {
       "name": "AMNmiya4646",
       "avg": 4579,
       "count": 6
+    },
+    {
+      "name": "kuroma_cos_",
+      "avg": 4567,
+      "count": 90
     },
     {
       "name": "kaorokuri",
@@ -307,18 +307,18 @@
     },
     {
       "name": "kri0063",
-      "avg": 1300,
-      "count": 30
-    },
-    {
-      "name": "miimi_cos",
-      "avg": 1237,
-      "count": 81
+      "avg": 1256,
+      "count": 32
     },
     {
       "name": "__stk_co",
       "avg": 1199,
       "count": 1
+    },
+    {
+      "name": "miimi_cos",
+      "avg": 1165,
+      "count": 90
     },
     {
       "name": "kyokotitty_",
@@ -334,6 +334,11 @@
       "name": "ebisen_bei_kosu",
       "avg": 1036,
       "count": 64
+    },
+    {
+      "name": "vr9su",
+      "avg": 1031,
+      "count": 2
     },
     {
       "name": "kaza_nn0531",
@@ -382,8 +387,8 @@
     },
     {
       "name": "chacha_0320",
-      "avg": 852,
-      "count": 160
+      "avg": 855,
+      "count": 183
     },
     {
       "name": "_Mizore_cos",
@@ -447,8 +452,8 @@
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 633,
-      "count": 287
+      "avg": 626,
+      "count": 293
     },
     {
       "name": "Rei_a_1323",
@@ -592,8 +597,8 @@
     },
     {
       "name": "myk_3a",
-      "avg": 198,
-      "count": 48
+      "avg": 196,
+      "count": 55
     },
     {
       "name": "Noko_cos",
@@ -781,6 +786,11 @@
       "count": 2
     },
     {
+      "name": "hy0gak1",
+      "avg": 38,
+      "count": 1
+    },
+    {
       "name": "koyo_cos_",
       "avg": 34,
       "count": 1
@@ -869,6 +879,15 @@
       "followers": 7220,
       "viral_score": 204.7,
       "url": "https://x.com/akari_mo/status/1840963179066646801/photo/1",
+      "location": "Others"
+    },
+    {
+      "character_name": "vr9su",
+      "cosplayer_name": "vr9su",
+      "like_count": 1654,
+      "followers": 917,
+      "viral_score": 180.37,
+      "url": "https://x.com/vr9su/status/2004524190154846305",
       "location": "Others"
     },
     {
@@ -1142,6 +1161,15 @@
       "location": "Others"
     },
     {
+      "character_name": "vr9su",
+      "cosplayer_name": "vr9su",
+      "like_count": 409,
+      "followers": 917,
+      "viral_score": 44.6,
+      "url": "https://x.com/vr9su/status/2004851008082768239",
+      "location": "Others"
+    },
+    {
       "character_name": "nyoru_nyokki",
       "cosplayer_name": "nyoru_nyokki",
       "like_count": 3484,
@@ -1292,24 +1320,6 @@
       "followers": 14300,
       "viral_score": 36.65,
       "url": "https://x.com/samesandayo/status/1949417584849527195/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "shinoazu_cos",
-      "cosplayer_name": "shinoazu_cos",
-      "like_count": 756,
-      "followers": 2093,
-      "viral_score": 36.12,
-      "url": "https://x.com/shinoazu_cos/status/1959597569161781602",
-      "location": "Studio/Home"
-    },
-    {
-      "character_name": "aoiro378",
-      "cosplayer_name": "aoiro378",
-      "like_count": 533,
-      "followers": 1488,
-      "viral_score": 35.82,
-      "url": "https://x.com/aoiro378/status/1933502546670477803?s=20",
       "location": "Others"
     }
   ]
