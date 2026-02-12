@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/12 06:24",
-  "total_analyzed": 2649,
+  "updated_at": "2026/02/12 07:58",
+  "total_analyzed": 2732,
   "total_records": 6136,
-  "global_avg": 1211,
+  "global_avg": 1185,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1211,
-      "count": 2649
+      "avg": 1185,
+      "count": 2732
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 824,
-      "count": 351
+      "avg": 826,
+      "count": 353
     },
     {
       "location": "Studio/Home",
-      "avg": 1120,
-      "count": 81
+      "avg": 993,
+      "count": 97
     },
     {
       "location": "Others",
-      "avg": 1275,
-      "count": 2217
+      "avg": 1249,
+      "count": 2282
     }
   ],
   "member_ranking": [
@@ -396,11 +396,6 @@
       "count": 35
     },
     {
-      "name": "akari_mo",
-      "avg": 717,
-      "count": 86
-    },
-    {
       "name": "maikasan_oO",
       "avg": 698,
       "count": 15
@@ -464,6 +459,11 @@
       "name": "r_1O31",
       "avg": 555,
       "count": 3
+    },
+    {
+      "name": "akari_mo",
+      "avg": 542,
+      "count": 169
     },
     {
       "name": "aoiro378",
