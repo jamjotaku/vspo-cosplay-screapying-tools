@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/12 20:02",
-  "total_analyzed": 3209,
+  "updated_at": "2026/02/12 21:35",
+  "total_analyzed": 3288,
   "total_records": 6136,
-  "global_avg": 1290,
+  "global_avg": 1306,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1290,
-      "count": 3209
+      "avg": 1306,
+      "count": 3288
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 882,
-      "count": 388
+      "avg": 906,
+      "count": 400
     },
     {
       "location": "Studio/Home",
-      "avg": 1374,
-      "count": 129
+      "avg": 1426,
+      "count": 131
     },
     {
       "location": "Others",
-      "avg": 1345,
-      "count": 2692
+      "avg": 1358,
+      "count": 2757
     }
   ],
   "member_ranking": [
@@ -177,8 +177,8 @@
     },
     {
       "name": "t_cos_214",
-      "avg": 6793,
-      "count": 25
+      "avg": 6162,
+      "count": 38
     },
     {
       "name": "kujoamani",
@@ -246,14 +246,14 @@
       "count": 14
     },
     {
+      "name": "VERYVERY_HOT",
+      "avg": 2794,
+      "count": 73
+    },
+    {
       "name": "shiomineta",
       "avg": 2551,
       "count": 17
-    },
-    {
-      "name": "VERYVERY_HOT",
-      "avg": 2404,
-      "count": 61
     },
     {
       "name": "UxxnaxxU",
@@ -326,6 +326,11 @@
       "count": 90
     },
     {
+      "name": "meumeu_cos",
+      "avg": 1152,
+      "count": 2
+    },
+    {
       "name": "kyokotitty_",
       "avg": 1149,
       "count": 61
@@ -382,8 +387,8 @@
     },
     {
       "name": "chacha_0320",
-      "avg": 869,
-      "count": 191
+      "avg": 866,
+      "count": 206
     },
     {
       "name": "hdk124",
@@ -431,6 +436,11 @@
       "count": 15
     },
     {
+      "name": "BF_kaya",
+      "avg": 687,
+      "count": 19
+    },
+    {
       "name": "nyan_o912",
       "avg": 676,
       "count": 47
@@ -456,14 +466,14 @@
       "count": 6
     },
     {
-      "name": "nyoru_nyokki",
-      "avg": 620,
-      "count": 298
-    },
-    {
       "name": "Rei_a_1323",
       "avg": 609,
       "count": 2
+    },
+    {
+      "name": "nyoru_nyokki",
+      "avg": 608,
+      "count": 309
     },
     {
       "name": "ancho_cos",
@@ -591,6 +601,11 @@
       "count": 1
     },
     {
+      "name": "nemu00551144",
+      "avg": 244,
+      "count": 1
+    },
+    {
       "name": "Shiau_Miau",
       "avg": 220,
       "count": 3
@@ -606,14 +621,14 @@
       "count": 67
     },
     {
-      "name": "myk_3a",
-      "avg": 196,
-      "count": 55
-    },
-    {
       "name": "Noko_cos",
       "avg": 195,
       "count": 19
+    },
+    {
+      "name": "myk_3a",
+      "avg": 194,
+      "count": 56
     },
     {
       "name": "Rukachi__",
@@ -641,6 +656,11 @@
       "count": 1
     },
     {
+      "name": "arusu_ash",
+      "avg": 146,
+      "count": 1
+    },
+    {
       "name": "kinomyan",
       "avg": 142,
       "count": 1
@@ -656,14 +676,14 @@
       "count": 12
     },
     {
+      "name": "chloelissam",
+      "avg": 115,
+      "count": 97
+    },
+    {
       "name": "suzumetyger",
       "avg": 115,
       "count": 1
-    },
-    {
-      "name": "chloelissam",
-      "avg": 113,
-      "count": 95
     },
     {
       "name": "3cha3_vcoO",
@@ -684,6 +704,11 @@
       "name": "shon_show_shown",
       "avg": 95,
       "count": 1
+    },
+    {
+      "name": "hy0gak1",
+      "avg": 93,
+      "count": 3
     },
     {
       "name": "juri_nosuke",
@@ -716,11 +741,6 @@
       "count": 5
     },
     {
-      "name": "hy0gak1",
-      "avg": 70,
-      "count": 2
-    },
-    {
       "name": "imokonbu2",
       "avg": 68,
       "count": 17
@@ -738,6 +758,11 @@
     {
       "name": "inyoungin2",
       "avg": 55,
+      "count": 1
+    },
+    {
+      "name": "shuuuunpoco",
+      "avg": 52,
       "count": 1
     },
     {
@@ -1006,6 +1031,15 @@
       "followers": 7851,
       "viral_score": 63.84,
       "url": "https://x.com/nyoru_nyokki/status/1953800153011241001/photo/1",
+      "location": "Others"
+    },
+    {
+      "character_name": "meumeu_cos",
+      "cosplayer_name": "meumeu_cos",
+      "like_count": 2135,
+      "followers": 3427,
+      "viral_score": 62.3,
+      "url": "https://x.com/meumeu_cos/status/2012501803192008764",
       "location": "Others"
     },
     {
@@ -1321,15 +1355,6 @@
       "followers": 14300,
       "viral_score": 39.11,
       "url": "https://x.com/samesandayo/status/2004887635660329195/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "nyoru_nyokki",
-      "cosplayer_name": "nyoru_nyokki",
-      "like_count": 2987,
-      "followers": 7851,
-      "viral_score": 38.05,
-      "url": "https://x.com/nyoru_nyokki/status/1952031867613724859/photo/1",
       "location": "Others"
     }
   ]
