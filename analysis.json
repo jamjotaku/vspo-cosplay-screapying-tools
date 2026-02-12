@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/12 11:45",
-  "total_analyzed": 2895,
+  "updated_at": "2026/02/12 14:08",
+  "total_analyzed": 2974,
   "total_records": 6136,
-  "global_avg": 1234,
+  "global_avg": 1230,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1234,
-      "count": 2895
+      "avg": 1230,
+      "count": 2974
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 847,
-      "count": 359
+      "avg": 839,
+      "count": 368
     },
     {
       "location": "Studio/Home",
-      "avg": 990,
-      "count": 101
+      "avg": 983,
+      "count": 106
     },
     {
       "location": "Others",
-      "avg": 1301,
-      "count": 2435
+      "avg": 1298,
+      "count": 2500
     }
   ],
   "member_ranking": [
@@ -216,14 +216,14 @@
       "count": 42
     },
     {
+      "name": "715_tyun",
+      "avg": 4307,
+      "count": 50
+    },
+    {
       "name": "udonshika_",
       "avg": 4185,
       "count": 25
-    },
-    {
-      "name": "715_tyun",
-      "avg": 4158,
-      "count": 44
     },
     {
       "name": "kuroma_cos_",
@@ -376,6 +376,11 @@
       "count": 23
     },
     {
+      "name": "chacha_0320",
+      "avg": 859,
+      "count": 156
+    },
+    {
       "name": "hdk124",
       "avg": 858,
       "count": 57
@@ -389,11 +394,6 @@
       "name": "akari0914honey",
       "avg": 824,
       "count": 1
-    },
-    {
-      "name": "chacha_0320",
-      "avg": 816,
-      "count": 105
     },
     {
       "name": "krpn_3",
@@ -577,8 +577,8 @@
     },
     {
       "name": "ru_rinrin",
-      "avg": 227,
-      "count": 36
+      "avg": 221,
+      "count": 58
     },
     {
       "name": "Shiau_Miau",
