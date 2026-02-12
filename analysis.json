@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/12 07:58",
-  "total_analyzed": 2732,
+  "updated_at": "2026/02/12 09:46",
+  "total_analyzed": 2815,
   "total_records": 6136,
-  "global_avg": 1185,
+  "global_avg": 1208,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1185,
-      "count": 2732
+      "avg": 1208,
+      "count": 2815
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 826,
-      "count": 353
+      "avg": 836,
+      "count": 355
     },
     {
       "location": "Studio/Home",
-      "avg": 993,
-      "count": 97
+      "avg": 990,
+      "count": 101
     },
     {
       "location": "Others",
-      "avg": 1249,
-      "count": 2282
+      "avg": 1273,
+      "count": 2359
     }
   ],
   "member_ranking": [
@@ -186,6 +186,11 @@
       "count": 22
     },
     {
+      "name": "kujoamani",
+      "avg": 5665,
+      "count": 10
+    },
+    {
       "name": "Noatan_cos",
       "avg": 5311,
       "count": 8
@@ -194,11 +199,6 @@
       "name": "angelia_lapin",
       "avg": 5066,
       "count": 1
-    },
-    {
-      "name": "kujoamani",
-      "avg": 4905,
-      "count": 8
     },
     {
       "name": "riha_amase",
@@ -216,14 +216,24 @@
       "count": 42
     },
     {
+      "name": "kuroma_cos_",
+      "avg": 3705,
+      "count": 39
+    },
+    {
       "name": "snow_sayu_",
       "avg": 3685,
       "count": 134
     },
     {
-      "name": "kuroma_cos_",
-      "avg": 3672,
-      "count": 35
+      "name": "udonshika_",
+      "avg": 3450,
+      "count": 23
+    },
+    {
+      "name": "yukimuraYY2",
+      "avg": 3043,
+      "count": 14
     },
     {
       "name": "715_tyun",
@@ -246,14 +256,14 @@
       "count": 2
     },
     {
-      "name": "samesandayo",
-      "avg": 2153,
-      "count": 94
-    },
-    {
       "name": "VERYVERY_HOT",
       "avg": 2143,
       "count": 43
+    },
+    {
+      "name": "samesandayo",
+      "avg": 2096,
+      "count": 100
     },
     {
       "name": "kieru_cos",
@@ -279,11 +289,6 @@
       "name": "aya__cos_",
       "avg": 1720,
       "count": 8
-    },
-    {
-      "name": "yukimuraYY2",
-      "avg": 1455,
-      "count": 9
     },
     {
       "name": "kagoshimanana",
@@ -318,7 +323,7 @@
     {
       "name": "ebisen_bei_kosu",
       "avg": 1053,
-      "count": 55
+      "count": 62
     },
     {
       "name": "sirane2525",
@@ -401,14 +406,14 @@
       "count": 15
     },
     {
-      "name": "nyan_o912",
-      "avg": 695,
-      "count": 45
-    },
-    {
       "name": "___napo_leon___",
       "avg": 686,
       "count": 130
+    },
+    {
+      "name": "nyan_o912",
+      "avg": 676,
+      "count": 47
     },
     {
       "name": "uniywp",
@@ -461,11 +466,6 @@
       "count": 3
     },
     {
-      "name": "akari_mo",
-      "avg": 542,
-      "count": 169
-    },
-    {
       "name": "aoiro378",
       "avg": 526,
       "count": 3
@@ -476,14 +476,14 @@
       "count": 2
     },
     {
+      "name": "akari_mo",
+      "avg": 506,
+      "count": 194
+    },
+    {
       "name": "negi_negi_cos",
       "avg": 498,
       "count": 4
-    },
-    {
-      "name": "udonshika_",
-      "avg": 493,
-      "count": 14
     },
     {
       "name": "koshianko0214",
@@ -492,8 +492,8 @@
     },
     {
       "name": "Itsuki_0714",
-      "avg": 448,
-      "count": 67
+      "avg": 451,
+      "count": 71
     },
     {
       "name": "hanyan_nyan",
@@ -566,11 +566,6 @@
       "count": 1
     },
     {
-      "name": "uramaru_Z",
-      "avg": 245,
-      "count": 36
-    },
-    {
       "name": "se_jo0104",
       "avg": 245,
       "count": 3
@@ -584,6 +579,11 @@
       "name": "Shiau_Miau",
       "avg": 220,
       "count": 3
+    },
+    {
+      "name": "uramaru_Z",
+      "avg": 217,
+      "count": 50
     },
     {
       "name": "myk_3a",
@@ -642,8 +642,8 @@
     },
     {
       "name": "chloelissam",
-      "avg": 107,
-      "count": 85
+      "avg": 112,
+      "count": 90
     },
     {
       "name": "3cha3_vcoO",
