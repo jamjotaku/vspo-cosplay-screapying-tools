@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/13 06:19",
-  "total_analyzed": 3524,
+  "updated_at": "2026/02/13 08:00",
+  "total_analyzed": 3601,
   "total_records": 6136,
-  "global_avg": 1351,
+  "global_avg": 1341,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1351,
-      "count": 3524
+      "avg": 1341,
+      "count": 3601
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 888,
-      "count": 412
+      "avg": 881,
+      "count": 416
     },
     {
       "location": "Studio/Home",
-      "avg": 1344,
-      "count": 143
+      "avg": 1290,
+      "count": 151
     },
     {
       "location": "Others",
-      "avg": 1415,
-      "count": 2969
+      "avg": 1406,
+      "count": 3034
     }
   ],
   "member_ranking": [
@@ -317,8 +317,8 @@
     },
     {
       "name": "kri0063",
-      "avg": 1301,
-      "count": 33
+      "avg": 1243,
+      "count": 37
     },
     {
       "name": "__stk_co",
@@ -352,8 +352,8 @@
     },
     {
       "name": "urisuke4_",
-      "avg": 1008,
-      "count": 152
+      "avg": 1005,
+      "count": 153
     },
     {
       "name": "cyama28",
@@ -391,14 +391,14 @@
       "count": 3
     },
     {
-      "name": "chacha_0320",
-      "avg": 872,
-      "count": 222
-    },
-    {
       "name": "hdk124",
       "avg": 858,
       "count": 57
+    },
+    {
+      "name": "chacha_0320",
+      "avg": 854,
+      "count": 230
     },
     {
       "name": "_Mizore_cos",
@@ -421,11 +421,6 @@
       "count": 1
     },
     {
-      "name": "mm_23_22",
-      "avg": 739,
-      "count": 61
-    },
-    {
       "name": "MeruRabbit033",
       "avg": 723,
       "count": 35
@@ -434,6 +429,11 @@
       "name": "maikasan_oO",
       "avg": 698,
       "count": 15
+    },
+    {
+      "name": "mm_23_22",
+      "avg": 696,
+      "count": 70
     },
     {
       "name": "nyan_o912",
@@ -454,6 +454,11 @@
       "name": "nenene_cos",
       "avg": 659,
       "count": 1
+    },
+    {
+      "name": "akari_mo",
+      "avg": 641,
+      "count": 242
     },
     {
       "name": "K_hum03_D",
@@ -486,19 +491,14 @@
       "count": 1
     },
     {
-      "name": "tsuyuko_cos",
-      "avg": 558,
-      "count": 173
-    },
-    {
       "name": "r_1O31",
       "avg": 555,
       "count": 3
     },
     {
-      "name": "Shino_323a",
-      "avg": 531,
-      "count": 77
+      "name": "tsuyuko_cos",
+      "avg": 554,
+      "count": 177
     },
     {
       "name": "taomaruko",
@@ -511,9 +511,9 @@
       "count": 2
     },
     {
-      "name": "akari_mo",
-      "avg": 499,
-      "count": 204
+      "name": "Shino_323a",
+      "avg": 504,
+      "count": 82
     },
     {
       "name": "negi_negi_cos",
@@ -644,6 +644,11 @@
       "name": "myk_3a",
       "avg": 182,
       "count": 66
+    },
+    {
+      "name": "FuriFuriFFF",
+      "avg": 180,
+      "count": 8
     },
     {
       "name": "amn__chan",
@@ -940,6 +945,15 @@
     {
       "character_name": "akari_mo",
       "cosplayer_name": "akari_mo",
+      "like_count": 36621,
+      "followers": 7220,
+      "viral_score": 507.22,
+      "url": "https://x.com/akari_mo/status/1774257015873044931/photo/1",
+      "location": "Others"
+    },
+    {
+      "character_name": "akari_mo",
+      "cosplayer_name": "akari_mo",
       "like_count": 14779,
       "followers": 7220,
       "viral_score": 204.7,
@@ -1107,6 +1121,15 @@
       "viral_score": 61.9,
       "url": "https://x.com/aoiro378/status/1932046462151794753?s=20",
       "location": "Event"
+    },
+    {
+      "character_name": "akari_mo",
+      "cosplayer_name": "akari_mo",
+      "like_count": 4315,
+      "followers": 7220,
+      "viral_score": 59.76,
+      "url": "https://x.com/akari_mo/status/1931912907299905942/photo/1",
+      "location": "Others"
     },
     {
       "character_name": "krpn_3",
@@ -1368,24 +1391,6 @@
       "viral_score": 41.22,
       "url": "https://x.com/samesandayo/status/1980197373063401612/photo/1",
       "location": "Others"
-    },
-    {
-      "character_name": "samesandayo",
-      "cosplayer_name": "samesandayo",
-      "like_count": 5856,
-      "followers": 14300,
-      "viral_score": 40.95,
-      "url": "https://x.com/samesandayo/status/1979130406135108025/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "meromeroko_cos",
-      "cosplayer_name": "meromeroko_cos",
-      "like_count": 22,
-      "followers": 54,
-      "viral_score": 40.74,
-      "url": "https://x.com/meromeroko_cos/status/1997613211181576656?s=20",
-      "location": "Event"
     }
   ]
 }
