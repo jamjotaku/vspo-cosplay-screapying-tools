@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/13 11:40",
-  "total_analyzed": 3755,
+  "updated_at": "2026/02/13 14:01",
+  "total_analyzed": 3832,
   "total_records": 6136,
-  "global_avg": 1312,
+  "global_avg": 1295,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1312,
-      "count": 3755
+      "avg": 1295,
+      "count": 3832
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 860,
-      "count": 432
+      "avg": 846,
+      "count": 446
     },
     {
       "location": "Studio/Home",
       "avg": 1247,
-      "count": 160
+      "count": 161
     },
     {
       "location": "Others",
-      "avg": 1377,
-      "count": 3163
+      "avg": 1360,
+      "count": 3225
     }
   ],
   "member_ranking": [
@@ -272,8 +272,8 @@
     },
     {
       "name": "samesandayo",
-      "avg": 2131,
-      "count": 105
+      "avg": 2123,
+      "count": 106
     },
     {
       "name": "333ikechi",
@@ -342,8 +342,8 @@
     },
     {
       "name": "ebisen_bei_kosu",
-      "avg": 1036,
-      "count": 64
+      "avg": 1032,
+      "count": 70
     },
     {
       "name": "kaza_nn0531",
@@ -381,14 +381,14 @@
       "count": 23
     },
     {
+      "name": "urisuke4_",
+      "avg": 877,
+      "count": 203
+    },
+    {
       "name": "meumeu_cos",
       "avg": 874,
       "count": 3
-    },
-    {
-      "name": "urisuke4_",
-      "avg": 868,
-      "count": 200
     },
     {
       "name": "hdk124",
@@ -418,7 +418,7 @@
     {
       "name": "nyan_o912",
       "avg": 754,
-      "count": 83
+      "count": 85
     },
     {
       "name": "krpn_3",
@@ -429,11 +429,6 @@
       "name": "MeruRabbit033",
       "avg": 723,
       "count": 35
-    },
-    {
-      "name": "maikasan_oO",
-      "avg": 698,
-      "count": 15
     },
     {
       "name": "mm_23_22",
@@ -471,14 +466,19 @@
       "count": 27
     },
     {
+      "name": "maikasan_oO",
+      "avg": 629,
+      "count": 21
+    },
+    {
       "name": "akari_mo",
       "avg": 629,
       "count": 254
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 608,
-      "count": 309
+      "avg": 602,
+      "count": 339
     },
     {
       "name": "___napo_leon___",
@@ -681,14 +681,14 @@
       "count": 1
     },
     {
-      "name": "chloelissam",
-      "avg": 123,
-      "count": 116
-    },
-    {
       "name": "fuyuha_c",
       "avg": 122,
       "count": 12
+    },
+    {
+      "name": "chloelissam",
+      "avg": 121,
+      "count": 145
     },
     {
       "name": "suzumetyger",
