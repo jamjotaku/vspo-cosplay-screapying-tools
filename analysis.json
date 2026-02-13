@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/13 15:42",
-  "total_analyzed": 3909,
+  "updated_at": "2026/02/13 17:48",
+  "total_analyzed": 3986,
   "total_records": 6136,
-  "global_avg": 1282,
+  "global_avg": 1284,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1282,
-      "count": 3909
+      "avg": 1284,
+      "count": 3986
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 845,
-      "count": 477
+      "avg": 860,
+      "count": 494
     },
     {
       "location": "Studio/Home",
-      "avg": 1247,
-      "count": 161
+      "avg": 1235,
+      "count": 163
     },
     {
       "location": "Others",
-      "avg": 1347,
-      "count": 3271
+      "avg": 1349,
+      "count": 3329
     }
   ],
   "member_ranking": [
@@ -232,18 +232,13 @@
     },
     {
       "name": "snow_sayu_",
-      "avg": 3685,
-      "count": 134
-    },
-    {
-      "name": "udonshika_",
-      "avg": 3331,
-      "count": 37
+      "avg": 3780,
+      "count": 141
     },
     {
       "name": "yukimuraYY2",
-      "avg": 3043,
-      "count": 14
+      "avg": 3063,
+      "count": 21
     },
     {
       "name": "VERYVERY_HOT",
@@ -264,6 +259,11 @@
       "name": "kokko_tarou",
       "avg": 2267,
       "count": 2
+    },
+    {
+      "name": "udonshika_",
+      "avg": 2196,
+      "count": 62
     },
     {
       "name": "miroooo_on",
@@ -297,8 +297,8 @@
     },
     {
       "name": "calxx0l",
-      "avg": 1827,
-      "count": 7
+      "avg": 1888,
+      "count": 17
     },
     {
       "name": "mano_n00",
@@ -406,11 +406,6 @@
       "count": 1
     },
     {
-      "name": "kaza_nn0531",
-      "avg": 767,
-      "count": 66
-    },
-    {
       "name": "vr9su",
       "avg": 765,
       "count": 3
@@ -426,9 +421,14 @@
       "count": 1
     },
     {
+      "name": "kaza_nn0531",
+      "avg": 742,
+      "count": 82
+    },
+    {
       "name": "MeruRabbit033",
-      "avg": 723,
-      "count": 35
+      "avg": 708,
+      "count": 40
     },
     {
       "name": "mm_23_22",
@@ -568,7 +568,7 @@
     {
       "name": "asagi_na_",
       "avg": 358,
-      "count": 12
+      "count": 16
     },
     {
       "name": "turatura2282",
@@ -627,8 +627,8 @@
     },
     {
       "name": "Noko_cos",
-      "avg": 204,
-      "count": 22
+      "avg": 209,
+      "count": 25
     },
     {
       "name": "ru_rinrin",
