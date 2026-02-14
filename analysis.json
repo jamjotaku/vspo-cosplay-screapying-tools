@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/14 11:29",
-  "total_analyzed": 4511,
+  "updated_at": "2026/02/14 13:53",
+  "total_analyzed": 4585,
   "total_records": 6237,
-  "global_avg": 1315,
+  "global_avg": 1333,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1315,
-      "count": 4511
+      "avg": 1333,
+      "count": 4585
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 878,
-      "count": 543
+      "avg": 896,
+      "count": 548
     },
     {
       "location": "Studio/Home",
-      "avg": 1186,
-      "count": 178
+      "avg": 1177,
+      "count": 181
     },
     {
       "location": "Others",
-      "avg": 1384,
-      "count": 3790
+      "avg": 1402,
+      "count": 3856
     }
   ],
   "member_ranking": [
@@ -172,8 +172,8 @@
     },
     {
       "name": "Sithle011",
-      "avg": 17881,
-      "count": 2
+      "avg": 13527,
+      "count": 10
     },
     {
       "name": "angelia_lapin",
@@ -207,8 +207,8 @@
     },
     {
       "name": "kaorokuri",
-      "avg": 4303,
-      "count": 46
+      "avg": 4468,
+      "count": 50
     },
     {
       "name": "715_tyun",
@@ -232,8 +232,8 @@
     },
     {
       "name": "snow_sayu_",
-      "avg": 3845,
-      "count": 146
+      "avg": 3848,
+      "count": 148
     },
     {
       "name": "yukimuraYY2",
@@ -257,8 +257,8 @@
     },
     {
       "name": "VERYVERY_HOT",
-      "avg": 2741,
-      "count": 86
+      "avg": 2719,
+      "count": 93
     },
     {
       "name": "marimmmochi",
@@ -287,8 +287,8 @@
     },
     {
       "name": "samesandayo",
-      "avg": 1965,
-      "count": 120
+      "avg": 1959,
+      "count": 121
     },
     {
       "name": "doscosoishi",
@@ -357,8 +357,8 @@
     },
     {
       "name": "miimi_cos",
-      "avg": 1132,
-      "count": 94
+      "avg": 1115,
+      "count": 97
     },
     {
       "name": "ume_hagi",
@@ -422,8 +422,8 @@
     },
     {
       "name": "chacha_0320",
-      "avg": 846,
-      "count": 238
+      "avg": 835,
+      "count": 268
     },
     {
       "name": "akari0914honey",
@@ -537,8 +537,8 @@
     },
     {
       "name": "tsuyuko_cos",
-      "avg": 554,
-      "count": 177
+      "avg": 541,
+      "count": 183
     },
     {
       "name": "taomaruko",
@@ -646,11 +646,6 @@
       "count": 1
     },
     {
-      "name": "shinoazu_cos",
-      "avg": 300,
-      "count": 51
-    },
-    {
       "name": "mitanryo",
       "avg": 272,
       "count": 3
@@ -659,6 +654,11 @@
       "name": "Shiau_Miau",
       "avg": 269,
       "count": 5
+    },
+    {
+      "name": "shinoazu_cos",
+      "avg": 267,
+      "count": 61
     },
     {
       "name": "chicken_3zui",
@@ -716,14 +716,14 @@
       "count": 25
     },
     {
-      "name": "myk_3a",
-      "avg": 208,
-      "count": 77
-    },
-    {
       "name": "ru_rinrin",
       "avg": 204,
       "count": 67
+    },
+    {
+      "name": "myk_3a",
+      "avg": 202,
+      "count": 80
     },
     {
       "name": "Rukachi__",
