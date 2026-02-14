@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/14 15:30",
-  "total_analyzed": 4660,
+  "updated_at": "2026/02/14 17:34",
+  "total_analyzed": 4734,
   "total_records": 6237,
-  "global_avg": 1359,
+  "global_avg": 1355,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1359,
-      "count": 4660
+      "avg": 1355,
+      "count": 4734
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 905,
-      "count": 551
+      "avg": 907,
+      "count": 556
     },
     {
       "location": "Studio/Home",
-      "avg": 1206,
-      "count": 186
+      "avg": 1219,
+      "count": 188
     },
     {
       "location": "Others",
-      "avg": 1429,
-      "count": 3923
+      "avg": 1424,
+      "count": 3990
     }
   ],
   "member_ranking": [
@@ -236,19 +236,14 @@
       "count": 23
     },
     {
-      "name": "Noatan_cos",
-      "avg": 3422,
-      "count": 16
-    },
-    {
-      "name": "VERYVERY_HOT",
-      "avg": 3020,
-      "count": 152
-    },
-    {
       "name": "calxx0l",
       "avg": 2993,
       "count": 24
+    },
+    {
+      "name": "VERYVERY_HOT",
+      "avg": 2983,
+      "count": 167
     },
     {
       "name": "shiomineta",
@@ -259,6 +254,11 @@
       "name": "yn_9rk",
       "avg": 2921,
       "count": 1
+    },
+    {
+      "name": "Noatan_cos",
+      "avg": 2799,
+      "count": 22
     },
     {
       "name": "marimmmochi",
@@ -441,11 +441,6 @@
       "count": 104
     },
     {
-      "name": "nyan_o912",
-      "avg": 779,
-      "count": 136
-    },
-    {
       "name": "vr9su",
       "avg": 765,
       "count": 3
@@ -454,6 +449,11 @@
       "name": "krpn_3",
       "avg": 748,
       "count": 1
+    },
+    {
+      "name": "nyan_o912",
+      "avg": 745,
+      "count": 182
     },
     {
       "name": "kaza_nn0531",
@@ -502,8 +502,8 @@
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 602,
-      "count": 339
+      "avg": 612,
+      "count": 344
     },
     {
       "name": "___napo_leon___",
@@ -782,8 +782,8 @@
     },
     {
       "name": "chloelissam",
-      "avg": 115,
-      "count": 158
+      "avg": 117,
+      "count": 160
     },
     {
       "name": "suzumetyger",
