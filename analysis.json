@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/14 17:34",
-  "total_analyzed": 4734,
+  "updated_at": "2026/02/14 19:39",
+  "total_analyzed": 4808,
   "total_records": 6237,
-  "global_avg": 1355,
+  "global_avg": 1347,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1355,
-      "count": 4734
+      "avg": 1347,
+      "count": 4808
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 907,
-      "count": 556
+      "avg": 906,
+      "count": 577
     },
     {
       "location": "Studio/Home",
-      "avg": 1219,
-      "count": 188
+      "avg": 1237,
+      "count": 191
     },
     {
       "location": "Others",
-      "avg": 1424,
-      "count": 3990
+      "avg": 1416,
+      "count": 4040
     }
   ],
   "member_ranking": [
@@ -257,8 +257,8 @@
     },
     {
       "name": "Noatan_cos",
-      "avg": 2799,
-      "count": 22
+      "avg": 2728,
+      "count": 23
     },
     {
       "name": "marimmmochi",
@@ -356,6 +356,11 @@
       "count": 61
     },
     {
+      "name": "ebisen_bei_kosu",
+      "avg": 1135,
+      "count": 92
+    },
+    {
       "name": "miimi_cos",
       "avg": 1101,
       "count": 99
@@ -384,11 +389,6 @@
       "name": "srmmm03",
       "avg": 1001,
       "count": 35
-    },
-    {
-      "name": "ebisen_bei_kosu",
-      "avg": 993,
-      "count": 85
     },
     {
       "name": "nekomya_cos",
@@ -446,14 +446,14 @@
       "count": 3
     },
     {
+      "name": "nyan_o912",
+      "avg": 753,
+      "count": 183
+    },
+    {
       "name": "krpn_3",
       "avg": 748,
       "count": 1
-    },
-    {
-      "name": "nyan_o912",
-      "avg": 745,
-      "count": 182
     },
     {
       "name": "kaza_nn0531",
@@ -502,8 +502,8 @@
     },
     {
       "name": "nyoru_nyokki",
-      "avg": 612,
-      "count": 344
+      "avg": 629,
+      "count": 398
     },
     {
       "name": "___napo_leon___",
@@ -781,14 +781,14 @@
       "count": 12
     },
     {
-      "name": "chloelissam",
-      "avg": 117,
-      "count": 160
-    },
-    {
       "name": "suzumetyger",
       "avg": 115,
       "count": 1
+    },
+    {
+      "name": "chloelissam",
+      "avg": 114,
+      "count": 171
     },
     {
       "name": "Mrr15___",
@@ -1163,6 +1163,15 @@
       "location": "Others"
     },
     {
+      "character_name": "nyoru_nyokki",
+      "cosplayer_name": "nyoru_nyokki",
+      "like_count": 6663,
+      "followers": 7851,
+      "viral_score": 84.87,
+      "url": "https://x.com/nyoru_nyokki/status/1995817922108031010/photo/1",
+      "location": "Others"
+    },
+    {
       "character_name": "asagi_na_",
       "cosplayer_name": "asagi_na_",
       "like_count": 4329,
@@ -1223,6 +1232,15 @@
       "followers": 7851,
       "viral_score": 71.07,
       "url": "https://x.com/nyoru_nyokki/status/2000194010863005825/photo/1",
+      "location": "Others"
+    },
+    {
+      "character_name": "nyoru_nyokki",
+      "cosplayer_name": "nyoru_nyokki",
+      "like_count": 5575,
+      "followers": 7851,
+      "viral_score": 71.01,
+      "url": "https://x.com/nyoru_nyokki/status/1981267276507889780/photo/1",
       "location": "Others"
     },
     {
@@ -1502,24 +1520,6 @@
       "followers": 14300,
       "viral_score": 48.17,
       "url": "https://x.com/samesandayo/status/1978761231151309174/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "shinoazu_cos",
-      "cosplayer_name": "shinoazu_cos",
-      "like_count": 1000,
-      "followers": 2093,
-      "viral_score": 47.78,
-      "url": "https://x.com/shinoazu_cos/status/1931733949182824718",
-      "location": "Others"
-    },
-    {
-      "character_name": "Shino_323a",
-      "cosplayer_name": "Shino_323a",
-      "like_count": 1696,
-      "followers": 3591,
-      "viral_score": 47.23,
-      "url": "https://x.com/Shino_323a/status/1788865664494842203/photo/1",
       "location": "Others"
     }
   ]
