@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/14 13:53",
-  "total_analyzed": 4585,
+  "updated_at": "2026/02/14 15:30",
+  "total_analyzed": 4660,
   "total_records": 6237,
-  "global_avg": 1333,
+  "global_avg": 1359,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1333,
-      "count": 4585
+      "avg": 1359,
+      "count": 4660
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 896,
-      "count": 548
+      "avg": 905,
+      "count": 551
     },
     {
       "location": "Studio/Home",
-      "avg": 1177,
-      "count": 181
+      "avg": 1206,
+      "count": 186
     },
     {
       "location": "Others",
-      "avg": 1402,
-      "count": 3856
+      "avg": 1429,
+      "count": 3923
     }
   ],
   "member_ranking": [
@@ -221,11 +221,6 @@
       "count": 13
     },
     {
-      "name": "Noatan_cos",
-      "avg": 4117,
-      "count": 12
-    },
-    {
       "name": "Nekosaki_moku",
       "avg": 4033,
       "count": 1
@@ -241,6 +236,16 @@
       "count": 23
     },
     {
+      "name": "Noatan_cos",
+      "avg": 3422,
+      "count": 16
+    },
+    {
+      "name": "VERYVERY_HOT",
+      "avg": 3020,
+      "count": 152
+    },
+    {
       "name": "calxx0l",
       "avg": 2993,
       "count": 24
@@ -254,11 +259,6 @@
       "name": "yn_9rk",
       "avg": 2921,
       "count": 1
-    },
-    {
-      "name": "VERYVERY_HOT",
-      "avg": 2719,
-      "count": 93
     },
     {
       "name": "marimmmochi",
@@ -357,8 +357,8 @@
     },
     {
       "name": "miimi_cos",
-      "avg": 1115,
-      "count": 97
+      "avg": 1101,
+      "count": 99
     },
     {
       "name": "ume_hagi",
@@ -461,14 +461,14 @@
       "count": 82
     },
     {
+      "name": "mm_23_22",
+      "avg": 707,
+      "count": 83
+    },
+    {
       "name": "MeruRabbit033",
       "avg": 705,
       "count": 41
-    },
-    {
-      "name": "mm_23_22",
-      "avg": 688,
-      "count": 75
     },
     {
       "name": "BF_kaya",
@@ -537,8 +537,8 @@
     },
     {
       "name": "tsuyuko_cos",
-      "avg": 541,
-      "count": 183
+      "avg": 538,
+      "count": 184
     },
     {
       "name": "taomaruko",
@@ -761,6 +761,11 @@
       "count": 1
     },
     {
+      "name": "shuuuunpoco",
+      "avg": 135,
+      "count": 2
+    },
+    {
       "name": "koyo_cos_",
       "avg": 131,
       "count": 3
@@ -883,11 +888,6 @@
     {
       "name": "inyoungin2",
       "avg": 55,
-      "count": 1
-    },
-    {
-      "name": "shuuuunpoco",
-      "avg": 52,
       "count": 1
     },
     {
