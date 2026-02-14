@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026/02/14 03:00",
-  "total_analyzed": 4211,
+  "updated_at": "2026/02/14 06:11",
+  "total_analyzed": 4286,
   "total_records": 6237,
-  "global_avg": 1328,
+  "global_avg": 1317,
   "hourly_report": [
     {
       "hour": 0,
@@ -143,25 +143,25 @@
     },
     {
       "type": "Unknown",
-      "avg": 1328,
-      "count": 4211
+      "avg": 1317,
+      "count": 4286
     }
   ],
   "location_report": [
     {
       "location": "Event",
-      "avg": 881,
-      "count": 513
+      "avg": 879,
+      "count": 518
     },
     {
       "location": "Studio/Home",
-      "avg": 1214,
-      "count": 170
+      "avg": 1210,
+      "count": 171
     },
     {
       "location": "Others",
-      "avg": 1398,
-      "count": 3528
+      "avg": 1386,
+      "count": 3597
     }
   ],
   "member_ranking": [
@@ -357,8 +357,8 @@
     },
     {
       "name": "sirane2525",
-      "avg": 1057,
-      "count": 83
+      "avg": 1047,
+      "count": 90
     },
     {
       "name": "ebisen_bei_kosu",
@@ -421,14 +421,19 @@
       "count": 1
     },
     {
+      "name": "asagi_na_",
+      "avg": 817,
+      "count": 50
+    },
+    {
       "name": "_Mizore_cos",
       "avg": 812,
       "count": 15
     },
     {
       "name": "nyan_o912",
-      "avg": 776,
-      "count": 118
+      "avg": 792,
+      "count": 130
     },
     {
       "name": "vr9su",
@@ -497,8 +502,8 @@
     },
     {
       "name": "akari_mo",
-      "avg": 598,
-      "count": 286
+      "avg": 596,
+      "count": 289
     },
     {
       "name": "maikasan_oO",
@@ -584,11 +589,6 @@
       "name": "rirerere",
       "avg": 362,
       "count": 1
-    },
-    {
-      "name": "asagi_na_",
-      "avg": 358,
-      "count": 16
     },
     {
       "name": "turatura2282",
@@ -771,11 +771,6 @@
       "count": 2
     },
     {
-      "name": "L4t___",
-      "avg": 95,
-      "count": 76
-    },
-    {
       "name": "shon_show_shown",
       "avg": 95,
       "count": 1
@@ -799,6 +794,11 @@
       "name": "cos_rako",
       "avg": 88,
       "count": 2
+    },
+    {
+      "name": "L4t___",
+      "avg": 85,
+      "count": 95
     },
     {
       "name": "_sanuu_",
@@ -1211,6 +1211,15 @@
       "location": "Event"
     },
     {
+      "character_name": "asagi_na_",
+      "cosplayer_name": "asagi_na_",
+      "like_count": 3336,
+      "followers": 5346,
+      "viral_score": 62.4,
+      "url": "https://x.com/asagi_na_/status/1930549375270523312?s=20",
+      "location": "Others"
+    },
+    {
       "character_name": "meumeu_cos",
       "cosplayer_name": "meumeu_cos",
       "like_count": 2135,
@@ -1328,6 +1337,15 @@
       "location": "Event"
     },
     {
+      "character_name": "asagi_na_",
+      "cosplayer_name": "asagi_na_",
+      "like_count": 2801,
+      "followers": 5346,
+      "viral_score": 52.39,
+      "url": "https://x.com/asagi_na_/status/1974422789416526150?s=20",
+      "location": "Others"
+    },
+    {
       "character_name": "Niru_ne",
       "cosplayer_name": "Niru_ne",
       "like_count": 1191,
@@ -1370,6 +1388,15 @@
       "followers": 22100,
       "viral_score": 49.18,
       "url": "https://x.com/kyokotitty_/status/1990707102109872398?s=20",
+      "location": "Others"
+    },
+    {
+      "character_name": "asagi_na_",
+      "cosplayer_name": "asagi_na_",
+      "like_count": 2627,
+      "followers": 5346,
+      "viral_score": 49.14,
+      "url": "https://x.com/asagi_na_/status/1947963871852966266?s=20",
       "location": "Others"
     },
     {
@@ -1433,33 +1460,6 @@
       "followers": 14300,
       "viral_score": 45.41,
       "url": "https://x.com/samesandayo/status/2006382459664175142/photo/1",
-      "location": "Others"
-    },
-    {
-      "character_name": "ume_hagi",
-      "cosplayer_name": "ume_hagi",
-      "like_count": 1094,
-      "followers": 2427,
-      "viral_score": 45.08,
-      "url": "https://x.com/ume_hagi/status/1950101241830293766?s=20",
-      "location": "Others"
-    },
-    {
-      "character_name": "RaM_606rn",
-      "cosplayer_name": "RaM_606rn",
-      "like_count": 275,
-      "followers": 613,
-      "viral_score": 44.86,
-      "url": "https://x.com/RaM_606rn/status/1993300610297610542?s=20",
-      "location": "Others"
-    },
-    {
-      "character_name": "vr9su",
-      "cosplayer_name": "vr9su",
-      "like_count": 409,
-      "followers": 917,
-      "viral_score": 44.6,
-      "url": "https://x.com/vr9su/status/2004851008082768239",
       "location": "Others"
     }
   ]
